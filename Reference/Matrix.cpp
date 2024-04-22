@@ -9,7 +9,7 @@ Matrix::Matrix(std::string_view const fileName)
     image.convertTo(data, CV_32F, SCALE_FACTOR);
 }
 
-Matrix::Matrix(Pair const & shape) : data{std::move(cv::Mat::zeros(static_cast<int>(shape.first), static_cast<int>(shape.second), CV_32F))} { }
+Matrix::Matrix(std::size_t const rows, std::size_t const cols) : data{std::move(cv::Mat::zeros(static_cast<int>(rows), static_cast<int>(cols), CV_32F))} { }
 
 Matrix::Matrix(std::initializer_list<std::initializer_list<float>> const & init)
 {
@@ -30,7 +30,6 @@ Matrix::Matrix(std::initializer_list<std::initializer_list<float>> const & init)
         ++rowIdx;
     }
 }
-
 
 auto Matrix::get() const -> cv::Mat const &
 {
