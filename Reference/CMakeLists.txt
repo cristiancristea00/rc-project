@@ -12,7 +12,7 @@ set(DEBUG_FLAGS "-Og -g -Wfatal-errors -Wpedantic -Wall -Wextra -Wconversion -Ws
                  -Wmissing-format-attribute -Wsuggest-attribute=cold -Walloc-zero -Walloca -Wattribute-alias=2 -Wduplicated-branches -Wcast-qual   \
                  -march=native -fsanitize=address,leak,undefined")
 
-set(OPTIMIZED_FLAGS "-Ofast -march=native -pipe -fno-builtin")
+set(OPTIMIZED_FLAGS "-g -Ofast -march=native -pipe -fno-builtin")
 
 
 set(CMAKE_CXX_FLAGS_DEBUG "${DEBUG_FLAGS}")

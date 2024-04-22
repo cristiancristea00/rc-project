@@ -12,14 +12,15 @@ public:
     Matrix(std::size_t const rows, std::size_t const cols);
     Matrix(std::initializer_list<std::initializer_list<float>> const & init);
 
-    [[nodiscard]] [[gnu::const]] auto get() const -> cv::Mat const &;
+    [[nodiscard]] constexpr auto get() const -> cv::Mat const & { return data; }
 
-    [[nodiscard]] [[gnu::pure]] auto rows() const -> std::size_t;
-    [[nodiscard]] [[gnu::pure]] auto cols() const -> std::size_t;
-    [[nodiscard]] [[gnu::pure]] auto shape() const -> Pair;
+    [[nodiscard]] constexpr auto rows() const -> std::size_t { return static_cast<std::size_t>(data.rows); }
 
-    [[gnu::pure]] auto operator[](std::size_t const row, std::size_t const col) -> float &;
-    [[gnu::pure]] auto operator[](std::size_t const row, std::size_t const col) const -> float const &;
+    [[nodiscard]] constexpr auto cols() const -> std::size_t { return static_cast<std::size_t>(data.cols); }
+
+    constexpr auto operator[](std::size_t const row, std::size_t const col) -> float & { return data.at<float>(static_cast<int>(row), static_cast<int>(col)); }
+
+    constexpr auto operator[](std::size_t const row, std::size_t const col) const -> float const & { return data.at<float>(static_cast<int>(row), static_cast<int>(col)); }
 
 private:
     cv::Mat data;

@@ -30,33 +30,3 @@ Matrix::Matrix(std::initializer_list<std::initializer_list<float>> const & init)
         ++rowIdx;
     }
 }
-
-auto Matrix::get() const -> cv::Mat const &
-{
-    return data;
-}
-
-auto Matrix::rows() const -> std::size_t
-{
-    return static_cast<std::size_t>(data.rows);
-}
-
-auto Matrix::cols() const -> std::size_t
-{
-    return static_cast<std::size_t>(data.cols);
-}
-
-auto Matrix::shape() const -> Pair
-{
-    return {rows(), cols()};
-}
-
-auto Matrix::operator[](std::size_t const row, std::size_t const col) -> float &
-{
-    return data.at<float>(static_cast<int>(row), static_cast<int>(col));
-}
-
-auto Matrix::operator[](std::size_t const row, std::size_t const col) const -> float const &
-{
-    return data.at<float>(static_cast<int>(row), static_cast<int>(col));
-}

@@ -13,14 +13,18 @@
 
 enum class Padding : std::uint8_t
 {
-    ZEROS,
+    EDGE,
     REFLECT,
+    ZEROS,
 };
 
 
 auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair const & stride = 1U, Padding const & padding = Padding::REFLECT) -> Matrix;
-auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
+
+inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
 -> std::optional<std::pair<std::int64_t const, std::int64_t const>>;
+
+auto MeasureTime(std::function<void(void)> const & function, std::string_view const message) -> void;
 
 
 auto main(int argc, char * argv[]) -> int
@@ -42,7 +46,10 @@ auto main(int argc, char * argv[]) -> int
                   {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX},
                   {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX}};
 
-    auto const result = LinearFilter(image, kernel);
+    MeasureTime([&] -> void
+                {
+                    auto const result = LinearFilter(image, kernel);
+                }, "Linear Filter");
 
     return EXIT_SUCCESS;
 }
@@ -62,23 +69,29 @@ auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair cons
         strideRow = strideCol = std::get<std::size_t>(stride);
     }
 
-    Matrix result{image.rows() / strideRow + 1, image.cols() / strideCol + 1};
+    auto const imgRows{image.rows()};
+    auto const imgCols{image.cols()};
+
+    auto const kerRows{kernel.rows()};
+    auto const kerCols{kernel.cols()};
+
+    Matrix result{imgRows / strideRow + 1, imgCols / strideCol + 1};
 
     #pragma omp parallel for
-    for (std::size_t row = 0; row < image.rows(); row += strideRow)
+    for (std::size_t row = 0; row < imgRows; row += strideRow)
     {
-        for (std::size_t col = 0; col < image.cols(); col += strideCol)
+        for (std::size_t col = 0; col < imgCols; col += strideCol)
         {
             float sum{0.0F};
 
-            for (std::size_t i = 0; i < kernel.rows(); ++i)
+            for (std::size_t i = 0; i < kerRows; ++i)
             {
-                for (std::size_t j = 0; j < kernel.cols(); ++j)
+                for (std::size_t j = 0; j < kerCols; ++j)
                 {
-                    std::int64_t imgRow = static_cast<std::int64_t>(row + i) - kernel.rows() / 2;
-                    std::int64_t imgCol = static_cast<std::int64_t>(col + j) - kernel.cols() / 2;
+                    std::int64_t imgRow = static_cast<std::int64_t>(row + i) - kerRows / 2;
+                    std::int64_t imgCol = static_cast<std::int64_t>(col + j) - kerCols / 2;
 
-                    auto const padded = Pad(imgRow, imgCol, image.rows(), image.cols(), padding);
+                    auto const padded = Pad(imgRow, imgCol, imgRows, imgCols, padding);
 
                     if (padded.has_value())
                     {
@@ -101,8 +114,8 @@ auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair cons
     return result;
 };
 
-auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols,
-         Padding const & padding) -> std::optional<std::pair<std::int64_t const, std::int64_t const>>
+inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
+-> std::optional<std::pair<std::int64_t const, std::int64_t const>>
 {
     static auto const leftBound = [](std::int64_t const & value) -> bool { return std::cmp_less(value, 0); };
     static auto const rightBound = [&](std::int64_t const & value) -> bool { return std::cmp_greater_equal(value, matRows); };
@@ -114,28 +127,58 @@ auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRo
 
     if (leftBound(row) || rightBound(row) || topBound(col) || bottomBound(col))
     {
-        if (padding == Padding::REFLECT)
+        switch (padding)
         {
-            if (leftBound(row))
-            {
-                imgRow = std::abs(row) - 1;
-            }
-            else if (rightBound(row))
-            {
-                imgRow = 2 * matRows - row - 1;
-            }
-            else if (topBound(col))
-            {
-                imgCol = std::abs(col) - 1;
-            }
-            else if (bottomBound(col))
-            {
-                imgCol = 2 * matCols - col - 1;
-            }
+            case Padding::EDGE:
+                if (leftBound(row))
+                {
+                    imgRow = 0;
+                }
+                if (rightBound(row))
+                {
+                    imgRow = matRows - 1;
+                }
+                if (topBound(col))
+                {
+                    imgCol = 0;
+                }
+                if (bottomBound(col))
+                {
+                    imgCol = matCols - 1;
+                }
+                break;
+            case Padding::REFLECT:
+                if (leftBound(row))
+                {
+                    imgRow = std::abs(row) - 1;
+                }
+                if (rightBound(row))
+                {
+                    imgRow = 2 * matRows - row - 1;
+                }
+                if (topBound(col))
+                {
+                    imgCol = std::abs(col) - 1;
+                }
+                if (bottomBound(col))
+                {
+                    imgCol = 2 * matCols - col - 1;
+                }
+                break;
+            case Padding::ZEROS:
+                return std::nullopt;
         }
-
-        return std::nullopt;
     }
 
     return std::make_pair(imgRow, imgCol);
+}
+
+auto MeasureTime(std::function<void(void)> const & function, std::string_view const message) -> void
+{
+    auto const start = std::chrono::high_resolution_clock::now();
+    function();
+    auto const stop = std::chrono::high_resolution_clock::now();
+    auto const difference_ms = duration_cast<std::chrono::milliseconds>(stop - start);
+    auto const time_ms = difference_ms.count();
+    std::cout << std::format("{}: {} ms\n", message, time_ms);
 }
