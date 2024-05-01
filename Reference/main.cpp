@@ -1,14 +1,14 @@
 #include <iostream>
 #include <thread>
 
-#include <opencv2/opencv.hpp>
 #include <omp.h>
+#include <opencv2/opencv.hpp>
+
+#include "Matrix.hpp"
+#include "Types.hpp"
 
 
 #define NUM_THREADS     ( std::thread::hardware_concurrency() )
-
-
-#include "Matrix.hpp"
 
 
 enum class Padding : std::uint8_t
@@ -22,9 +22,11 @@ enum class Padding : std::uint8_t
 auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair const & stride = 1U, Padding const & padding = Padding::REFLECT) -> Matrix;
 
 inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
--> std::optional<std::pair<std::int64_t const, std::int64_t const>>;
+    -> std::optional<std::pair<std::int64_t const, std::int64_t const>>;
 
-auto MeasureTime(std::function<void(void)> const & function, std::string_view const message) -> void;
+auto const GetMedianFilterKernel(std::size_t const size) -> Matrix;
+
+auto MeasureTime(std::function<void()> const & function, std::string_view const message) -> void;
 
 
 auto main(int argc, char * argv[]) -> int
@@ -37,19 +39,19 @@ auto main(int argc, char * argv[]) -> int
 
     omp_set_num_threads(NUM_THREADS);
 
-    Matrix image{argv[1]};
+    Matrix const image{argv[1]};
 
-    static constexpr float MAX{25.0F};
-    Matrix kernel{{1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX},
-                  {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX},
-                  {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX},
-                  {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX},
-                  {1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX, 1 / MAX}};
+    auto const kernel = GetMedianFilterKernel(5);
 
-    MeasureTime([&] -> void
-                {
-                    auto const result = LinearFilter(image, kernel);
-                }, "Linear Filter");
+    std::cout << std::format("Linear Image Filtering with {} threads\n", NUM_THREADS);
+    std::cout << std::format("Image size: {}x{}\n", image.rows(), image.cols());
+
+    MeasureTime(
+        [&] -> void
+        {
+            auto const result = LinearFilter(image, kernel);
+        }, "Linear Filter"
+    );
 
     return EXIT_SUCCESS;
 }
@@ -91,9 +93,7 @@ auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair cons
                     std::int64_t imgRow = static_cast<std::int64_t>(row + i) - kerRows / 2;
                     std::int64_t imgCol = static_cast<std::int64_t>(col + j) - kerCols / 2;
 
-                    auto const padded = Pad(imgRow, imgCol, imgRows, imgCols, padding);
-
-                    if (padded.has_value())
+                    if (auto const padded = Pad(imgRow, imgCol, imgRows, imgCols, padding); padded.has_value())
                     {
                         imgRow = padded->first;
                         imgCol = padded->second;
@@ -115,12 +115,24 @@ auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair cons
 };
 
 inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
--> std::optional<std::pair<std::int64_t const, std::int64_t const>>
+    -> std::optional<std::pair<std::int64_t const, std::int64_t const>>
 {
-    static auto const leftBound = [](std::int64_t const & value) -> bool { return std::cmp_less(value, 0); };
-    static auto const rightBound = [&](std::int64_t const & value) -> bool { return std::cmp_greater_equal(value, matRows); };
-    static auto const topBound = [](std::int64_t const & value) -> bool { return std::cmp_less(value, 0); };
-    static auto const bottomBound = [&](std::int64_t const & value) -> bool { return std::cmp_greater_equal(value, matCols); };
+    static auto const leftBound = [](std::int64_t const & value) -> bool
+    {
+        return std::cmp_less(value, 0);
+    };
+    static auto const rightBound = [&](std::int64_t const & value) -> bool
+    {
+        return std::cmp_greater_equal(value, matRows);
+    };
+    static auto const topBound = [](std::int64_t const & value) -> bool
+    {
+        return std::cmp_less(value, 0);
+    };
+    static auto const bottomBound = [&](std::int64_t const & value) -> bool
+    {
+        return std::cmp_greater_equal(value, matCols);
+    };
 
     std::int64_t imgRow{row};
     std::int64_t imgCol{col};
@@ -129,7 +141,7 @@ inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t cons
     {
         switch (padding)
         {
-            case Padding::EDGE:
+            case Padding::EDGE :
                 if (leftBound(row))
                 {
                     imgRow = 0;
@@ -147,7 +159,7 @@ inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t cons
                     imgCol = matCols - 1;
                 }
                 break;
-            case Padding::REFLECT:
+            case Padding::REFLECT :
                 if (leftBound(row))
                 {
                     imgRow = std::abs(row) - 1;
@@ -165,7 +177,8 @@ inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t cons
                     imgCol = 2 * matCols - col - 1;
                 }
                 break;
-            case Padding::ZEROS:
+            case Padding::ZEROS :
+            default :
                 return std::nullopt;
         }
     }
@@ -173,7 +186,17 @@ inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t cons
     return std::make_pair(imgRow, imgCol);
 }
 
-auto MeasureTime(std::function<void(void)> const & function, std::string_view const message) -> void
+auto const GetMedianFilterKernel(std::size_t const size) -> Matrix
+{
+    if (size % 2 == 0)
+    {
+        throw std::invalid_argument{std::format("Kernel size must be odd. {} is even.", size)};
+    }
+
+    return Matrix{size, size, 1.0F / static_cast<float>(size * size)};
+}
+
+auto MeasureTime(std::function<void()> const & function, std::string_view const message) -> void
 {
     auto const start = std::chrono::high_resolution_clock::now();
     function();

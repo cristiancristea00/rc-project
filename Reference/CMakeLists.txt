@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(Reference)
+project(Reference LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
@@ -23,11 +23,9 @@ set(CMAKE_C_FLAGS_RELEASE "${OPTIMIZED_FLAGS}")
 
 add_executable(Reference main.cpp Matrix.cpp)
 
-
 find_package(OpenCV REQUIRED)
 target_link_libraries(Reference PRIVATE ${OpenCV_LIBS})
 include_directories(${OpenCV_INCLUDE_DIRS})
-
 
 find_package(OpenMP REQUIRED)
 target_link_libraries(Reference PRIVATE OpenMP::OpenMP_CXX)

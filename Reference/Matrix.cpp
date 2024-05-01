@@ -1,32 +1,37 @@
 #include "Matrix.hpp"
 
-#define SCALE_FACTOR     ( 1.0F / 255.0F )
+#include <ranges>
 
 
 Matrix::Matrix(std::string_view const fileName)
 {
-    auto const image = cv::imread(fileName.data(), cv::IMREAD_GRAYSCALE);
-    image.convertTo(data, CV_32F, SCALE_FACTOR);
+    auto const image = imread(fileName.data(), cv::IMREAD_GRAYSCALE);
+    cv::Mat convertedImage;
+    image.convertTo(convertedImage, CV_32F, SCALE_FACTOR);
+
+    imageRows = convertedImage.rows;
+    imageCols = convertedImage.cols;
+
+    data.resize(imageRows * imageCols);
+    data.assign(convertedImage.begin<float>(), convertedImage.end<float>());
 }
 
-Matrix::Matrix(std::size_t const rows, std::size_t const cols) : data{std::move(cv::Mat::zeros(static_cast<int>(rows), static_cast<int>(cols), CV_32F))} { }
+Matrix::Matrix(std::size_t const rows, std::size_t const cols, float const value) : data(rows * cols, value), imageRows{rows}, imageCols{cols} { }
 
-Matrix::Matrix(std::initializer_list<std::initializer_list<float>> const & init)
+Matrix::Matrix(std::initializer_list<std::initializer_list<float>> const & init): imageRows{init.size()}, imageCols{init.begin()->size()}
 {
-    std::size_t const rows = init.size();
-    std::size_t const cols = init.begin()->size();
-
-    data = cv::Mat::zeros(static_cast<int>(rows), static_cast<int>(cols), CV_32F);
-
-    std::size_t rowIdx{0};
-    for (auto const & row: init)
+    for (auto const & [idx, row] : std::views::enumerate(init))
     {
-        std::size_t colIdx{0};
-        for (auto const & elem: row)
+        if (row.size() != imageCols)
         {
-            data.at<float>(static_cast<int>(rowIdx), static_cast<int>(colIdx)) = elem;
-            ++colIdx;
+            throw std::invalid_argument{std::format("Input matrix is ragged. Row {} has {} columns, but the first row has {} columns.", idx, row.size(), imageCols)};
         }
-        ++rowIdx;
+    }
+
+    data.reserve(imageRows * imageCols);
+
+    for (auto const & row : init)
+    {
+        data.insert(data.end(), row.begin(), row.end());
     }
 }
