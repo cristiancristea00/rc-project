@@ -1,0 +1,48 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=LinearImageFilter" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = m_axi port = image_out bundle = image_out offset = slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = m_axi port = image_in bundle = image_in offset = slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = m_axi port = kernel bundle = kernel offset = slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = rows" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = cols" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = kernel_size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = stride_row" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = stride_col" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = padding" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-386" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:8:0" msg_body="A depth specification is required for MAXI interface port 'image_out' for cosimulation.">
+        <args Name="image_out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-386" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:8:0" msg_body="A depth specification is required for MAXI interface port 'image_in' for cosimulation.">
+        <args Name="image_in"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INTERFACE" msg_id="214-386" msg_severity="WARNING" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:8:0" msg_body="A depth specification is required for MAXI interface port 'kernel' for cosimulation.">
+        <args Name="kernel"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:8:0" msg_body="Inlining function 'Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)' into 'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'">
+        <args Callee="Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)" Callee-DebugLoc="File /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 49 Column 0" Caller="LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)" Caller-DebugLoc="File /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 8 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

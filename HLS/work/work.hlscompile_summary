@@ -1,0 +1,374 @@
+<ENTRY>
+{
+ "thisFile": "/home/cristian/Documents/ACES/RC-Project/HLS/work/work.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed May  8 18:23:49 2024",
+ "timestampMillis": "1715181829789",
+ "buildStep": {
+  "cmdId": "c2b94a2c-54ad-4ac6-aa0d-c1ec795843b9",
+  "name": "v++",
+  "logFile": "/home/cristian/Documents/ACES/RC-Project/HLS/work/logs/work.steps.log",
+  "commandLine": "/home/cristian/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --part xc7z020clg400-1 --config synthesys.cfg --work_dir work ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--part",
+   "xc7z020clg400-1",
+   "--config",
+   "synthesys.cfg",
+   "--work_dir",
+   "work"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/cristian/Documents/ACES/RC-Project/HLS/synthesys.cfg",
+    "content": "[hls]\nclock=100MHz\nflow_target=vivado\nsyn.file=LinearImageFiltering.cpp\nsyn.top=LinearImageFilter\nsyn.cflags=\"-std=c++14\"\nsyn.compile.pragma_strict_mode=1\nsyn.compile.unsafe_math_optimizations=1\nsyn.interface.m_axi_addr64=0\nsyn.interface.s_axilite_data64=0\npackage.output.format=ip_catalog\npackage.output.syn=true\npackage.output.file=LinearImageFiltering\npackage.ip.description=Linear Image Filtering using HSL\npackage.ip.display_name=Linear Image Filtering\npackage.ip.library=Image\npackage.ip.name=LinearImageFiltering\npackage.ip.taxonomy=ImageProcessing\npackage.ip.vendor=Cristi\npackage.ip.version=0.1.0"
+   }
+  ],
+  "cwd": "/home/cristian/Documents/ACES/RC-Project/HLS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:23:49 2024",
+ "timestampMillis": "1715181829789",
+ "status": {
+  "cmdId": "c2b94a2c-54ad-4ac6-aa0d-c1ec795843b9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832753",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "LinearImageFilter",
+     "file": "/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832755",
+ "buildStep": {
+  "cmdId": "7424e0f9-defb-449b-aa82-afdf5eaa1920",
+  "name": "csynth_design",
+  "logFile": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/hls.log",
+  "commandLine": "csynth_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/cristian/Documents/ACES/RC-Project/HLS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832756",
+ "status": {
+  "cmdId": "7424e0f9-defb-449b-aa82-afdf5eaa1920",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832756",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832756",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:23:52 2024",
+ "timestampMillis": "1715181832756",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843562",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843562",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843562",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843563",
+ "status": {
+  "cmdId": "7424e0f9-defb-449b-aa82-afdf5eaa1920",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843565",
+ "buildStep": {
+  "cmdId": "b234df57-713a-463a-a83d-24c6c400ffd3",
+  "name": "export_design",
+  "logFile": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/hls.log",
+  "commandLine": "export_design -flow none -format ip_catalog",
+  "args": [
+   "-flow",
+   "none",
+   "-format",
+   "ip_catalog"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/cristian/Documents/ACES/RC-Project/HLS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843565",
+ "status": {
+  "cmdId": "b234df57-713a-463a-a83d-24c6c400ffd3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843565",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843565",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:03 2024",
+ "timestampMillis": "1715181843566",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870497",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870497",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870498",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870498",
+ "status": {
+  "cmdId": "b234df57-713a-463a-a83d-24c6c400ffd3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870721",
+ "status": {
+  "cmdId": "c2b94a2c-54ad-4ac6-aa0d-c1ec795843b9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870761",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/reports/v++_compile_work_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May  8 18:24:30 2024",
+ "timestampMillis": "1715181870762",
+ "report": {
+  "path": "/home/cristian/Documents/ACES/RC-Project/HLS/work/reports/.db/v++_compile_work_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

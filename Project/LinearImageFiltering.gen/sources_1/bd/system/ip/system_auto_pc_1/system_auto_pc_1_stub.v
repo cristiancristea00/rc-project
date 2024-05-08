@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
 // Date        : Fri May  3 11:15:20 2024
 // Host        : Hephaestion running 64-bit Ubuntu 24.04 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ip/system_auto_pc_1/system_auto_pc_1_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top system_auto_pc_1 -prefix
+//               system_auto_pc_1_ system_auto_pc_1_stub.v
 // Design      : system_auto_pc_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

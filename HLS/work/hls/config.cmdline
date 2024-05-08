@@ -1,0 +1,4 @@
+part=xc7z020clg400-1
+relativeroot=/home/cristian/Documents/ACES/RC-Project/HLS
+original_argv=-c --mode hls --part xc7z020clg400-1 --config synthesys.cfg --work_dir work 
+

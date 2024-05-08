@@ -1,0 +1,39 @@
+{
+    "0": {
+        "name": "LinearImageFilter",
+        "file": "LinearImageFiltering.cpp",
+        "fileloc": "7",
+        "instructions": "92",
+        "total_instructions": "223",
+        "calls": "1",
+        "basicblocks": "7",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "1": {
+        "name": "LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop",
+        "file": "\/home\/cristian\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering.cpp",
+        "fileloc": "25",
+        "instructions": "131",
+        "total_instructions": "131",
+        "calls": "",
+        "basicblocks": "10",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "8"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+---
+MainSourceFile:  /home/cristian/Documents/ACES/RC-Project/HLS/work/hls/.autopilot/db/LinearImageFiltering.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'invalid value ''c++14"'' in ''-std=c++14"'''
+    FileOffset:      0
+    FilePath:        ''
+    Replacements:    
+...

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May  3 11:13:50 2024" VIVADOVERSION="2023.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May  8 18:26:17 2024" VIVADOVERSION="2023.2.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -69,7 +69,7 @@
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_RAS_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DRSTB"/>
       </CONNECTIONS>
@@ -676,11 +676,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m_axi_image_in_ARREGION" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_ARREGION">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_arregion"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="2" NAME="m_axi_image_in_ARSIZE" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_ARSIZE">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_arsize"/>
@@ -734,11 +729,6 @@
         <PORT DIR="I" NAME="m_axi_image_in_AWREADY" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m_axi_image_in_AWREGION" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWREGION">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_awregion"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="m_axi_image_in_AWSIZE" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWSIZE">
@@ -804,11 +794,6 @@
         <PORT DIR="O" LEFT="31" NAME="m_axi_image_in_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="m_axi_image_in_WID" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WID">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_AXI_wid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axi_image_in_WLAST" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WLAST">
@@ -1458,7 +1443,6 @@
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="m_axi_image_in_ARPROT"/>
             <PORTMAP LOGICAL="ARQOS" PHYSICAL="m_axi_image_in_ARQOS"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="m_axi_image_in_ARREADY"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="m_axi_image_in_ARREGION"/>
             <PORTMAP LOGICAL="ARSIZE" PHYSICAL="m_axi_image_in_ARSIZE"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="m_axi_image_in_ARVALID"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="m_axi_image_in_AWADDR"/>
@@ -1470,7 +1454,6 @@
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="m_axi_image_in_AWPROT"/>
             <PORTMAP LOGICAL="AWQOS" PHYSICAL="m_axi_image_in_AWQOS"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="m_axi_image_in_AWREADY"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="m_axi_image_in_AWREGION"/>
             <PORTMAP LOGICAL="AWSIZE" PHYSICAL="m_axi_image_in_AWSIZE"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="m_axi_image_in_AWVALID"/>
             <PORTMAP LOGICAL="BID" PHYSICAL="m_axi_image_in_BID"/>
@@ -1484,7 +1467,6 @@
             <PORTMAP LOGICAL="RRESP" PHYSICAL="m_axi_image_in_RRESP"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="m_axi_image_in_RVALID"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="m_axi_image_in_WDATA"/>
-            <PORTMAP LOGICAL="WID" PHYSICAL="m_axi_image_in_WID"/>
             <PORTMAP LOGICAL="WLAST" PHYSICAL="m_axi_image_in_WLAST"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="m_axi_image_in_WREADY"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="m_axi_image_in_WSTRB"/>
@@ -2163,11 +2145,6 @@
             <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arregion" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_ARREGION">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_ARREGION"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="2" NAME="S00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_ARSIZE">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_ARSIZE"/>
@@ -2221,11 +2198,6 @@
         <PORT DIR="O" LEFT="0" NAME="S00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_AWREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S00_AXI_awregion" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWREGION">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_AWREGION"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="S00_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_AWSIZE">
@@ -2291,11 +2263,6 @@
         <PORT DIR="I" LEFT="31" NAME="S00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_WDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S00_AXI_wid" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WID">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="m_axi_image_in_WID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="S00_AXI_wlast" RIGHT="0" SIGIS="undef" SIGNAME="LinearImageFiltering_0_m_axi_image_in_WLAST">
@@ -2721,7 +2688,6 @@
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="S00_AXI_arprot"/>
             <PORTMAP LOGICAL="ARQOS" PHYSICAL="S00_AXI_arqos"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="S00_AXI_arready"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="S00_AXI_arregion"/>
             <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S00_AXI_arsize"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="S00_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="S00_AXI_awaddr"/>
@@ -2733,7 +2699,6 @@
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="S00_AXI_awprot"/>
             <PORTMAP LOGICAL="AWQOS" PHYSICAL="S00_AXI_awqos"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="S00_AXI_awready"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="S00_AXI_awregion"/>
             <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S00_AXI_awsize"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="S00_AXI_awvalid"/>
             <PORTMAP LOGICAL="BID" PHYSICAL="S00_AXI_bid"/>
@@ -2747,7 +2712,6 @@
             <PORTMAP LOGICAL="RRESP" PHYSICAL="S00_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="S00_AXI_rvalid"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="S00_AXI_wdata"/>
-            <PORTMAP LOGICAL="WID" PHYSICAL="S00_AXI_wid"/>
             <PORTMAP LOGICAL="WLAST" PHYSICAL="S00_AXI_wlast"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="S00_AXI_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="S00_AXI_wstrb"/>
@@ -3917,7 +3881,6 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
@@ -3926,6 +3889,7 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S02_ACLK"/>
+            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -5298,7 +5262,6 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
@@ -5306,6 +5269,7 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S02_ARESETN"/>
+            <CONNECTION INSTANCE="LinearImageFiltering_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

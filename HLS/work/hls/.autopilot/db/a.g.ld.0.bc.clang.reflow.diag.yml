@@ -1,0 +1,188 @@
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 8, Column: 0 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            image_out
+  - String:          ''' for cosimulation.'
+...
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 8, Column: 0 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            image_in
+  - String:          ''' for cosimulation.'
+...
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 8, Column: 0 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            kernel
+  - String:          ''' for cosimulation.'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 8, Column: 0 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'Pad(int&, int&, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 49, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 8, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 23, Column: 20 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        cols_loop
+  - String:          ' '
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23:20'
+  - String:          ' '
+  - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 21, Column: 13 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        rows_loop
+  - String:          ' '
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21:13'
+  - String:          ' '
+  - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 39, Column: 28 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Access '
+  - Access:          load
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 39, Column: 28 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 39, Column: 28 }
+  - OrigDirection:   read
+  - OrigID:          if.end.load.6
+  - ArrayName:       image_in
+  - String:          ' '
+  - BundleName:      image_in
+  - String:          ' '
+  - LoopName:        ker_cols_loop
+  - String:          ' '
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:32'
+  - String:          ' '
+  - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 39, Column: 63 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Access '
+  - Access:          load
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 39, Column: 63 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 39, Column: 63 }
+  - OrigDirection:   read
+  - OrigID:          if.end.load.10
+  - ArrayName:       kernel
+  - String:          ' '
+  - BundleName:      kernel
+  - String:          ' '
+  - LoopName:        ker_cols_loop
+  - String:          ' '
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:32'
+  - String:          ' '
+  - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
+    DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                       Line: 8, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 75, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i
+  - String:          ''' living in '''
+  - LoopName:        ker_cols_loop
+  - String:          '''('
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:32'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 83, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i
+  - String:          ''' living in '''
+  - LoopName:        ker_cols_loop
+  - String:          '''('
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:32'
+  - String:          ') .'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols_loop
+  - String:          '> at '
+  - LoopLoc:         '/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:32'
+  - String:          ' '
+...

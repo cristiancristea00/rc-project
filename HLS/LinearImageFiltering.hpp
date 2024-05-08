@@ -4,9 +4,9 @@
 
 enum class Padding : uint8_t
 {
-    EDGE,
-    REFLECT,
-    ZEROS,
+    EDGE    = 0x01,
+    REFLECT = 0x02,
+    ZEROS   = 0x04,
 };
 
 

@@ -1,0 +1,1001 @@
+
+
+================================================================
+== Vitis HLS Report for 'LinearImageFilter'
+================================================================
+* Date:           Wed May  8 18:24:02 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        work
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- rows_loop   |        ?|        ?|         ?|          -|          -|     ?|        no|
+        | + cols_loop  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 86
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 4 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 5 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%row = alloca i32 1" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 87 'alloca' 'row' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (1.00ns)   --->   "%padding_read = read i8 @_ssdm_op_Read.s_axilite.i8, i8 %padding"   --->   Operation 88 'read' 'padding_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 89 [1/1] (1.00ns)   --->   "%stride_col_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %stride_col"   --->   Operation 89 'read' 'stride_col_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 90 [1/1] (1.00ns)   --->   "%stride_row_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %stride_row"   --->   Operation 90 'read' 'stride_row_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 91 [1/1] (1.00ns)   --->   "%kernel_size_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %kernel_size_r"   --->   Operation 91 'read' 'kernel_size_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 92 [1/1] (1.00ns)   --->   "%kernel_offset_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %kernel_offset"   --->   Operation 92 'read' 'kernel_offset_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 93 [1/1] (1.00ns)   --->   "%cols_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %cols"   --->   Operation 93 'read' 'cols_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 94 [1/1] (1.00ns)   --->   "%rows_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %rows"   --->   Operation 94 'read' 'rows_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 95 [1/1] (1.00ns)   --->   "%image_in_offset_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %image_in_offset"   --->   Operation 95 'read' 'image_in_offset_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 96 [1/1] (1.00ns)   --->   "%image_out_offset_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %image_out_offset"   --->   Operation 96 'read' 'image_out_offset_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%sum_1_loc = alloca i32 1"   --->   Operation 97 'alloca' 'sum_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln7 = trunc i8 %padding_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 98 'trunc' 'trunc_ln7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%trunc_ln7_1 = trunc i32 %cols_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 99 'trunc' 'trunc_ln7_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%trunc_ln7_2 = trunc i32 %rows_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 100 'trunc' 'trunc_ln7_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%div = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %kernel_size_read, i32 1, i32 31"   --->   Operation 101 'partselect' 'div' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%empty = trunc i32 %rows_read"   --->   Operation 102 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%empty_42 = trunc i32 %cols_read"   --->   Operation 103 'trunc' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (1.58ns)   --->   "%store_ln21 = store i32 0, i32 %row" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 104 'store' 'store_ln21' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 6.91>
+ST_2 : Operation 105 [1/1] (0.00ns)   --->   "%zext_ln7 = zext i32 %kernel_size_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 105 'zext' 'zext_ln7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 106 [2/2] (6.91ns)   --->   "%mul_ln7 = mul i64 %zext_ln7, i64 %zext_ln7" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 106 'mul' 'mul_ln7' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.91>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%spectopmodule_ln7 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_7" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 107 'spectopmodule' 'spectopmodule_ln7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_out, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_4, void @empty_2, i32 16, i32 16, i32 16, i32 16, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 108 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %image_out"   --->   Operation 109 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_in, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_5, void @empty_4, void @empty_2, i32 16, i32 16, i32 16, i32 16, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 110 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %image_in"   --->   Operation 111 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %kernel, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_6, void @empty_4, void @empty_2, i32 16, i32 16, i32 16, i32 16, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 112 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %kernel"   --->   Operation 113 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_out_offset, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_18, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 114 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_out_offset, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 115 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_in_offset, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_0, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 116 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %image_in_offset, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 117 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %rows"   --->   Operation 118 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %rows, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_9, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 119 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %rows, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 120 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %cols"   --->   Operation 121 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %cols, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_10, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 122 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %cols, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 123 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %kernel_offset, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_11, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 124 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %kernel_offset, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty, i32 4294967295, i32 0"   --->   Operation 125 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %kernel_size_r"   --->   Operation 126 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %kernel_size_r, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_12, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 127 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %kernel_size_r, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 128 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %stride_row"   --->   Operation 129 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %stride_row, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_13, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 130 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %stride_row, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 131 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %stride_col"   --->   Operation 132 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %stride_col, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_14, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 133 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %stride_col, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 134 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %padding"   --->   Operation 135 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %padding, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_16, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 136 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 137 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %padding, void @empty_17, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 137 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_8, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_15, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 138 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%div_cast = zext i31 %div"   --->   Operation 139 'zext' 'div_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 140 [1/1] (2.49ns)   --->   "%sub_i = add i30 %trunc_ln7_2, i30 1073741823" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 140 'add' 'sub_i' <Predicate = true> <Delay = 2.49> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.49> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 141 [1/1] (2.49ns)   --->   "%sub16_i = add i30 %trunc_ln7_1, i30 1073741823" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 141 'add' 'sub16_i' <Predicate = true> <Delay = 2.49> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.49> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%mul_i = bitconcatenate i30 @_ssdm_op_BitConcatenate.i30.i29.i1, i29 %empty, i1 0"   --->   Operation 142 'bitconcatenate' 'mul_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "%mul35_i = bitconcatenate i30 @_ssdm_op_BitConcatenate.i30.i29.i1, i29 %empty_42, i1 0"   --->   Operation 143 'bitconcatenate' 'mul35_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 144 [1/2] (6.91ns)   --->   "%mul_ln7 = mul i64 %zext_ln7, i64 %zext_ln7" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 144 'mul' 'mul_ln7' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 145 [1/1] (0.00ns)   --->   "%br_ln21 = br void %for.cond" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 145 'br' 'br_ln21' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 2.55>
+ST_4 : Operation 146 [1/1] (0.00ns)   --->   "%row_2 = load i32 %row" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 146 'load' 'row_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 147 [1/1] (2.55ns)   --->   "%icmp_ln21 = icmp_ult  i32 %row_2, i32 %rows_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 147 'icmp' 'icmp_ln21' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 148 [1/1] (0.00ns)   --->   "%br_ln21 = br i1 %icmp_ln21, void %for.end43, void %cols_loop" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 148 'br' 'br_ln21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 149 [1/1] (0.00ns)   --->   "%specloopname_ln21 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 149 'specloopname' 'specloopname_ln21' <Predicate = (icmp_ln21)> <Delay = 0.00>
+ST_4 : Operation 150 [1/1] (2.55ns)   --->   "%add = sub i32 %row_2, i32 %div_cast" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 150 'sub' 'add' <Predicate = (icmp_ln21)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 151 [1/1] (1.58ns)   --->   "%br_ln23 = br void %for.cond1" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 151 'br' 'br_ln23' <Predicate = (icmp_ln21)> <Delay = 1.58>
+ST_4 : Operation 152 [1/1] (0.00ns)   --->   "%ret_ln46 = ret" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:46]   --->   Operation 152 'ret' 'ret_ln46' <Predicate = (!icmp_ln21)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 4.14>
+ST_5 : Operation 153 [1/1] (0.00ns)   --->   "%col = phi i32 0, void %cols_loop, i32 %col_1, void %ker_rows_loop"   --->   Operation 153 'phi' 'col' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 154 [1/1] (2.55ns)   --->   "%icmp_ln23 = icmp_ult  i32 %col, i32 %cols_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 154 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 155 [1/1] (0.00ns)   --->   "%br_ln23 = br i1 %icmp_ln23, void %for.inc40, void %ker_rows_loop" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 155 'br' 'br_ln23' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 156 [2/2] (0.00ns)   --->   "%call_ln7 = call void @LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop, i32 %kernel, i32 %image_in, i64 %mul_ln7, i3 %trunc_ln7, i32 %kernel_size_read, i32 %add, i32 %rows_read, i30 %sub_i, i32 %col, i31 %div, i32 %cols_read, i30 %trunc_ln7_1, i32 %image_in_offset_read, i32 %kernel_offset_read, i30 %sub16_i, i30 %mul_i, i30 %mul35_i, i32 %sum_1_loc" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 156 'call' 'call_ln7' <Predicate = (icmp_ln23)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 157 [36/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 157 'udiv' 'udiv_ln43' <Predicate = (icmp_ln23)> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 158 [36/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 158 'udiv' 'udiv_ln43_2' <Predicate = (icmp_ln23)> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 159 [1/1] (2.55ns)   --->   "%col_1 = add i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 159 'add' 'col_1' <Predicate = (icmp_ln23)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 160 [1/1] (2.55ns)   --->   "%row_3 = add i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 160 'add' 'row_3' <Predicate = (!icmp_ln23)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 161 [1/1] (1.58ns)   --->   "%store_ln21 = store i32 %row_3, i32 %row" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 161 'store' 'store_ln21' <Predicate = (!icmp_ln23)> <Delay = 1.58>
+ST_5 : Operation 162 [1/1] (0.00ns)   --->   "%br_ln21 = br void %for.cond" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21]   --->   Operation 162 'br' 'br_ln21' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 4.13>
+ST_6 : Operation 163 [1/2] (0.00ns)   --->   "%call_ln7 = call void @LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop, i32 %kernel, i32 %image_in, i64 %mul_ln7, i3 %trunc_ln7, i32 %kernel_size_read, i32 %add, i32 %rows_read, i30 %sub_i, i32 %col, i31 %div, i32 %cols_read, i30 %trunc_ln7_1, i32 %image_in_offset_read, i32 %kernel_offset_read, i30 %sub16_i, i30 %mul_i, i30 %mul35_i, i32 %sum_1_loc" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7]   --->   Operation 163 'call' 'call_ln7' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 164 [35/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 164 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 165 [35/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 165 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 4.13>
+ST_7 : Operation 166 [34/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 166 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 167 [34/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 167 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 4.13>
+ST_8 : Operation 168 [33/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 168 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 169 [33/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 169 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 4.13>
+ST_9 : Operation 170 [32/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 170 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 171 [32/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 171 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 4.13>
+ST_10 : Operation 172 [31/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 172 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 173 [31/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 173 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 4.13>
+ST_11 : Operation 174 [30/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 174 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 175 [30/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 175 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 4.13>
+ST_12 : Operation 176 [29/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 176 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 177 [29/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 177 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 4.13>
+ST_13 : Operation 178 [28/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 178 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 179 [28/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 179 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 4.13>
+ST_14 : Operation 180 [27/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 180 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 181 [27/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 181 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 4.13>
+ST_15 : Operation 182 [26/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 182 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 183 [26/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 183 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 4.13>
+ST_16 : Operation 184 [25/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 184 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 185 [25/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 185 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 4.13>
+ST_17 : Operation 186 [24/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 186 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 187 [24/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 187 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 4.13>
+ST_18 : Operation 188 [23/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 188 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 189 [23/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 189 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 4.13>
+ST_19 : Operation 190 [22/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 190 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 191 [22/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 191 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 4.13>
+ST_20 : Operation 192 [21/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 192 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 193 [21/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 193 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 4.13>
+ST_21 : Operation 194 [20/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 194 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 195 [20/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 195 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 4.13>
+ST_22 : Operation 196 [19/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 196 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 197 [19/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 197 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 4.13>
+ST_23 : Operation 198 [18/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 198 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 199 [18/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 199 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 4.13>
+ST_24 : Operation 200 [17/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 200 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 201 [17/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 201 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 4.13>
+ST_25 : Operation 202 [16/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 202 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 203 [16/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 203 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 4.13>
+ST_26 : Operation 204 [15/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 204 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 205 [15/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 205 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 4.13>
+ST_27 : Operation 206 [14/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 206 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 207 [14/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 207 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 4.13>
+ST_28 : Operation 208 [13/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 208 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 209 [13/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 209 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 4.13>
+ST_29 : Operation 210 [12/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 210 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 211 [12/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 211 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 4.13>
+ST_30 : Operation 212 [11/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 212 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 213 [11/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 213 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 4.13>
+ST_31 : Operation 214 [10/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 214 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 215 [10/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 215 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 4.13>
+ST_32 : Operation 216 [9/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 216 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 217 [9/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 217 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 4.13>
+ST_33 : Operation 218 [8/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 218 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 219 [8/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 219 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 4.13>
+ST_34 : Operation 220 [7/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 220 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 221 [7/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 221 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 4.13>
+ST_35 : Operation 222 [6/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 222 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 223 [6/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 223 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 4.13>
+ST_36 : Operation 224 [5/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 224 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 225 [5/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 225 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 4.13>
+ST_37 : Operation 226 [4/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 226 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 227 [4/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 227 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 4.13>
+ST_38 : Operation 228 [3/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 228 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 229 [3/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 229 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 4.13>
+ST_39 : Operation 230 [2/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 230 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 231 [2/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 231 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 4.13>
+ST_40 : Operation 232 [1/36] (4.13ns)   --->   "%udiv_ln43 = udiv i32 %row_2, i32 %stride_row_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 232 'udiv' 'udiv_ln43' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 32> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 233 [1/36] (4.13ns)   --->   "%udiv_ln43_2 = udiv i32 %col, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 233 'udiv' 'udiv_ln43_2' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 6.91>
+ST_41 : Operation 234 [2/2] (6.91ns)   --->   "%mul_ln43 = mul i32 %udiv_ln43, i32 %cols_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 234 'mul' 'mul_ln43' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 6.91>
+ST_42 : Operation 235 [1/2] (6.91ns)   --->   "%mul_ln43 = mul i32 %udiv_ln43, i32 %cols_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 235 'mul' 'mul_ln43' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 4.13>
+ST_43 : Operation 236 [36/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 236 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 4.13>
+ST_44 : Operation 237 [35/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 237 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 4.13>
+ST_45 : Operation 238 [34/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 238 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 4.13>
+ST_46 : Operation 239 [33/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 239 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 4.13>
+ST_47 : Operation 240 [32/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 240 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 4.13>
+ST_48 : Operation 241 [31/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 241 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 4.13>
+ST_49 : Operation 242 [30/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 242 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 49> <Delay = 4.13>
+ST_50 : Operation 243 [29/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 243 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 50> <Delay = 4.13>
+ST_51 : Operation 244 [28/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 244 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 4.13>
+ST_52 : Operation 245 [27/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 245 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 4.13>
+ST_53 : Operation 246 [26/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 246 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 53> <Delay = 4.13>
+ST_54 : Operation 247 [25/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 247 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 54> <Delay = 4.13>
+ST_55 : Operation 248 [24/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 248 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 56 <SV = 55> <Delay = 4.13>
+ST_56 : Operation 249 [23/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 249 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 57 <SV = 56> <Delay = 4.13>
+ST_57 : Operation 250 [22/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 250 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 58 <SV = 57> <Delay = 4.13>
+ST_58 : Operation 251 [21/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 251 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 58> <Delay = 4.13>
+ST_59 : Operation 252 [20/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 252 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 59> <Delay = 4.13>
+ST_60 : Operation 253 [19/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 253 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 61 <SV = 60> <Delay = 4.13>
+ST_61 : Operation 254 [18/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 254 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 62 <SV = 61> <Delay = 4.13>
+ST_62 : Operation 255 [17/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 255 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 62> <Delay = 4.13>
+ST_63 : Operation 256 [16/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 256 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 63> <Delay = 4.13>
+ST_64 : Operation 257 [15/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 257 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 64> <Delay = 4.13>
+ST_65 : Operation 258 [14/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 258 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 65> <Delay = 4.13>
+ST_66 : Operation 259 [13/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 259 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 66> <Delay = 4.13>
+ST_67 : Operation 260 [12/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 260 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 67> <Delay = 4.13>
+ST_68 : Operation 261 [11/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 261 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 68> <Delay = 4.13>
+ST_69 : Operation 262 [10/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 262 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 69> <Delay = 4.13>
+ST_70 : Operation 263 [9/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 263 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 70> <Delay = 4.13>
+ST_71 : Operation 264 [8/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 264 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 71> <Delay = 4.13>
+ST_72 : Operation 265 [7/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 265 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 72> <Delay = 4.13>
+ST_73 : Operation 266 [6/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 266 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 73> <Delay = 4.13>
+ST_74 : Operation 267 [5/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 267 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 74> <Delay = 4.13>
+ST_75 : Operation 268 [4/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 268 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 75> <Delay = 4.13>
+ST_76 : Operation 269 [3/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 269 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 76> <Delay = 4.13>
+ST_77 : Operation 270 [2/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 270 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+
+State 78 <SV = 77> <Delay = 6.62>
+ST_78 : Operation 271 [1/36] (4.13ns)   --->   "%udiv_ln43_1 = udiv i32 %mul_ln43, i32 %stride_col_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 271 'udiv' 'udiv_ln43_1' <Predicate = true> <Delay = 4.13> <CoreInst = "DivnS_SEQ">   --->   Core 7 'DivnS_SEQ' <Latency = 35> <II = 30> <Delay = 4.13> <FuncUnit> <Opcode : 'udiv' 'sdiv' 'urem' 'srem'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 272 [1/1] (0.00ns)   --->   "%trunc_ln43 = trunc i30 %udiv_ln43_1" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 272 'trunc' 'trunc_ln43' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 273 [1/1] (0.00ns)   --->   "%trunc_ln43_1 = trunc i30 %udiv_ln43_2" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 273 'trunc' 'trunc_ln43_1' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 274 [1/1] (2.49ns)   --->   "%add_ln43 = add i30 %trunc_ln43_1, i30 %trunc_ln43" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 274 'add' 'add_ln43' <Predicate = true> <Delay = 2.49> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.49> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 79 <SV = 78> <Delay = 2.55>
+ST_79 : Operation 275 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i30.i2, i30 %add_ln43, i2 0" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 275 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 276 [1/1] (2.55ns)   --->   "%add_ln43_1 = add i32 %shl_ln, i32 %image_out_offset_read" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 276 'add' 'add_ln43_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_79 : Operation 277 [1/1] (0.00ns)   --->   "%trunc_ln43_2 = partselect i30 @_ssdm_op_PartSelect.i30.i32.i32.i32, i32 %add_ln43_1, i32 2, i32 31" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 277 'partselect' 'trunc_ln43_2' <Predicate = true> <Delay = 0.00>
+
+State 80 <SV = 79> <Delay = 7.30>
+ST_80 : Operation 278 [1/1] (0.00ns)   --->   "%sext_ln43 = sext i30 %trunc_ln43_2" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 278 'sext' 'sext_ln43' <Predicate = true> <Delay = 0.00>
+ST_80 : Operation 279 [1/1] (0.00ns)   --->   "%image_out_addr = getelementptr i32 %image_out, i32 %sext_ln43" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 279 'getelementptr' 'image_out_addr' <Predicate = true> <Delay = 0.00>
+ST_80 : Operation 280 [1/1] (7.30ns)   --->   "%image_out_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %image_out_addr, i32 1" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 280 'writereq' 'image_out_addr_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 81 <SV = 80> <Delay = 7.30>
+ST_81 : Operation 281 [1/1] (0.00ns)   --->   "%sum_1_loc_load = load i32 %sum_1_loc"   --->   Operation 281 'load' 'sum_1_loc_load' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 282 [1/1] (0.00ns)   --->   "%bitcast_ln43 = bitcast i32 %sum_1_loc_load" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 282 'bitcast' 'bitcast_ln43' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 283 [1/1] (7.30ns)   --->   "%write_ln43 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %image_out_addr, i32 %bitcast_ln43, i4 15" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 283 'write' 'write_ln43' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 82 <SV = 81> <Delay = 7.30>
+ST_82 : Operation 284 [5/5] (7.30ns)   --->   "%image_out_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %image_out_addr" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 284 'writeresp' 'image_out_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 83 <SV = 82> <Delay = 7.30>
+ST_83 : Operation 285 [4/5] (7.30ns)   --->   "%image_out_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %image_out_addr" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 285 'writeresp' 'image_out_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 84 <SV = 83> <Delay = 7.30>
+ST_84 : Operation 286 [3/5] (7.30ns)   --->   "%image_out_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %image_out_addr" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 286 'writeresp' 'image_out_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 85 <SV = 84> <Delay = 7.30>
+ST_85 : Operation 287 [2/5] (7.30ns)   --->   "%image_out_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %image_out_addr" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 287 'writeresp' 'image_out_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 86 <SV = 85> <Delay = 7.30>
+ST_86 : Operation 288 [1/1] (0.00ns)   --->   "%specloopname_ln23 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 288 'specloopname' 'specloopname_ln23' <Predicate = true> <Delay = 0.00>
+ST_86 : Operation 289 [1/5] (7.30ns)   --->   "%image_out_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %image_out_addr" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43]   --->   Operation 289 'writeresp' 'image_out_addr_resp' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_86 : Operation 290 [1/1] (0.00ns)   --->   "%br_ln23 = br void %for.cond1" [/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23]   --->   Operation 290 'br' 'br_ln23' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 32 bit ('row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21) [13]  (0.000 ns)
+	'store' operation 0 bit ('store_ln21', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21) of constant 0 on local variable 'row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21 [69]  (1.588 ns)
+
+ <State 2>: 6.912ns
+The critical path consists of the following:
+	'mul' operation 64 bit ('mul_ln7', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7) [68]  (6.912 ns)
+
+ <State 3>: 6.912ns
+The critical path consists of the following:
+	'mul' operation 64 bit ('mul_ln7', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7) [68]  (6.912 ns)
+
+ <State 4>: 2.552ns
+The critical path consists of the following:
+	'load' operation 32 bit ('row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21) on local variable 'row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21 [72]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln21', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21) [73]  (2.552 ns)
+
+ <State 5>: 4.140ns
+The critical path consists of the following:
+	'phi' operation 32 bit ('col') with incoming values : ('col', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23) [80]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln23', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23) [81]  (2.552 ns)
+	'store' operation 0 bit ('store_ln21', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21) of variable 'row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21 on local variable 'row', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21 [107]  (1.588 ns)
+
+ <State 6>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 7>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 8>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 9>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 10>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 11>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 12>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 13>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 14>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 15>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 16>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 17>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 18>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 19>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 20>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 21>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 22>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 23>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 24>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 25>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 26>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 27>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 28>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 29>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 30>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 31>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 32>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 33>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 34>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 35>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 36>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 37>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 38>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 39>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 40>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 32 bit ('udiv_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [87]  (4.135 ns)
+
+ <State 41>: 6.912ns
+The critical path consists of the following:
+	'mul' operation 32 bit ('mul_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [88]  (6.912 ns)
+
+ <State 42>: 6.912ns
+The critical path consists of the following:
+	'mul' operation 32 bit ('mul_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [88]  (6.912 ns)
+
+ <State 43>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 44>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 45>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 46>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 47>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 48>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 49>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 50>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 51>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 52>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 53>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 54>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 55>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 56>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 57>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 58>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 59>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 60>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 61>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 62>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 63>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 64>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 65>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 66>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 67>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 68>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 69>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 70>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 71>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 72>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 73>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 74>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 75>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 76>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 77>: 4.135ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+
+ <State 78>: 6.628ns
+The critical path consists of the following:
+	'udiv' operation 30 bit ('udiv_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [89]  (4.135 ns)
+	'add' operation 30 bit ('add_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [93]  (2.493 ns)
+
+ <State 79>: 2.552ns
+The critical path consists of the following:
+	'add' operation 32 bit ('add_ln43_1', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [95]  (2.552 ns)
+
+ <State 80>: 7.300ns
+The critical path consists of the following:
+	'getelementptr' operation 32 bit ('image_out_addr', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [99]  (0.000 ns)
+	bus request operation ('image_out_addr_req', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [100]  (7.300 ns)
+
+ <State 81>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('sum_1_loc_load') on local variable 'sum_1_loc' [86]  (0.000 ns)
+	bus write operation ('write_ln43', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [101]  (7.300 ns)
+
+ <State 82>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('image_out_addr_resp', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [102]  (7.300 ns)
+
+ <State 83>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('image_out_addr_resp', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [102]  (7.300 ns)
+
+ <State 84>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('image_out_addr_resp', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [102]  (7.300 ns)
+
+ <State 85>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('image_out_addr_resp', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [102]  (7.300 ns)
+
+ <State 86>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('image_out_addr_resp', /home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) on port 'image_out' (/home/cristian/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43) [102]  (7.300 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

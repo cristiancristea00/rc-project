@@ -3,16 +3,16 @@
 # SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
 # IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
 # SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Fri May  3 11:14:29 2024
-# Process ID: 60675
+# Start of session at: Wed May  8 18:26:26 2024
+# Process ID: 6334
 # Current directory: /home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1
 # Command line: vivado -log system_LinearImageFiltering_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_LinearImageFiltering_0_0.tcl
 # Log file: /home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/system_LinearImageFiltering_0_0.vds
 # Journal file: /home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/vivado.jou
-# Running On: Hephaestion, OS: Linux, CPU Frequency: 2600.017 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 2600.697 MHz, CPU Physical cores: 6, Host memory: 16631 MB
 #-----------------------------------------------------------
 source system_LinearImageFiltering_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1330.828 ; gain = 0.027 ; free physical = 2636 ; free virtual = 13558
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1331.891 ; gain = 0.027 ; free physical = 9594 ; free virtual = 16901
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cristian/Documents/ACES/RC-Project/HLS'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/cristian/AMD/Vivado/2023.2/data/ip'.
@@ -24,219 +24,220 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 61073
+INFO: [Synth 8-7075] Helper process launched with PID 6373
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2055.074 ; gain = 406.684 ; free physical = 172 ; free virtual = 7281
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2053.105 ; gain = 404.715 ; free physical = 8569 ; free virtual = 15907
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_LinearImageFiltering_0_0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ip/system_LinearImageFiltering_0_0/synth/system_LinearImageFiltering_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
 INFO: [Synth 8-6157] synthesizing module 'LUT1' [/home/cristian/AMD/Vivado/2023.2/scripts/rt/data/unisim_comp.v:81293]
 INFO: [Synth 8-6155] done synthesizing module 'LUT1' (0#1) [/home/cristian/AMD/Vivado/2023.2/scripts/rt/data/unisim_comp.v:81293]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_30s_30s_30_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_30s_30s_30_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_flow_control_loop_pipe_sequential_init' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_flow_control_loop_pipe_sequential_init' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_control_s_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_control_s_axi.v:9]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_control_s_axi.v:261]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_control_s_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_control_s_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1858]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1861]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1355]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1539]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1355]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_in_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1858]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1861]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1355]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1539]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1355]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_image_out_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:796]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:327]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1867]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2173]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1858]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1861]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1547]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1355]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1539]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1355]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_kernel_m_axi.v:11]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_32ns_32ns_64_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_32ns_32ns_64_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_32s_32s_32_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_32s_32s_32_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v:5]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:83]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:83]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:83]
-INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1_divseq' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1_divseq' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_30s_30s_30_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_30s_30s_30_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_flow_control_loop_pipe_sequential_init' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_flow_control_loop_pipe_sequential_init' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_control_s_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_control_s_axi.v:261]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_control_s_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1858]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1861]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1355]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1539]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:1355]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_in_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_in_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1858]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1861]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1355]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1539]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:1355]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_image_out_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_image_out_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_store' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_mem' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_mem' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_store' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:796]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_load' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_mem__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_mem__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2733]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_load' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:327]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_write' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_burst_converter' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_burst_converter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1867]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_throttle' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized0' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized5' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized3' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized3' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized5' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized6' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized4' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_srl__parameterized4' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2679]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_fifo__parameterized6' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2501]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_throttle' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2173]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1858]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1861]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_write' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1547]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_read' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1355]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:2399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1539]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi_read' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:1355]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_kernel_m_axi' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_kernel_m_axi.v:11]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_32ns_32ns_64_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_32ns_32ns_64_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_mul_32s_32s_32_2_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_mul_32s_32s_32_2_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:83]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:83]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:83]
+INFO: [Synth 8-6157] synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1_divseq' [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1_divseq' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter_udiv_32ns_32ns_30_36_seq_1' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'LinearImageFilter' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'system_LinearImageFiltering_0_0' (0#1) [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ip/system_LinearImageFiltering_0_0/synth/system_LinearImageFiltering_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_control_s_axi.v:354]
-WARNING: [Synth 8-6014] Unused sequential element remd_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:150]
-WARNING: [Synth 8-6014] Unused sequential element remd_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:150]
+WARNING: [Synth 8-6014] Unused sequential element ap_predicate_pred208_state6_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop.v:738]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_control_s_axi.v:354]
+WARNING: [Synth 8-6014] Unused sequential element remd_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:150]
+WARNING: [Synth 8-6014] Unused sequential element remd_reg was removed.  [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:150]
 WARNING: [Synth 8-7129] Port reset in module LinearImageFilter_mul_32s_32s_32_2_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port reset in module LinearImageFilter_mul_32ns_32ns_64_2_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port in_BUS_RID[0] in module LinearImageFilter_kernel_m_axi_read is either unconnected or has no load
@@ -339,18 +340,18 @@ WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_8_viv__parameterized6
 WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_8_viv__parameterized64 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2259.043 ; gain = 610.652 ; free physical = 232 ; free virtual = 6320
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2259.043 ; gain = 610.652 ; free physical = 8342 ; free virtual = 15685
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2273.887 ; gain = 625.496 ; free physical = 230 ; free virtual = 6318
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2276.855 ; gain = 628.465 ; free physical = 8342 ; free virtual = 15685
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2273.887 ; gain = 625.496 ; free physical = 230 ; free virtual = 6318
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2276.855 ; gain = 628.465 ; free physical = 8342 ; free virtual = 15685
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2279.824 ; gain = 0.000 ; free physical = 227 ; free virtual = 6316
+Netlist sorting complete. Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2282.793 ; gain = 0.000 ; free physical = 8348 ; free virtual = 15691
 INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -363,29 +364,29 @@ Parsing XDC File [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFi
 Finished Parsing XDC File [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2363.668 ; gain = 0.000 ; free physical = 228 ; free virtual = 6321
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2363.668 ; gain = 0.000 ; free physical = 8326 ; free virtual = 15683
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   FDE => FDRE: 3 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 212 ; free virtual = 6304
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 8326 ; free virtual = 15683
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 450 ; free virtual = 6432
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8320 ; free virtual = 15677
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 448 ; free virtual = 6430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8320 ; free virtual = 15677
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 448 ; free virtual = 6430
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8320 ; free virtual = 15677
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
@@ -403,7 +404,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Linea
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized0'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized1'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2'
-WARNING: [Synth 8-3936] Found unconnected internal register 'remd_tmp_reg' and it is trimmed from '32' to '31' bits. [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:40]
+WARNING: [Synth 8-3936] Found unconnected internal register 'remd_tmp_reg' and it is trimmed from '32' to '31' bits. [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v:40]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -524,7 +525,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'LinearImageFilter_kernel_m_axi_reg_slice__parameterized2'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 725 ; free virtual = 6734
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8319 ; free virtual = 15678
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'inst/grp_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop_fu_206/fadd_32ns_32ns_32_5_full_dsp_1_U1/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/SUB_DELAY' (delay__parameterized0) to 'inst/grp_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop_fu_206/fadd_32ns_32ns_32_5_full_dsp_1_U1/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/SUB_ADD_IP_DELAY'
 INFO: [Synth 8-223] decloning instance 'inst/grp_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop_fu_206/fadd_32ns_32ns_32_5_full_dsp_1_U1/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/grp_LinearImageFilter_Pipeline_ker_rows_loop_ker_cols_loop_fu_206/fadd_32ns_32ns_32_5_full_dsp_1_U1/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
@@ -550,7 +551,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3936] Found unconnected internal register 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq_u/remd_tmp_reg' and it is trimmed from '32' to '31' bits. [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/da6d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:40]
+WARNING: [Synth 8-3936] Found unconnected internal register 'LinearImageFilter_udiv_32ns_32ns_32_36_seq_1_divseq_u/remd_tmp_reg' and it is trimmed from '32' to '31' bits. [/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/system/ipshared/573b/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v:40]
 INFO: [Synth 8-5784] Optimized 36 bits of RAM "store_unit/buff_wdata/U_fifo_mem/mem_reg" due to constant propagation. Old ram width 36 bits, new ram width 0 bits.
 WARNING: [Synth 8-5785] Removed RAM "store_unit/buff_wdata/U_fifo_mem/mem_reg" due to constant propagation. Write data stuck at zero 
 INFO: [Synth 8-7082] The signal store_unit/buff_wdata/U_fifo_mem/mem_reg is implemented as Block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (4 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
@@ -658,7 +659,7 @@ WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U26/buff0_reg[2
 WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U26/buff0_reg[28]) is unused and will be removed from module LinearImageFilter.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 4202 ; free virtual = 10237
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15686
 ---------------------------------------------------------------------------------
  Sort Area is  mul_32ns_32ns_64_2_1_U26/tmp_product_6 : 0 0 : 3101 5927 : Used 1 time 0
  Sort Area is  mul_32ns_32ns_64_2_1_U26/tmp_product_6 : 0 1 : 2826 5927 : Used 1 time 0
@@ -676,13 +677,13 @@ Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elaps
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8334 ; free virtual = 14376
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8322 ; free virtual = 15691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8338 ; free virtual = 14380
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8322 ; free virtual = 15691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -690,7 +691,7 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance inst/image_in_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/kernel_m_axi_U/load_unit/buff_rdata/U_fifo_mem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8342 ; free virtual = 14381
+Finished Technology Mapping : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8323 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -708,37 +709,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14379
+Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14379
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -776,53 +777,53 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |   358|
+|1     |CARRY4   |   359|
 |2     |DSP48E1  |    15|
 |12    |LUT1     |   127|
-|13    |LUT2     |   872|
-|14    |LUT3     |  1064|
-|15    |LUT4     |   777|
-|16    |LUT5     |   549|
-|17    |LUT6     |   502|
+|13    |LUT2     |   880|
+|14    |LUT3     |  1099|
+|15    |LUT4     |   774|
+|16    |LUT5     |   546|
+|17    |LUT6     |   473|
 |18    |MUXCY    |    74|
 |19    |MUXF7    |     6|
 |20    |RAMB18E1 |     3|
 |22    |SRL16E   |   173|
 |23    |XORCY    |    25|
 |24    |FDE      |     3|
-|25    |FDRE     |  4764|
+|25    |FDRE     |  4765|
 |26    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 383 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 2363.703 ; gain = 625.496 ; free physical = 8340 ; free virtual = 14380
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8340 ; free virtual = 14380
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 2363.703 ; gain = 628.465 ; free physical = 8324 ; free virtual = 15693
+Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 2363.703 ; gain = 715.312 ; free physical = 8324 ; free virtual = 15693
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 8602 ; free virtual = 14642
-INFO: [Netlist 29-17] Analyzing 484 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 8613 ; free virtual = 15982
+INFO: [Netlist 29-17] Analyzing 485 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 8600 ; free virtual = 14640
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2363.703 ; gain = 0.000 ; free physical = 8611 ; free virtual = 15980
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 23 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 20 instances
   FDE => FDRE: 3 instances
 
-Synth Design complete | Checksum: 7c3f080e
+Synth Design complete | Checksum: 641e2bfd
 INFO: [Common 17-83] Releasing license: Synthesis
-266 Infos, 215 Warnings, 0 Critical Warnings and 0 Errors encountered.
+266 Infos, 216 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:04 ; elapsed = 00:01:02 . Memory (MB): peak = 2363.703 ; gain = 1032.875 ; free physical = 8600 ; free virtual = 14640
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1935.506; main = 1636.950; forked = 348.360
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3304.457; main = 2363.672; forked = 972.801
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00 . Memory (MB): peak = 2387.680 ; gain = 0.000 ; free physical = 8600 ; free virtual = 14641
+synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:21 . Memory (MB): peak = 2363.703 ; gain = 1031.812 ; free physical = 8611 ; free virtual = 15980
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1966.391; main = 1638.598; forked = 374.753
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3323.207; main = 2363.672; forked = 991.551
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2387.680 ; gain = 0.000 ; free physical = 8611 ; free virtual = 15981
 INFO: [Common 17-1381] The checkpoint '/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/system_LinearImageFiltering_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_LinearImageFiltering_0_0, cache-ID = 41cd61f27e004ea1
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_LinearImageFiltering_0_0, cache-ID = 11e4f4b39f77f89d
 INFO: [Coretcl 2-1174] Renamed 172 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2387.680 ; gain = 0.000 ; free physical = 8572 ; free virtual = 14623
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2387.680 ; gain = 0.000 ; free physical = 8593 ; free virtual = 15973
 INFO: [Common 17-1381] The checkpoint '/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/system_LinearImageFiltering_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_LinearImageFiltering_0_0_utilization_synth.rpt -pb system_LinearImageFiltering_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May  3 11:15:47 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed May  8 18:28:06 2024...
