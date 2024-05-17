@@ -6,9 +6,9 @@
 
 auto LinearImageFilter(float * const image_out, float const * const image_in, uint32_t const rows, uint32_t const cols, float const * const kernel, uint32_t const kernel_size, uint32_t const stride_row, uint32_t const stride_col, Padding const padding) -> void
 {
-    #pragma HLS INTERFACE mode = m_axi     port = image_out bundle = image_out offset = slave
-    #pragma HLS INTERFACE mode = m_axi     port = image_in  bundle = image_in  offset = slave
-    #pragma HLS INTERFACE mode = m_axi     port = kernel    bundle = kernel    offset = slave
+    #pragma HLS INTERFACE mode = m_axi     port = image_out bundle = image_out offset = slave depth = 25000000
+    #pragma HLS INTERFACE mode = m_axi     port = image_in  bundle = image_in  offset = slave depth = 25000000
+    #pragma HLS INTERFACE mode = m_axi     port = kernel    bundle = kernel    offset = slave depth = 200
 
     #pragma HLS INTERFACE mode = s_axilite port = rows
     #pragma HLS INTERFACE mode = s_axilite port = cols
@@ -18,15 +18,15 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
     #pragma HLS INTERFACE mode = s_axilite port = padding
     #pragma HLS INTERFACE mode = s_axilite port = return
 
-    rows_loop: for (uint32_t row = 0; row < rows; row += stride_row)
+    img_rows: for (uint32_t row = 0; row < rows; row += stride_row)
     {
-        cols_loop: for (uint32_t col = 0; col < cols; col += stride_col)
+        img_cols: for (uint32_t col = 0; col < cols; col += stride_col)
         {
             float sum{0.0F};
 
-            ker_rows_loop: for (uint32_t i = 0; i < kernel_size; ++i)
+            ker_rows: for (uint32_t i = 0; i < kernel_size; ++i)
             {
-                ker_cols_loop: for (uint32_t j = 0; j < kernel_size; ++j)
+                ker_cols: for (uint32_t j = 0; j < kernel_size; ++j)
                 {
                     int32_t newRow = row + i - kernel_size / 2;
                     int32_t newCol = col + j - kernel_size / 2;

@@ -24,7 +24,7 @@ auto LinearFilter(Matrix const & image, Matrix const & kernel, SingleOrPair cons
 inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t const matRows, std::size_t const matCols, Padding const & padding)
     -> std::optional<std::pair<std::int64_t const, std::int64_t const>>;
 
-auto const GetMedianFilterKernel(std::size_t const size) -> Matrix;
+auto GetMedianFilterKernel(std::size_t const size) -> Matrix;
 
 auto MeasureTime(std::function<void()> const & function, std::string_view const message) -> void;
 
@@ -186,7 +186,7 @@ inline auto Pad(std::int64_t const row, std::int64_t const col, std::size_t cons
     return std::make_pair(imgRow, imgCol);
 }
 
-auto const GetMedianFilterKernel(std::size_t const size) -> Matrix
+auto GetMedianFilterKernel(std::size_t const size) -> Matrix
 {
     if (size % 2 == 0)
     {

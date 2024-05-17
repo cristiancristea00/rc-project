@@ -9,4 +9,4 @@ cosimulation:
 
 .PHONY: clean
 clean:
-	rm -rf work vitis* *.zip *.log .Xil
+	rm -rf work vitis* *.zip *.log *.json .Xil
