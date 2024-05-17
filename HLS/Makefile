@@ -1,8 +1,12 @@
-DEVICE=xc7z020clg400-1
+synthesys:
+	v++ -c --mode hls --config config.cfg --work_dir work
 
-all:
-	v++ -c --mode hls --part $(DEVICE) --config synthesys.cfg --work_dir work
+simulation:
+	vitis-run --mode hls --csim --config config.cfg --work_dir work
+
+cosimulation:
+	vitis-run --mode hls --cosim --config config.cfg --work_dir work
 
 .PHONY: clean
 clean:
-	rm -rf work vitis* *.zip .Xil
+	rm -rf work vitis* *.zip *.log .Xil

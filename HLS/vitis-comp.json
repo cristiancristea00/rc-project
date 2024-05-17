@@ -1,9 +1,0 @@
-{
-  "name": "HLS",
-  "type": "HLS",
-  "configuration": {
-    "componentType": "HLS",
-    "configFiles": ["synthesys.cfg"],
-    "work_dir": "work"
-  }
-}

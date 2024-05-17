@@ -1,1 +1,0 @@
-lappend RenamedRtlIO kernel_size kernel_size_r
