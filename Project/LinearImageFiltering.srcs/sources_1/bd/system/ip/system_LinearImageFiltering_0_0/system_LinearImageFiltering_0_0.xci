@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "system_LinearImageFiltering_0_0",
-    "cell_name": "LinearImageFiltering_0",
+    "cell_name": "LinearImageFiltering",
     "component_reference": "Cristi:Image:LinearImageFiltering:0.1",
     "ip_revision": "0",
     "gen_directory": "../../../../../../LinearImageFiltering.gen/sources_1/bd/system/ip/system_LinearImageFiltering_0_0",
@@ -45,7 +45,7 @@
         "C_M_AXI_KERNEL_PROT_VALUE": [ { "value": "\"000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_M_AXI_KERNEL_CACHE_VALUE": [ { "value": "\"0011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "Component_Name": [ { "value": "system_LinearImageFiltering_0_0", "resolve_type": "user", "usage": "all" } ],
-        "clk_period": [ { "value": "10", "enabled": false, "usage": "all" } ],
+        "clk_period": [ { "value": "8", "enabled": false, "usage": "all" } ],
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
         "latency": [ { "value": "undef", "enabled": false, "usage": "all" } ],

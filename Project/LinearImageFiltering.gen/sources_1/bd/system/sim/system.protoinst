@@ -3,7 +3,7 @@
 	"modules": {
 		"system": {
 			"proto_instances": {
-				"/LinearImageFiltering_0/m_axi_image_in": {
+				"/LinearImageFiltering/m_axi_image_in": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "ap_clk"},
@@ -50,7 +50,7 @@
 						"WVALID": { "actual": "m_axi_image_in_WVALID"}
 					}
 				},
-				"/LinearImageFiltering_0/m_axi_image_out": {
+				"/LinearImageFiltering/m_axi_image_out": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "ap_clk"},
@@ -97,7 +97,7 @@
 						"WVALID": { "actual": "m_axi_image_out_WVALID"}
 					}
 				},
-				"/LinearImageFiltering_0/m_axi_kernel": {
+				"/LinearImageFiltering/m_axi_kernel": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "ap_clk"},
@@ -144,7 +144,7 @@
 						"WVALID": { "actual": "m_axi_kernel_WVALID"}
 					}
 				},
-				"/LinearImageFiltering_0/s_axi_control": {
+				"/LinearImageFiltering/s_axi_control": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "ap_clk"},

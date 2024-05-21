@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/work.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed May 22 18:16:33 2024",
+ "timestampMillis": "1716390993427",
+ "buildStep": {
+  "cmdId": "f1ac4f77-9227-4632-a167-267d701acff9",
+  "name": "vitis-run",
+  "logFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/logs/work.steps.log",
+  "commandLine": "/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config config.cfg --work_dir work ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "config.cfg",
+   "--work_dir",
+   "work"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/cristi/Documents/ACES/RC-Project/HLS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May 22 18:16:33 2024",
+ "timestampMillis": "1716390993427",
+ "status": {
+  "cmdId": "f1ac4f77-9227-4632-a167-267d701acff9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed May 22 18:16:36 2024",
+ "timestampMillis": "1716390996997",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "LinearImageFilter",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed May 22 18:16:36 2024",
+ "timestampMillis": "1716390996998",
+ "buildStep": {
+  "cmdId": "743d504f-8fb8-4f40-bc42-570687ffef3a",
+  "name": "csim_design",
+  "logFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/cristi/Documents/ACES/RC-Project/HLS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May 22 18:16:36 2024",
+ "timestampMillis": "1716390996999",
+ "status": {
+  "cmdId": "743d504f-8fb8-4f40-bc42-570687ffef3a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May 22 18:16:46 2024",
+ "timestampMillis": "1716391006552",
+ "status": {
+  "cmdId": "743d504f-8fb8-4f40-bc42-570687ffef3a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed May 22 18:16:46 2024",
+ "timestampMillis": "1716391006648",
+ "status": {
+  "cmdId": "f1ac4f77-9227-4632-a167-267d701acff9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May 22 18:16:46 2024",
+ "timestampMillis": "1716391006649",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed May 22 18:16:46 2024",
+ "timestampMillis": "1716391006649",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

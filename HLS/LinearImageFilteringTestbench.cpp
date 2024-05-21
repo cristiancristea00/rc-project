@@ -14,7 +14,7 @@ auto GetMedianFilterKernel(std::size_t const size) -> Matrix;
 
 auto main() -> int
 {
-    Matrix const image{"../../../../image.png"};
+    Matrix const image{"../../../../lena.tif"};
     image.show("Original Image");
 
     auto const kernel = GetMedianFilterKernel(FILTER_SIZE);

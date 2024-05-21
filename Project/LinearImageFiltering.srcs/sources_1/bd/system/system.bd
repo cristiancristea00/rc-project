@@ -12,7 +12,7 @@
     },
     "design_tree": {
       "processing_system7_0": "",
-      "LinearImageFiltering_0": "",
+      "LinearImageFiltering": "",
       "ps7_0_axi_periph": {
         "s00_couplers": {
           "auto_pc": ""
@@ -1931,12 +1931,12 @@
           }
         }
       },
-      "LinearImageFiltering_0": {
+      "LinearImageFiltering": {
         "vlnv": "Cristi:Image:LinearImageFiltering:0.1",
         "ip_revision": "0",
         "xci_name": "system_LinearImageFiltering_0_0",
         "xci_path": "ip/system_LinearImageFiltering_0_0/system_LinearImageFiltering_0_0.xci",
-        "inst_hier_path": "LinearImageFiltering_0",
+        "inst_hier_path": "LinearImageFiltering",
         "interface_ports": {
           "m_axi_image_out": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -2719,19 +2719,19 @@
     "interface_nets": {
       "LinearImageFiltering_0_m_axi_image_in": {
         "interface_ports": [
-          "LinearImageFiltering_0/m_axi_image_in",
+          "LinearImageFiltering/m_axi_image_in",
           "axi_mem_intercon/S00_AXI"
         ]
       },
       "LinearImageFiltering_0_m_axi_image_out": {
         "interface_ports": [
-          "LinearImageFiltering_0/m_axi_image_out",
+          "LinearImageFiltering/m_axi_image_out",
           "axi_mem_intercon/S01_AXI"
         ]
       },
       "LinearImageFiltering_0_m_axi_kernel": {
         "interface_ports": [
-          "LinearImageFiltering_0/m_axi_kernel",
+          "LinearImageFiltering/m_axi_kernel",
           "axi_mem_intercon/S02_AXI"
         ]
       },
@@ -2762,7 +2762,7 @@
       "ps7_0_axi_periph_M00_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M00_AXI",
-          "LinearImageFiltering_0/s_axi_control"
+          "LinearImageFiltering/s_axi_control"
         ]
       }
     },
@@ -2781,7 +2781,7 @@
           "axi_mem_intercon/ACLK",
           "axi_mem_intercon/S01_ACLK",
           "axi_mem_intercon/S02_ACLK",
-          "LinearImageFiltering_0/ap_clk"
+          "LinearImageFiltering/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2801,7 +2801,7 @@
           "axi_mem_intercon/ARESETN",
           "axi_mem_intercon/S01_ARESETN",
           "axi_mem_intercon/S02_ARESETN",
-          "LinearImageFiltering_0/ap_rst_n"
+          "LinearImageFiltering/ap_rst_n"
         ]
       }
     },
@@ -2811,7 +2811,7 @@
           "Data": {
             "segments": {
               "SEG_LinearImageFiltering_0_Reg": {
-                "address_block": "/LinearImageFiltering_0/s_axi_control/Reg",
+                "address_block": "/LinearImageFiltering/s_axi_control/Reg",
                 "offset": "0x40000000",
                 "range": "64K",
                 "offset_base_param": "C_S_AXI_CONTROL_BASEADDR",
@@ -2821,7 +2821,7 @@
           }
         }
       },
-      "/LinearImageFiltering_0": {
+      "/LinearImageFiltering": {
         "address_spaces": {
           "Data_m_axi_image_out": {
             "segments": {

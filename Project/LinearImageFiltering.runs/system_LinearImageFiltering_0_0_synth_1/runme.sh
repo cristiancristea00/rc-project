@@ -8,9 +8,9 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/home/cristian/AMD/Vitis/2023.2/bin:/home/cristian/AMD/Vivado/2023.2/ids_lite/ISE/bin/lin64:/home/cristian/AMD/Vivado/2023.2/bin
+  PATH=/home/cristi/AMD/Vitis/2023.2/bin:/home/cristi/AMD/Vivado/2023.2/ids_lite/ISE/bin/lin64:/home/cristi/AMD/Vivado/2023.2/bin
 else
-  PATH=/home/cristian/AMD/Vitis/2023.2/bin:/home/cristian/AMD/Vivado/2023.2/ids_lite/ISE/bin/lin64:/home/cristian/AMD/Vivado/2023.2/bin:$PATH
+  PATH=/home/cristi/AMD/Vitis/2023.2/bin:/home/cristi/AMD/Vivado/2023.2/ids_lite/ISE/bin/lin64:/home/cristi/AMD/Vivado/2023.2/bin:$PATH
 fi
 export PATH
 
@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cristian/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1'
+HD_PWD='/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

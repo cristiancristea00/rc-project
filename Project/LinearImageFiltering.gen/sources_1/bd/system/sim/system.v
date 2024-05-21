@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-//Date        : Wed May  8 18:26:16 2024
+//Date        : Thu May 23 08:00:16 2024
 //Host        : Hephaestion running 64-bit Ubuntu 24.04 LTS
 //Command     : generate_target system.bd
 //Design      : system
@@ -1800,7 +1800,7 @@ module system
   wire ps7_0_axi_periph_M00_AXI_WVALID;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
 
-  system_LinearImageFiltering_0_0 LinearImageFiltering_0
+  system_LinearImageFiltering_0_0 LinearImageFiltering
        (.ap_clk(processing_system7_0_FCLK_CLK0),
         .ap_rst_n(rst_ps7_0_100M_peripheral_aresetn),
         .m_axi_image_in_ARADDR(LinearImageFiltering_0_m_axi_image_in_ARADDR),

@@ -28,8 +28,8 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
             {
                 ker_cols: for (uint32_t j = 0; j < kernel_size; ++j)
                 {
-                    int32_t newRow = row + i - kernel_size / 2;
-                    int32_t newCol = col + j - kernel_size / 2;
+                    int32_t newRow = (int32_t) (row + i) - kernel_size / 2;
+                    int32_t newCol = (int32_t) (col + j) - kernel_size / 2;
 
                     if (Pad(newRow, newCol, rows, cols, padding))
                     {
@@ -40,7 +40,7 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
                 }
             }
 
-            image_out[row / stride_row * cols / stride_col + col / stride_col] = sum;
+            image_out[(row * cols) / (stride_row * stride_col) + col / stride_col] = sum;
         }
     }
 };
