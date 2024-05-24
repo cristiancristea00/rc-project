@@ -45,7 +45,7 @@
         "C_M_AXI_KERNEL_PROT_VALUE": [ { "value": "\"000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "C_M_AXI_KERNEL_CACHE_VALUE": [ { "value": "\"0011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "Component_Name": [ { "value": "system_LinearImageFiltering_0_0", "resolve_type": "user", "usage": "all" } ],
-        "clk_period": [ { "value": "8", "enabled": false, "usage": "all" } ],
+        "clk_period": [ { "value": "10", "enabled": false, "usage": "all" } ],
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
         "latency": [ { "value": "undef", "enabled": false, "usage": "all" } ],
@@ -855,18 +855,18 @@
                     }
                   }
                 },
-                "kernel_size_r": {
+                "kernel_dim": {
                   "address_offset": "56",
                   "size": 32,
-                  "display_name": "kernel_size_r",
-                  "description": "Data signal of kernel_size_r",
+                  "display_name": "kernel_dim",
+                  "description": "Data signal of kernel_dim",
                   "access": "write-only",
                   "reset_value": "0",
                   "fields": {
-                    "kernel_size_r": {
+                    "kernel_dim": {
                       "bit_offset": 0,
                       "bit_width": 32,
-                      "description": "Bit 31 to 0 of kernel_size_r",
+                      "description": "Bit 31 to 0 of kernel_dim",
                       "access": "write-only"
                     }
                   }

@@ -243,34 +243,34 @@ class AESL_RUNTIME_BC {
 };
 using hls::sim::Byte;
 extern "C" void LinearImageFilter(Byte<4>*, Byte<4>*, Byte<4>*, int, int, int, int, int, int, int, int, char);
-extern "C" void apatb_LinearImageFilter_hw(volatile void * __xlx_apatb_param_image_out, volatile void * __xlx_apatb_param_image_in, int __xlx_apatb_param_rows, int __xlx_apatb_param_cols, volatile void * __xlx_apatb_param_kernel, int __xlx_apatb_param_kernel_size, int __xlx_apatb_param_stride_row, int __xlx_apatb_param_stride_col, char __xlx_apatb_param_padding) {
+extern "C" void apatb_LinearImageFilter_hw(volatile void * __xlx_apatb_param_image_out, volatile void * __xlx_apatb_param_image_in, int __xlx_apatb_param_rows, int __xlx_apatb_param_cols, volatile void * __xlx_apatb_param_kernel, int __xlx_apatb_param_kernel_dim, int __xlx_apatb_param_stride_row, int __xlx_apatb_param_stride_col, char __xlx_apatb_param_padding) {
 using hls::sim::createStream;
   // Collect __xlx_image_out__tmp_vec
 std::vector<Byte<4>> __xlx_image_out__tmp_vec;
-for (size_t i = 0; i < 25000000; ++i){
+for (size_t i = 0; i < 10000000; ++i){
 __xlx_image_out__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_image_out)[i]);
 }
-  int __xlx_size_param_image_out = 25000000;
+  int __xlx_size_param_image_out = 10000000;
   int __xlx_offset_param_image_out = 0;
   int __xlx_offset_byte_param_image_out = 0*4;
   // Collect __xlx_image_in__tmp_vec
 std::vector<Byte<4>> __xlx_image_in__tmp_vec;
-for (size_t i = 0; i < 25000000; ++i){
+for (size_t i = 0; i < 10000000; ++i){
 __xlx_image_in__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_image_in)[i]);
 }
-  int __xlx_size_param_image_in = 25000000;
+  int __xlx_size_param_image_in = 10000000;
   int __xlx_offset_param_image_in = 0;
   int __xlx_offset_byte_param_image_in = 0*4;
   // Collect __xlx_kernel__tmp_vec
 std::vector<Byte<4>> __xlx_kernel__tmp_vec;
-for (size_t i = 0; i < 200; ++i){
+for (size_t i = 0; i < 1000; ++i){
 __xlx_kernel__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_kernel)[i]);
 }
-  int __xlx_size_param_kernel = 200;
+  int __xlx_size_param_kernel = 1000;
   int __xlx_offset_param_kernel = 0;
   int __xlx_offset_byte_param_kernel = 0*4;
   // DUT call
-  LinearImageFilter(__xlx_image_out__tmp_vec.data(), __xlx_image_in__tmp_vec.data(), __xlx_kernel__tmp_vec.data(), __xlx_offset_byte_param_image_out, __xlx_offset_byte_param_image_in, __xlx_apatb_param_rows, __xlx_apatb_param_cols, __xlx_offset_byte_param_kernel, __xlx_apatb_param_kernel_size, __xlx_apatb_param_stride_row, __xlx_apatb_param_stride_col, __xlx_apatb_param_padding);
+  LinearImageFilter(__xlx_image_out__tmp_vec.data(), __xlx_image_in__tmp_vec.data(), __xlx_kernel__tmp_vec.data(), __xlx_offset_byte_param_image_out, __xlx_offset_byte_param_image_in, __xlx_apatb_param_rows, __xlx_apatb_param_cols, __xlx_offset_byte_param_kernel, __xlx_apatb_param_kernel_dim, __xlx_apatb_param_stride_row, __xlx_apatb_param_stride_col, __xlx_apatb_param_padding);
 // print __xlx_apatb_param_image_out
 for (size_t i = 0; i < __xlx_size_param_image_out; ++i) {
 ((Byte<4>*)__xlx_apatb_param_image_out)[i] = __xlx_image_out__tmp_vec[__xlx_offset_param_image_out+i];

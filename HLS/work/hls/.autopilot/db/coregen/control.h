@@ -32,8 +32,8 @@
 // 0x30 : Data signal of kernel_offset
 //        bit 31~0 - kernel_offset[31:0] (Read/Write)
 // 0x34 : reserved
-// 0x38 : Data signal of kernel_size_r
-//        bit 31~0 - kernel_size_r[31:0] (Read/Write)
+// 0x38 : Data signal of kernel_dim
+//        bit 31~0 - kernel_dim[31:0] (Read/Write)
 // 0x3c : reserved
 // 0x40 : Data signal of stride_row
 //        bit 31~0 - stride_row[31:0] (Read/Write)
@@ -61,8 +61,8 @@
 #define CONTROL_BITS_COLS_DATA             32
 #define CONTROL_ADDR_KERNEL_OFFSET_DATA    0x30
 #define CONTROL_BITS_KERNEL_OFFSET_DATA    32
-#define CONTROL_ADDR_KERNEL_SIZE_R_DATA    0x38
-#define CONTROL_BITS_KERNEL_SIZE_R_DATA    32
+#define CONTROL_ADDR_KERNEL_DIM_DATA       0x38
+#define CONTROL_BITS_KERNEL_DIM_DATA       32
 #define CONTROL_ADDR_STRIDE_ROW_DATA       0x40
 #define CONTROL_BITS_STRIDE_ROW_DATA       32
 #define CONTROL_ADDR_STRIDE_COL_DATA       0x48

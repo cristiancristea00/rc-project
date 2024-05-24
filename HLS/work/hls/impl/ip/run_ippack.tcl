@@ -75,19 +75,18 @@ set solution_dir "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls"
 set solution_json_file [file join $solution_dir [file tail $solution_dir]_data.json]
 set debug_dir "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/.debug"
 set xo_hls_files_dir ""
-set hdl_module_list {LinearImageFilter_fadd_32ns_32ns_32_8_full_dsp_1
+set hdl_module_list {LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1
 LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1
-LinearImageFilter_mul_30s_30s_30_3_1
+LinearImageFilter_mul_30s_30s_30_2_1
 LinearImageFilter_flow_control_loop_pipe_sequential_init
-LinearImageFilter_mul_32ns_32ns_64_3_1
-LinearImageFilter_mul_32s_32s_32_3_1
+LinearImageFilter_mul_32s_32s_32_2_1
+LinearImageFilter_udiv_32ns_32ns_32_36_seq_1
 LinearImageFilter_udiv_32ns_32ns_30_36_seq_1
-LinearImageFilter_udiv_32ns_32s_30_36_seq_1
 LinearImageFilter_image_out_m_axi
 LinearImageFilter_image_in_m_axi
 LinearImageFilter_kernel_m_axi
 LinearImageFilter_control_s_axi
-LinearImageFilter_Pipeline_ker_rows_ker_cols
+LinearImageFilter_Pipeline_ker_cols
 LinearImageFilter
 }
 set kernel_xo ""
@@ -112,7 +111,7 @@ set Interfaces {
         param_prefix "C_S_AXI_CONTROL"
         addr_bits "7"
         port_width "AWADDR 7 WDATA 32 WSTRB 4 ARADDR 7 RDATA 32"
-        registers {{0x00 CTRL RW 0x0 {Control signals} {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 1 RESERVED_2 R 0 "Reserved.  0s on read." } { 9 1 INTERRUPT R 0 "Control signal Register for 'interrupt'." } { 10 22 RESERVED_3 R 0 "Reserved.  0s on read." }}} {0x04 GIER RW 0x0 {Global Interrupt Enable Register} {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }}} {0x08 IP_IER RW 0x0 {IP Interrupt Enable Register} {{0 1 CHAN0_INT_EN RW 0 {Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.}} {1 1 CHAN1_INT_EN RW 0 {Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.}} {2 30 RESERVED_0 R 0 {Reserved.  0s on read.}}}} {0x0c IP_ISR RW 0x0 {IP Interrupt Status Register} {{0 1 CHAN0_INT_ST RTOW 0 {Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.}} {1 1 CHAN1_INT_ST RTOW 0 {Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.}} {2 30 RESERVED_0 R 0 {Reserved.  0s on read.}}}} {0x10 image_out_offset W 0x0 "Data signal of image_out_offset" {{0 32 image_out_offset W 0 "Bit 31 to 0 of image_out_offset"}}} {0x18 image_in_offset W 0x0 "Data signal of image_in_offset" {{0 32 image_in_offset W 0 "Bit 31 to 0 of image_in_offset"}}} {0x20 rows W 0x0 "Data signal of rows" {{0 32 rows W 0 "Bit 31 to 0 of rows"}}} {0x28 cols W 0x0 "Data signal of cols" {{0 32 cols W 0 "Bit 31 to 0 of cols"}}} {0x30 kernel_offset W 0x0 "Data signal of kernel_offset" {{0 32 kernel_offset W 0 "Bit 31 to 0 of kernel_offset"}}} {0x38 kernel_size_r W 0x0 "Data signal of kernel_size_r" {{0 32 kernel_size_r W 0 "Bit 31 to 0 of kernel_size_r"}}} {0x40 stride_row W 0x0 "Data signal of stride_row" {{0 32 stride_row W 0 "Bit 31 to 0 of stride_row"}}} {0x48 stride_col W 0x0 "Data signal of stride_col" {{0 32 stride_col W 0 "Bit 31 to 0 of stride_col"}}} {0x50 padding W 0x0 "Data signal of padding" {{0 8 padding W 0 "Bit 7 to 0 of padding"} {8 24 RESERVED R 0 "Reserved.  0s on read."}}}}
+        registers {{0x00 CTRL RW 0x0 {Control signals} {{ 0 1 AP_START RW 0 "Control signal Register for 'ap_start'." } { 1 1 AP_DONE R 0 "Control signal Register for 'ap_done'." } { 2 1 AP_IDLE R 0 "Control signal Register for 'ap_idle'." } { 3 1 AP_READY R 0 "Control signal Register for 'ap_ready'." } { 4 3 RESERVED_1 R 0 "Reserved.  0s on read." } { 7 1 AUTO_RESTART RW 0 "Control signal Register for 'auto_restart'." } { 8 1 RESERVED_2 R 0 "Reserved.  0s on read." } { 9 1 INTERRUPT R 0 "Control signal Register for 'interrupt'." } { 10 22 RESERVED_3 R 0 "Reserved.  0s on read." }}} {0x04 GIER RW 0x0 {Global Interrupt Enable Register} {{ 0 1 Enable RW 0 "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled" } { 1 31 RESERVED R 0 "Reserved.  0s on read." }}} {0x08 IP_IER RW 0x0 {IP Interrupt Enable Register} {{0 1 CHAN0_INT_EN RW 0 {Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.}} {1 1 CHAN1_INT_EN RW 0 {Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.}} {2 30 RESERVED_0 R 0 {Reserved.  0s on read.}}}} {0x0c IP_ISR RW 0x0 {IP Interrupt Status Register} {{0 1 CHAN0_INT_ST RTOW 0 {Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.}} {1 1 CHAN1_INT_ST RTOW 0 {Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.}} {2 30 RESERVED_0 R 0 {Reserved.  0s on read.}}}} {0x10 image_out_offset W 0x0 "Data signal of image_out_offset" {{0 32 image_out_offset W 0 "Bit 31 to 0 of image_out_offset"}}} {0x18 image_in_offset W 0x0 "Data signal of image_in_offset" {{0 32 image_in_offset W 0 "Bit 31 to 0 of image_in_offset"}}} {0x20 rows W 0x0 "Data signal of rows" {{0 32 rows W 0 "Bit 31 to 0 of rows"}}} {0x28 cols W 0x0 "Data signal of cols" {{0 32 cols W 0 "Bit 31 to 0 of cols"}}} {0x30 kernel_offset W 0x0 "Data signal of kernel_offset" {{0 32 kernel_offset W 0 "Bit 31 to 0 of kernel_offset"}}} {0x38 kernel_dim W 0x0 "Data signal of kernel_dim" {{0 32 kernel_dim W 0 "Bit 31 to 0 of kernel_dim"}}} {0x40 stride_row W 0x0 "Data signal of stride_row" {{0 32 stride_row W 0 "Bit 31 to 0 of stride_row"}}} {0x48 stride_col W 0x0 "Data signal of stride_col" {{0 32 stride_col W 0 "Bit 31 to 0 of stride_col"}}} {0x50 padding W 0x0 "Data signal of padding" {{0 8 padding W 0 "Bit 7 to 0 of padding"} {8 24 RESERVED R 0 "Reserved.  0s on read."}}}}
         memories ""
         ctype {
             AWVALID {
@@ -2444,7 +2443,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 8 machine 64 combinational 0 latency undef II x}
+set user_parameters_list {clk_period 10 machine 64 combinational 0 latency undef II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

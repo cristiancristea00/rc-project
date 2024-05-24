@@ -40,7 +40,7 @@ port (
     rows                  :out  STD_LOGIC_VECTOR(31 downto 0);
     cols                  :out  STD_LOGIC_VECTOR(31 downto 0);
     kernel_offset         :out  STD_LOGIC_VECTOR(31 downto 0);
-    kernel_size_r         :out  STD_LOGIC_VECTOR(31 downto 0);
+    kernel_dim            :out  STD_LOGIC_VECTOR(31 downto 0);
     stride_row            :out  STD_LOGIC_VECTOR(31 downto 0);
     stride_col            :out  STD_LOGIC_VECTOR(31 downto 0);
     padding               :out  STD_LOGIC_VECTOR(7 downto 0);
@@ -88,8 +88,8 @@ end entity LinearImageFilter_control_s_axi;
 -- 0x30 : Data signal of kernel_offset
 --        bit 31~0 - kernel_offset[31:0] (Read/Write)
 -- 0x34 : reserved
--- 0x38 : Data signal of kernel_size_r
---        bit 31~0 - kernel_size_r[31:0] (Read/Write)
+-- 0x38 : Data signal of kernel_dim
+--        bit 31~0 - kernel_dim[31:0] (Read/Write)
 -- 0x3c : reserved
 -- 0x40 : Data signal of stride_row
 --        bit 31~0 - stride_row[31:0] (Read/Write)
@@ -122,8 +122,8 @@ architecture behave of LinearImageFilter_control_s_axi is
     constant ADDR_COLS_CTRL               : INTEGER := 16#2c#;
     constant ADDR_KERNEL_OFFSET_DATA_0    : INTEGER := 16#30#;
     constant ADDR_KERNEL_OFFSET_CTRL      : INTEGER := 16#34#;
-    constant ADDR_KERNEL_SIZE_R_DATA_0    : INTEGER := 16#38#;
-    constant ADDR_KERNEL_SIZE_R_CTRL      : INTEGER := 16#3c#;
+    constant ADDR_KERNEL_DIM_DATA_0       : INTEGER := 16#38#;
+    constant ADDR_KERNEL_DIM_CTRL         : INTEGER := 16#3c#;
     constant ADDR_STRIDE_ROW_DATA_0       : INTEGER := 16#40#;
     constant ADDR_STRIDE_ROW_CTRL         : INTEGER := 16#44#;
     constant ADDR_STRIDE_COL_DATA_0       : INTEGER := 16#48#;
@@ -163,7 +163,7 @@ architecture behave of LinearImageFilter_control_s_axi is
     signal int_rows            : UNSIGNED(31 downto 0) := (others => '0');
     signal int_cols            : UNSIGNED(31 downto 0) := (others => '0');
     signal int_kernel_offset   : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_kernel_size_r   : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_kernel_dim      : UNSIGNED(31 downto 0) := (others => '0');
     signal int_stride_row      : UNSIGNED(31 downto 0) := (others => '0');
     signal int_stride_col      : UNSIGNED(31 downto 0) := (others => '0');
     signal int_padding         : UNSIGNED(7 downto 0) := (others => '0');
@@ -305,8 +305,8 @@ begin
                         rdata_data <= RESIZE(int_cols(31 downto 0), 32);
                     when ADDR_KERNEL_OFFSET_DATA_0 =>
                         rdata_data <= RESIZE(int_kernel_offset(31 downto 0), 32);
-                    when ADDR_KERNEL_SIZE_R_DATA_0 =>
-                        rdata_data <= RESIZE(int_kernel_size_r(31 downto 0), 32);
+                    when ADDR_KERNEL_DIM_DATA_0 =>
+                        rdata_data <= RESIZE(int_kernel_dim(31 downto 0), 32);
                     when ADDR_STRIDE_ROW_DATA_0 =>
                         rdata_data <= RESIZE(int_stride_row(31 downto 0), 32);
                     when ADDR_STRIDE_COL_DATA_0 =>
@@ -332,7 +332,7 @@ begin
     rows                 <= STD_LOGIC_VECTOR(int_rows);
     cols                 <= STD_LOGIC_VECTOR(int_cols);
     kernel_offset        <= STD_LOGIC_VECTOR(int_kernel_offset);
-    kernel_size_r        <= STD_LOGIC_VECTOR(int_kernel_size_r);
+    kernel_dim           <= STD_LOGIC_VECTOR(int_kernel_dim);
     stride_row           <= STD_LOGIC_VECTOR(int_stride_row);
     stride_col           <= STD_LOGIC_VECTOR(int_stride_col);
     padding              <= STD_LOGIC_VECTOR(int_padding);
@@ -566,8 +566,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_KERNEL_SIZE_R_DATA_0) then
-                    int_kernel_size_r(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_kernel_size_r(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_KERNEL_DIM_DATA_0) then
+                    int_kernel_dim(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_kernel_dim(31 downto 0));
                 end if;
             end if;
         end if;

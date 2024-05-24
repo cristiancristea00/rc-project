@@ -1,34 +1,17 @@
 {
   "0": {
-    "basicblocks": 14,
-    "calls": "1",
+    "basicblocks": 22,
+    "calls": "",
     "file": "LinearImageFiltering.cpp",
     "fileloc": 7,
-    "instructions": 79,
+    "instructions": 108,
     "loads": {
-      "L": 2,
       "T": 2
     },
     "name": "LinearImageFilter",
     "stores": {
-      "L": 2,
       "T": 1
     },
-    "total_instructions": 146
-  },
-  "1": {
-    "basicblocks": 19,
-    "calls": "",
-    "file": "LinearImageFiltering.cpp",
-    "fileloc": 48,
-    "instructions": 67,
-    "loads": {
-      "L": 2
-    },
-    "name": "Pad",
-    "stores": {
-      "L": 6
-    },
-    "total_instructions": 67
+    "total_instructions": 108
   }
 }

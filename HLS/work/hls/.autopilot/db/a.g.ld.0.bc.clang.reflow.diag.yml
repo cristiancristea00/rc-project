@@ -1,14 +1,14 @@
 --- !Passed
-Pass:            reflow-inliner
-Name:            Inline
+Pass:            inline
+Name:            AlwaysInline
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 8, Column: 0 }
+                   Line: 43, Column: 26 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Inlining function '''
   - Callee:          'Pad(int&, int&, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 49, Column: 0 }
+                       Line: 59, Column: 0 }
   - String:          ''' into '''
   - Caller:          'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -19,14 +19,14 @@ Args:
 Pass:            reflow-burst-inference
 Name:            CouldNotAnalyzeBoundsPattern
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 23, Column: 19 }
+                   Line: 30, Column: 19 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          Could not analyze the loop bounds
   - String:          ' _XLX_SEP_ '
   - LoopName:        img_cols
   - String:          ' '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23:19'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:30:19'
   - String:          ' '
   - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -37,14 +37,14 @@ Args:
 Pass:            reflow-burst-inference
 Name:            CouldNotAnalyzeBoundsPattern
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 21, Column: 12 }
+                   Line: 28, Column: 15 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          Could not analyze the loop bounds
   - String:          ' _XLX_SEP_ '
   - LoopName:        img_rows
   - String:          ' '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21:12'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28:15'
   - String:          ' '
   - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -55,18 +55,18 @@ Args:
 Pass:            reflow-burst-inference
 Name:            AccessInCondBranch
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 39, Column: 28 }
+                   Line: 48, Column: 28 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Access '
   - Access:          load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 39, Column: 28 }
+                       Line: 48, Column: 28 }
   - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 39, Column: 28 }
+                       Line: 48, Column: 28 }
   - OrigDirection:   read
   - OrigID:          if.end.load.6
   - ArrayName:       image_in
@@ -75,7 +75,7 @@ Args:
   - String:          ' '
   - LoopName:        ker_cols
   - String:          ' '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27'
   - String:          ' '
   - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -86,18 +86,18 @@ Args:
 Pass:            reflow-burst-inference
 Name:            AccessInCondBranch
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 39, Column: 63 }
+                   Line: 48, Column: 63 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Access '
   - Access:          load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 39, Column: 63 }
+                       Line: 48, Column: 63 }
   - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 39, Column: 63 }
+                       Line: 48, Column: 63 }
   - OrigDirection:   read
   - OrigID:          if.end.load.10
   - ArrayName:       kernel
@@ -106,7 +106,7 @@ Args:
   - String:          ' '
   - LoopName:        ker_cols
   - String:          ' '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27'
   - String:          ' '
   - Function:        'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -117,7 +117,7 @@ Args:
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 75, Column: 27 }
+                   Line: 87, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''
@@ -125,14 +125,14 @@ Args:
   - String:          ''' living in '''
   - LoopName:        ker_cols
   - String:          '''('
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27'
   - String:          ') .'
 ...
 --- !Failure
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 83, Column: 27 }
+                   Line: 95, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''
@@ -140,7 +140,7 @@ Args:
   - String:          ''' living in '''
   - LoopName:        ker_cols
   - String:          '''('
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27'
   - String:          ') .'
 ...
 --- !HLSReportInfo
@@ -150,6 +150,6 @@ Args:
   - String:          'automatically set the pipeline for Loop< '
   - LoopName:        ker_cols
   - String:          '> at '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27'
   - String:          ' '
 ...

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'LinearImageFilter'" level="0">
-<item name = "Date">Thu May 23 07:59:11 2024
+<item name = "Date">Fri May 24 13:04:30 2024
 </item>
 <item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
 <item name = "Project">work</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">8.00 ns, 5.840 ns, 2.16 ns</column>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -31,13 +31,14 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210">LinearImageFilter_Pipeline_ker_rows_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_cols_fu_254">LinearImageFilter_Pipeline_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- img_rows">?, ?, ?, -, -, ?, no</column>
 <column name=" + img_cols">?, ?, ?, -, -, ?, no</column>
+<column name="  ++ ker_rows">?, ?, ?, -, -, ?, no</column>
 </table>
 </item>
 </section>
@@ -50,29 +51,29 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 345, -</column>
+<column name="Expression">-, -, 0, 644, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">12, 15, 5795, 5896, -</column>
+<column name="Instance">12, 11, 5426, 5615, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 355, -</column>
-<column name="Register">-, -, 960, -, -</column>
+<column name="Multiplexer">-, -, -, 337, -</column>
+<column name="Register">-, -, 1126, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">4, 6, 6, 12, 0</specialColumn>
+<specialColumn name="Utilization (%)">4, 5, 6, 12, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210">LinearImageFilter_Pipeline_ker_rows_ker_cols, 0, 8, 1831, 2552, 0</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_cols_fu_254">LinearImageFilter_Pipeline_ker_cols, 0, 8, 1235, 2081, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 354, 568, 0</column>
 <column name="image_in_m_axi_U">image_in_m_axi, 4, 0, 830, 734, 0</column>
 <column name="image_out_m_axi_U">image_out_m_axi, 4, 0, 830, 734, 0</column>
 <column name="kernel_m_axi_U">kernel_m_axi, 4, 0, 830, 734, 0</column>
-<column name="mul_32ns_32ns_64_3_1_U26">mul_32ns_32ns_64_3_1, 0, 4, 166, 49, 0</column>
-<column name="mul_32s_32s_32_3_1_U27">mul_32s_32s_32_3_1, 0, 3, 166, 49, 0</column>
-<column name="udiv_32ns_32ns_30_36_seq_1_U28">udiv_32ns_32ns_30_36_seq_1, 0, 0, 394, 238, 0</column>
-<column name="udiv_32ns_32s_30_36_seq_1_U29">udiv_32ns_32s_30_36_seq_1, 0, 0, 394, 238, 0</column>
+<column name="mul_32s_32s_32_2_1_U29">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
+<column name="udiv_32ns_32ns_30_36_seq_1_U32">udiv_32ns_32ns_30_36_seq_1, 0, 0, 394, 238, 0</column>
+<column name="udiv_32ns_32ns_32_36_seq_1_U30">udiv_32ns_32ns_32_36_seq_1, 0, 0, 394, 238, 0</column>
+<column name="udiv_32ns_32ns_32_36_seq_1_U31">udiv_32ns_32ns_32_36_seq_1, 0, 0, 394, 238, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -89,24 +90,32 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln43_1_fu_367_p2">+, 0, 0, 39, 32, 32</column>
-<column name="add_ln43_fu_353_p2">+, 0, 0, 37, 30, 30</column>
-<column name="col_1_fu_333_p2">+, 0, 0, 39, 32, 32</column>
-<column name="row_3_fu_338_p2">+, 0, 0, 39, 32, 32</column>
-<column name="sub16_i_fu_287_p2">+, 0, 0, 37, 30, 2</column>
-<column name="sub_i_fu_282_p2">+, 0, 0, 37, 30, 2</column>
-<column name="add_fu_315_p2">-, 0, 0, 39, 32, 32</column>
-<column name="icmp_ln21_fu_310_p2">icmp, 0, 0, 39, 32, 32</column>
-<column name="icmp_ln23_fu_319_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="add_ln34_fu_378_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln53_fu_505_p2">+, 0, 0, 39, 32, 32</column>
+<column name="col_1_fu_471_p2">+, 0, 0, 39, 32, 32</column>
+<column name="i_1_fu_388_p2">+, 0, 0, 39, 32, 1</column>
+<column name="newCol_2_fu_328_p2">+, 0, 0, 37, 30, 2</column>
+<column name="newRow_4_fu_310_p2">+, 0, 0, 37, 30, 2</column>
+<column name="newRow_fu_394_p2">+, 0, 0, 39, 32, 32</column>
+<column name="out_idx_fu_492_p2">+, 0, 0, 37, 30, 30</column>
+<column name="row_3_fu_369_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_fu_359_p2">-, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln28_fu_354_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln30_fu_364_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln34_fu_383_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="ult42_fu_436_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="ult_fu_415_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="newRow_1_fu_447_p3">select, 0, 0, 30, 1, 30</column>
+<column name="newRow_3_fu_420_p3">select, 0, 0, 31, 1, 1</column>
+<column name="rev43_fu_441_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="rev_fu_476_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">225, 52, 1, 52</column>
-<column name="col_reg_198">9, 2, 32, 64</column>
-<column name="grp_fu_239_ce">9, 2, 1, 2</column>
-<column name="grp_fu_239_p0">20, 4, 32, 128</column>
-<column name="grp_fu_239_p1">20, 4, 32, 128</column>
+<column name="ap_NS_fsm">229, 53, 1, 53</column>
+<column name="col_reg_208">9, 2, 32, 64</column>
+<column name="i_reg_220">9, 2, 32, 64</column>
 <column name="image_in_ARVALID">9, 2, 1, 2</column>
 <column name="image_in_RREADY">9, 2, 1, 2</column>
 <column name="image_out_blk_n_AW">9, 2, 1, 2</column>
@@ -114,42 +123,53 @@
 <column name="image_out_blk_n_W">9, 2, 1, 2</column>
 <column name="kernel_ARVALID">9, 2, 1, 2</column>
 <column name="kernel_RREADY">9, 2, 1, 2</column>
-<column name="row_fu_120">9, 2, 32, 64</column>
+<column name="phi_mul_reg_243">9, 2, 32, 64</column>
+<column name="row_fu_130">9, 2, 32, 64</column>
+<column name="sum_reg_231">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_reg_544">32, 0, 32, 0</column>
-<column name="ap_CS_fsm">51, 0, 51, 0</column>
-<column name="col_1_reg_552">32, 0, 32, 0</column>
-<column name="col_reg_198">32, 0, 32, 0</column>
-<column name="cols_read_reg_436">32, 0, 32, 0</column>
-<column name="div_cast_reg_498">31, 0, 32, 1</column>
-<column name="div_reg_476">31, 0, 31, 0</column>
-<column name="empty_41_reg_487">29, 0, 29, 0</column>
-<column name="empty_reg_482">29, 0, 29, 0</column>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg">1, 0, 1, 0</column>
-<column name="image_in_offset_read_reg_449">32, 0, 32, 0</column>
-<column name="image_out_offset_read_reg_454">32, 0, 32, 0</column>
-<column name="kernel_offset_read_reg_431">32, 0, 32, 0</column>
-<column name="kernel_size_read_reg_425">32, 0, 32, 0</column>
-<column name="mul29_reg_539">32, 0, 32, 0</column>
-<column name="mul30_reg_503">32, 0, 32, 0</column>
-<column name="mul35_i_reg_523">29, 0, 30, 1</column>
-<column name="mul_i_reg_518">29, 0, 30, 1</column>
-<column name="mul_ln7_reg_528">64, 0, 64, 0</column>
-<column name="padding_read_reg_407">8, 0, 8, 0</column>
-<column name="row_fu_120">32, 0, 32, 0</column>
-<column name="rows_read_reg_443">32, 0, 32, 0</column>
-<column name="stride_col_read_reg_412">32, 0, 32, 0</column>
-<column name="stride_row_read_reg_419">32, 0, 32, 0</column>
-<column name="sub16_i_reg_513">30, 0, 30, 0</column>
-<column name="sub_i_reg_508">30, 0, 30, 0</column>
-<column name="trunc_ln43_2_reg_567">30, 0, 30, 0</column>
-<column name="trunc_ln7_1_reg_471">30, 0, 30, 0</column>
-<column name="trunc_ln7_reg_465">30, 0, 30, 0</column>
-<column name="udiv_ln43_1_reg_562">30, 0, 30, 0</column>
-<column name="udiv_ln43_reg_557">30, 0, 30, 0</column>
+<column name="add_ln34_reg_654">32, 0, 32, 0</column>
+<column name="add_reg_646">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">52, 0, 52, 0</column>
+<column name="col_1_reg_697">32, 0, 32, 0</column>
+<column name="col_reg_208">32, 0, 32, 0</column>
+<column name="cols_read_reg_572">32, 0, 32, 0</column>
+<column name="div_cast_reg_613">31, 0, 32, 1</column>
+<column name="div_reg_608">31, 0, 31, 0</column>
+<column name="empty_43_reg_672">30, 0, 30, 0</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_cols_fu_254_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_1_reg_662">32, 0, 32, 0</column>
+<column name="i_reg_220">32, 0, 32, 0</column>
+<column name="image_in_offset_read_reg_587">32, 0, 32, 0</column>
+<column name="image_out_offset_read_reg_592">32, 0, 32, 0</column>
+<column name="kernel_dim_read_reg_560">32, 0, 32, 0</column>
+<column name="kernel_offset_read_reg_567">32, 0, 32, 0</column>
+<column name="mul35_i_reg_633">29, 0, 30, 1</column>
+<column name="mul_i_reg_623">29, 0, 30, 1</column>
+<column name="newCol_2_reg_628">30, 0, 30, 0</column>
+<column name="newRow_1_reg_687">30, 0, 30, 0</column>
+<column name="newRow_4_reg_618">30, 0, 30, 0</column>
+<column name="newRow_reg_667">32, 0, 32, 0</column>
+<column name="padding_read_reg_542">8, 0, 8, 0</column>
+<column name="phi_mul_reg_243">32, 0, 32, 0</column>
+<column name="rev_reg_702">1, 0, 1, 0</column>
+<column name="row_2_reg_638">32, 0, 32, 0</column>
+<column name="row_fu_130">32, 0, 32, 0</column>
+<column name="rows_read_reg_579">32, 0, 32, 0</column>
+<column name="stride_col_read_reg_547">32, 0, 32, 0</column>
+<column name="stride_row_read_reg_554">32, 0, 32, 0</column>
+<column name="sum_reg_231">32, 0, 32, 0</column>
+<column name="tmp_reg_677">1, 0, 1, 0</column>
+<column name="trunc_ln1_reg_730">30, 0, 30, 0</column>
+<column name="trunc_ln48_reg_692">30, 0, 30, 0</column>
+<column name="trunc_ln52_reg_725">30, 0, 30, 0</column>
+<column name="trunc_ln7_reg_603">30, 0, 30, 0</column>
+<column name="udiv_ln52_1_reg_715">32, 0, 32, 0</column>
+<column name="udiv_ln52_2_reg_720">30, 0, 30, 0</column>
+<column name="udiv_ln52_reg_710">32, 0, 32, 0</column>
+<column name="ult_reg_682">1, 0, 1, 0</column>
 </table>
 </item>
 </section>

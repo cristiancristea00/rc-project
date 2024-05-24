@@ -1,6 +1,6 @@
 
 set TopModule "LinearImageFilter"
-set ClockPeriod 8
+set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0

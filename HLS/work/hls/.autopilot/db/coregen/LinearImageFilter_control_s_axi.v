@@ -37,7 +37,7 @@ module LinearImageFilter_control_s_axi
     output wire [31:0]                   rows,
     output wire [31:0]                   cols,
     output wire [31:0]                   kernel_offset,
-    output wire [31:0]                   kernel_size_r,
+    output wire [31:0]                   kernel_dim,
     output wire [31:0]                   stride_row,
     output wire [31:0]                   stride_col,
     output wire [7:0]                    padding,
@@ -83,8 +83,8 @@ module LinearImageFilter_control_s_axi
 // 0x30 : Data signal of kernel_offset
 //        bit 31~0 - kernel_offset[31:0] (Read/Write)
 // 0x34 : reserved
-// 0x38 : Data signal of kernel_size_r
-//        bit 31~0 - kernel_size_r[31:0] (Read/Write)
+// 0x38 : Data signal of kernel_dim
+//        bit 31~0 - kernel_dim[31:0] (Read/Write)
 // 0x3c : reserved
 // 0x40 : Data signal of stride_row
 //        bit 31~0 - stride_row[31:0] (Read/Write)
@@ -114,8 +114,8 @@ localparam
     ADDR_COLS_CTRL               = 7'h2c,
     ADDR_KERNEL_OFFSET_DATA_0    = 7'h30,
     ADDR_KERNEL_OFFSET_CTRL      = 7'h34,
-    ADDR_KERNEL_SIZE_R_DATA_0    = 7'h38,
-    ADDR_KERNEL_SIZE_R_CTRL      = 7'h3c,
+    ADDR_KERNEL_DIM_DATA_0       = 7'h38,
+    ADDR_KERNEL_DIM_CTRL         = 7'h3c,
     ADDR_STRIDE_ROW_DATA_0       = 7'h40,
     ADDR_STRIDE_ROW_CTRL         = 7'h44,
     ADDR_STRIDE_COL_DATA_0       = 7'h48,
@@ -163,7 +163,7 @@ localparam
     reg  [31:0]                   int_rows = 'b0;
     reg  [31:0]                   int_cols = 'b0;
     reg  [31:0]                   int_kernel_offset = 'b0;
-    reg  [31:0]                   int_kernel_size_r = 'b0;
+    reg  [31:0]                   int_kernel_dim = 'b0;
     reg  [31:0]                   int_stride_row = 'b0;
     reg  [31:0]                   int_stride_col = 'b0;
     reg  [7:0]                    int_padding = 'b0;
@@ -291,8 +291,8 @@ always @(posedge ACLK) begin
                 ADDR_KERNEL_OFFSET_DATA_0: begin
                     rdata <= int_kernel_offset[31:0];
                 end
-                ADDR_KERNEL_SIZE_R_DATA_0: begin
-                    rdata <= int_kernel_size_r[31:0];
+                ADDR_KERNEL_DIM_DATA_0: begin
+                    rdata <= int_kernel_dim[31:0];
                 end
                 ADDR_STRIDE_ROW_DATA_0: begin
                     rdata <= int_stride_row[31:0];
@@ -320,7 +320,7 @@ assign image_in_offset   = int_image_in_offset;
 assign rows              = int_rows;
 assign cols              = int_cols;
 assign kernel_offset     = int_kernel_offset;
-assign kernel_size_r     = int_kernel_size_r;
+assign kernel_dim        = int_kernel_dim;
 assign stride_row        = int_stride_row;
 assign stride_col        = int_stride_col;
 assign padding           = int_padding;
@@ -506,13 +506,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_kernel_size_r[31:0]
+// int_kernel_dim[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_kernel_size_r[31:0] <= 0;
+        int_kernel_dim[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_KERNEL_SIZE_R_DATA_0)
-            int_kernel_size_r[31:0] <= (WDATA[31:0] & wmask) | (int_kernel_size_r[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_KERNEL_DIM_DATA_0)
+            int_kernel_dim[31:0] <= (WDATA[31:0] & wmask) | (int_kernel_dim[31:0] & ~wmask);
     end
 end
 

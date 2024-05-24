@@ -7,15 +7,15 @@
         <ProductFamily>zynq</ProductFamily>
         <Part>xc7z020-clg400-1</Part>
         <TopModelName>LinearImageFilter</TopModelName>
-        <TargetClockPeriod>8.00</TargetClockPeriod>
-        <ClockUncertainty>2.16</ClockUncertainty>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
         <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+            <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
@@ -30,37 +30,51 @@
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
             <img_rows>
-                <Slack>5.84</Slack>
+                <Slack>7.30</Slack>
                 <TripCount>undef</TripCount>
                 <Latency>undef</Latency>
                 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                 <IterationLatency>undef</IterationLatency>
                 <InstanceList/>
                 <img_cols>
-                    <Slack>5.84</Slack>
+                    <Slack>7.30</Slack>
                     <TripCount>undef</TripCount>
                     <Latency>undef</Latency>
                     <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                     <IterationLatency>undef</IterationLatency>
                     <InstanceList/>
+                    <ker_rows>
+                        <Slack>7.30</Slack>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <IterationLatency>undef</IterationLatency>
+                        <InstanceList/>
+                    </ker_rows>
                 </img_cols>
             </img_rows>
         </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21</SourceLocation>
+            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28</SourceLocation>
             <SummaryOfLoopViolations>
                 <img_rows>
                     <Name>img_rows</Name>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21</SourceLocation>
+                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28</SourceLocation>
                     <img_cols>
                         <Name>img_cols</Name>
                         <IssueType>-</IssueType>
                         <ViolationType>-</ViolationType>
-                        <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23</SourceLocation>
+                        <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:30</SourceLocation>
+                        <ker_rows>
+                            <Name>ker_rows</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34</SourceLocation>
+                        </ker_rows>
                     </img_cols>
                 </img_rows>
             </SummaryOfLoopViolations>
@@ -69,8 +83,8 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>12</BRAM_18K>
-            <DSP>15</DSP>
-            <FF>6755</FF>
+            <DSP>11</DSP>
+            <FF>6552</FF>
             <LUT>6596</LUT>
             <URAM>0</URAM>
         </Resources>
@@ -1929,27 +1943,27 @@
             <ModuleName>LinearImageFilter</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210</InstName>
-                    <ModuleName>LinearImageFilter_Pipeline_ker_rows_ker_cols</ModuleName>
+                    <InstName>grp_LinearImageFilter_Pipeline_ker_cols_fu_254</InstName>
+                    <ModuleName>LinearImageFilter_Pipeline_ker_cols</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>210</ID>
-                    <BindInstances>add_ln27_fu_326_p2 add_ln27_1_fu_343_p2 newRow_fu_363_p2 neg_fu_477_p2 newRow_3_fu_494_p2 neg1_fu_510_p2 newCol_2_fu_527_p2 mul_30s_30s_30_3_1_U3 add_ln39_fu_679_p2 add_ln39_1_fu_692_p2 add_ln39_2_fu_623_p2 add_ln39_3_fu_636_p2 fmul_32ns_32ns_32_4_max_dsp_1_U2 fadd_32ns_32ns_32_8_full_dsp_1_U1 add_ln29_fu_661_p2</BindInstances>
+                    <ID>254</ID>
+                    <BindInstances>add_ln36_fu_357_p2 neg_fu_387_p2 newRow_3_fu_404_p2 neg1_fu_420_p2 newCol_4_fu_437_p2 mul_30s_30s_30_2_1_U3 add_ln48_fu_585_p2 add_ln48_1_fu_598_p2 add_ln48_2_fu_488_p2 add_ln48_3_fu_501_p2 fmul_32ns_32ns_32_4_max_dsp_1_U2 fadd_32ns_32ns_32_5_full_dsp_1_U1</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>mul_32s_32s_32_3_1_U27 sub_i_fu_282_p2 sub16_i_fu_287_p2 mul_32ns_32ns_64_3_1_U26 mul_32s_32s_32_3_1_U27 add_fu_315_p2 add_ln43_fu_353_p2 add_ln43_1_fu_367_p2 col_1_fu_333_p2 row_3_fu_338_p2 control_s_axi_U image_in_m_axi_U image_out_m_axi_U kernel_m_axi_U</BindInstances>
+            <BindInstances>newRow_4_fu_310_p2 newCol_2_fu_328_p2 add_fu_359_p2 add_ln34_fu_378_p2 i_1_fu_388_p2 newRow_fu_394_p2 mul_32s_32s_32_2_1_U29 out_idx_fu_492_p2 add_ln53_fu_505_p2 col_1_fu_471_p2 row_3_fu_369_p2 control_s_axi_U image_in_m_axi_U image_out_m_axi_U kernel_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>LinearImageFilter_Pipeline_ker_rows_ker_cols</Name>
+            <Name>LinearImageFilter_Pipeline_ker_cols</Name>
             <Loops>
-                <ker_rows_ker_cols/>
+                <ker_cols/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>2.16</ClockUncertainty>
-                    <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -1962,30 +1976,30 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <ker_rows_ker_cols>
-                        <Name>ker_rows_ker_cols</Name>
-                        <Slack>5.84</Slack>
+                    <ker_cols>
+                        <Name>ker_cols</Name>
+                        <Slack>7.30</Slack>
                         <TripCount>undef</TripCount>
                         <Latency>undef</Latency>
                         <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-                        <PipelineII>8</PipelineII>
-                        <PipelineDepth>31</PipelineDepth>
+                        <PipelineII>5</PipelineII>
+                        <PipelineDepth>25</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </ker_rows_ker_cols>
+                    </ker_cols>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29</SourceLocation>
+                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <ker_rows_ker_cols>
-                            <Name>ker_rows_ker_cols</Name>
+                        <ker_cols>
+                            <Name>ker_cols</Name>
                             <IssueType>II Violation</IssueType>
                             <ViolationType>Memory Dependency</ViolationType>
                             <IterationDistance>1</IterationDistance>
-                            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:27</SourceLocation>
-                        </ker_rows_ker_cols>
+                            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48</SourceLocation>
+                        </ker_cols>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -1994,12 +2008,12 @@
                     <DSP>8</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>3</UTIL_DSP>
-                    <FF>1831</FF>
+                    <FF>1235</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>2552</LUT>
+                    <LUT>2081</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>4</UTIL_LUT>
+                    <UTIL_LUT>3</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2009,35 +2023,34 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln27_fu_326_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln27_1_fu_343_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln27_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="newRow_fu_363_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="newRow"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="sub" PRAGMA="" RTLNAME="neg_fu_477_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="neg"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="newRow_3_fu_494_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:75" STORAGESUBTYPE="" URAM="0" VARIABLE="newRow_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="sub" PRAGMA="" RTLNAME="neg1_fu_510_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:32" STORAGESUBTYPE="" URAM="0" VARIABLE="neg1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="newCol_2_fu_527_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:83" STORAGESUBTYPE="" URAM="0" VARIABLE="newCol_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="2" LOOP="ker_rows_ker_cols" OPTYPE="mul" PRAGMA="" RTLNAME="mul_30s_30s_30_3_1_U3" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln39"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_fu_679_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_1_fu_692_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_2_fu_623_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_3_fu_636_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="ker_rows_ker_cols" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="mul"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="7" LOOP="ker_rows_ker_cols" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_8_full_dsp_1_U1" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows_ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_fu_661_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln36_fu_357_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="sub" PRAGMA="" RTLNAME="neg_fu_387_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="neg"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="newRow_3_fu_404_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:87" STORAGESUBTYPE="" URAM="0" VARIABLE="newRow_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="sub" PRAGMA="" RTLNAME="neg1_fu_420_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="neg1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="newCol_4_fu_437_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:95" STORAGESUBTYPE="" URAM="0" VARIABLE="newCol_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="ker_cols" OPTYPE="mul" PRAGMA="" RTLNAME="mul_30s_30s_30_2_1_U3" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_fu_585_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_1_fu_598_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_2_fu_488_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_3_fu_501_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="ker_cols" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="mul"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="ker_cols" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U1" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_2"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>LinearImageFilter</Name>
             <Loops>
                 <img_rows>
-                    <img_cols/>
+                    <img_cols>
+                        <ker_rows/>
+                    </img_cols>
                 </img_rows>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>2.16</ClockUncertainty>
-                    <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -2052,7 +2065,7 @@
                 <SummaryOfLoopLatency>
                     <img_rows>
                         <Name>img_rows</Name>
-                        <Slack>5.84</Slack>
+                        <Slack>7.30</Slack>
                         <TripCount>undef</TripCount>
                         <Latency>undef</Latency>
                         <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
@@ -2062,34 +2075,51 @@
                         <InstanceList/>
                         <img_cols>
                             <Name>img_cols</Name>
-                            <Slack>5.84</Slack>
+                            <Slack>7.30</Slack>
                             <TripCount>undef</TripCount>
                             <Latency>undef</Latency>
                             <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                             <IterationLatency>undef</IterationLatency>
                             <PipelineDepth>undef</PipelineDepth>
                             <PipelineType>no</PipelineType>
-                            <InstanceList>
-                                <Instance>grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210</Instance>
-                            </InstanceList>
+                            <InstanceList/>
+                            <ker_rows>
+                                <Name>ker_rows</Name>
+                                <Slack>7.30</Slack>
+                                <TripCount>undef</TripCount>
+                                <Latency>undef</Latency>
+                                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                                <IterationLatency>undef</IterationLatency>
+                                <PipelineDepth>undef</PipelineDepth>
+                                <PipelineType>no</PipelineType>
+                                <InstanceList>
+                                    <Instance>grp_LinearImageFilter_Pipeline_ker_cols_fu_254</Instance>
+                                </InstanceList>
+                            </ker_rows>
                         </img_cols>
                     </img_rows>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21</SourceLocation>
+                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28</SourceLocation>
                     <SummaryOfLoopViolations>
                         <img_rows>
                             <Name>img_rows</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21</SourceLocation>
+                            <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28</SourceLocation>
                             <img_cols>
                                 <Name>img_cols</Name>
                                 <IssueType>-</IssueType>
                                 <ViolationType>-</ViolationType>
-                                <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23</SourceLocation>
+                                <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:30</SourceLocation>
+                                <ker_rows>
+                                    <Name>ker_rows</Name>
+                                    <IssueType>-</IssueType>
+                                    <ViolationType>-</ViolationType>
+                                    <SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34</SourceLocation>
+                                </ker_rows>
                             </img_cols>
                         </img_rows>
                     </SummaryOfLoopViolations>
@@ -2100,10 +2130,10 @@
                     <BRAM_18K>12</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>4</UTIL_BRAM>
-                    <DSP>15</DSP>
+                    <DSP>11</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>6</UTIL_DSP>
-                    <FF>6755</FF>
+                    <UTIL_DSP>5</UTIL_DSP>
+                    <FF>6552</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>6</UTIL_FF>
                     <LUT>6596</LUT>
@@ -2115,16 +2145,17 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_3_1_U27" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="mul30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="sub_i_fu_282_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_i"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="sub16_i_fu_287_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="sub16_i"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32ns_32ns_64_3_1_U26" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="2" LOOP="img_rows" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_3_1_U27" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="mul29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_rows" OPTYPE="sub" PRAGMA="" RTLNAME="add_fu_315_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="add"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_fu_353_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln43"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_1_fu_367_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln43_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="col_1_fu_333_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:23" STORAGESUBTYPE="" URAM="0" VARIABLE="col_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_rows" OPTYPE="add" PRAGMA="" RTLNAME="row_3_fu_338_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="row_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="newRow_4_fu_310_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="newRow_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="newCol_2_fu_328_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="newCol_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_rows" OPTYPE="sub" PRAGMA="" RTLNAME="add_fu_359_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows" OPTYPE="add" PRAGMA="" RTLNAME="add_ln34_fu_378_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows" OPTYPE="add" PRAGMA="" RTLNAME="i_1_fu_388_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="i_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="ker_rows" OPTYPE="add" PRAGMA="" RTLNAME="newRow_fu_394_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="newRow"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="img_cols" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U29" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:52" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="out_idx_fu_492_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="out_idx"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="add_ln53_fu_505_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_cols" OPTYPE="add" PRAGMA="" RTLNAME="col_1_fu_471_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="col_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="img_rows" OPTYPE="add" PRAGMA="" RTLNAME="row_3_fu_369_p2" SOURCE="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:28" STORAGESUBTYPE="" URAM="0" VARIABLE="row_3"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="image_in" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="image_in_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="image_out" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="image_out_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
@@ -2135,9 +2166,8 @@
     <FIFOInformation/>
     <UserConfigCommands>
         <config_compile pragma_strict_mode="1" unsafe_math_optimizations="1"/>
-        <config_cosim enable_fifo_sizing="1" ldflags="-L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui"/>
+        <config_cosim O="1" disable_binary_tv="1" ldflags="-L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui"/>
         <config_csim ldflags="-L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui"/>
-        <config_dataflow default_channel="fifo"/>
         <config_export description="Linear Image Filtering using HSL" display_name="Linear Image Filtering" ipname="LinearImageFiltering" library="Image" output="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering" taxonomy="ImageProcessing" vendor="Cristi" version="0.1.0"/>
         <config_interface m_axi_addr64="0"/>
     </UserConfigCommands>
@@ -2170,9 +2200,9 @@
                 <hwRef type="interface" interface="s_axi_control" name="" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="kernel_size" index="5" direction="in" srcType="unsigned int const " srcSize="32">
+        <Arg ArgName="kernel_dim" index="5" direction="in" srcType="unsigned int const " srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="kernel_size_r" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="kernel_dim" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="stride_row" index="6" direction="in" srcType="unsigned int const " srcSize="32">
@@ -2271,9 +2301,9 @@
                         <field offset="0" width="32" name="kernel_offset" access="W" description="Bit 31 to 0 of kernel_offset"/>
                     </fields>
                 </register>
-                <register offset="0x38" name="kernel_size_r" access="W" description="Data signal of kernel_size_r" range="32">
+                <register offset="0x38" name="kernel_dim" access="W" description="Data signal of kernel_dim" range="32">
                     <fields>
-                        <field offset="0" width="32" name="kernel_size_r" access="W" description="Bit 31 to 0 of kernel_size_r"/>
+                        <field offset="0" width="32" name="kernel_dim" access="W" description="Bit 31 to 0 of kernel_dim"/>
                     </fields>
                 </register>
                 <register offset="0x40" name="stride_row" access="W" description="Data signal of stride_row" range="32">
@@ -2299,7 +2329,7 @@
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32" argName="rows"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="cols"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="48" argName="kernel"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="56" argName="kernel_size"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="56" argName="kernel_dim"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64" argName="stride_row"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="72" argName="stride_col"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="80" argName="padding"/>
@@ -2560,7 +2590,7 @@
                     <column name="s_axi_control">rows, 0x20, 32, W, Data signal of rows, </column>
                     <column name="s_axi_control">cols, 0x28, 32, W, Data signal of cols, </column>
                     <column name="s_axi_control">kernel_offset, 0x30, 32, W, Data signal of kernel_offset, </column>
-                    <column name="s_axi_control">kernel_size_r, 0x38, 32, W, Data signal of kernel_size_r, </column>
+                    <column name="s_axi_control">kernel_dim, 0x38, 32, W, Data signal of kernel_dim, </column>
                     <column name="s_axi_control">stride_row, 0x40, 32, W, Data signal of stride_row, </column>
                     <column name="s_axi_control">stride_col, 0x48, 32, W, Data signal of stride_col, </column>
                     <column name="s_axi_control">padding, 0x50, 32, W, Data signal of padding, </column>
@@ -2587,7 +2617,7 @@
                     <column name="rows">in, unsigned int const </column>
                     <column name="cols">in, unsigned int const </column>
                     <column name="kernel">in, float const * const </column>
-                    <column name="kernel_size">in, unsigned int const </column>
+                    <column name="kernel_dim">in, unsigned int const </column>
                     <column name="stride_row">in, unsigned int const </column>
                     <column name="stride_col">in, unsigned int const </column>
                     <column name="padding">in, Padding const </column>
@@ -2604,7 +2634,7 @@
                     <column name="cols">s_axi_control, register, , name=cols offset=0x28 range=32</column>
                     <column name="kernel">m_axi_kernel, interface, , </column>
                     <column name="kernel">s_axi_control, interface, offset, </column>
-                    <column name="kernel_size">s_axi_control, register, , name=kernel_size_r offset=0x38 range=32</column>
+                    <column name="kernel_dim">s_axi_control, register, , name=kernel_dim offset=0x38 range=32</column>
                     <column name="stride_row">s_axi_control, register, , name=stride_row offset=0x40 range=32</column>
                     <column name="stride_col">s_axi_control, register, , name=stride_col offset=0x48 range=32</column>
                     <column name="padding">s_axi_control, register, , name=padding offset=0x50 range=32</column>
@@ -2618,23 +2648,25 @@
             <item name="All M_AXI Variable Accesses">
                 <table>
                     <keys size="9">HW Interface, Variable, Access Location, Direction, Burst Status, Loop, Loop Location, Resolution, Problem</keys>
-                    <column name="m_axi_image_in">image_in, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:28, read, Fail, ker_cols, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27, 214-232, Access load is in the conditional branch</column>
-                    <column name="m_axi_kernel">kernel, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:63, read, Fail, ker_cols, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:29:27, 214-232, Access load is in the conditional branch</column>
+                    <column name="m_axi_image_in">image_in, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48:28, read, Fail, ker_cols, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27, 214-232, Access load is in the conditional branch</column>
+                    <column name="m_axi_kernel">kernel, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48:63, read, Fail, ker_cols, /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27, 214-232, Access load is in the conditional branch</column>
                 </table>
             </item>
         </section>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="interface" location="LinearImageFiltering.cpp:9" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = image_out bundle = image_out offset = slave depth = 25000000"/>
-        <Pragma type="interface" location="LinearImageFiltering.cpp:10" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = image_in bundle = image_in offset = slave depth = 25000000"/>
-        <Pragma type="interface" location="LinearImageFiltering.cpp:11" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = kernel bundle = kernel offset = slave depth = 200"/>
+        <Pragma type="interface" location="LinearImageFiltering.cpp:9" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = image_out bundle = image_out offset = slave depth = 10000000"/>
+        <Pragma type="interface" location="LinearImageFiltering.cpp:10" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = image_in bundle = image_in offset = slave depth = 10000000"/>
+        <Pragma type="interface" location="LinearImageFiltering.cpp:11" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = m_axi port = kernel bundle = kernel offset = slave depth = 1000"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:13" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = rows"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:14" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = cols"/>
-        <Pragma type="interface" location="LinearImageFiltering.cpp:15" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = kernel_size"/>
+        <Pragma type="interface" location="LinearImageFiltering.cpp:15" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = kernel_dim"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:16" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = stride_row"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:17" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = stride_col"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:18" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = padding"/>
         <Pragma type="interface" location="LinearImageFiltering.cpp:19" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="mode = s_axilite port = return"/>
+        <Pragma type="loop_flatten" location="LinearImageFiltering.cpp:38" status="valid" parentFunction="linearimagefilter" variable="" isDirective="0" options="off"/>
+        <Pragma type="inline" location="LinearImageFiltering.cpp:60" status="valid" parentFunction="pad" variable="" isDirective="0" options=""/>
     </PragmaReport>
 </profile>
 

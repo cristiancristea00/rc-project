@@ -1,7 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
 make[1]: Entering directory '/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/csim/build'
-   Compiling ../../../../LinearImageFilteringTestbench.cpp in debug mode
    Compiling ../../../../LinearImageFiltering.cpp in debug mode
    Generating csim.exe
 make[1]: Leaving directory '/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/csim/build'

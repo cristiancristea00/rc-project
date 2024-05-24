@@ -42,7 +42,7 @@ kernel_offset {
 	offset 48
 	offset_end 55
 }
-kernel_size_r { 
+kernel_dim { 
 	dir I
 	width 32
 	depth 1

@@ -3,12 +3,12 @@
 # SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
 # IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
 # SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Thu May 23 08:00:26 2024
-# Process ID: 6882
+# Start of session at: Fri May 24 13:09:17 2024
+# Process ID: 291857
 # Current directory: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1
 # Command line: vivado -log system_LinearImageFiltering_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_LinearImageFiltering_0_0.tcl
 # Log file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/system_LinearImageFiltering_0_0.vds
 # Journal file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/system_LinearImageFiltering_0_0_synth_1/vivado.jou
-# Running On: Hephaestion, OS: Linux, CPU Frequency: 2600.179 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 2899.847 MHz, CPU Physical cores: 6, Host memory: 16631 MB
 #-----------------------------------------------------------
 source system_LinearImageFiltering_0_0.tcl -notrace

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'LinearImageFilter'" level="0">
-<item name = "Date">Thu May 23 07:59:11 2024
+<item name = "Date">Fri May 24 13:04:30 2024
 </item>
 <item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
 <item name = "Project">work</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">8.00 ns, 5.840 ns, 2.16 ns</column>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -37,6 +37,7 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- img_rows">?, ?, ?, -, -, ?, no</column>
 <column name=" + img_cols">?, ?, ?, -, -, ?, no</column>
+<column name="  ++ ker_rows">?, ?, ?, -, -, ?, no</column>
 </table>
 </item>
 </section>

@@ -161,20 +161,20 @@ u32 XLinearimagefilter_Get_kernel_offset(XLinearimagefilter *InstancePtr) {
     return Data;
 }
 
-void XLinearimagefilter_Set_kernel_size_r(XLinearimagefilter *InstancePtr, u32 Data) {
+void XLinearimagefilter_Set_kernel_dim(XLinearimagefilter *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XLinearimagefilter_WriteReg(InstancePtr->Control_BaseAddress, XLINEARIMAGEFILTER_CONTROL_ADDR_KERNEL_SIZE_R_DATA, Data);
+    XLinearimagefilter_WriteReg(InstancePtr->Control_BaseAddress, XLINEARIMAGEFILTER_CONTROL_ADDR_KERNEL_DIM_DATA, Data);
 }
 
-u32 XLinearimagefilter_Get_kernel_size_r(XLinearimagefilter *InstancePtr) {
+u32 XLinearimagefilter_Get_kernel_dim(XLinearimagefilter *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XLinearimagefilter_ReadReg(InstancePtr->Control_BaseAddress, XLINEARIMAGEFILTER_CONTROL_ADDR_KERNEL_SIZE_R_DATA);
+    Data = XLinearimagefilter_ReadReg(InstancePtr->Control_BaseAddress, XLINEARIMAGEFILTER_CONTROL_ADDR_KERNEL_DIM_DATA);
     return Data;
 }
 

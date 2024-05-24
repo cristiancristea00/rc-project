@@ -1,24 +1,18 @@
 # This script segment is generated automatically by AutoPilot
 
-set name LinearImageFilter_mul_32ns_32ns_64_3_1
+set name LinearImageFilter_mul_32s_32s_32_2_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name LinearImageFilter_mul_32s_32s_32_3_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-set name LinearImageFilter_udiv_32ns_32ns_30_36_seq_1
+set name LinearImageFilter_udiv_32ns_32ns_32_36_seq_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {udiv} IMPL {auto_seq} LATENCY 35 ALLOW_PRAGMA 1
 }
 
 
-set name LinearImageFilter_udiv_32ns_32s_30_36_seq_1
+set name LinearImageFilter_udiv_32ns_32ns_30_36_seq_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {udiv} IMPL {auto_seq} LATENCY 35 ALLOW_PRAGMA 1
 }
@@ -88,7 +82,7 @@ kernel_offset {
 	offset 48
 	offset_end 55
 }
-kernel_size_r { 
+kernel_dim { 
 	dir I
 	width 32
 	depth 1
@@ -134,7 +128,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 34 \
+			id 36 \
 			corename LinearImageFilter_control_axilite \
 			name LinearImageFilter_control_s_axi \
 			ports {$port_control} \

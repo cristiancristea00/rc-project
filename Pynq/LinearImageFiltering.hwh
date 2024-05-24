@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May 23 08:00:17 2024" VIVADOVERSION="2023.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 24 13:09:07 2024" VIVADOVERSION="2023.2.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -474,16 +474,16 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="kernel_size_r">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of kernel_size_r"/>
+            <REGISTER NAME="kernel_dim">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of kernel_dim"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
               <FIELDS>
-                <FIELD NAME="kernel_size_r">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of kernel_size_r"/>
+                <FIELD NAME="kernel_dim">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of kernel_dim"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="write-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -611,7 +611,7 @@
         <PARAMETER NAME="C_M_AXI_KERNEL_ENABLE_USER_PORTS" VALUE="false"/>
         <PARAMETER NAME="Component_Name" VALUE="system_LinearImageFiltering_0_0"/>
         <PARAMETER NAME="II" VALUE="x"/>
-        <PARAMETER NAME="clk_period" VALUE="8"/>
+        <PARAMETER NAME="clk_period" VALUE="10"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
         <PARAMETER NAME="latency" VALUE="undef"/>
         <PARAMETER NAME="machine" VALUE="64"/>

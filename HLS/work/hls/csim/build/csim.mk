@@ -89,6 +89,6 @@ $(ObjDir)/LinearImageFilteringTestbench.o: ../../../../LinearImageFilteringTestb
 
 $(ObjDir)/LinearImageFiltering.o: ../../../../LinearImageFiltering.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../LinearImageFiltering.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -std=c++14 -fno-builtin -std=c++17 -fno-builtin  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -std=c++14 -fno-builtin -std=c++14 -fno-builtin  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/LinearImageFiltering.d
