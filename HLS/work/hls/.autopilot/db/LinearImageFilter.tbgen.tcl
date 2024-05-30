@@ -360,7 +360,7 @@ set NewPortList {[
  	{ "name": "m_axi_kernel_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6", "7", "8", "9", "10", "11", "12", "13"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6", "7", "8", "9", "10", "11", "12", "13", "14"],
 		"CDFG" : "LinearImageFilter",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -382,10 +382,10 @@ set RtlHierarchyInfo {[
 					{"Name" : "image_out_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "image_in", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_cols_fu_254", "Port" : "image_in", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Port" : "image_in", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
 			{"Name" : "kernel", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_cols_fu_254", "Port" : "kernel", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Port" : "kernel", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
 			{"Name" : "image_out_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "image_in_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "rows", "Type" : "None", "Direction" : "I"},
@@ -396,14 +396,12 @@ set RtlHierarchyInfo {[
 			{"Name" : "stride_col", "Type" : "None", "Direction" : "I"},
 			{"Name" : "padding", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "ker_rows", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "52", "FirstState" : "ap_ST_fsm_state4", "LastState" : ["ap_ST_fsm_state7"], "QuitState" : ["ap_ST_fsm_state4"], "PreState" : ["ap_ST_fsm_state3"], "PostState" : ["ap_ST_fsm_state8"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "img_cols", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "52", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state52"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state2"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
+				"LoopDec" : {"FSMBitwidth" : "50", "FirstState" : "ap_ST_fsm_state5", "LastState" : ["ap_ST_fsm_state50"], "QuitState" : ["ap_ST_fsm_state5"], "PreState" : ["ap_ST_fsm_state4"], "PostState" : ["ap_ST_fsm_state4"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "img_rows", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "52", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state3"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_cols_fu_254", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
-		"CDFG" : "LinearImageFilter_Pipeline_ker_cols",
+				"LoopDec" : {"FSMBitwidth" : "50", "FirstState" : "ap_ST_fsm_state4", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state4"], "PreState" : ["ap_ST_fsm_state3"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
+		"CDFG" : "LinearImageFilter_Pipeline_ker_rows_ker_cols",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -417,7 +415,6 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "sum", "Type" : "None", "Direction" : "I"},
 			{"Name" : "kernel", "Type" : "MAXI", "Direction" : "I",
 				"BlockSignal" : [
 					{"Name" : "kernel_blk_n_AR", "Type" : "RtlSignal"},
@@ -426,47 +423,45 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "image_in_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "image_in_blk_n_R", "Type" : "RtlSignal"}]},
-			{"Name" : "kernel_dim", "Type" : "None", "Direction" : "I"},
+			{"Name" : "mul_ln7", "Type" : "None", "Direction" : "I"},
 			{"Name" : "padding", "Type" : "None", "Direction" : "I"},
+			{"Name" : "kernel_dim", "Type" : "None", "Direction" : "I"},
+			{"Name" : "add", "Type" : "None", "Direction" : "I"},
+			{"Name" : "rows", "Type" : "None", "Direction" : "I"},
+			{"Name" : "newRow_4", "Type" : "None", "Direction" : "I"},
 			{"Name" : "col", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_28", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_26", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cols", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_29", "Type" : "None", "Direction" : "I"},
-			{"Name" : "rev", "Type" : "None", "Direction" : "I"},
-			{"Name" : "newRow_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_30", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_31", "Type" : "None", "Direction" : "I"},
-			{"Name" : "image_in_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty", "Type" : "None", "Direction" : "I"},
+			{"Name" : "image_in_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "kernel_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "newCol_2", "Type" : "None", "Direction" : "I"},
-			{"Name" : "newRow", "Type" : "None", "Direction" : "I"},
-			{"Name" : "rows", "Type" : "None", "Direction" : "I"},
 			{"Name" : "mul_i", "Type" : "None", "Direction" : "I"},
 			{"Name" : "mul35_i", "Type" : "None", "Direction" : "I"},
-			{"Name" : "sum_2_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "sum_1_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
-			{"Name" : "ker_cols", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage4", "LastStateIter" : "ap_enable_reg_pp0_iter4", "LastStateBlock" : "ap_block_pp0_stage4_subdone", "QuitState" : "ap_ST_fsm_pp0_stage4", "QuitStateIter" : "ap_enable_reg_pp0_iter4", "QuitStateBlock" : "ap_block_pp0_stage4_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_cols_fu_254.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "1"},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_cols_fu_254.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "1"},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_cols_fu_254.mul_30s_30s_30_2_1_U3", "Parent" : "1"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_cols_fu_254.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
+			{"Name" : "ker_rows_ker_cols", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage1", "LastStateIter" : "ap_enable_reg_pp0_iter5", "LastStateBlock" : "ap_block_pp0_stage1_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter5", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.mul_30s_30s_30_2_1_U3", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_in_m_axi_U", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_out_m_axi_U", "Parent" : "0"},
 	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.kernel_m_axi_U", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U29", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_32_36_seq_1_U30", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_32_36_seq_1_U31", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_30_36_seq_1_U32", "Parent" : "0"}]}
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32ns_32ns_64_2_1_U26", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U27", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_32_36_seq_1_U28", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_32_36_seq_1_U29", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.udiv_32ns_32ns_30_36_seq_1_U30", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	LinearImageFilter {
-		image_out {Type O LastRead 44 FirstWrite 43}
-		image_in {Type I LastRead 14 FirstWrite -1}
-		kernel {Type I LastRead 10 FirstWrite -1}
+		image_out {Type O LastRead 45 FirstWrite 44}
+		image_in {Type I LastRead 16 FirstWrite -1}
+		kernel {Type I LastRead 13 FirstWrite -1}
 		image_out_offset {Type I LastRead 0 FirstWrite -1}
 		image_in_offset {Type I LastRead 0 FirstWrite -1}
 		rows {Type I LastRead 0 FirstWrite -1}
@@ -476,29 +471,25 @@ set ArgLastReadFirstWriteLatency {
 		stride_row {Type I LastRead 0 FirstWrite -1}
 		stride_col {Type I LastRead 0 FirstWrite -1}
 		padding {Type I LastRead 0 FirstWrite -1}}
-	LinearImageFilter_Pipeline_ker_cols {
-		sum {Type I LastRead 0 FirstWrite -1}
-		kernel {Type I LastRead 10 FirstWrite -1}
-		image_in {Type I LastRead 14 FirstWrite -1}
-		kernel_dim {Type I LastRead 0 FirstWrite -1}
+	LinearImageFilter_Pipeline_ker_rows_ker_cols {
+		kernel {Type I LastRead 13 FirstWrite -1}
+		image_in {Type I LastRead 16 FirstWrite -1}
+		mul_ln7 {Type I LastRead 0 FirstWrite -1}
 		padding {Type I LastRead 0 FirstWrite -1}
+		kernel_dim {Type I LastRead 0 FirstWrite -1}
+		add {Type I LastRead 0 FirstWrite -1}
+		rows {Type I LastRead 0 FirstWrite -1}
+		newRow_4 {Type I LastRead 0 FirstWrite -1}
 		col {Type I LastRead 0 FirstWrite -1}
-		empty_28 {Type I LastRead 0 FirstWrite -1}
+		empty_26 {Type I LastRead 0 FirstWrite -1}
 		cols {Type I LastRead 0 FirstWrite -1}
-		empty_29 {Type I LastRead 0 FirstWrite -1}
-		rev {Type I LastRead 0 FirstWrite -1}
-		newRow_1 {Type I LastRead 0 FirstWrite -1}
-		empty_30 {Type I LastRead 0 FirstWrite -1}
-		empty_31 {Type I LastRead 0 FirstWrite -1}
-		image_in_offset {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
+		image_in_offset {Type I LastRead 0 FirstWrite -1}
 		kernel_offset {Type I LastRead 0 FirstWrite -1}
 		newCol_2 {Type I LastRead 0 FirstWrite -1}
-		newRow {Type I LastRead 0 FirstWrite -1}
-		rows {Type I LastRead 0 FirstWrite -1}
 		mul_i {Type I LastRead 0 FirstWrite -1}
 		mul35_i {Type I LastRead 0 FirstWrite -1}
-		sum_2_out {Type O LastRead -1 FirstWrite 19}}}
+		sum_1_out {Type O LastRead -1 FirstWrite 21}}}
 
 set hasDtUnsupportedChannel 0
 

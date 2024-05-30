@@ -9,7 +9,7 @@
 Environment variables :
 ------------------------------------------
 SHELL=/bin/bash
-SESSION_MANAGER=local/Hephaestion:@/tmp/.ICE-unix/3670,unix/Hephaestion:/tmp/.ICE-unix/3670
+SESSION_MANAGER=local/Hephaestion:@/tmp/.ICE-unix/3453,unix/Hephaestion:/tmp/.ICE-unix/3453
 QT_ACCESSIBILITY=1
 COLORTERM=truecolor
 XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
@@ -22,7 +22,6 @@ LANGUAGE=en_US:en
 MAKE_TERMOUT=/dev/pts/0
 XIL_SUPPRESS_OVERRIDE_WARNINGS=1
 RDI_BINROOT=/home/cristi/AMD/Vitis/2023.2/bin
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
 LC_ADDRESS=en_GB.UTF-8
 XILINX_VIVADO=/home/cristi/AMD/Vivado/2023.2
 GNOME_SHELL_SESSION_MODE=ubuntu
@@ -37,61 +36,60 @@ RDI_PATCHROOT=
 DESKTOP_SESSION=ubuntu
 LC_MONETARY=en_GB.UTF-8
 GTK_MODULES=gail:atk-bridge
-DBUS_STARTER_BUS_TYPE=session
 XIL_NO_OVERRIDE=0
 RDI_LIBDIR=/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o
 PWD=/home/cristi/Documents/ACES/RC-Project/HLS
 XDG_SESSION_DESKTOP=ubuntu
 LOGNAME=cristi
-XDG_SESSION_TYPE=x11
+XDG_SESSION_TYPE=wayland
 CONDA_PREFIX=/home/cristi/conda
 _RDI_DONT_SET_XILINX_AS_PATH=True
 MANPATH=
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-SYSTEMD_EXEC_PID=3670
-XAUTHORITY=/run/user/1000/gdm/Xauthority
+SYSTEMD_EXEC_PID=3497
+XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.KQ3RO2
 RDI_PREPEND_PATH=/home/cristi/AMD/Vitis/2023.2/bin
 XILINX_DSP=
-WINDOWPATH=2
 PICO_SDK_PATH=/home/cristi/Pico/pico-sdk
 HOME=/home/cristi
 USERNAME=cristi
+IM_CONFIG_PHASE=1
 SYNTH_COMMON=/home/cristi/AMD/Vitis/2023.2/scripts/rt/data
 LANG=en_US.UTF-8
 LC_PAPER=en_GB.UTF-8
 XDG_CURRENT_DESKTOP=ubuntu:GNOME
-MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\x2dsession\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure
+MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
 STARSHIP_SHELL=fish
 VTE_VERSION=7600
+WAYLAND_DISPLAY=wayland-0
 XILINX_HLS=/home/cristi/AMD/Vitis_HLS/2023.2
 CONDA_PROMPT_MODIFIER=
 HDI_PROCESSOR=x86_64
 RDI_BUILD=yes
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/6901fcb9_f3f0_4287_998e_623c10b07e30
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/ce06bd91_1ed4_4f43_9356_69055ca39d44
 RDI_PROG=/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++
-RDI_SESSION_INFO=/home/cristi/Documents/ACES/RC-Project/HLS:Hephaestion_1715980406_86748
+RDI_SESSION_INFO=/home/cristi/Documents/ACES/RC-Project/HLS:Hephaestion_1717086706_6850
 RT_TCL_PATH=/home/cristi/AMD/Vitis/2023.2/scripts/rt/base_tcl/tcl
-STARSHIP_SESSION_KEY=2676025841825825
+STARSHIP_SESSION_KEY=1237911919295143
 MFLAGS=
 XILINX_SDK=/home/cristi/AMD/Vitis/2023.2
+GNOME_SETUP_DISPLAY=:1
 RDI_SHARED_DATA=/home/cristi/AMD/SharedData/2023.2/data
 MAKEFLAGS=
 XDG_SESSION_CLASS=user
 TERM=xterm-256color
 LC_IDENTIFICATION=en_GB.UTF-8
 _CE_CONDA=
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
 USER=cristi
 MAKE_TERMERR=/dev/pts/0
 XILINX_PLANAHEAD=/home/cristi/AMD/Vitis/2023.2
-GNOME_TERMINAL_SERVICE=:1.114
+GNOME_TERMINAL_SERVICE=:1.135
 CONDA_SHLVL=1
 RDI_BASEROOT=/home/cristi/AMD/Vitis
 RDI_TPS_ROOT=/home/cristi/AMD/Vivado/2023.2/tps/lnx64
 RDI_JAVA_VERSION=17.0.7_7
 MANPAGER=sh -c 'col -b | bat -l man -p'
 RDI_DATADIR=/home/cristi/AMD/Vitis/2023.2/data
-DISPLAY=:1
+DISPLAY=:0
 SHLVL=3
 GSM_SKIP_SSH_AGENT_WORKAROUND=true
 MAKELEVEL=1
@@ -99,14 +97,11 @@ LC_TELEPHONE=en_GB.UTF-8
 QT_IM_MODULE=ibus
 LC_MEASUREMENT=en_GB.UTF-8
 XILINX_VIVADO_HLS=/home/cristi/AMD/Vivado/2023.2
-OPENCV_INCLUDE=/usr/local/include/opencv4
 XIL_CHECK_TCL_DEBUG=False
-DBUS_STARTER_ADDRESS=unix:path=/run/user/1000/bus,guid=1d160476e6108395259f1f2b66477790
 PAPERSIZE=a4
 CONDA_PYTHON_EXE=/home/cristi/conda/bin/python
-LD_LIBRARY_PATH=/home/cristi/AMD/Vitis/2023.2/tps/lnx64/java-cef-95.0.4638.69/bin/lib/linux64:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/home/cristi/AMD/Vitis/2023.2/tps/lnx64/jre17.0.7_7/lib/:/home/cristi/AMD/Vitis/2023.2/tps/lnx64/jre17.0.7_7/lib//server:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/usr/local/lib:/home/cristi/AMD/Vitis/2023.2/bin/../lnx64/tools/dot/lib
-HDIPRELDPATH=/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/usr/local/lib:/home/cristi/AMD/Vitis/2023.2/bin/../lnx64/tools/dot/lib
-OPENCV_LIB=/usr/local/lib
+LD_LIBRARY_PATH=/home/cristi/AMD/Vitis/2023.2/tps/lnx64/java-cef-95.0.4638.69/bin/lib/linux64:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/home/cristi/AMD/Vitis/2023.2/tps/lnx64/jre17.0.7_7/lib/:/home/cristi/AMD/Vitis/2023.2/tps/lnx64/jre17.0.7_7/lib//server:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/home/cristi/AMD/Vitis/2023.2/bin/../lnx64/tools/dot/lib
+HDIPRELDPATH=/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o/Ubuntu:/home/cristi/AMD/Vitis/2023.2/lib/lnx64.o:/home/cristi/AMD/Vitis/2023.2/bin/../lnx64/tools/dot/lib
 XDG_RUNTIME_DIR=/run/user/1000
 TCMALLOC_LARGE_ALLOC_REPORT_THRESHOLD=4294967296
 CONDA_DEFAULT_ENV=base
@@ -120,7 +115,7 @@ PATH=/home/cristi/AMD/Vivado/2023.2/tps/lnx64/binutils-2.26/bin:/home/cristi/AMD
 RT_LIBPATH=/home/cristi/AMD/Vitis/2023.2/scripts/rt/data
 GDMSESSION=ubuntu
 HDI_APPROOT=/home/cristi/AMD/Vitis/2023.2
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus,guid=1d160476e6108395259f1f2b66477790
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 RDI_PLATFORM=lnx64
 MYVIVADO=
 ISL_IOSTREAMS_RSA=/home/cristi/AMD/Vitis/2023.2/tps/isl
@@ -128,8 +123,8 @@ LC_NUMERIC=en_GB.UTF-8
 XILINX_VITIS=/home/cristi/AMD/Vitis/2023.2
 OLDPWD=/home/cristi/AMD/Vitis/2023.2/bin
 _=/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++
-XILINX_CD_CONNECT_ID=36895
-XILINX_CD_SESSION=9df3b0d4-8544-4472-a8eb-4992008434c1
+XILINX_CD_CONNECT_ID=44791
+XILINX_CD_SESSION=c0db778c-f8e8-40d2-ba56-3072c011d76c
 
 
 V++ command line:
@@ -139,8 +134,9 @@ V++ command line:
 FINAL PROGRAM OPTIONS
 --compile
 --config config.cfg
---hls.clock 125MHz
---hls.cosim.enable_fifo_sizing true
+--hls.clock 100MHz
+--hls.cosim.O true
+--hls.cosim.disable_binary_tv true
 --hls.cosim.ldflags -L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
 --hls.csim.ldflags -L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
 --hls.flow_target vivado
@@ -157,8 +153,7 @@ FINAL PROGRAM OPTIONS
 --hls.syn.cflags -std=c++14 -fno-builtin
 --hls.syn.compile.pragma_strict_mode 1
 --hls.syn.compile.unsafe_math_optimizations 1
---hls.syn.csimflags -std=c++17 -fno-builtin
---hls.syn.dataflow.default_channel fifo
+--hls.syn.csimflags -std=c++14 -fno-builtin
 --hls.syn.file LinearImageFiltering.cpp
 --hls.syn.interface.m_axi_addr64 0
 --hls.syn.interface.s_axilite_data64 0
@@ -166,6 +161,7 @@ FINAL PROGRAM OPTIONS
 --hls.tb.cflags -std=c++17 -fno-builtin -I/usr/local/include/opencv4
 --hls.tb.file LinearImageFilteringTestbench.cpp
 --hls.tb.file Matrix.cpp
+--hls.vivado.rtl verilog
 --mode hls
 --part xc7z020clg400-1
 --target hw
@@ -180,12 +176,12 @@ PARSED COMMAND LINE OPTIONS
 PARSED CONFIG FILE (1) OPTIONS
 file: config.cfg
 part xc7z020clg400-1 
-hls.clock 125MHz 
+hls.clock 100MHz 
 hls.flow_target vivado 
 hls.syn.file LinearImageFiltering.cpp 
 hls.syn.top LinearImageFilter 
 hls.syn.cflags -std=c++14 -fno-builtin 
-hls.syn.csimflags -std=c++17 -fno-builtin 
+hls.syn.csimflags -std=c++14 -fno-builtin 
 hls.tb.file LinearImageFilteringTestbench.cpp 
 hls.tb.file Matrix.cpp 
 hls.csim.ldflags -L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui 
@@ -195,8 +191,9 @@ hls.syn.compile.pragma_strict_mode 1
 hls.syn.compile.unsafe_math_optimizations 1 
 hls.syn.interface.m_axi_addr64 0 
 hls.syn.interface.s_axilite_data64 0 
-hls.syn.dataflow.default_channel fifo 
-hls.cosim.enable_fifo_sizing true 
+hls.cosim.O true 
+hls.vivado.rtl verilog 
+hls.cosim.disable_binary_tv true 
 hls.package.output.format ip_catalog 
 hls.package.output.syn true 
 hls.package.output.file LinearImageFiltering 
@@ -211,806 +208,14 @@ hls.package.ip.version 0.1.0
 
 ==========================================
 new:  steps log generated by v++ for new launch 
-timestamp: 18 May 2024 00:13:30
+timestamp: 30 May 2024 19:31:51
 ------------------------------------------
 V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 18 May 2024 00:13:30
+timestamp: 30 May 2024 19:31:51
 V++ internal step status: success
 ------------------------------------------
 V++ internal step: running vitis_hls
-timestamp: 18 May 2024 00:13:30
+timestamp: 30 May 2024 19:31:51
 working dir: /home/cristi/Documents/ACES/RC-Project/HLS
 cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
 V++ internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 18 May 2024 17:08:09
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 18 May 2024 17:08:09
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 18 May 2024 17:08:09
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 18 May 2024 17:09:14
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 18 May 2024 17:09:14
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 18 May 2024 17:09:14
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 18 May 2024 17:10:06
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 18 May 2024 17:10:06
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 18 May 2024 17:10:06
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 18 May 2024 19:06:33
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 18 May 2024 19:06:33
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 18 May 2024 19:06:33
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 21 May 2024 19:46:16
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 21 May 2024 19:46:16
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 21 May 2024 19:46:16
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 21 May 2024 20:34:25
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 21 May 2024 20:34:25
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 21 May 2024 20:34:25
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 22 May 2024 18:16:33
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 22 May 2024 18:16:33
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 22 May 2024 18:16:33
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 22 May 2024 18:16:56
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 22 May 2024 18:16:56
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 22 May 2024 18:16:56
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 23 May 2024 07:57:01
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 23 May 2024 07:57:01
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 23 May 2024 07:57:01
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 23 May 2024 07:58:58
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 23 May 2024 07:58:58
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 23 May 2024 07:58:58
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:14:27
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:14:27
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:14:27
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:17:25
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:17:25
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 12:17:25
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:18:31
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:18:31
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:18:31
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:21:32
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:21:32
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 12:21:32
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:22:57
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:22:57
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:22:57
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:28:27
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:28:27
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:28:27
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:30:58
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:30:58
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:30:58
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:31:37
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:31:37
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:31:37
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:32:25
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:32:25
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:32:25
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:33:13
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:33:13
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 12:33:13
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:34:18
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:34:18
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:34:18
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:34:33
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:34:33
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:34:33
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:39:22
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:39:22
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 12:39:22
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:40:49
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:40:49
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 12:40:49
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:43:53
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:43:53
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:43:53
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:46:08
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:46:08
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:46:08
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:48:50
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:48:50
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:48:50
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:49:43
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:49:43
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:49:43
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:52:28
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:52:28
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:52:28
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:53:34
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:53:34
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:53:34
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:54:12
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:54:12
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:54:12
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:54:42
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:54:42
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:54:42
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 12:55:19
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 12:55:19
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 12:55:19
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success
-
-------------------------------------------
-V++ command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++ -c --mode hls --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 13:04:18
-------------------------------------------
-V++ internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 13:04:18
-V++ internal step status: success
-------------------------------------------
-V++ internal step: running vitis_hls
-timestamp: 24 May 2024 13:04:18
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-V++ internal step status: success
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --cosim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 13:05:42
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 13:05:42
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 13:05:42
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run cosim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: fail
-
-------------------------------------------
-VITIS-RUN command line :
-------------------------------------------
-/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/vitis-run --mode hls --csim --config config.cfg --work_dir work 
-  Options from -O    : 
-  Options from *.ini : 
-  Options from Hw Platform : 
-
-==========================================
-new:  steps log generated by v++ for new launch 
-timestamp: 24 May 2024 13:06:55
-------------------------------------------
-VITIS-RUN internal step: writing a config file for vitis_hls: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-timestamp: 24 May 2024 13:06:55
-VITIS-RUN internal step status: success
-------------------------------------------
-VITIS-RUN internal step: running vitis_hls
-timestamp: 24 May 2024 13:06:55
-working dir: /home/cristi/Documents/ACES/RC-Project/HLS
-cmd: vitis_hls -nolog -run csim -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
-VITIS-RUN internal step status: success

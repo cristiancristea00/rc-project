@@ -3,12 +3,12 @@
 # SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
 # IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
 # SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Fri May 24 13:11:53 2024
-# Process ID: 292615
+# Start of session at: Thu May 30 19:41:10 2024
+# Process ID: 12345
 # Current directory: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1
-# Command line: vivado -log system_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source system_wrapper.tcl -notrace
-# Log file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1/system_wrapper.vdi
+# Command line: vivado -log filtering_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source filtering_wrapper.tcl -notrace
+# Log file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1/filtering_wrapper.vdi
 # Journal file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1/vivado.jou
-# Running On: Hephaestion, OS: Linux, CPU Frequency: 4262.597 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 4295.391 MHz, CPU Physical cores: 6, Host memory: 16631 MB
 #-----------------------------------------------------------
-source system_wrapper.tcl -notrace
+source filtering_wrapper.tcl -notrace

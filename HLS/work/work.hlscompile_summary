@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri May 24 13:04:18 2024",
- "timestampMillis": "1716545058431",
+ "dateTimestamp": "Thu May 30 19:31:51 2024",
+ "timestampMillis": "1717086711600",
  "buildStep": {
-  "cmdId": "a655b185-52c2-4624-8229-31232c9ce205",
+  "cmdId": "65b2b859-b68d-447b-a938-c24a40b2c323",
   "name": "v++",
   "logFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/logs/work.steps.log",
   "commandLine": "/home/cristi/AMD/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config config.cfg --work_dir work ",
@@ -38,10 +38,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:04:18 2024",
- "timestampMillis": "1716545058432",
+ "dateTimestamp": "Thu May 30 19:31:51 2024",
+ "timestampMillis": "1717086711601",
  "status": {
-  "cmdId": "a655b185-52c2-4624-8229-31232c9ce205",
+  "cmdId": "65b2b859-b68d-447b-a938-c24a40b2c323",
   "state": "CS_RUNNING"
  }
 }
@@ -49,8 +49,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061196",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715821",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -85,10 +85,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061197",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715822",
  "buildStep": {
-  "cmdId": "c8bd00d7-2c67-443f-8de7-04d4b3944492",
+  "cmdId": "719a35b8-91e9-40fd-bde8-1de98188c0ed",
   "name": "csynth_design",
   "logFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/hls.log",
   "commandLine": "csynth_design",
@@ -101,10 +101,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061198",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715822",
  "status": {
-  "cmdId": "c8bd00d7-2c67-443f-8de7-04d4b3944492",
+  "cmdId": "719a35b8-91e9-40fd-bde8-1de98188c0ed",
   "state": "CS_RUNNING"
  }
 }
@@ -112,8 +112,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061198",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715823",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/hls_data.json",
   "name": "",
@@ -126,8 +126,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061198",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715823",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.rpt",
   "name": "",
@@ -140,8 +140,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:21 2024",
- "timestampMillis": "1716545061199",
+ "dateTimestamp": "Thu May 30 19:31:55 2024",
+ "timestampMillis": "1717086715823",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.xml",
   "name": "",
@@ -154,8 +154,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072806",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728224",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -168,8 +168,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072807",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728224",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -182,8 +182,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072807",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728225",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -196,10 +196,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072808",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728225",
  "status": {
-  "cmdId": "c8bd00d7-2c67-443f-8de7-04d4b3944492",
+  "cmdId": "719a35b8-91e9-40fd-bde8-1de98188c0ed",
   "state": "CS_PASSED"
  }
 }
@@ -207,10 +207,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072812",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728228",
  "buildStep": {
-  "cmdId": "566f5995-1612-49bf-84c9-ca68b8ae56f5",
+  "cmdId": "c89ced59-fb35-41e9-94eb-575877d0885a",
   "name": "export_design",
   "logFile": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/hls.log",
   "commandLine": "export_design -flow none -format ip_catalog",
@@ -228,10 +228,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072812",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728228",
  "status": {
-  "cmdId": "566f5995-1612-49bf-84c9-ca68b8ae56f5",
+  "cmdId": "c89ced59-fb35-41e9-94eb-575877d0885a",
   "state": "CS_RUNNING"
  }
 }
@@ -239,8 +239,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072813",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728229",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/hls_data.json",
   "name": "",
@@ -253,8 +253,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072813",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728229",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.rpt",
   "name": "",
@@ -267,8 +267,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:04:32 2024",
- "timestampMillis": "1716545072814",
+ "dateTimestamp": "Thu May 30 19:32:08 2024",
+ "timestampMillis": "1717086728229",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth.xml",
   "name": "",
@@ -281,8 +281,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:05:09 2024",
- "timestampMillis": "1716545109921",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765320",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -295,8 +295,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:05:09 2024",
- "timestampMillis": "1716545109922",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765320",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -309,8 +309,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:05:09 2024",
- "timestampMillis": "1716545109922",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765321",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/hls",
   "name": "",
@@ -323,10 +323,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:05:09 2024",
- "timestampMillis": "1716545109923",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765321",
  "status": {
-  "cmdId": "566f5995-1612-49bf-84c9-ca68b8ae56f5",
+  "cmdId": "c89ced59-fb35-41e9-94eb-575877d0885a",
   "state": "CS_PASSED"
  }
 }
@@ -334,10 +334,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May 24 13:05:10 2024",
- "timestampMillis": "1716545110143",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765442",
  "status": {
-  "cmdId": "a655b185-52c2-4624-8229-31232c9ce205",
+  "cmdId": "65b2b859-b68d-447b-a938-c24a40b2c323",
   "state": "CS_PASSED"
  }
 }
@@ -345,8 +345,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:05:10 2024",
- "timestampMillis": "1716545110186",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765464",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/reports/v++_compile_work_guidance.html",
   "name": "",
@@ -359,8 +359,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May 24 13:05:10 2024",
- "timestampMillis": "1716545110188",
+ "dateTimestamp": "Thu May 30 19:32:45 2024",
+ "timestampMillis": "1717086765464",
  "report": {
   "path": "/home/cristi/Documents/ACES/RC-Project/HLS/work/reports/.db/v++_compile_work_guidance.pb3",
   "name": "",

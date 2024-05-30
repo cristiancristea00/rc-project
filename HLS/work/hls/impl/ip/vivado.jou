@@ -3,12 +3,12 @@
 # SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
 # IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
 # SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Fri May 24 13:04:38 2024
-# Process ID: 289562
+# Start of session at: Thu May 30 19:32:13 2024
+# Process ID: 7289
 # Current directory: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/impl/ip/vivado.log
 # Journal file: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/impl/ip/vivado.jou
-# Running On: Hephaestion, OS: Linux, CPU Frequency: 2100.068 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 2600.473 MHz, CPU Physical cores: 6, Host memory: 16631 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace

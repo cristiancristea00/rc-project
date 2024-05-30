@@ -2,13 +2,13 @@
 Pass:            inline
 Name:            AlwaysInline
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 43, Column: 26 }
+                   Line: 41, Column: 26 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Inlining function '''
   - Callee:          'Pad(int&, int&, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 59, Column: 0 }
+                       Line: 57, Column: 0 }
   - String:          ''' into '''
   - Caller:          'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -55,18 +55,18 @@ Args:
 Pass:            reflow-burst-inference
 Name:            AccessInCondBranch
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 48, Column: 28 }
+                   Line: 46, Column: 28 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Access '
   - Access:          load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 48, Column: 28 }
+                       Line: 46, Column: 28 }
   - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 48, Column: 28 }
+                       Line: 46, Column: 28 }
   - OrigDirection:   read
   - OrigID:          if.end.load.6
   - ArrayName:       image_in
@@ -86,18 +86,18 @@ Args:
 Pass:            reflow-burst-inference
 Name:            AccessInCondBranch
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 48, Column: 63 }
+                   Line: 46, Column: 63 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Access '
   - Access:          load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 48, Column: 63 }
+                       Line: 46, Column: 63 }
   - String:          ' is in the conditional branch'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 48, Column: 63 }
+                       Line: 46, Column: 63 }
   - OrigDirection:   read
   - OrigID:          if.end.load.10
   - ArrayName:       kernel
@@ -117,7 +117,7 @@ Args:
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 87, Column: 27 }
+                   Line: 85, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''
@@ -132,7 +132,7 @@ Args:
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 95, Column: 27 }
+                   Line: 93, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''

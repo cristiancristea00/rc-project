@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'LinearImageFilter'" level="0">
-<item name = "Date">Fri May 24 13:04:30 2024
+<item name = "Date">Thu May 30 19:32:06 2024
 </item>
 <item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
 <item name = "Project">work</item>
@@ -31,14 +31,13 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_cols_fu_254">LinearImageFilter_Pipeline_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210">LinearImageFilter_Pipeline_ker_rows_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- img_rows">?, ?, ?, -, -, ?, no</column>
 <column name=" + img_cols">?, ?, ?, -, -, ?, no</column>
-<column name="  ++ ker_rows">?, ?, ?, -, -, ?, no</column>
 </table>
 </item>
 </section>

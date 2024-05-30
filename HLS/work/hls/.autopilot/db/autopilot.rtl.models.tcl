@@ -1,5 +1,5 @@
 set SynModuleInfo {
-  {SRCNAME LinearImageFilter_Pipeline_ker_cols MODELNAME LinearImageFilter_Pipeline_ker_cols RTLNAME LinearImageFilter_LinearImageFilter_Pipeline_ker_cols
+  {SRCNAME LinearImageFilter_Pipeline_ker_rows_ker_cols MODELNAME LinearImageFilter_Pipeline_ker_rows_ker_cols RTLNAME LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols
     SUBMODULES {
       {MODELNAME LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1 RTLNAME LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 4 ALLOW_PRAGMA 1}
       {MODELNAME LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1 RTLNAME LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 3 ALLOW_PRAGMA 1}
@@ -9,6 +9,7 @@ set SynModuleInfo {
   }
   {SRCNAME LinearImageFilter MODELNAME LinearImageFilter RTLNAME LinearImageFilter IS_TOP 1
     SUBMODULES {
+      {MODELNAME LinearImageFilter_mul_32ns_32ns_64_2_1 RTLNAME LinearImageFilter_mul_32ns_32ns_64_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
       {MODELNAME LinearImageFilter_mul_32s_32s_32_2_1 RTLNAME LinearImageFilter_mul_32s_32s_32_2_1 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
       {MODELNAME LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 RTLNAME LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 BINDTYPE op TYPE udiv IMPL auto_seq LATENCY 35 ALLOW_PRAGMA 1}
       {MODELNAME LinearImageFilter_udiv_32ns_32ns_30_36_seq_1 RTLNAME LinearImageFilter_udiv_32ns_32ns_30_36_seq_1 BINDTYPE op TYPE udiv IMPL auto_seq LATENCY 35 ALLOW_PRAGMA 1}

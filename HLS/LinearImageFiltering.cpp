@@ -35,8 +35,6 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
             {
                 ker_cols: for (uint32_t j = 0; j < kernel_dim; ++j)
                 {
-                    #pragma HLS LOOP_FLATTEN off
-
                     newRow = static_cast<int32_t>(row + i) - kernel_dim / 2;
                     newCol = static_cast<int32_t>(col + j) - kernel_dim / 2;
 

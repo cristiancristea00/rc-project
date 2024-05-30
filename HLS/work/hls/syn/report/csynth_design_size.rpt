@@ -29,15 +29,15 @@
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
 |               | (1) lowering                | 138          | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           | 144          | high level synthesis optimizations                                                     |
+|               | (2) optimizations           | 143          | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
 +---------------------+-----------------------------+--------------+---------------+--------------+-------------+---------------+
 | Function            | Location                    | Compile/Link | Unroll/Inline | Array/Struct | Performance | HW Transforms |
 +---------------------+-----------------------------+--------------+---------------+--------------+-------------+---------------+
-| + LinearImageFilter | LinearImageFiltering.cpp:7  | 172          | 114           | 117          | 114         | 144           |
-|    Pad              | LinearImageFiltering.cpp:58 |  77          |               |              |             |               |
+| + LinearImageFilter | LinearImageFiltering.cpp:7  | 172          | 114           | 117          | 114         | 143           |
+|    Pad              | LinearImageFiltering.cpp:56 |  77          |               |              |             |               |
 +---------------------+-----------------------------+--------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings

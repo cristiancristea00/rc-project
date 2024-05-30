@@ -2038,7 +2038,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d3a3fc0d</spirit:value>
+            <spirit:value>265daaae</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2057,7 +2057,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>cb18e73d</spirit:value>
+            <spirit:value>3c48d54e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2076,7 +2076,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>50d800af</spirit:value>
+            <spirit:value>8eef9144</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2095,7 +2095,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>654d5c99</spirit:value>
+            <spirit:value>cba9e042</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5179,11 +5179,15 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_cols.v</spirit:name>
+        <spirit:name>hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -5251,12 +5255,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_cols.v</spirit:name>
+        <spirit:name>hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -5345,11 +5354,15 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/LinearImageFilter_LinearImageFilter_Pipeline_ker_cols.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/LinearImageFilter_mul_30s_30s_30_2_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/LinearImageFilter_mul_32ns_32ns_64_2_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -5367,7 +5380,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/LinearImageFilter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_29553a2b</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ad08037f</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -5418,12 +5431,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/LinearImageFilter_LinearImageFilter_Pipeline_ker_cols.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/LinearImageFilter_mul_30s_30s_30_2_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/LinearImageFilter_mul_32ns_32ns_64_2_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -5908,7 +5926,7 @@
       <xilinx:displayName>Linear Image Filtering</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
       <xilinx:coreRevision>0</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-05-24T10:04:59Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-05-30T16:32:35Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -5919,7 +5937,7 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1fe55220"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="0c78f690"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="15a2556c"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3729fe76"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="31331a84"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="417565b0"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="30fa342e"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="66911506"/>

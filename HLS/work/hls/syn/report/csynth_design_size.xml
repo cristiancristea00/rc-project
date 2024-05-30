@@ -25,15 +25,15 @@
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
             <column name="">(1) lowering, 138, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations, 144, high level synthesis optimizations</column>
+            <column name="">(2) optimizations, 143, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="LinearImageFilter" col1="LinearImageFiltering.cpp:7" col2="172" col3="114" col4="117" col5="114" col6="144">
-                    <row id="1" col0="Pad" col1="LinearImageFiltering.cpp:58" col2="77" col3="" col4="" col5="" col6=""/>
+                <row id="0" col0="LinearImageFilter" col1="LinearImageFiltering.cpp:7" col2="172" col3="114" col4="117" col5="114" col6="143">
+                    <row id="1" col0="Pad" col1="LinearImageFiltering.cpp:56" col2="77" col3="" col4="" col5="" col6=""/>
                 </row>
             </rows>
             <notes/>

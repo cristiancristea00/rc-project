@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'LinearImageFilter'
 ================================================================
 + General Information: 
-    * Date:           Fri May 24 13:04:30 2024
+    * Date:           Thu May 30 19:32:06 2024
     * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
     * Project:        work
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,17 +15,16 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +-------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
-    |                  Modules                  | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |         |           |            |     |
-    |                  & Loops                  | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF    |     LUT    | URAM|
-    +-------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
-    |+ LinearImageFilter                        |     -|  0.00|        -|       -|         -|        -|     -|        no|  12 (4%)|  11 (5%)|  6552 (6%)|  6596 (12%)|    -|
-    | o img_rows                                |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
-    |  o img_cols                               |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
-    |   o ker_rows                              |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
-    |    + LinearImageFilter_Pipeline_ker_cols  |     -|  0.00|        -|       -|         -|        -|     -|        no|        -|   8 (3%)|  1235 (1%)|   2081 (3%)|    -|
-    |     o ker_cols                            |    II|  7.30|        -|       -|        25|        5|     -|       yes|        -|        -|          -|           -|    -|
-    +-------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
+    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
+    |                      Modules                      | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |         |           |            |     |
+    |                      & Loops                      | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF    |     LUT    | URAM|
+    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
+    |+ LinearImageFilter                                |     -|  0.00|        -|       -|         -|        -|     -|        no|  12 (4%)|  15 (6%)|  6993 (6%)|  6836 (12%)|    -|
+    | o img_rows                                        |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
+    |  o img_cols                                       |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols  |     -|  0.00|        -|       -|         -|        -|     -|        no|        -|   8 (3%)|  1678 (1%)|   2568 (4%)|    -|
+    |    o ker_rows_ker_cols                            |    II|  7.30|        -|       -|        26|        5|     -|       yes|        -|        -|          -|           -|    -|
+    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
 
 
 ================================================================
@@ -124,8 +123,8 @@
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
 | HW Interface   | Variable | Access Location                                                           | Direction | Burst Status | Loop     | Loop Location                                                             | Resolution | Problem                                  |
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
-| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48:28 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
-| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:48:63 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
+| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:46:28 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
+| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:46:63 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
 
     * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
@@ -133,35 +132,36 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+----------------------------------------+-----+--------+------------+------+---------+---------+
-| Name                                   | DSP | Pragma | Variable   | Op   | Impl    | Latency |
-+----------------------------------------+-----+--------+------------+------+---------+---------+
-| + LinearImageFilter                    | 11  |        |            |      |         |         |
-|   newRow_4_fu_310_p2                   |     |        | newRow_4   | add  | fabric  | 0       |
-|   newCol_2_fu_328_p2                   |     |        | newCol_2   | add  | fabric  | 0       |
-|   add_fu_359_p2                        |     |        | add        | sub  | fabric  | 0       |
-|   add_ln34_fu_378_p2                   |     |        | add_ln34   | add  | fabric  | 0       |
-|   i_1_fu_388_p2                        |     |        | i_1        | add  | fabric  | 0       |
-|   newRow_fu_394_p2                     |     |        | newRow     | add  | fabric  | 0       |
-|   mul_32s_32s_32_2_1_U29               | 3   |        | mul_ln52   | mul  | auto    | 1       |
-|   out_idx_fu_492_p2                    |     |        | out_idx    | add  | fabric  | 0       |
-|   add_ln53_fu_505_p2                   |     |        | add_ln53   | add  | fabric  | 0       |
-|   col_1_fu_471_p2                      |     |        | col_1      | add  | fabric  | 0       |
-|   row_3_fu_369_p2                      |     |        | row_3      | add  | fabric  | 0       |
-|  + LinearImageFilter_Pipeline_ker_cols | 8   |        |            |      |         |         |
-|    add_ln36_fu_357_p2                  |     |        | add_ln36   | add  | fabric  | 0       |
-|    neg_fu_387_p2                       |     |        | neg        | sub  | fabric  | 0       |
-|    newRow_3_fu_404_p2                  |     |        | newRow_3   | add  | fabric  | 0       |
-|    neg1_fu_420_p2                      |     |        | neg1       | sub  | fabric  | 0       |
-|    newCol_4_fu_437_p2                  |     |        | newCol_4   | add  | fabric  | 0       |
-|    mul_30s_30s_30_2_1_U3               | 3   |        | mul_ln48   | mul  | auto    | 1       |
-|    add_ln48_fu_585_p2                  |     |        | add_ln48   | add  | fabric  | 0       |
-|    add_ln48_1_fu_598_p2                |     |        | add_ln48_1 | add  | fabric  | 0       |
-|    add_ln48_2_fu_488_p2                |     |        | add_ln48_2 | add  | fabric  | 0       |
-|    add_ln48_3_fu_501_p2                |     |        | add_ln48_3 | add  | fabric  | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U2    | 3   |        | mul        | fmul | maxdsp  | 3       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U1   | 2   |        | sum_2      | fadd | fulldsp | 4       |
-+----------------------------------------+-----+--------+------------+------+---------+---------+
++-------------------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                            | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++-------------------------------------------------+-----+--------+------------+------+---------+---------+
+| + LinearImageFilter                             | 15  |        |            |      |         |         |
+|   newRow_4_fu_282_p2                            |     |        | newRow_4   | add  | fabric  | 0       |
+|   newCol_2_fu_294_p2                            |     |        | newCol_2   | add  | fabric  | 0       |
+|   mul_32s_32s_32_2_1_U27                        | 4   |        | mul_ln7    | mul  | auto    | 1       |
+|   add_fu_314_p2                                 |     |        | add        | sub  | fabric  | 0       |
+|   mul_32s_32s_32_2_1_U27                        | 3   |        | mul_ln50   | mul  | auto    | 1       |
+|   out_idx_fu_358_p2                             |     |        | out_idx    | add  | fabric  | 0       |
+|   add_ln51_fu_371_p2                            |     |        | add_ln51   | add  | fabric  | 0       |
+|   col_1_fu_337_p2                               |     |        | col_1      | add  | fabric  | 0       |
+|   row_3_fu_342_p2                               |     |        | row_3      | add  | fabric  | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols | 8   |        |            |      |         |         |
+|    add_ln34_fu_322_p2                           |     |        | add_ln34   | add  | fabric  | 0       |
+|    add_ln34_1_fu_339_p2                         |     |        | add_ln34_1 | add  | fabric  | 0       |
+|    newRow_fu_359_p2                             |     |        | newRow     | add  | fabric  | 0       |
+|    neg_fu_479_p2                                |     |        | neg        | sub  | fabric  | 0       |
+|    newRow_5_fu_496_p2                           |     |        | newRow_5   | add  | fabric  | 0       |
+|    neg1_fu_512_p2                               |     |        | neg1       | sub  | fabric  | 0       |
+|    newCol_4_fu_529_p2                           |     |        | newCol_4   | add  | fabric  | 0       |
+|    mul_30s_30s_30_2_1_U3                        | 3   |        | mul_ln46   | mul  | auto    | 1       |
+|    add_ln46_fu_690_p2                           |     |        | add_ln46   | add  | fabric  | 0       |
+|    add_ln46_1_fu_703_p2                         |     |        | add_ln46_1 | add  | fabric  | 0       |
+|    add_ln46_2_fu_634_p2                         |     |        | add_ln46_2 | add  | fabric  | 0       |
+|    add_ln46_3_fu_647_p2                         |     |        | add_ln46_3 | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2             | 3   |        | mul        | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1            | 2   |        | sum_1      | fadd | fulldsp | 4       |
+|    add_ln36_fu_672_p2                           |     |        | add_ln36   | add  | fabric  | 0       |
++-------------------------------------------------+-----+--------+------------+------+---------+---------+
 
 
 ================================================================
@@ -183,21 +183,20 @@
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+--------------+----------------------------------------------------------------------------------+--------------------------------------------------+
-| Type         | Options                                                                          | Location                                         |
-+--------------+----------------------------------------------------------------------------------+--------------------------------------------------+
-| interface    | mode = m_axi port = image_out bundle = image_out offset = slave depth = 10000000 | LinearImageFiltering.cpp:9 in linearimagefilter  |
-| interface    | mode = m_axi port = image_in bundle = image_in offset = slave depth = 10000000   | LinearImageFiltering.cpp:10 in linearimagefilter |
-| interface    | mode = m_axi port = kernel bundle = kernel offset = slave depth = 1000           | LinearImageFiltering.cpp:11 in linearimagefilter |
-| interface    | mode = s_axilite port = rows                                                     | LinearImageFiltering.cpp:13 in linearimagefilter |
-| interface    | mode = s_axilite port = cols                                                     | LinearImageFiltering.cpp:14 in linearimagefilter |
-| interface    | mode = s_axilite port = kernel_dim                                               | LinearImageFiltering.cpp:15 in linearimagefilter |
-| interface    | mode = s_axilite port = stride_row                                               | LinearImageFiltering.cpp:16 in linearimagefilter |
-| interface    | mode = s_axilite port = stride_col                                               | LinearImageFiltering.cpp:17 in linearimagefilter |
-| interface    | mode = s_axilite port = padding                                                  | LinearImageFiltering.cpp:18 in linearimagefilter |
-| interface    | mode = s_axilite port = return                                                   | LinearImageFiltering.cpp:19 in linearimagefilter |
-| loop_flatten | off                                                                              | LinearImageFiltering.cpp:38 in linearimagefilter |
-| inline       |                                                                                  | LinearImageFiltering.cpp:60 in pad               |
-+--------------+----------------------------------------------------------------------------------+--------------------------------------------------+
++-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
+| Type      | Options                                                                          | Location                                         |
++-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
+| interface | mode = m_axi port = image_out bundle = image_out offset = slave depth = 10000000 | LinearImageFiltering.cpp:9 in linearimagefilter  |
+| interface | mode = m_axi port = image_in bundle = image_in offset = slave depth = 10000000   | LinearImageFiltering.cpp:10 in linearimagefilter |
+| interface | mode = m_axi port = kernel bundle = kernel offset = slave depth = 1000           | LinearImageFiltering.cpp:11 in linearimagefilter |
+| interface | mode = s_axilite port = rows                                                     | LinearImageFiltering.cpp:13 in linearimagefilter |
+| interface | mode = s_axilite port = cols                                                     | LinearImageFiltering.cpp:14 in linearimagefilter |
+| interface | mode = s_axilite port = kernel_dim                                               | LinearImageFiltering.cpp:15 in linearimagefilter |
+| interface | mode = s_axilite port = stride_row                                               | LinearImageFiltering.cpp:16 in linearimagefilter |
+| interface | mode = s_axilite port = stride_col                                               | LinearImageFiltering.cpp:17 in linearimagefilter |
+| interface | mode = s_axilite port = padding                                                  | LinearImageFiltering.cpp:18 in linearimagefilter |
+| interface | mode = s_axilite port = return                                                   | LinearImageFiltering.cpp:19 in linearimagefilter |
+| inline    |                                                                                  | LinearImageFiltering.cpp:58 in pad               |
++-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
 
 

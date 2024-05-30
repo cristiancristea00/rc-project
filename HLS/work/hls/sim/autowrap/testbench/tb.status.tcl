@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/./sim/autowrap/testbench/LinearImageFiltering.cpp_pre.cpp.tb.cpp

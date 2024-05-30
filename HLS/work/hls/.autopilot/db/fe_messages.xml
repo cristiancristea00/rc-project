@@ -32,14 +32,11 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:19:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode = s_axilite port = return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:38:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="LinearImageFilter" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:60:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:58:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="Pad" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:26" msg_body="Inlining function 'Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)' into 'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'">
-        <args Callee="Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)" Callee-DebugLoc="File /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 59 Column 0" Caller="LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)" Caller-DebugLoc="File /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 8 Column 0"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:41:26" msg_body="Inlining function 'Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)' into 'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'">
+        <args Callee="Pad(int&amp;, int&amp;, unsigned int, unsigned int, Padding)" Callee-DebugLoc="File /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 57 Column 0" Caller="LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)" Caller-DebugLoc="File /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp Line 8 Column 0"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

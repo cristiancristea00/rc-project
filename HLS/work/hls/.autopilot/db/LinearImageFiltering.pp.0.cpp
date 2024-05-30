@@ -6892,9 +6892,7 @@ __attribute__((sdx_kernel("LinearImageFilter", 0))) auto LinearImageFilter(float
             {
                 ker_cols: for (uint32_t j = 0; j < kernel_dim; ++j)
                 {
-#pragma HLS LOOP_FLATTEN off
-
- newRow = static_cast<int32_t>(row + i) - kernel_dim / 2;
+                    newRow = static_cast<int32_t>(row + i) - kernel_dim / 2;
                     newCol = static_cast<int32_t>(col + j) - kernel_dim / 2;
 
                     if (!Pad(newRow, newCol, rows, cols, padding))
