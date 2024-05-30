@@ -1,11 +1,11 @@
 {
   "0": {
-    "basicblocks": 21,
+    "basicblocks": 246,
     "calls": "",
     "file": "LinearImageFiltering.cpp",
     "fileloc": 7,
-    "instructions": 140,
+    "instructions": 1445,
     "name": "LinearImageFilter",
-    "total_instructions": 140
+    "total_instructions": 1445
   }
 }

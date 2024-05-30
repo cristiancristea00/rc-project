@@ -173,7 +173,7 @@
       "config_export -ipname=LinearImageFiltering",
       "config_export -taxonomy=ImageProcessing",
       "config_export -vendor=Cristi",
-      "config_export -version=0.2.0",
+      "config_export -version=0.3.0",
       "config_export -output=\/home\/cristi\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering",
       "config_export -format=ip_catalog",
       "config_export -rtl=verilog",
@@ -203,13 +203,13 @@
     "Vendor": "Cristi",
     "Library": "Image",
     "Name": "LinearImageFiltering",
-    "Version": "0.2",
+    "Version": "0.3",
     "DisplayName": "Linear Image Filtering",
     "Revision": "0",
     "Description": "Linear Image Filtering using HSL",
     "Taxonomy": "\/ImageProcessing",
     "AutoFamilySupport": "",
-    "ZipFile": "Cristi_Image_LinearImageFiltering_0_2.zip"
+    "ZipFile": "Cristi_Image_LinearImageFiltering_0_3.zip"
   },
   "Files": {
     "CSource": ["\/home\/cristi\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering.cpp"],
@@ -222,6 +222,21 @@
       "impl\/vhdl\/LinearImageFilter_image_out_m_axi.vhd",
       "impl\/vhdl\/LinearImageFilter_kernel_m_axi.vhd",
       "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols1.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols2.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols3.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols4.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols5.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols6.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols7.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols8.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols9.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols10.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols11.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols12.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols13.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols14.vhd",
+      "impl\/vhdl\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols15.vhd",
       "impl\/vhdl\/LinearImageFilter_mul_30s_30s_30_2_1.vhd",
       "impl\/vhdl\/LinearImageFilter_mul_32ns_32ns_64_2_1.vhd",
       "impl\/vhdl\/LinearImageFilter_mul_32s_32s_32_2_1.vhd",
@@ -238,6 +253,21 @@
       "impl\/verilog\/LinearImageFilter_image_out_m_axi.v",
       "impl\/verilog\/LinearImageFilter_kernel_m_axi.v",
       "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols1.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols2.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols3.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols4.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols5.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols6.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols7.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols8.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols9.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols10.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols11.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols12.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols13.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols14.v",
+      "impl\/verilog\/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols15.v",
       "impl\/verilog\/LinearImageFilter_mul_30s_30s_30_2_1.v",
       "impl\/verilog\/LinearImageFilter_mul_32ns_32ns_64_2_1.v",
       "impl\/verilog\/LinearImageFilter_mul_32s_32s_32_2_1.v",
@@ -246,16 +276,16 @@
       "impl\/verilog\/LinearImageFilter.v"
     ],
     "SwDriver": [
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.mdd",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.tcl",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.yaml",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/CMakeLists.txt",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/Makefile",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter.c",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter.h",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_hw.h",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_linux.c",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_sinit.c"
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/data\/LinearImageFilter.mdd",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/data\/LinearImageFilter.tcl",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/data\/LinearImageFilter.yaml",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/CMakeLists.txt",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/Makefile",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/xlinearimagefilter.c",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/xlinearimagefilter.h",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/xlinearimagefilter_hw.h",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/xlinearimagefilter_linux.c",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_3\/src\/xlinearimagefilter_sinit.c"
     ],
     "IpMisc": ["impl\/misc\/logo.png"],
     "Subcore": [
@@ -1636,13 +1666,180 @@
   "ModuleInfo": {
     "Hierarchy": {
       "ModuleName": "LinearImageFilter",
-      "Instances": [{
+      "Instances": [
+        {
           "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols",
-          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220"
-        }]
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_550"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols1",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols1_fu_575"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols2",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols2_fu_599"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols3",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols3_fu_623"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols4",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols4_fu_647"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols5",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols5_fu_671"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols6",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols6_fu_695"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols7",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols7_fu_719"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols8",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols8_fu_743"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols9",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols9_fu_767"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols10",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols10_fu_791"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols11",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols11_fu_815"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols12",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols12_fu_839"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols13",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols13_fu_863"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols14",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols14_fu_887"
+        },
+        {
+          "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols15",
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols15_fu_911"
+        }
+      ]
     },
     "Info": {
       "LinearImageFilter_Pipeline_ker_rows_ker_cols": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols1": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols2": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols3": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols4": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols5": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols6": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols7": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols8": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols9": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols10": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols11": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols12": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols13": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols14": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols15": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "0",
         "isPipelined": "1",
@@ -1660,10 +1857,12 @@
     "Metrics": {
       "LinearImageFilter_Pipeline_ker_rows_ker_cols": {
         "Latency": {
-          "LatencyBest": "",
-          "LatencyAvg": "",
-          "LatencyWorst": "",
-          "PipelineII": "",
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
           "PipelineDepth": "",
           "PipelineType": "no"
         },
@@ -1675,23 +1874,670 @@
         "Loops": [{
             "Name": "ker_rows_ker_cols",
             "TripCount": "",
-            "Latency": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
             "PipelineII": "5",
             "PipelineDepth": "26"
           }],
         "Area": {
-          "DSP": "8",
-          "AVAIL_DSP": "220",
-          "UTIL_DSP": "3",
-          "FF": "1678",
+          "FF": "1212",
           "AVAIL_FF": "106400",
           "UTIL_FF": "1",
-          "LUT": "2568",
+          "LUT": "1812",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "4",
+          "UTIL_LUT": "3",
           "BRAM_18K": "0",
           "AVAIL_BRAM": "280",
           "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols1": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols2": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols3": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols4": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols5": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols6": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols7": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols8": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols9": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols10": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols11": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols12": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols13": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols14": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "LinearImageFilter_Pipeline_ker_rows_ker_cols15": {
+        "Latency": {
+          "LatencyBest": "67",
+          "LatencyAvg": "147",
+          "LatencyWorst": "627",
+          "PipelineIIMin": "67",
+          "PipelineIIMax": "627",
+          "PipelineII": "67 ~ 627",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.300"
+        },
+        "Loops": [{
+            "Name": "ker_rows_ker_cols",
+            "TripCount": "",
+            "LatencyMin": "65",
+            "LatencyMax": "625",
+            "Latency": "65 ~ 625",
+            "PipelineII": "5",
+            "PipelineDepth": "26"
+          }],
+        "Area": {
+          "FF": "1212",
+          "AVAIL_FF": "106400",
+          "UTIL_FF": "1",
+          "LUT": "1812",
+          "AVAIL_LUT": "53200",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "280",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "0",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1722,7 +2568,9 @@
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
-                "PipelineDepth": ""
+                "PipelineDepthMin": "1763",
+                "PipelineDepthMax": "10723",
+                "PipelineDepth": "1763 ~ 10723"
               }]
           }],
         "Area": {
@@ -1732,12 +2580,12 @@
           "DSP": "15",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "6",
-          "FF": "6993",
+          "FF": "33094",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "6",
-          "LUT": "6836",
+          "UTIL_FF": "31",
+          "LUT": "44091",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "12",
+          "UTIL_LUT": "82",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1748,7 +2596,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-05-30 20:38:04 EEST",
+    "Time": "2024-05-30 21:28:14 EEST",
     "ToolName": "vitis_hls",
     "ToolVersion": "2023.2.2"
   }

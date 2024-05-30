@@ -24,6 +24,24 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
+set name LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 4 ALLOW_PRAGMA 1
+}
+
+
+set name LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 3 ALLOW_PRAGMA 1
+}
+
+
+set name LinearImageFilter_mul_30s_30s_30_2_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler LinearImageFilter_image_out_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
@@ -134,7 +152,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 35 \
+			id 383 \
 			corename LinearImageFilter_control_axilite \
 			name LinearImageFilter_control_s_axi \
 			ports {$port_control} \

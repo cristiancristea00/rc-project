@@ -1,0 +1,212 @@
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/cristi/Documents/ACES/RC-Project/HLS/work/work.hlscompile_summary, at Thu May 30 20:37:51 2024
+INFO: [v++ 82-31] Launching vitis_hls: vitis_hls -nolog -run csynth -work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work -config /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg -cmdlineconfig /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2.2 (64-bit)
+  **** SW Build 4101106 on Feb  9 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /home/cristi/AMD/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/cristi/AMD/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'cristi' on host 'hephaestion' (Linux_x86_64 version 6.8.0-31-generic) on Thu May 30 20:37:53 EEST 2024
+INFO: [HLS 200-10] On os Ubuntu 24.04 LTS
+INFO: [HLS 200-10] In directory '/home/cristi/Documents/ACES/RC-Project/HLS'
+INFO: [HLS 200-1909] Reading HLS ini file /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg
+INFO: [HLS 200-1909] Reading HLS ini file /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
+INFO: [HLS 200-2005] Using work_dir /home/cristi/Documents/ACES/RC-Project/HLS/work 
+INFO: [HLS 200-1510] Running: open_project /home/cristi/Documents/ACES/RC-Project/HLS/work -diskless 
+INFO: [HLS 200-1510] Running: open_solution hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: apply_ini /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg 
+INFO: [HLS 200-1909] Reading HLS ini file /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg
+INFO: [HLS 200-1465] Applying ini 'syn.file=LinearImageFiltering.cpp' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(6)
+INFO: [HLS 200-10] Adding design file '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-std=c++14 -fno-builtin' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'syn.csimflags=-std=c++14 -fno-builtin' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'tb.file=LinearImageFilteringTestbench.cpp' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFilteringTestbench.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=Matrix.cpp' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file '/home/cristi/Documents/ACES/RC-Project/HLS/Matrix.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-std=c++17 -fno-builtin -I/usr/local/include/opencv4' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'syn.top=LinearImageFilter' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(5)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xc7z020clg400-1' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying ini 'clock=100MHz' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(4)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'cosim.O=true' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(20)
+INFO: [HLS 200-1465] Applying ini 'cosim.disable_binary_tv=true' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(22)
+INFO: [HLS 200-1465] Applying ini 'cosim.ldflags=-L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'csim.ldflags=-L /usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'package.ip.description=Linear Image Filtering using HSL' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(26)
+INFO: [HLS 200-1465] Applying ini 'package.ip.display_name=Linear Image Filtering' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(27)
+INFO: [HLS 200-1465] Applying ini 'package.ip.library=Image' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(28)
+INFO: [HLS 200-1465] Applying ini 'package.ip.name=LinearImageFiltering' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(29)
+INFO: [HLS 200-1465] Applying ini 'package.ip.taxonomy=ImageProcessing' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(30)
+INFO: [HLS 200-1465] Applying ini 'package.ip.vendor=Cristi' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(31)
+INFO: [HLS 200-1465] Applying ini 'package.ip.version=0.2.0' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(32)
+INFO: [HLS 200-1465] Applying ini 'package.output.file=LinearImageFiltering' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(25)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(23)
+INFO: [HLS 200-1465] Applying ini 'syn.compile.pragma_strict_mode=1' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(16)
+INFO: [HLS 200-1465] Applying ini 'syn.compile.unsafe_math_optimizations=1' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(17)
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_addr64=0' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(18)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.m_axi_cache_impl=bram' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(15)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.s_axilite_data64=0' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(19)
+INFO: [HLS 200-1465] Applying ini 'vivado.rtl=verilog' at /home/cristi/Documents/ACES/RC-Project/HLS/config.cfg(21)
+INFO: [HLS 200-1510] Running: apply_ini /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline 
+INFO: [HLS 200-1909] Reading HLS ini file /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/config.cmdline
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 211.184 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.45 seconds. CPU system time: 0.26 seconds. Elapsed time: 0.71 seconds; current allocated memory: 213.316 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 174 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 149 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 110 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 119 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 117 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 140 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/cristi/Documents/ACES/RC-Project/HLS/work/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-131] Inlining function 'Pad(int&, int&, unsigned int, unsigned int, Padding)' into 'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)' (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:44:26)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< ker_cols> at /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:27 
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2 seconds. CPU system time: 0.28 seconds. Elapsed time: 6.96 seconds; current allocated memory: 215.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 215.824 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 216.352 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 216.566 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:86:21) to (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:102:17) in function 'LinearImageFilter'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'LinearImageFilter' (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:7:17)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 238.922 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'ker_rows'(/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:37:23) and 'ker_cols'(/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:27) in function 'LinearImageFilter' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'ker_rows' (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:37:23) in function 'LinearImageFilter'.
+WARNING: [HLS 200-960] Cannot flatten loop 'img_cols' (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:33:19) in function 'LinearImageFilter' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [HLS 200-960] Cannot flatten loop 'img_rows' (/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:31:15) in function 'LinearImageFilter' the outer loop is not a perfect loop because either the parent loop or the sub loop has no computeable trip count.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 239.781 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LinearImageFilter' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ker_rows_ker_cols'.
+WARNING: [HLS 200-880] The II Violation in module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' (loop 'ker_rows_ker_cols'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln24', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24) of variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49 on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24 and 'load' operation 32 bit ('sum_load_1', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49) on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' (loop 'ker_rows_ker_cols'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln24', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24) of variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49 on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24 and 'load' operation 32 bit ('sum_load_1', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49) on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' (loop 'ker_rows_ker_cols'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln24', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24) of variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49 on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24 and 'load' operation 32 bit ('sum_load_1', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49) on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' (loop 'ker_rows_ker_cols'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_write_ln24', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24) of variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49 on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24 and 'load' operation 32 bit ('sum_load_1', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49) on local variable 'sum', /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:24.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 27, loop 'ker_rows_ker_cols'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.13 seconds; current allocated memory: 242.988 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 242.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LinearImageFilter' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 242.988 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 242.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'LinearImageFilter_Pipeline_ker_rows_ker_cols' pipeline 'ker_rows_ker_cols' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_30s_30s_30_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LinearImageFilter_Pipeline_ker_rows_ker_cols'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 244.176 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LinearImageFilter' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/image_out' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/image_in' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/kernel' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/image_out_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/image_in_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/rows' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/cols' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/kernel_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/kernel_dim' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/stride_row' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/stride_col' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LinearImageFilter/padding' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'LinearImageFilter' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'image_out_offset', 'image_in_offset', 'rows', 'cols', 'kernel_offset', 'kernel_dim', 'stride_row', 'stride_col', 'padding' and 'return' to AXI-Lite port control.
+WARNING: [HLS 200-2088] Using the default maximum M_AXI bus width 1024 as the M_AXI adapter bus width on the port image_in.
+WARNING: [HLS 200-2088] Using the default maximum M_AXI bus width 1024 as the M_AXI adapter bus width on the port kernel.
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'udiv_32ns_32ns_30_36_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'udiv_32ns_32ns_32_36_seq_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LinearImageFilter'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 249.457 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 253.973 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.95 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.97 seconds; current allocated memory: 262.672 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for LinearImageFilter.
+INFO: [VLOG 209-307] Generating Verilog RTL for LinearImageFilter.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4.15 seconds. CPU system time: 0.63 seconds. Elapsed time: 9.47 seconds; current allocated memory: 51.621 MB.
+INFO: [HLS 200-1510] Running: export_design -flow none -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2023.2.2 (64-bit)
+  **** SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1332.898 ; gain = 0.027 ; free physical = 2562 ; free virtual = 12495
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/cristi/AMD/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/cristi/AMD/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Thu May 30 20:38:19 2024...
+INFO: [HLS 200-802] Generated output file LinearImageFiltering.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 16.98 seconds. CPU system time: 0.47 seconds. Elapsed time: 26.51 seconds; current allocated memory: 7.234 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 22.2 seconds. Total CPU system time: 1.28 seconds. Total elapsed time: 37.1 seconds; peak allocated memory: 269.906 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Thu May 30 20:38:29 2024...
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 40s

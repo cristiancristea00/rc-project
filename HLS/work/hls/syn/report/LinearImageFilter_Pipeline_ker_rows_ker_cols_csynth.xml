@@ -22,21 +22,36 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>undef</Best-caseLatency>
-<Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>undef</Worst-caseLatency>
-<Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
-<Interval-min>undef</Interval-min>
-<Interval-max>undef</Interval-max>
+<Best-caseLatency>67</Best-caseLatency>
+<Average-caseLatency>147</Average-caseLatency>
+<Worst-caseLatency>627</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.670 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.470 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>6.270 us</Worst-caseRealTimeLatency>
+<Interval-min>67</Interval-min>
+<Interval-max>627</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <ker_rows_ker_cols>
 <Slack>7.30</Slack>
-<TripCount>undef</TripCount>
-<Latency>undef</Latency>
-<AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+<TripCount>
+<range>
+<min>9</min>
+<max>121</max>
+</range>
+</TripCount>
+<Latency>
+<range>
+<min>65</min>
+<max>625</max>
+</range>
+</Latency>
+<AbsoluteTimeLatency>
+<range>
+<min>650</min>
+<max>6250</max>
+</range>
+</AbsoluteTimeLatency>
 <PipelineII>5</PipelineII>
 <PipelineDepth>26</PipelineDepth>
 <InstanceList>
@@ -46,14 +61,14 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39</SourceLocation>
+<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43</SourceLocation>
 <SummaryOfLoopViolations>
 <ker_rows_ker_cols>
 <Name>ker_rows_ker_cols</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Memory Dependency</ViolationType>
 <IterationDistance>1</IterationDistance>
-<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:37</SourceLocation>
+<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39</SourceLocation>
 </ker_rows_ker_cols>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -61,10 +76,10 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>8</DSP>
-<FF>1678</FF>
-<LUT>2568</LUT>
+<FF>1212</FF>
+<LUT>1812</LUT>
 <BRAM_18K>0</BRAM_18K>
+<DSP>0</DSP>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -144,7 +159,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_249_p_din0</name>
+<name>grp_fu_2998_p_din0</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -155,7 +170,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_249_p_din1</name>
+<name>grp_fu_2998_p_din1</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -166,7 +181,18 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_249_p_dout0</name>
+<name>grp_fu_2998_p_opcode</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>2</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_2998_p_dout0</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -177,7 +203,139 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_249_p_ce</name>
+<name>grp_fu_2998_p_ce</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3002_p_din0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3002_p_din1</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3002_p_dout0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3002_p_ce</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3006_p_din0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>30</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3006_p_din1</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>30</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3006_p_dout0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>30</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_3006_p_ce</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_939_p_din0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_939_p_din1</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_939_p_dout0</name>
+<Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_fu_939_p_ce</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -1233,8 +1391,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>add</name>
-<Object>add</Object>
+<name>add_0</name>
+<Object>add_0</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -1255,8 +1413,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>newRow_4</name>
-<Object>newRow_4</Object>
+<name>newRow_2</name>
+<Object>newRow_2</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -1277,8 +1435,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_26</name>
-<Object>empty_26</Object>
+<name>empty_41</name>
+<Object>empty_41</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

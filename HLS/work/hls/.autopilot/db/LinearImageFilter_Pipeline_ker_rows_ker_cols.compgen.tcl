@@ -1,23 +1,5 @@
 # This script segment is generated automatically by AutoPilot
 
-set name LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 4 ALLOW_PRAGMA 1
-}
-
-
-set name LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 3 ALLOW_PRAGMA 1
-}
-
-
-set name LinearImageFilter_mul_30s_30s_30_2_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
-}
-
-
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -28,7 +10,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 8 \
+    id 5 \
     name kernel \
     type other \
     dir I \
@@ -43,7 +25,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 9 \
+    id 6 \
     name image_in \
     type other \
     dir I \
@@ -58,7 +40,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 10 \
+    id 7 \
     name mul_ln7 \
     type other \
     dir I \
@@ -73,7 +55,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 11 \
+    id 8 \
     name padding \
     type other \
     dir I \
@@ -88,7 +70,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 12 \
+    id 9 \
     name kernel_dim \
     type other \
     dir I \
@@ -103,22 +85,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 13 \
-    name add \
+    id 10 \
+    name add_0 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_add \
+    corename dc_add_0 \
     op interface \
-    ports { add { I 32 vector } } \
+    ports { add_0 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 14 \
+    id 11 \
     name rows \
     type other \
     dir I \
@@ -133,22 +115,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 15 \
-    name newRow_4 \
+    id 12 \
+    name newRow_2 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_newRow_4 \
+    corename dc_newRow_2 \
     op interface \
-    ports { newRow_4 { I 30 vector } } \
+    ports { newRow_2 { I 30 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 16 \
+    id 13 \
     name col \
     type other \
     dir I \
@@ -163,22 +145,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 17 \
-    name empty_26 \
+    id 14 \
+    name empty_41 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_26 \
+    corename dc_empty_41 \
     op interface \
-    ports { empty_26 { I 31 vector } } \
+    ports { empty_41 { I 31 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 18 \
+    id 15 \
     name cols \
     type other \
     dir I \
@@ -193,7 +175,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 19 \
+    id 16 \
     name empty \
     type other \
     dir I \
@@ -208,7 +190,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 20 \
+    id 17 \
     name image_in_offset \
     type other \
     dir I \
@@ -223,7 +205,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 21 \
+    id 18 \
     name kernel_offset \
     type other \
     dir I \
@@ -238,7 +220,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 22 \
+    id 19 \
     name newCol_2 \
     type other \
     dir I \
@@ -253,7 +235,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 23 \
+    id 20 \
     name mul_i \
     type other \
     dir I \
@@ -268,7 +250,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 24 \
+    id 21 \
     name mul35_i \
     type other \
     dir I \
@@ -283,7 +265,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 25 \
+    id 22 \
     name sum_1_out \
     type other \
     dir O \

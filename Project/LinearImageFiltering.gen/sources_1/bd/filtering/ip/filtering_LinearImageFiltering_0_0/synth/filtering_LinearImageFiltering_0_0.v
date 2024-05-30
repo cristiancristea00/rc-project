@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Cristi:Image:LinearImageFiltering:0.2
+// IP VLNV: Cristi:Image:LinearImageFiltering:0.3
 // IP Revision: 0
 
 (* X_CORE_INFO = "LinearImageFilter,Vivado 2023.2.2" *)

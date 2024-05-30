@@ -45,7 +45,12 @@
 <TripCount>undef</TripCount>
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-<IterationLatency>undef</IterationLatency>
+<IterationLatency>
+<range>
+<min>1763</min>
+<max>10723</max>
+</range>
+</IterationLatency>
 <InstanceList>
 </InstanceList>
 </img_cols>
@@ -76,8 +81,8 @@
 <Resources>
 <BRAM_18K>12</BRAM_18K>
 <DSP>15</DSP>
-<FF>6993</FF>
-<LUT>6836</LUT>
+<FF>33094</FF>
+<LUT>44091</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

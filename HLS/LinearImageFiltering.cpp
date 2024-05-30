@@ -32,12 +32,18 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
     {
         img_cols: for (uint32_t col = 0; col < cols; col += stride_col)
         {
+            #pragma HLS UNROLL factor = 16
+
             sum = 0.0F;
 
             ker_rows: for (uint32_t i = 0; i < kernel_dim; ++i)
             {
+                #pragma HLS LOOP_TRIPCOUNT min = 3 max = 11 avg = 5
+
                 ker_cols: for (uint32_t j = 0; j < kernel_dim; ++j)
                 {
+                    #pragma HLS LOOP_TRIPCOUNT min = 3 max = 11 avg = 5
+
                     newRow = static_cast<int32_t>(row + i) - kernel_dim / 2;
                     newCol = static_cast<int32_t>(col + j) - kernel_dim / 2;
 

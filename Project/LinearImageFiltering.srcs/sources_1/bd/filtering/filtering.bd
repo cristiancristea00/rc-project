@@ -1938,7 +1938,7 @@
         }
       },
       "LinearImageFilter": {
-        "vlnv": "Cristi:Image:LinearImageFiltering:0.2",
+        "vlnv": "Cristi:Image:LinearImageFiltering:0.3",
         "ip_revision": "0",
         "xci_name": "filtering_LinearImageFiltering_0_0",
         "xci_path": "ip/filtering_LinearImageFiltering_0_0/filtering_LinearImageFiltering_0_0.xci",

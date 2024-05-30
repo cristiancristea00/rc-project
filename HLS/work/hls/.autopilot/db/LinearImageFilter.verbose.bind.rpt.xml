@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'LinearImageFilter'" level="0">
-<item name = "Date">Thu May 30 20:38:02 2024
+<item name = "Date">Thu May 30 21:28:07 2024
 </item>
 <item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
 <item name = "Project">work</item>
@@ -31,13 +31,28 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220">LinearImageFilter_Pipeline_ker_rows_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_550">LinearImageFilter_Pipeline_ker_rows_ker_cols, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols1_fu_575">LinearImageFilter_Pipeline_ker_rows_ker_cols1, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols2_fu_599">LinearImageFilter_Pipeline_ker_rows_ker_cols2, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols3_fu_623">LinearImageFilter_Pipeline_ker_rows_ker_cols3, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols4_fu_647">LinearImageFilter_Pipeline_ker_rows_ker_cols4, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols5_fu_671">LinearImageFilter_Pipeline_ker_rows_ker_cols5, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols6_fu_695">LinearImageFilter_Pipeline_ker_rows_ker_cols6, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols7_fu_719">LinearImageFilter_Pipeline_ker_rows_ker_cols7, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols8_fu_743">LinearImageFilter_Pipeline_ker_rows_ker_cols8, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols9_fu_767">LinearImageFilter_Pipeline_ker_rows_ker_cols9, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols10_fu_791">LinearImageFilter_Pipeline_ker_rows_ker_cols10, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols11_fu_815">LinearImageFilter_Pipeline_ker_rows_ker_cols11, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols12_fu_839">LinearImageFilter_Pipeline_ker_rows_ker_cols12, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols13_fu_863">LinearImageFilter_Pipeline_ker_rows_ker_cols13, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols14_fu_887">LinearImageFilter_Pipeline_ker_rows_ker_cols14, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols15_fu_911">LinearImageFilter_Pipeline_ker_rows_ker_cols15, 67, 627, 0.670 us, 6.270 us, 67, 627, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- img_rows">?, ?, ?, -, -, ?, no</column>
-<column name=" + img_cols">?, ?, ?, -, -, ?, no</column>
+<column name=" + img_cols">?, ?, 1763 ~ 10723, -, -, ?, no</column>
 </table>
 </item>
 </section>

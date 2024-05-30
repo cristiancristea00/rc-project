@@ -2,13 +2,13 @@
 Pass:            inline
 Name:            AlwaysInline
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 44, Column: 26 }
+                   Line: 50, Column: 26 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Inlining function '''
   - Callee:          'Pad(int&, int&, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 60, Column: 0 }
+                       Line: 66, Column: 0 }
   - String:          ''' into '''
   - Caller:          'LinearImageFilter(float*, float const*, unsigned int, unsigned int, float const*, unsigned int, unsigned int, unsigned int, Padding)'
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
@@ -55,14 +55,14 @@ Args:
 Pass:            reflow-burst-inference
 Name:            CacheUnderlyingObject
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 49, Column: 28 }
+                   Line: 55, Column: 28 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 49, Column: 28 }
+                       Line: 55, Column: 28 }
   - OrigDirection:   read
   - OrigID:          if.end.load.6
   - ArrayName:       image_in
@@ -78,14 +78,14 @@ Args:
 Pass:            reflow-burst-inference
 Name:            CacheUnderlyingObject
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 49, Column: 63 }
+                   Line: 55, Column: 63 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                       Line: 49, Column: 63 }
+                       Line: 55, Column: 63 }
   - OrigDirection:   read
   - OrigID:          if.end.load.10
   - ArrayName:       kernel
@@ -97,34 +97,503 @@ Args:
                        Line: 8, Column: 0 }
   - String:          ' '
 ...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 8, Column: 0 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        img_cols
+  - String:          ''' ('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:33:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          LinearImageFilter
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '16'
+...
 --- !Failure
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 88, Column: 27 }
+                   Line: 94, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''
-  - BBName:          if.then20.i
+  - BBName:          if.then20.i.0
   - String:          ''' living in '''
   - LoopName:        ker_cols
   - String:          '''('
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
   - String:          ') .'
 ...
 --- !Failure
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
 DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
-                   Line: 96, Column: 27 }
+                   Line: 102, Column: 27 }
 Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
 Args:            
   - String:          'Could not analyze occurrence information for '''
-  - BBName:          if.then29.i
+  - BBName:          if.then29.i.0
   - String:          ''' living in '''
   - LoopName:        ker_cols
   - String:          '''('
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.1
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.1
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.2
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.2
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.3
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.3
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.4
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.4
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.5
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.5
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.6
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.6
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.7
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.7
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.8
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.8
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.9
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.9
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.10
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.10
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.11
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.11
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.12
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.12
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.13
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.13
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.14
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.14
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 94, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then20.i.15
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp, 
+                   Line: 102, Column: 27 }
+Function:        _Z17LinearImageFilterPfPKfjjS1_jjj7Padding
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.then29.i.15
+  - String:          ''' living in '''
+  - LoopName:        ker_cols
+  - String:          '''('
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
   - String:          ') .'
 ...
 --- !HLSReportInfo
@@ -134,6 +603,156 @@ Args:
   - String:          'automatically set the pipeline for Loop< '
   - LoopName:        ker_cols
   - String:          '> at '
-  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39:27'
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        ker_cols
+  - String:          '> at '
+  - LoopLoc:         '/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:43:12'
   - String:          ' '
 ...

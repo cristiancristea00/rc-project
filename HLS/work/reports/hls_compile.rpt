@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'LinearImageFilter'
 ================================================================
 + General Information: 
-    * Date:           Thu May 30 20:38:02 2024
+    * Date:           Thu May 30 21:28:10 2024
     * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
     * Project:        work
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,16 +15,46 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
-    |                      Modules                      | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |         |           |            |     |
-    |                      & Loops                      | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF    |     LUT    | URAM|
-    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
-    |+ LinearImageFilter                                |     -|  0.00|        -|       -|         -|        -|     -|        no|  12 (4%)|  15 (6%)|  6993 (6%)|  6836 (12%)|    -|
-    | o img_rows                                        |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
-    |  o img_cols                                       |     -|  7.30|        -|       -|         -|        -|     -|        no|        -|        -|          -|           -|    -|
-    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols  |     -|  0.00|        -|       -|         -|        -|     -|        no|        -|   8 (3%)|  1678 (1%)|   2568 (4%)|    -|
-    |    o ker_rows_ker_cols                            |    II|  7.30|        -|       -|        26|        5|     -|       yes|        -|        -|          -|           -|    -|
-    +---------------------------------------------------+------+------+---------+--------+----------+---------+------+----------+---------+---------+-----------+------------+-----+
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-------------+-------------+-----+
+    |                       Modules                       | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |         |             |             |     |
+    |                       & Loops                       | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |      FF     |     LUT     | URAM|
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-------------+-------------+-----+
+    |+ LinearImageFilter                                  |     -|  0.00|        -|          -|         -|        -|     -|        no|  12 (4%)|  15 (6%)|  33094 (31%)|  44091 (82%)|    -|
+    | o img_rows                                          |     -|  7.30|        -|          -|         -|        -|     -|        no|        -|        -|            -|            -|    -|
+    |  o img_cols                                         |     -|  7.30|        -|          -|     10723|        -|     -|        no|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols    |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols1   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols2   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols3   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols4   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols5   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols6   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols7   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols8   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols9   |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols10  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols11  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols12  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols13  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols14  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    |   + LinearImageFilter_Pipeline_ker_rows_ker_cols15  |     -|  0.00|      627|  6.270e+03|         -|      627|     -|        no|        -|        -|    1212 (1%)|    1812 (3%)|    -|
+    |    o ker_rows_ker_cols                              |    II|  7.30|      625|  6.250e+03|        26|        5|   121|       yes|        -|        -|            -|            -|    -|
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-------------+-------------+-----+
 
 
 ================================================================
@@ -123,8 +153,8 @@
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
 | HW Interface   | Variable | Access Location                                                           | Direction | Burst Status | Resolution | Problem                                                                                                                            |
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
-| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49:28 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
-| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49:63 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
+| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:55:28 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
+| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:55:63 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
 +----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
 
     * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
@@ -132,36 +162,273 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+-------------------------------------------------+-----+--------+------------+------+---------+---------+
-| Name                                            | DSP | Pragma | Variable   | Op   | Impl    | Latency |
-+-------------------------------------------------+-----+--------+------------+------+---------+---------+
-| + LinearImageFilter                             | 15  |        |            |      |         |         |
-|   newRow_4_fu_292_p2                            |     |        | newRow_4   | add  | fabric  | 0       |
-|   newCol_2_fu_304_p2                            |     |        | newCol_2   | add  | fabric  | 0       |
-|   mul_32s_32s_32_2_1_U27                        | 4   |        | mul_ln7    | mul  | auto    | 1       |
-|   add_fu_324_p2                                 |     |        | add        | sub  | fabric  | 0       |
-|   mul_32s_32s_32_2_1_U27                        | 3   |        | mul_ln53   | mul  | auto    | 1       |
-|   out_idx_fu_368_p2                             |     |        | out_idx    | add  | fabric  | 0       |
-|   add_ln54_fu_381_p2                            |     |        | add_ln54   | add  | fabric  | 0       |
-|   col_1_fu_347_p2                               |     |        | col_1      | add  | fabric  | 0       |
-|   row_3_fu_352_p2                               |     |        | row_3      | add  | fabric  | 0       |
-|  + LinearImageFilter_Pipeline_ker_rows_ker_cols | 8   |        |            |      |         |         |
-|    add_ln37_fu_328_p2                           |     |        | add_ln37   | add  | fabric  | 0       |
-|    add_ln37_1_fu_345_p2                         |     |        | add_ln37_1 | add  | fabric  | 0       |
-|    newRow_fu_365_p2                             |     |        | newRow     | add  | fabric  | 0       |
-|    neg_fu_485_p2                                |     |        | neg        | sub  | fabric  | 0       |
-|    newRow_5_fu_502_p2                           |     |        | newRow_5   | add  | fabric  | 0       |
-|    neg1_fu_518_p2                               |     |        | neg1       | sub  | fabric  | 0       |
-|    newCol_4_fu_535_p2                           |     |        | newCol_4   | add  | fabric  | 0       |
-|    mul_30s_30s_30_2_1_U3                        | 3   |        | mul_ln49   | mul  | auto    | 1       |
-|    add_ln49_fu_696_p2                           |     |        | add_ln49   | add  | fabric  | 0       |
-|    add_ln49_1_fu_709_p2                         |     |        | add_ln49_1 | add  | fabric  | 0       |
-|    add_ln49_2_fu_640_p2                         |     |        | add_ln49_2 | add  | fabric  | 0       |
-|    add_ln49_3_fu_653_p2                         |     |        | add_ln49_3 | add  | fabric  | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U2             | 3   |        | mul        | fmul | maxdsp  | 3       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U1            | 2   |        | sum_1      | fadd | fulldsp | 4       |
-|    add_ln39_fu_678_p2                           |     |        | add_ln39   | add  | fabric  | 0       |
-+-------------------------------------------------+-----+--------+------------+------+---------+---------+
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                              | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + LinearImageFilter                               | 15  |        |             |     |        |         |
+|   newRow_2_fu_961_p2                              |     |        | newRow_2    | add | fabric | 0       |
+|   newCol_2_fu_995_p2                              |     |        | newCol_2    | add | fabric | 0       |
+|   mul_32ns_32ns_64_2_1_U353                       | 4   |        | mul_ln7     | mul | auto   | 1       |
+|   add_0_fu_1015_p2                                |     |        | add_0       | sub | fabric | 0       |
+|   mul_32s_32s_32_2_1_U354                         | 3   |        | mul_ln59    | mul | auto   | 1       |
+|   out_idx_fu_1050_p2                              |     |        | out_idx     | add | fabric | 0       |
+|   add_ln60_fu_1063_p2                             |     |        | add_ln60    | add | fabric | 0       |
+|   col_1_fu_1038_p2                                |     |        | col_1       | add | fabric | 0       |
+|   out_idx_1_fu_1107_p2                            |     |        | out_idx_1   | add | fabric | 0       |
+|   add_ln60_1_fu_1120_p2                           |     |        | add_ln60_1  | add | fabric | 0       |
+|   col_2_fu_1153_p2                                |     |        | col_2       | add | fabric | 0       |
+|   out_idx_2_fu_1171_p2                            |     |        | out_idx_2   | add | fabric | 0       |
+|   add_ln60_2_fu_1184_p2                           |     |        | add_ln60_2  | add | fabric | 0       |
+|   col_3_fu_1217_p2                                |     |        | col_3       | add | fabric | 0       |
+|   out_idx_3_fu_1235_p2                            |     |        | out_idx_3   | add | fabric | 0       |
+|   add_ln60_3_fu_1248_p2                           |     |        | add_ln60_3  | add | fabric | 0       |
+|   col_4_fu_1281_p2                                |     |        | col_4       | add | fabric | 0       |
+|   out_idx_4_fu_1298_p2                            |     |        | out_idx_4   | add | fabric | 0       |
+|   add_ln60_4_fu_1311_p2                           |     |        | add_ln60_4  | add | fabric | 0       |
+|   col_5_fu_1344_p2                                |     |        | col_5       | add | fabric | 0       |
+|   out_idx_5_fu_1362_p2                            |     |        | out_idx_5   | add | fabric | 0       |
+|   add_ln60_5_fu_1375_p2                           |     |        | add_ln60_5  | add | fabric | 0       |
+|   col_6_fu_1408_p2                                |     |        | col_6       | add | fabric | 0       |
+|   out_idx_6_fu_1426_p2                            |     |        | out_idx_6   | add | fabric | 0       |
+|   add_ln60_6_fu_1439_p2                           |     |        | add_ln60_6  | add | fabric | 0       |
+|   col_7_fu_1472_p2                                |     |        | col_7       | add | fabric | 0       |
+|   out_idx_7_fu_1490_p2                            |     |        | out_idx_7   | add | fabric | 0       |
+|   add_ln60_7_fu_1503_p2                           |     |        | add_ln60_7  | add | fabric | 0       |
+|   col_8_fu_1536_p2                                |     |        | col_8       | add | fabric | 0       |
+|   out_idx_8_fu_1554_p2                            |     |        | out_idx_8   | add | fabric | 0       |
+|   add_ln60_8_fu_1567_p2                           |     |        | add_ln60_8  | add | fabric | 0       |
+|   col_9_fu_1600_p2                                |     |        | col_9       | add | fabric | 0       |
+|   out_idx_9_fu_1618_p2                            |     |        | out_idx_9   | add | fabric | 0       |
+|   add_ln60_9_fu_1631_p2                           |     |        | add_ln60_9  | add | fabric | 0       |
+|   col_10_fu_1664_p2                               |     |        | col_10      | add | fabric | 0       |
+|   out_idx_10_fu_1681_p2                           |     |        | out_idx_10  | add | fabric | 0       |
+|   add_ln60_10_fu_1694_p2                          |     |        | add_ln60_10 | add | fabric | 0       |
+|   col_11_fu_1727_p2                               |     |        | col_11      | add | fabric | 0       |
+|   out_idx_11_fu_1745_p2                           |     |        | out_idx_11  | add | fabric | 0       |
+|   add_ln60_11_fu_1758_p2                          |     |        | add_ln60_11 | add | fabric | 0       |
+|   col_12_fu_1791_p2                               |     |        | col_12      | add | fabric | 0       |
+|   out_idx_12_fu_1809_p2                           |     |        | out_idx_12  | add | fabric | 0       |
+|   add_ln60_12_fu_1822_p2                          |     |        | add_ln60_12 | add | fabric | 0       |
+|   col_13_fu_1855_p2                               |     |        | col_13      | add | fabric | 0       |
+|   out_idx_13_fu_1873_p2                           |     |        | out_idx_13  | add | fabric | 0       |
+|   add_ln60_13_fu_1886_p2                          |     |        | add_ln60_13 | add | fabric | 0       |
+|   col_14_fu_1919_p2                               |     |        | col_14      | add | fabric | 0       |
+|   out_idx_14_fu_1936_p2                           |     |        | out_idx_14  | add | fabric | 0       |
+|   add_ln60_14_fu_1949_p2                          |     |        | add_ln60_14 | add | fabric | 0       |
+|   col_15_fu_1982_p2                               |     |        | col_15      | add | fabric | 0       |
+|   out_idx_15_fu_2006_p2                           |     |        | out_idx_15  | add | fabric | 0       |
+|   add_ln60_15_fu_2018_p2                          |     |        | add_ln60_15 | add | fabric | 0       |
+|   col_16_fu_1997_p2                               |     |        | col_16      | add | fabric | 0       |
+|   row_3_fu_2051_p2                                |     |        | row_3       | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols   | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_13_fu_353_p2                          |     |        | add_ln39_13 | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg_fu_493_p2                                  |     |        | neg         | sub | fabric | 0       |
+|    newRow_76_fu_510_p2                            |     |        | newRow_76   | add | fabric | 0       |
+|    neg1_fu_526_p2                                 |     |        | neg1        | sub | fabric | 0       |
+|    newCol_98_fu_543_p2                            |     |        | newCol_98   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_1_fu_717_p2                           |     |        | add_ln55_1  | add | fabric | 0       |
+|    add_ln55_2_fu_648_p2                           |     |        | add_ln55_2  | add | fabric | 0       |
+|    add_ln55_3_fu_661_p2                           |     |        | add_ln55_3  | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols1  | 0   |        |             |     |        |         |
+|    add_ln39_2_fu_336_p2                           |     |        | add_ln39_2  | add | fabric | 0       |
+|    add_ln39_fu_353_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    newRow_4_fu_373_p2                             |     |        | newRow_4    | add | fabric | 0       |
+|    neg4_fu_493_p2                                 |     |        | neg4        | sub | fabric | 0       |
+|    newRow_fu_510_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg7_fu_526_p2                                 |     |        | neg7        | sub | fabric | 0       |
+|    newCol_92_fu_543_p2                            |     |        | newCol_92   | add | fabric | 0       |
+|    add_ln55_4_fu_704_p2                           |     |        | add_ln55_4  | add | fabric | 0       |
+|    add_ln55_5_fu_717_p2                           |     |        | add_ln55_5  | add | fabric | 0       |
+|    add_ln55_6_fu_648_p2                           |     |        | add_ln55_6  | add | fabric | 0       |
+|    add_ln55_7_fu_661_p2                           |     |        | add_ln55_7  | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols2  | 0   |        |             |     |        |         |
+|    add_ln39_4_fu_336_p2                           |     |        | add_ln39_4  | add | fabric | 0       |
+|    add_ln39_fu_353_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    newRow_11_fu_373_p2                            |     |        | newRow_11   | add | fabric | 0       |
+|    neg10_fu_493_p2                                |     |        | neg10       | sub | fabric | 0       |
+|    newRow_fu_510_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg13_fu_526_p2                                |     |        | neg13       | sub | fabric | 0       |
+|    newCol_50_fu_543_p2                            |     |        | newCol_50   | add | fabric | 0       |
+|    add_ln55_8_fu_704_p2                           |     |        | add_ln55_8  | add | fabric | 0       |
+|    add_ln55_9_fu_717_p2                           |     |        | add_ln55_9  | add | fabric | 0       |
+|    add_ln55_10_fu_648_p2                          |     |        | add_ln55_10 | add | fabric | 0       |
+|    add_ln55_11_fu_661_p2                          |     |        | add_ln55_11 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols3  | 0   |        |             |     |        |         |
+|    add_ln39_6_fu_336_p2                           |     |        | add_ln39_6  | add | fabric | 0       |
+|    add_ln39_fu_353_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    newRow_18_fu_373_p2                            |     |        | newRow_18   | add | fabric | 0       |
+|    neg16_fu_493_p2                                |     |        | neg16       | sub | fabric | 0       |
+|    newRow_fu_510_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg19_fu_526_p2                                |     |        | neg19       | sub | fabric | 0       |
+|    newCol_44_fu_543_p2                            |     |        | newCol_44   | add | fabric | 0       |
+|    add_ln55_12_fu_704_p2                          |     |        | add_ln55_12 | add | fabric | 0       |
+|    add_ln55_13_fu_717_p2                          |     |        | add_ln55_13 | add | fabric | 0       |
+|    add_ln55_14_fu_648_p2                          |     |        | add_ln55_14 | add | fabric | 0       |
+|    add_ln55_15_fu_661_p2                          |     |        | add_ln55_15 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols4  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_6_fu_353_p2                           |     |        | add_ln39_6  | add | fabric | 0       |
+|    newRow_25_fu_373_p2                            |     |        | newRow_25   | add | fabric | 0       |
+|    neg22_fu_493_p2                                |     |        | neg22       | sub | fabric | 0       |
+|    newRow_fu_510_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg25_fu_526_p2                                |     |        | neg25       | sub | fabric | 0       |
+|    newCol_38_fu_543_p2                            |     |        | newCol_38   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_16_fu_717_p2                          |     |        | add_ln55_16 | add | fabric | 0       |
+|    add_ln55_17_fu_648_p2                          |     |        | add_ln55_17 | add | fabric | 0       |
+|    add_ln55_18_fu_661_p2                          |     |        | add_ln55_18 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols5  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_5_fu_353_p2                           |     |        | add_ln39_5  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg28_fu_493_p2                                |     |        | neg28       | sub | fabric | 0       |
+|    newRow_28_fu_510_p2                            |     |        | newRow_28   | add | fabric | 0       |
+|    neg31_fu_526_p2                                |     |        | neg31       | sub | fabric | 0       |
+|    newCol_28_fu_543_p2                            |     |        | newCol_28   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_13_fu_717_p2                          |     |        | add_ln55_13 | add | fabric | 0       |
+|    add_ln55_14_fu_648_p2                          |     |        | add_ln55_14 | add | fabric | 0       |
+|    add_ln55_15_fu_661_p2                          |     |        | add_ln55_15 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols6  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_4_fu_353_p2                           |     |        | add_ln39_4  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg34_fu_493_p2                                |     |        | neg34       | sub | fabric | 0       |
+|    newRow_22_fu_510_p2                            |     |        | newRow_22   | add | fabric | 0       |
+|    neg37_fu_526_p2                                |     |        | neg37       | sub | fabric | 0       |
+|    newCol_22_fu_543_p2                            |     |        | newCol_22   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_10_fu_717_p2                          |     |        | add_ln55_10 | add | fabric | 0       |
+|    add_ln55_11_fu_648_p2                          |     |        | add_ln55_11 | add | fabric | 0       |
+|    add_ln55_12_fu_661_p2                          |     |        | add_ln55_12 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols7  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_3_fu_353_p2                           |     |        | add_ln39_3  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg40_fu_493_p2                                |     |        | neg40       | sub | fabric | 0       |
+|    newRow_16_fu_510_p2                            |     |        | newRow_16   | add | fabric | 0       |
+|    neg43_fu_526_p2                                |     |        | neg43       | sub | fabric | 0       |
+|    newCol_16_fu_543_p2                            |     |        | newCol_16   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_7_fu_717_p2                           |     |        | add_ln55_7  | add | fabric | 0       |
+|    add_ln55_8_fu_648_p2                           |     |        | add_ln55_8  | add | fabric | 0       |
+|    add_ln55_9_fu_661_p2                           |     |        | add_ln55_9  | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols8  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_2_fu_353_p2                           |     |        | add_ln39_2  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg46_fu_493_p2                                |     |        | neg46       | sub | fabric | 0       |
+|    newRow_10_fu_510_p2                            |     |        | newRow_10   | add | fabric | 0       |
+|    neg49_fu_526_p2                                |     |        | neg49       | sub | fabric | 0       |
+|    newCol_10_fu_543_p2                            |     |        | newCol_10   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_4_fu_717_p2                           |     |        | add_ln55_4  | add | fabric | 0       |
+|    add_ln55_5_fu_648_p2                           |     |        | add_ln55_5  | add | fabric | 0       |
+|    add_ln55_6_fu_661_p2                           |     |        | add_ln55_6  | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols9  | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_1_fu_353_p2                           |     |        | add_ln39_1  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg52_fu_493_p2                                |     |        | neg52       | sub | fabric | 0       |
+|    newRow_4_fu_510_p2                             |     |        | newRow_4    | add | fabric | 0       |
+|    neg55_fu_526_p2                                |     |        | neg55       | sub | fabric | 0       |
+|    newCol_4_fu_543_p2                             |     |        | newCol_4    | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_1_fu_717_p2                           |     |        | add_ln55_1  | add | fabric | 0       |
+|    add_ln55_2_fu_648_p2                           |     |        | add_ln55_2  | add | fabric | 0       |
+|    add_ln55_3_fu_661_p2                           |     |        | add_ln55_3  | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols10 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_12_fu_353_p2                          |     |        | add_ln39_12 | add | fabric | 0       |
+|    newRow_67_fu_373_p2                            |     |        | newRow_67   | add | fabric | 0       |
+|    neg58_fu_493_p2                                |     |        | neg58       | sub | fabric | 0       |
+|    newRow_70_fu_510_p2                            |     |        | newRow_70   | add | fabric | 0       |
+|    neg61_fu_526_p2                                |     |        | neg61       | sub | fabric | 0       |
+|    newCol_86_fu_543_p2                            |     |        | newCol_86   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_34_fu_717_p2                          |     |        | add_ln55_34 | add | fabric | 0       |
+|    add_ln55_35_fu_648_p2                          |     |        | add_ln55_35 | add | fabric | 0       |
+|    add_ln55_36_fu_661_p2                          |     |        | add_ln55_36 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols11 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_11_fu_353_p2                          |     |        | add_ln39_11 | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg64_fu_493_p2                                |     |        | neg64       | sub | fabric | 0       |
+|    newRow_65_fu_510_p2                            |     |        | newRow_65   | add | fabric | 0       |
+|    neg67_fu_526_p2                                |     |        | neg67       | sub | fabric | 0       |
+|    newCol_80_fu_543_p2                            |     |        | newCol_80   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_31_fu_717_p2                          |     |        | add_ln55_31 | add | fabric | 0       |
+|    add_ln55_32_fu_648_p2                          |     |        | add_ln55_32 | add | fabric | 0       |
+|    add_ln55_33_fu_661_p2                          |     |        | add_ln55_33 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols12 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_10_fu_353_p2                          |     |        | add_ln39_10 | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg70_fu_493_p2                                |     |        | neg70       | sub | fabric | 0       |
+|    newRow_59_fu_510_p2                            |     |        | newRow_59   | add | fabric | 0       |
+|    neg73_fu_526_p2                                |     |        | neg73       | sub | fabric | 0       |
+|    newCol_74_fu_543_p2                            |     |        | newCol_74   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_28_fu_717_p2                          |     |        | add_ln55_28 | add | fabric | 0       |
+|    add_ln55_29_fu_648_p2                          |     |        | add_ln55_29 | add | fabric | 0       |
+|    add_ln55_30_fu_661_p2                          |     |        | add_ln55_30 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols13 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_9_fu_353_p2                           |     |        | add_ln39_9  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg76_fu_493_p2                                |     |        | neg76       | sub | fabric | 0       |
+|    newRow_53_fu_510_p2                            |     |        | newRow_53   | add | fabric | 0       |
+|    neg79_fu_526_p2                                |     |        | neg79       | sub | fabric | 0       |
+|    newCol_68_fu_543_p2                            |     |        | newCol_68   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_25_fu_717_p2                          |     |        | add_ln55_25 | add | fabric | 0       |
+|    add_ln55_26_fu_648_p2                          |     |        | add_ln55_26 | add | fabric | 0       |
+|    add_ln55_27_fu_661_p2                          |     |        | add_ln55_27 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols14 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_8_fu_353_p2                           |     |        | add_ln39_8  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg82_fu_493_p2                                |     |        | neg82       | sub | fabric | 0       |
+|    newRow_47_fu_510_p2                            |     |        | newRow_47   | add | fabric | 0       |
+|    neg85_fu_526_p2                                |     |        | neg85       | sub | fabric | 0       |
+|    newCol_62_fu_543_p2                            |     |        | newCol_62   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_22_fu_717_p2                          |     |        | add_ln55_22 | add | fabric | 0       |
+|    add_ln55_23_fu_648_p2                          |     |        | add_ln55_23 | add | fabric | 0       |
+|    add_ln55_24_fu_661_p2                          |     |        | add_ln55_24 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
+|  + LinearImageFilter_Pipeline_ker_rows_ker_cols15 | 0   |        |             |     |        |         |
+|    add_ln39_fu_336_p2                             |     |        | add_ln39    | add | fabric | 0       |
+|    add_ln39_7_fu_353_p2                           |     |        | add_ln39_7  | add | fabric | 0       |
+|    newRow_fu_373_p2                               |     |        | newRow      | add | fabric | 0       |
+|    neg88_fu_493_p2                                |     |        | neg88       | sub | fabric | 0       |
+|    newRow_41_fu_510_p2                            |     |        | newRow_41   | add | fabric | 0       |
+|    neg91_fu_526_p2                                |     |        | neg91       | sub | fabric | 0       |
+|    newCol_56_fu_543_p2                            |     |        | newCol_56   | add | fabric | 0       |
+|    add_ln55_fu_704_p2                             |     |        | add_ln55    | add | fabric | 0       |
+|    add_ln55_19_fu_717_p2                          |     |        | add_ln55_19 | add | fabric | 0       |
+|    add_ln55_20_fu_648_p2                          |     |        | add_ln55_20 | add | fabric | 0       |
+|    add_ln55_21_fu_661_p2                          |     |        | add_ln55_21 | add | fabric | 0       |
+|    add_ln43_fu_686_p2                             |     |        | add_ln43    | add | fabric | 0       |
++---------------------------------------------------+-----+--------+-------------+-----+--------+---------+
 
 
 ================================================================
@@ -183,22 +450,25 @@
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
-| Type      | Options                                                                          | Location                                         |
-+-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
-| interface | mode = m_axi port = image_out bundle = image_out offset = slave depth = 10000000 | LinearImageFiltering.cpp:9 in linearimagefilter  |
-| interface | mode = m_axi port = image_in bundle = image_in offset = slave depth = 10000000   | LinearImageFiltering.cpp:10 in linearimagefilter |
-| interface | mode = m_axi port = kernel bundle = kernel offset = slave depth = 1000           | LinearImageFiltering.cpp:11 in linearimagefilter |
-| interface | mode = s_axilite port = rows                                                     | LinearImageFiltering.cpp:13 in linearimagefilter |
-| interface | mode = s_axilite port = cols                                                     | LinearImageFiltering.cpp:14 in linearimagefilter |
-| interface | mode = s_axilite port = kernel_dim                                               | LinearImageFiltering.cpp:15 in linearimagefilter |
-| interface | mode = s_axilite port = stride_row                                               | LinearImageFiltering.cpp:16 in linearimagefilter |
-| interface | mode = s_axilite port = stride_col                                               | LinearImageFiltering.cpp:17 in linearimagefilter |
-| interface | mode = s_axilite port = padding                                                  | LinearImageFiltering.cpp:18 in linearimagefilter |
-| interface | mode = s_axilite port = return                                                   | LinearImageFiltering.cpp:19 in linearimagefilter |
-| cache     | port = image_in depth = 128 lines = 256                                          | LinearImageFiltering.cpp:21 in linearimagefilter |
-| cache     | port = kernel depth = 128 lines = 1                                              | LinearImageFiltering.cpp:22 in linearimagefilter |
-| inline    |                                                                                  | LinearImageFiltering.cpp:61 in pad               |
-+-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
++----------------+----------------------------------------------------------------------------------+--------------------------------------------------+
+| Type           | Options                                                                          | Location                                         |
++----------------+----------------------------------------------------------------------------------+--------------------------------------------------+
+| interface      | mode = m_axi port = image_out bundle = image_out offset = slave depth = 10000000 | LinearImageFiltering.cpp:9 in linearimagefilter  |
+| interface      | mode = m_axi port = image_in bundle = image_in offset = slave depth = 10000000   | LinearImageFiltering.cpp:10 in linearimagefilter |
+| interface      | mode = m_axi port = kernel bundle = kernel offset = slave depth = 1000           | LinearImageFiltering.cpp:11 in linearimagefilter |
+| interface      | mode = s_axilite port = rows                                                     | LinearImageFiltering.cpp:13 in linearimagefilter |
+| interface      | mode = s_axilite port = cols                                                     | LinearImageFiltering.cpp:14 in linearimagefilter |
+| interface      | mode = s_axilite port = kernel_dim                                               | LinearImageFiltering.cpp:15 in linearimagefilter |
+| interface      | mode = s_axilite port = stride_row                                               | LinearImageFiltering.cpp:16 in linearimagefilter |
+| interface      | mode = s_axilite port = stride_col                                               | LinearImageFiltering.cpp:17 in linearimagefilter |
+| interface      | mode = s_axilite port = padding                                                  | LinearImageFiltering.cpp:18 in linearimagefilter |
+| interface      | mode = s_axilite port = return                                                   | LinearImageFiltering.cpp:19 in linearimagefilter |
+| cache          | port = image_in depth = 128 lines = 256                                          | LinearImageFiltering.cpp:21 in linearimagefilter |
+| cache          | port = kernel depth = 128 lines = 1                                              | LinearImageFiltering.cpp:22 in linearimagefilter |
+| unroll         | factor = 16                                                                      | LinearImageFiltering.cpp:35 in linearimagefilter |
+| loop_tripcount | min = 3 max = 11 avg = 5                                                         | LinearImageFiltering.cpp:41 in linearimagefilter |
+| loop_tripcount | min = 3 max = 11 avg = 5                                                         | LinearImageFiltering.cpp:45 in linearimagefilter |
+| inline         |                                                                                  | LinearImageFiltering.cpp:67 in pad               |
++----------------+----------------------------------------------------------------------------------+--------------------------------------------------+
 
 

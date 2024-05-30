@@ -1,17 +1,17 @@
 {
   "0": {
-    "basicblocks": 22,
+    "basicblocks": 262,
     "calls": "",
     "file": "LinearImageFiltering.cpp",
     "fileloc": 7,
-    "instructions": 119,
+    "instructions": 1379,
     "loads": {
-      "T": 2
+      "T": 32
     },
     "name": "LinearImageFilter",
     "stores": {
-      "T": 1
+      "T": 16
     },
-    "total_instructions": 119
+    "total_instructions": 1379
   }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
   <core name="" type="" target="">
-    <kernel name="LinearImageFiltering" language="c" vlnv="Cristi:Image:LinearImageFiltering:0.2" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true">
+    <kernel name="LinearImageFiltering" language="c" vlnv="Cristi:Image:LinearImageFiltering:0.3" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true">
       <port name="S_AXI_CONTROL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x00000000"/>
       <port name="M_AXI_IMAGE_OUT" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x00000000"/>
       <port name="M_AXI_IMAGE_IN" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x00000000"/>
