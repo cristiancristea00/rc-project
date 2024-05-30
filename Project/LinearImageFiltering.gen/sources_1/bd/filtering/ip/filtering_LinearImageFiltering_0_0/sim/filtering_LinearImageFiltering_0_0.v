@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Cristi:Image:LinearImageFiltering:0.1
+// IP VLNV: Cristi:Image:LinearImageFiltering:0.2
 // IP Revision: 0
 
 `timescale 1ns/1ps

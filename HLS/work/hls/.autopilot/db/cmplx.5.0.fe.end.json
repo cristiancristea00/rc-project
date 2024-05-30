@@ -3,8 +3,8 @@
         "name": "LinearImageFilter",
         "file": "LinearImageFiltering.cpp",
         "fileloc": "7",
-        "instructions": "91",
-        "total_instructions": "223",
+        "instructions": "93",
+        "total_instructions": "227",
         "calls": "1",
         "basicblocks": "7",
         "loads": {
@@ -21,9 +21,9 @@
     "1": {
         "name": "LinearImageFilter_Pipeline_ker_rows_ker_cols",
         "file": "\/home\/cristi\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering.cpp",
-        "fileloc": "21",
-        "instructions": "132",
-        "total_instructions": "132",
+        "fileloc": "24",
+        "instructions": "134",
+        "total_instructions": "134",
         "calls": "",
         "basicblocks": "9",
         "loads": {

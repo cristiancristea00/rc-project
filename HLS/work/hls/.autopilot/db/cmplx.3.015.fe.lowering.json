@@ -4,8 +4,8 @@
     "calls": "",
     "file": "LinearImageFiltering.cpp",
     "fileloc": 7,
-    "instructions": 138,
+    "instructions": 140,
     "name": "LinearImageFilter",
-    "total_instructions": 138
+    "total_instructions": 140
   }
 }

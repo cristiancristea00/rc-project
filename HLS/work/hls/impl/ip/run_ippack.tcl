@@ -55,7 +55,7 @@ proc sort_file_names {files {top_name {}}} {
 set Vendor      "Cristi"
 set Library     "Image"
 set IPName      "LinearImageFiltering"
-set Version     "0.1"
+set Version     "0.2"
 set DisplayName "Linear Image Filtering"
 set Revision    "0"
 set Description "Linear Image Filtering using HSL"
@@ -491,6 +491,7 @@ set Interfaces {
         handshake ""
         busParams "NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 MAX_BURST_LENGTH 256 PROTOCOL AXI4 READ_WRITE_MODE READ_ONLY HAS_BURST 0 SUPPORTS_NARROW_BURST 0"
         Object "image_in"
+        cacheInfo "lineCount 256 lineWords 128 lineWidth 32"
         ctype {
             AWLEN {
                 Type "integer unsigned"
@@ -659,13 +660,13 @@ set Interfaces {
             }
             WDATA {
                 Type "null"
-                Width "32"
-                Bits "32"
+                Width "1024"
+                Bits "1024"
             }
             WSTRB {
                 Type "integer unsigned"
-                Width "4"
-                Bits "4"
+                Width "128"
+                Bits "128"
             }
             WID {
                 Type "integer unsigned"
@@ -694,8 +695,8 @@ set Interfaces {
             }
             RDATA {
                 Type "null"
-                Width "32"
-                Bits "32"
+                Width "1024"
+                Bits "1024"
             }
             RID {
                 Type "integer unsigned"
@@ -718,10 +719,10 @@ set Interfaces {
                 Bits "1"
             }
         }
-        data_width "32"
+        data_width "1024"
         port_prefix "m_axi_image_in"
         param_prefix "C_M_AXI_IMAGE_IN"
-        port_width "AWADDR 32 AWID 1 AWUSER 1 WDATA 32 WSTRB 4 WID 1 WUSER 1 ARADDR 32 ARID 1 ARUSER 1 RDATA 32 RID 1 RUSER 1 BID 1 BUSER 1"
+        port_width "AWADDR 32 AWID 1 AWUSER 1 WDATA 1024 WSTRB 128 WID 1 WUSER 1 ARADDR 32 ARID 1 ARUSER 1 RDATA 1024 RID 1 RUSER 1 BID 1 BUSER 1"
         HasOffset "1"
         has_dependant_on "1"
         offset_slave_name "s_axi_control"
@@ -736,6 +737,7 @@ set Interfaces {
         handshake ""
         busParams "NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 MAX_BURST_LENGTH 256 PROTOCOL AXI4 READ_WRITE_MODE READ_ONLY HAS_BURST 0 SUPPORTS_NARROW_BURST 0"
         Object "kernel"
+        cacheInfo "lineCount 1 lineWords 128 lineWidth 32"
         ctype {
             AWLEN {
                 Type "integer unsigned"
@@ -904,13 +906,13 @@ set Interfaces {
             }
             WDATA {
                 Type "null"
-                Width "32"
-                Bits "32"
+                Width "1024"
+                Bits "1024"
             }
             WSTRB {
                 Type "integer unsigned"
-                Width "4"
-                Bits "4"
+                Width "128"
+                Bits "128"
             }
             WID {
                 Type "integer unsigned"
@@ -939,8 +941,8 @@ set Interfaces {
             }
             RDATA {
                 Type "null"
-                Width "32"
-                Bits "32"
+                Width "1024"
+                Bits "1024"
             }
             RID {
                 Type "integer unsigned"
@@ -963,10 +965,10 @@ set Interfaces {
                 Bits "1"
             }
         }
-        data_width "32"
+        data_width "1024"
         port_prefix "m_axi_kernel"
         param_prefix "C_M_AXI_KERNEL"
-        port_width "AWADDR 32 AWID 1 AWUSER 1 WDATA 32 WSTRB 4 WID 1 WUSER 1 ARADDR 32 ARID 1 ARUSER 1 RDATA 32 RID 1 RUSER 1 BID 1 BUSER 1"
+        port_width "AWADDR 32 AWID 1 AWUSER 1 WDATA 1024 WSTRB 128 WID 1 WUSER 1 ARADDR 32 ARID 1 ARUSER 1 RDATA 1024 RID 1 RUSER 1 BID 1 BUSER 1"
         HasOffset "1"
         has_dependant_on "1"
         offset_slave_name "s_axi_control"

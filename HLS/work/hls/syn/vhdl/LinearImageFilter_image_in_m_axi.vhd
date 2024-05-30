@@ -32,11 +32,17 @@ entity LinearImageFilter_image_in_m_axi is
         USER_AW                   : INTEGER := 32;
         USER_MAXREQS              : INTEGER := 16;
         USER_RFIFONUM_WIDTH       : INTEGER := 6;
-        MAXI_BUFFER_IMPL          : STRING  := "block");
+        MAXI_BUFFER_IMPL          : STRING  := "block";
+        -- for cache
+        MAXI_CACHE_IMPL           : STRING  := "block";
+        NUM_CACHE_LINE            : INTEGER := 256;
+        CACHE_LINE_DEPTH          : INTEGER := 128);
     port (
         
         
-        
+        -- cache flush
+        cache_flush     : in  STD_LOGIC;
+        -- cache_flush_done: out STD_LOGIC;
         -- system signal
         ACLK            : in  STD_LOGIC;
         ARESET          : in  STD_LOGIC;
@@ -130,11 +136,16 @@ architecture behave of LinearImageFilter_image_in_m_axi is
             USER_AW                : INTEGER := 32;
             USER_MAXREQS           : INTEGER := 16;
             USER_RFIFONUM_WIDTH    : INTEGER := 6;
-            BUFFER_IMPL            : STRING  := "auto");
+            SUPPORT_BURST          : INTEGER := 0;
+            CACHE_IMPL             : STRING  := "auto";
+            NUM_CACHE_LINE         : INTEGER := 1;
+            CACHE_LINE_DEPTH       : INTEGER := 16);
         port (
             ACLK                   : in  STD_LOGIC;
             ARESET                 : in  STD_LOGIC;
             ACLK_EN                : in  STD_LOGIC;
+            cache_flush            : in  STD_LOGIC;
+            cache_flush_done       : out STD_LOGIC;
             out_AXI_ARADDR         : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
             out_AXI_ARLEN          : out UNSIGNED(31 downto 0);
             out_AXI_ARVALID        : out STD_LOGIC;
@@ -330,12 +341,17 @@ begin
             USER_AW                => USER_AW,
             USER_MAXREQS           => USER_MAXREQS,
             USER_RFIFONUM_WIDTH    => USER_RFIFONUM_WIDTH,
-            BUFFER_IMPL            => MAXI_BUFFER_IMPL)
+            SUPPORT_BURST          => 0,
+            NUM_CACHE_LINE         => NUM_CACHE_LINE,
+            CACHE_LINE_DEPTH       => CACHE_LINE_DEPTH,
+            CACHE_IMPL             => MAXI_CACHE_IMPL)
         port map(
             ACLK                   => ACLK,
             ARESET                 => ARESET,
             ACLK_EN                => ACLK_EN,
             
+            cache_flush            => cache_flush,
+            cache_flush_done       => open, --cache_flush_done,
             out_AXI_ARADDR         => ARADDR_Dummy,
             out_AXI_ARLEN          => ARLEN_Dummy,
             out_AXI_ARVALID        => ARVALID_Dummy,
@@ -513,6 +529,643 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
+entity LinearImageFilter_image_in_m_axi_cache_mem is
+    generic (
+        MEM_STYLE   : string  := "auto";
+        DATA_WIDTH  : integer := 32;
+        ADDR_WIDTH  : integer := 6;
+        DEPTH       : integer := 63);
+    port (
+        clk         : in  std_logic;
+        reset       : in  std_logic;
+        clk_en      : in  std_logic;
+        we          : in  std_logic;
+        waddr       : in  UNSIGNED(ADDR_WIDTH-1 downto 0);
+        din         : in  UNSIGNED(DATA_WIDTH-1 downto 0);
+        re          : in  std_logic;
+        raddr       : in  UNSIGNED(ADDR_WIDTH-1 downto 0);
+        dout        : out UNSIGNED(DATA_WIDTH-1 downto 0));
+end LinearImageFilter_image_in_m_axi_cache_mem;
+
+architecture behav of LinearImageFilter_image_in_m_axi_cache_mem is
+    type MEM_ARRAY is array (0 to DEPTH - 1) of UNSIGNED(DATA_WIDTH - 1 downto 0);
+    signal mem : MEM_ARRAY;
+    signal mem_reg : UNSIGNED(DATA_WIDTH - 1 downto 0);
+    -- read write collision attribute settings.
+    attribute ram_style: string;
+    attribute ram_style of mem: signal is MEM_STYLE;
+
+begin
+    dout <= mem_reg;
+
+    process (clk) begin
+        if clk'event and clk = '1' then
+            if (reset = '1') then
+                mem_reg <= (others => '0');
+            elsif clk_en = '1' and re = '1' then
+                mem_reg <= mem(to_integer(raddr));
+            end if;
+        end if;
+    end process;
+
+    process (clk) begin
+        if clk'event and clk = '1' then
+            if clk_en = '1' and we = '1' then
+                mem(to_integer(waddr)) <= din;
+            end if;
+        end if;
+    end process;
+end architecture behav;
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity LinearImageFilter_image_in_m_axi_cache_unit is
+    generic (
+        MODE                  : STRING  := "READ-ONLY";
+        CACHE_IMPL            : STRING  := "auto";
+        C_TARGET_ADDR         : INTEGER := 16#00000000#;
+        USER_AW               : INTEGER := 64;
+        USER_DW               : INTEGER := 32;
+        BUS_ADDR_WIDTH        : INTEGER := 64;
+        BUS_DATA_WIDTH        : INTEGER := 512;
+        NUM_CACHE_LINE        : INTEGER := 1;
+        CACHE_LINE_DEPTH      : INTEGER := 16);
+    port (
+        ACLK                  : in  STD_LOGIC;
+        ARESET                : in  STD_LOGIC;
+        ACLK_EN               : in  STD_LOGIC;
+
+        cache_flush           : in  STD_LOGIC;
+        cache_flush_done      : out STD_LOGIC;
+
+        out_AXI_ARADDR        : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+        out_AXI_ARLEN         : out UNSIGNED(31 downto 0);
+        out_AXI_ARVALID       : out STD_LOGIC;
+        in_AXI_ARREADY        : in  STD_LOGIC;
+
+        in_AXI_RDATA          : in  UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+        in_AXI_RLAST          : in  STD_LOGIC;
+        in_AXI_RVALID         : in  STD_LOGIC;
+        out_AXI_RREADY        : out STD_LOGIC;
+        
+        in_HLS_ARADDR         : in  UNSIGNED(USER_AW-1 downto 0);
+        in_HLS_ARVALID        : in  STD_LOGIC;
+        out_HLS_ARREADY       : out STD_LOGIC;
+
+        out_HLS_RDATA         : out UNSIGNED(USER_DW-1 downto 0);
+        out_HLS_RVALID        : out STD_LOGIC;
+        in_HLS_RREADY         : in  STD_LOGIC);
+end entity LinearImageFilter_image_in_m_axi_cache_unit;
+
+architecture behave of LinearImageFilter_image_in_m_axi_cache_unit is
+    ------------------------Task and function--------------
+    function max (x : INTEGER;
+                  y : INTEGER) return INTEGER is
+        variable r : INTEGER;
+    begin
+        r := y;
+        if (x > y) then
+            r := x;
+        end if;
+        return r;
+    end function max;
+
+    function calc_data_width (x : INTEGER) return INTEGER is
+        variable y : INTEGER;
+    begin
+        y := 8;
+        while y < x loop
+            y := y * 2;
+        end loop;
+        return y;
+    end function calc_data_width;
+
+    function log2 (x : INTEGER) return INTEGER is
+        variable n, m : INTEGER;
+    begin
+        n := 0;
+        m := 1;
+        while m < x loop
+            n := n + 1;
+            m := m * 2;
+        end loop;
+        return n;
+    end function log2;
+    ------------------------Parameter----------------------
+    constant USER_DATA_WIDTH   : INTEGER := calc_data_width(USER_DW);
+    constant USER_DATA_BYTES   : INTEGER := USER_DATA_WIDTH/8;
+    constant USER_ADDR_ALIGN   : INTEGER := log2(USER_DATA_BYTES);
+    constant TARGET_ADDR       : INTEGER := (C_TARGET_ADDR/USER_DATA_BYTES)*USER_DATA_BYTES;
+    -- for cache 
+    constant CACHE_BURST_LEN   : INTEGER := max(CACHE_LINE_DEPTH * USER_DATA_WIDTH / BUS_DATA_WIDTH , 2);
+    constant BUS_ADDR_ALIGN    : INTEGER := log2(BUS_DATA_WIDTH/8);
+    constant CACHE_ADDR_ALIGN  : INTEGER := log2(CACHE_BURST_LEN);
+    constant CACHE_LINE_ALIGN  : INTEGER := BUS_ADDR_ALIGN + CACHE_ADDR_ALIGN;
+    constant CACHE_INDEX_WIDTH : INTEGER := max(log2(NUM_CACHE_LINE), 1);
+    constant CACHE_TAG_WIDTH   : INTEGER := BUS_ADDR_WIDTH - log2(NUM_CACHE_LINE) - CACHE_LINE_ALIGN;
+    constant CACHE_DATA_ALIGN  : INTEGER := max(1, BUS_ADDR_ALIGN - USER_ADDR_ALIGN);
+
+    ------------------------Local signal-------------------
+    type DATA_ARRAYS_1D is array (0 to CACHE_BURST_LEN - 1) of UNSIGNED(BUS_DATA_WIDTH - 1 downto 0);
+    type DATA_ARRAYS_2D is array (0 to NUM_CACHE_LINE - 1)  of DATA_ARRAYS_1D;
+    type TAG_ARRAYS     is array (0 to NUM_CACHE_LINE - 1)  of UNSIGNED(CACHE_TAG_WIDTH - 1 downto 0);
+    type TMP_DATA_1D    is array (0 to NUM_CACHE_LINE - 1)  of UNSIGNED(BUS_DATA_WIDTH - 1 downto 0);
+
+    signal data_array      : DATA_ARRAYS_2D;
+    signal tag_array       : TAG_ARRAYS;
+    signal valid_array     : UNSIGNED(NUM_CACHE_LINE - 1 downto 0);
+
+    signal next_rreq       : STD_LOGIC;
+    signal ready_for_rreq  : STD_LOGIC; 
+
+    signal tmp_addr        : UNSIGNED(BUS_ADDR_WIDTH - 1 downto 0);
+    signal tmp_valid       : STD_LOGIC;
+    signal tmp_align       : UNSIGNED(CACHE_DATA_ALIGN - 1 downto 0);
+    signal tmp_offset      : UNSIGNED(CACHE_ADDR_ALIGN - 1 downto 0);
+    signal tmp_index       : UNSIGNED(CACHE_INDEX_WIDTH - 1 downto 0);
+    signal tmp_tag         : UNSIGNED(CACHE_TAG_WIDTH - 1 downto 0);
+    signal tmp_data        : TMP_DATA_1D;
+
+    signal cache_hit       : STD_LOGIC;
+    signal cache_in_update : STD_LOGIC;
+    signal update_cache    : STD_LOGIC;
+    signal update_done     : STD_LOGIC;
+    signal ready_for_update: STD_LOGIC;
+    signal update_we       : UNSIGNED(NUM_CACHE_LINE-1 downto 0);
+    signal update_offset   : UNSIGNED(CACHE_ADDR_ALIGN - 1 downto 0);
+    signal update_status   : UNSIGNED(CACHE_BURST_LEN - 1 downto 0);
+    signal update_index    : UNSIGNED(CACHE_INDEX_WIDTH - 1 downto 0);
+
+    signal cache_in_flush  : STD_LOGIC;
+    signal flush_done      : STD_LOGIC;
+
+    signal data_index      : UNSIGNED(CACHE_INDEX_WIDTH - 1 downto 0);
+    signal data_align      : UNSIGNED(CACHE_DATA_ALIGN - 1 downto 0);
+    signal data_buf        : UNSIGNED(USER_DATA_WIDTH - 1 downto 0);
+    signal data_valid      : STD_LOGIC;
+    
+    signal read_data       : STD_LOGIC;
+    signal next_data       : STD_LOGIC;
+    signal ready_for_read  : STD_LOGIC;
+    signal ready_for_data  : STD_LOGIC;
+ 
+    component LinearImageFilter_image_in_m_axi_cache_mem is
+        generic (
+            MEM_STYLE   : string  := "auto";
+            DATA_WIDTH  : integer := 32;
+            ADDR_WIDTH  : integer := 6;
+            DEPTH       : integer := 63);
+        port (
+            clk         : in  std_logic;
+            reset       : in  std_logic;
+            clk_en      : in  std_logic;
+            we          : in  std_logic;
+            waddr       : in  UNSIGNED(ADDR_WIDTH-1 downto 0);
+            din         : in  UNSIGNED(DATA_WIDTH-1 downto 0);
+            re          : in  std_logic;
+            raddr       : in  UNSIGNED(ADDR_WIDTH-1 downto 0);
+            dout        : out UNSIGNED(DATA_WIDTH-1 downto 0));
+    end component LinearImageFilter_image_in_m_axi_cache_mem;
+
+begin
+
+    out_HLS_ARREADY   <= ready_for_rreq; 
+    next_rreq         <= in_HLS_ARVALID and ready_for_rreq;
+    ready_for_rreq    <= ((not tmp_valid) or (cache_hit and ready_for_read) ) and not cache_in_flush;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                tmp_addr <= (others => '0');
+            elsif ACLK_EN = '1' then
+                if (next_rreq = '1') then
+                    tmp_addr <= TARGET_ADDR + SHIFT_LEFT(RESIZE(in_HLS_ARADDR, BUS_ADDR_WIDTH), USER_ADDR_ALIGN);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                tmp_valid  <= '0';
+            elsif ACLK_EN = '1' then
+                if (next_rreq= '1') then
+                    tmp_valid <= '1';
+                elsif (cache_hit and ready_for_read) = '1' then
+                    tmp_valid <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    tmp_align       <= "0" when (BUS_ADDR_ALIGN <= USER_ADDR_ALIGN) else
+                       tmp_addr(BUS_ADDR_ALIGN - 1   downto USER_ADDR_ALIGN);
+    tmp_offset      <= tmp_addr(CACHE_LINE_ALIGN - 1 downto BUS_ADDR_ALIGN);
+    tmp_index       <= "0" when (NUM_CACHE_LINE = 1) else
+                       tmp_addr(CACHE_LINE_ALIGN + log2(NUM_CACHE_LINE) - 1 downto CACHE_LINE_ALIGN);
+    tmp_tag         <= tmp_addr(BUS_ADDR_WIDTH - 1                          downto CACHE_LINE_ALIGN + log2(NUM_CACHE_LINE));
+    cache_hit       <= '1' when (tag_array(to_integer(tmp_index)) = tmp_tag) and (valid_array(to_integer(tmp_index)) = '1' or (tmp_index = update_index and update_status(to_integer(tmp_offset)) = '1')) else '0';
+
+    -- read output data from cache when cache hit.
+    out_HLS_RDATA   <= data_buf(USER_DW-1 downto 0);
+    out_HLS_RVALID  <= data_valid;
+
+    read_data       <= tmp_valid and cache_hit and ready_for_read;
+    ready_for_read  <= (not next_data) or ready_for_data;
+    ready_for_data  <= (not data_valid) or in_HLS_RREADY;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                next_data <= '0';
+            elsif ACLK_EN = '1' then
+                if (read_data = '1') then
+                    next_data <= '1';
+                elsif (ready_for_data = '1') then
+                    next_data <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                data_index <= (others => '0');
+                data_align <= (others => '0');
+            elsif ACLK_EN = '1' then
+                if (read_data = '1') then
+                    data_index <= tmp_index;
+                    data_align <= tmp_align;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                data_buf <= (others=>'0');
+            elsif ACLK_EN = '1' then
+                if (next_data and ready_for_data) = '1' then
+                    data_buf <= tmp_data(to_integer(data_index))((to_integer(data_align)+1)*USER_DATA_WIDTH-1 downto to_integer(data_align)*USER_DATA_WIDTH);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                data_valid <= '0';
+            elsif ACLK_EN = '1' then
+                if (next_data and ready_for_data) = '1' then
+                    data_valid <= '1';
+                elsif (in_HLS_RREADY = '1') then
+                    data_valid <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- flush cache.
+    cache_flush_done <= flush_done;
+    
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                cache_in_flush <= '0';
+            elsif ACLK_EN = '1' then
+                if flush_done = '1' then
+                    cache_in_flush <= '0';
+                elsif cache_flush = '1' then
+                    cache_in_flush <= '1';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                flush_done <= '0';
+            elsif ACLK_EN = '1' then
+                if (cache_in_flush and not cache_in_update) = '1' then
+                    flush_done <= '1';
+                else
+                    flush_done <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- update cache when cache is not hit.
+    out_AXI_ARLEN   <= TO_UNSIGNED(2**CACHE_LINE_ALIGN - 1, 32);
+    out_AXI_ARADDR  <= tmp_addr(BUS_ADDR_WIDTH-1 downto CACHE_LINE_ALIGN) & (CACHE_LINE_ALIGN - 1 downto 0 => '0');
+    out_AXI_ARVALID <= tmp_valid and not (cache_hit or cache_in_update);
+    
+    update_cache    <= tmp_valid and in_AXI_ARREADY and not (cache_hit or cache_in_update);
+    update_done     <= in_AXI_RLAST and in_AXI_RVALID and cache_in_update;
+    out_AXI_RREADY  <= cache_in_update;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                cache_in_update <= '0';
+            elsif ACLK_EN = '1' then
+                if update_cache = '1' then
+                    cache_in_update <= '1';
+                elsif update_done = '1' then
+                    cache_in_update <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                update_index <= (others=>'0');
+            elsif ACLK_EN = '1' then
+                if update_cache = '1' then
+                    update_index <= tmp_index;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                update_status <= (others=>'0');
+            elsif ACLK_EN = '1' then
+                if (update_cache or update_done) = '1' then
+                    update_status <= (others=>'0');
+                elsif (cache_in_update and in_AXI_RVALID) = '1' then
+                    update_status(to_integer(update_offset)) <= '1';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                update_offset <= (others=>'0');
+            elsif ACLK_EN = '1' then
+                if update_cache = '1' then
+                    update_offset <= (others=>'0');
+                elsif (cache_in_update and in_AXI_RVALID) = '1' then
+                    update_offset <= update_offset + 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- data array
+    multiple_cache_lines : for idx in 0 to NUM_CACHE_LINE-1 generate
+    cache_mem: LinearImageFilter_image_in_m_axi_cache_mem
+    generic map (
+        MEM_STYLE   => CACHE_IMPL,
+        DATA_WIDTH  => BUS_DATA_WIDTH,
+        ADDR_WIDTH  => CACHE_ADDR_ALIGN,
+        DEPTH       => CACHE_BURST_LEN)
+    port map (
+        clk         => ACLK,
+        reset       => ARESET,
+        clk_en      => ACLK_EN,
+        we          => update_we(idx),
+        waddr       => update_offset,
+        din         => in_AXI_RDATA,
+        re          => read_data,
+        raddr       => tmp_offset,
+        dout        => tmp_data(idx));
+
+    update_we(idx) <= '1' when (cache_in_update and in_AXI_RVALID) = '1' and (update_index = idx) else '0';
+    end generate multiple_cache_lines;
+
+    -- tag array
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                tag_array <= (others=>(others=>'0'));
+            elsif (ACLK_EN = '1') then
+                if (update_cache = '1') then
+                    tag_array(to_integer(tmp_index)) <= tmp_tag;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- valid array
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                valid_array <= (others=>'0');
+            elsif (ACLK_EN = '1') then
+                if (cache_in_flush = '1') then
+                    valid_array <= (others=>'0'); 
+                elsif (update_cache = '1') then
+                    valid_array(to_integer(tmp_index)) <= '0';
+                elsif (update_done = '1') then
+                    valid_array(to_integer(update_index)) <= '1';
+                end if;
+            end if;
+        end if;
+    end process;
+
+end architecture behave;
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity LinearImageFilter_image_in_m_axi_cache_preprocessor is
+    generic (
+        SUPPORT_BURST         : INTEGER := 1; -- 1 burst / 0 non-burst
+        USER_AW               : INTEGER := 64;
+        USER_MAXREQS          : INTEGER := 16);
+    port (
+        ACLK                  : in  STD_LOGIC;
+        ARESET                : in  STD_LOGIC;
+        ACLK_EN               : in  STD_LOGIC;
+
+        in_HLS_ARADDR         : in  UNSIGNED(USER_AW-1 downto 0);
+        in_HLS_ARLEN          : in  UNSIGNED(31 downto 0);
+        in_HLS_ARVALID        : in  STD_LOGIC;
+        out_HLS_ARREADY       : out STD_LOGIC;
+
+        out_CACHE_ARADDR      : out UNSIGNED(USER_AW-1 downto 0);
+        out_CACHE_ARVALID     : out STD_LOGIC;
+        in_CACHE_ARREADY      : in  STD_LOGIC);
+end entity LinearImageFilter_image_in_m_axi_cache_preprocessor;
+
+architecture behave of LinearImageFilter_image_in_m_axi_cache_preprocessor is
+    ------------------------Task and function--------------
+    function log2 (x : INTEGER) return INTEGER is
+        variable n, m : INTEGER;
+    begin
+        n := 0;
+        m := 1;
+        while m < x loop
+            n := n + 1;
+            m := m * 2;
+        end loop;
+        return n;
+    end function log2;
+
+    function sel (a, b, cond : INTEGER) return INTEGER is
+        variable ret : INTEGER;
+    begin
+        if (cond = 0) then
+            ret := b;
+        else
+            ret := a;
+        end if;
+        return ret;
+    end function sel;
+    ------------------------Parameter----------------------
+    constant DATA_WIDTH : INTEGER := sel(USER_AW + 32, USER_AW, SUPPORT_BURST);
+
+    ------------------------Local signal-------------------
+    signal rreq_in         : UNSIGNED(DATA_WIDTH - 1 downto 0);
+    signal rreq_out        : UNSIGNED(DATA_WIDTH - 1 downto 0);
+    signal rreq_valid      : STD_LOGIC;
+    signal rreq_ready      : STD_LOGIC;
+
+    component LinearImageFilter_image_in_m_axi_fifo is
+        generic (
+            MEM_STYLE             : STRING  := "shiftreg";
+            DATA_WIDTH            : INTEGER := 8;
+            ADDR_WIDTH            : INTEGER := 4;
+            DEPTH                 : INTEGER := 16);
+        port (
+            clk                   : in  STD_LOGIC;
+            reset                 : in  STD_LOGIC;
+            clk_en                : in  STD_LOGIC;
+            if_full_n             : out STD_LOGIC;
+            if_write              : in  STD_LOGIC;
+            if_din                : in  UNSIGNED(DATA_WIDTH-1 downto 0);
+            if_empty_n            : out STD_LOGIC;
+            if_read               : in  STD_LOGIC;
+            if_dout               : out UNSIGNED(DATA_WIDTH-1 downto 0);
+            if_num_data_valid     : out UNSIGNED(ADDR_WIDTH downto 0));
+    end component LinearImageFilter_image_in_m_axi_fifo;
+
+begin
+    ------------------------Instantiation------------------
+    fifo_rreq: LinearImageFilter_image_in_m_axi_fifo
+    generic map (
+        DATA_WIDTH        => DATA_WIDTH,
+        ADDR_WIDTH        => log2(USER_MAXREQS),
+        DEPTH             => USER_MAXREQS)
+    port map (
+        clk               => ACLK,
+        reset             => ARESET,
+        clk_en            => ACLK_EN,
+        if_full_n         => out_HLS_ARREADY,
+        if_write          => in_HLS_ARVALID,
+        if_din            => rreq_in,
+        if_empty_n        => rreq_valid,
+        if_read           => rreq_ready,
+        if_dout           => rreq_out,
+        if_num_data_valid => open);
+
+    burst_gen: if (SUPPORT_BURST = 1) generate
+        signal next_rreq : STD_LOGIC;
+        signal rreq_addr : UNSIGNED(USER_AW - 1 downto 0);
+        signal rreq_len  : UNSIGNED(31 downto 0);
+
+        signal tmp_addr  : UNSIGNED(USER_AW - 1 downto 0);
+        signal tmp_cnt   : UNSIGNED(31 downto 0);
+        signal tmp_valid : STD_LOGIC;
+        signal tmp_ready : STD_LOGIC;
+        signal last_addr : STD_LOGIC;
+        signal next_addr : STD_LOGIC;
+    begin
+        rreq_in           <= in_HLS_ARLEN & in_HLS_ARADDR;
+        rreq_addr         <= rreq_out(USER_AW - 1  downto 0);
+        rreq_len          <= rreq_out(USER_AW + 31 downto USER_AW);
+
+        out_CACHE_ARADDR  <= tmp_addr;
+        out_CACHE_ARVALID <= tmp_valid;
+        tmp_ready         <= in_CACHE_ARREADY;
+
+        next_addr         <= tmp_ready and tmp_valid;
+        last_addr         <= '1' when (tmp_cnt = 1) and next_addr = '1' else '0';
+        rreq_ready        <= (not tmp_valid) or last_addr;
+        next_rreq         <= rreq_valid and rreq_ready; 
+        
+        process (ACLK)
+        begin
+            if (ACLK'event and ACLK = '1') then
+                if (ARESET = '1') then
+                    tmp_addr <= (others => '0');
+                    tmp_cnt  <= (others => '0');
+                elsif ACLK_EN = '1' then
+                    if (next_rreq = '1') then
+                        tmp_addr <= rreq_addr;
+                        tmp_cnt  <= rreq_len;
+                    elsif (next_addr = '1') then
+                        tmp_addr <= tmp_addr + 1;
+                        tmp_cnt  <= tmp_cnt  - 1;
+                    end if;
+                end if;
+            end if;
+        end process;
+    
+        process (ACLK)
+        begin
+            if (ACLK'event and ACLK = '1') then
+                if (ARESET = '1') then
+                    tmp_valid  <= '0';
+                elsif ACLK_EN = '1' then
+                    if (next_rreq = '1') then
+                        tmp_valid <= '1';
+                    elsif (last_addr = '1') then
+                        tmp_valid <= '0';
+                    end if;
+                end if;
+            end if;
+        end process;
+
+    end generate;
+
+    non_busrt_gen: if (SUPPORT_BURST = 0) generate
+    begin
+        rreq_in           <= in_HLS_ARADDR;
+        out_CACHE_ARADDR  <= rreq_out;
+        out_CACHE_ARVALID <= rreq_valid;
+        rreq_ready        <= in_CACHE_ARREADY;
+
+    end generate;
+
+end architecture behave;
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
 entity LinearImageFilter_image_in_m_axi_load is
     generic (
         C_TARGET_ADDR         : INTEGER := 16#00000000#;
@@ -524,11 +1177,18 @@ entity LinearImageFilter_image_in_m_axi_load is
         USER_AW               : INTEGER := 32;
         USER_MAXREQS          : INTEGER := 16;
         USER_RFIFONUM_WIDTH   : INTEGER := 6;
-        BUFFER_IMPL           : STRING  := "auto");
+        -- for cache
+        SUPPORT_BURST         : INTEGER := 0;
+        CACHE_IMPL            : STRING  := "auto";
+        NUM_CACHE_LINE        : INTEGER := 1;
+        CACHE_LINE_DEPTH      : INTEGER := 16);
     port (
         ACLK                  : in  STD_LOGIC;
         ARESET                : in  STD_LOGIC;
         ACLK_EN               : in  STD_LOGIC;
+
+        cache_flush           : in  STD_LOGIC;
+        cache_flush_done      : out STD_LOGIC;
 
         out_AXI_ARADDR        : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
         out_AXI_ARLEN         : out UNSIGNED(31 downto 0);
@@ -552,16 +1212,6 @@ end entity LinearImageFilter_image_in_m_axi_load;
 
 architecture behave of LinearImageFilter_image_in_m_axi_load is
     ------------------------Task and function--------------
-    function calc_data_width (x : INTEGER) return INTEGER is
-        variable y : INTEGER;
-    begin
-        y := 8;
-        while y < x loop
-            y := y * 2;
-        end loop;
-        return y;
-    end function calc_data_width;
-
     function log2 (x : INTEGER) return INTEGER is
         variable n, m : INTEGER;
     begin
@@ -574,488 +1224,149 @@ architecture behave of LinearImageFilter_image_in_m_axi_load is
         return n;
     end function log2;
     ------------------------Parameter----------------------
-    constant USER_DATA_WIDTH  : INTEGER := calc_data_width(USER_DW);
-    constant USER_DATA_BYTES  : INTEGER := USER_DATA_WIDTH / 8;
-    constant USER_ADDR_ALIGN  : INTEGER := log2(USER_DATA_BYTES);
-    constant BUS_DATA_BYTES   : INTEGER := BUS_DATA_WIDTH / 8;
-    constant BUS_ADDR_ALIGN   : INTEGER := log2(BUS_DATA_BYTES);
-    constant RBUFF_DEPTH      : INTEGER := MAX_READ_BURST_LENGTH*NUM_READ_OUTSTANDING;
-    constant TARGET_ADDR      : INTEGER := (C_TARGET_ADDR/USER_DATA_BYTES)*USER_DATA_BYTES;
+    ------------------------Local signal-------------------    
+    signal tmp_rreq               : UNSIGNED(USER_AW-1 downto 0);
+    signal rreq_ready             : STD_LOGIC;
+    signal rreq_valid             : STD_LOGIC;
+     
+    signal rdata_valid            : STD_LOGIC;
+    signal ready_for_outstanding  : STD_LOGIC; 
 
-    ------------------------Local signal-------------------
-    signal next_rreq      : STD_LOGIC;
-    signal ready_for_rreq : STD_LOGIC;
-    signal rreq_ready     : STD_LOGIC;
-    
-    signal in_rreq_pack   : UNSIGNED(USER_AW+31 downto 0);
-    signal rreq_pack      : UNSIGNED(USER_AW+31 downto 0);
-    signal rreq_addr      : UNSIGNED(USER_AW-1 downto 0);
-    signal rreq_len       : UNSIGNED(31 downto 0);
-    signal rreq_valid     : STD_LOGIC;
-    
-    signal tmp_addr       : UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
-    signal tmp_len        : UNSIGNED(31 downto 0);
-    signal tmp_valid      : STD_LOGIC;
-
-    signal valid_length   : STD_LOGIC;
-    
-    signal beat_valid     : STD_LOGIC;
-    signal next_beat      : STD_LOGIC;
-    signal last_beat      : STD_LOGIC;
-    signal beat_data      : UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
-    signal in_beat_pack   : UNSIGNED(BUS_DATA_WIDTH+1 downto 0); 
-    signal beat_pack      : UNSIGNED(BUS_DATA_WIDTH+1 downto 0);
-    signal beat_nvalid    : UNSIGNED(log2(RBUFF_DEPTH) downto 0);
-    signal burst_ready    : STD_LOGIC;
-    signal ready_for_outstanding : STD_LOGIC; 
-    
-    -- regslice io ?  no 
-
-    -- enable regslice on R channel  no 
-
-    component LinearImageFilter_image_in_m_axi_fifo is
+    component LinearImageFilter_image_in_m_axi_cache_preprocessor is
         generic (
-            MEM_STYLE         : STRING  := "shiftreg";
-            DATA_WIDTH        : INTEGER := 8;
-            ADDR_WIDTH        : INTEGER := 4;
-            DEPTH             : INTEGER := 16);
+            SUPPORT_BURST         : INTEGER := 1; -- 1 burst / 0 non-burst
+            USER_AW               : INTEGER := 64;
+            USER_MAXREQS          : INTEGER := 16);
         port (
-            clk               : in  STD_LOGIC;
-            reset             : in  STD_LOGIC;
-            clk_en            : in  STD_LOGIC;
-            if_full_n         : out STD_LOGIC;
-            if_write          : in  STD_LOGIC;
-            if_din            : in  UNSIGNED(DATA_WIDTH-1 downto 0);
-            if_empty_n        : out STD_LOGIC;
-            if_read           : in  STD_LOGIC;
-            if_dout           : out UNSIGNED(DATA_WIDTH-1 downto 0);
-            if_num_data_valid : out UNSIGNED(ADDR_WIDTH downto 0));
-    end component LinearImageFilter_image_in_m_axi_fifo;
-
+            ACLK                  : in  STD_LOGIC;
+            ARESET                : in  STD_LOGIC;
+            ACLK_EN               : in  STD_LOGIC;
     
+            in_HLS_ARADDR         : in  UNSIGNED(USER_AW-1 downto 0);
+            in_HLS_ARLEN          : in  UNSIGNED(31 downto 0);
+            in_HLS_ARVALID        : in  STD_LOGIC;
+            out_HLS_ARREADY       : out STD_LOGIC;
+    
+            out_CACHE_ARADDR      : out UNSIGNED(USER_AW-1 downto 0);
+            out_CACHE_ARVALID     : out STD_LOGIC;
+            in_CACHE_ARREADY      : in  STD_LOGIC);
+    end component LinearImageFilter_image_in_m_axi_cache_preprocessor;
+
+    component LinearImageFilter_image_in_m_axi_cache_unit is
+    generic (
+        MODE                  : STRING  := "READ-ONLY";
+        CACHE_IMPL            : STRING  := "auto";
+        C_TARGET_ADDR         : INTEGER := 16#00000000#;
+        USER_AW               : INTEGER := 64;
+        USER_DW               : INTEGER := 32;
+        BUS_ADDR_WIDTH        : INTEGER := 64;
+        BUS_DATA_WIDTH        : INTEGER := 512;
+        NUM_CACHE_LINE        : INTEGER := 1;
+        CACHE_LINE_DEPTH      : INTEGER := 16);
+    port (
+        ACLK                  : in  STD_LOGIC;
+        ARESET                : in  STD_LOGIC;
+        ACLK_EN               : in  STD_LOGIC;
+
+        cache_flush           : in  STD_LOGIC;
+        cache_flush_done      : out STD_LOGIC;
+
+        out_AXI_ARADDR        : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+        out_AXI_ARLEN         : out UNSIGNED(31 downto 0);
+        out_AXI_ARVALID       : out STD_LOGIC;
+        in_AXI_ARREADY        : in  STD_LOGIC;
+
+        in_AXI_RDATA          : in  UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+        in_AXI_RLAST          : in  STD_LOGIC;
+        in_AXI_RVALID         : in  STD_LOGIC;
+        out_AXI_RREADY        : out STD_LOGIC;
+        
+        in_HLS_ARADDR         : in  UNSIGNED(USER_AW-1 downto 0);
+        in_HLS_ARVALID        : in  STD_LOGIC;
+        out_HLS_ARREADY       : out STD_LOGIC;
+
+        out_HLS_RDATA         : out UNSIGNED(USER_DW-1 downto 0);
+        out_HLS_RVALID        : out STD_LOGIC;
+        in_HLS_RREADY         : in  STD_LOGIC);
+    end component LinearImageFilter_image_in_m_axi_cache_unit;
 
 begin
 
     -- Instantiation
-    
-    
-    fifo_rreq : LinearImageFilter_image_in_m_axi_fifo
+    cache_preprocessor : LinearImageFilter_image_in_m_axi_cache_preprocessor
     generic map (
-        DATA_WIDTH        => USER_AW + 32,
-        ADDR_WIDTH        => log2(USER_MAXREQS),
-        DEPTH             => USER_MAXREQS)
+        SUPPORT_BURST     => SUPPORT_BURST,
+        USER_AW           => USER_AW,
+        USER_MAXREQS      => USER_MAXREQS)
     port map (
-        clk               => ACLK,
-        reset             => ARESET,
-        clk_en            => ACLK_EN,
-        if_full_n         => out_HLS_ARREADY,
-        if_write          => in_HLS_ARVALID,
-        if_din            => in_rreq_pack,
-        if_empty_n        => rreq_valid,
-        if_read           => next_rreq,
-        if_dout           => rreq_pack,
-        if_num_data_valid => open);
+        ACLK              => ACLK,
+        ARESET            => ARESET,
+        ACLK_EN           => ACLK_EN,
+        in_HLS_ARADDR     => in_HLS_ARADDR,
+        in_HLS_ARLEN      => in_HLS_ARLEN,
+        in_HLS_ARVALID    => in_HLS_ARVALID,
+        out_HLS_ARREADY   => out_HLS_ARREADY,
+        out_CACHE_ARADDR  => tmp_rreq,
+        out_CACHE_ARVALID => rreq_valid,
+        in_CACHE_ARREADY  => rreq_ready);
+
+    read_cache : LinearImageFilter_image_in_m_axi_cache_unit
+    generic map (
+        CACHE_IMPL        => CACHE_IMPL,
+        USER_AW           => USER_AW,
+        USER_DW           => USER_DW,
+        BUS_ADDR_WIDTH    => BUS_ADDR_WIDTH,
+        BUS_DATA_WIDTH    => BUS_DATA_WIDTH,
+        NUM_CACHE_LINE    => NUM_CACHE_LINE,
+        CACHE_LINE_DEPTH  => CACHE_LINE_DEPTH)
+    port map (
+        ACLK              => ACLK,
+        ARESET            => ARESET,
+        ACLK_EN           => ACLK_EN,
+
+        cache_flush       => cache_flush,
+        cache_flush_done  => cache_flush_done,
+
+        out_AXI_ARADDR    => out_AXI_ARADDR,
+        out_AXI_ARLEN     => out_AXI_ARLEN,
+        out_AXI_ARVALID   => out_AXI_ARVALID,
+        in_AXI_ARREADY    => in_AXI_ARREADY,
+
+        in_AXI_RDATA      => in_AXI_RDATA,
+        in_AXI_RLAST      => in_AXI_RLAST(0),
+        in_AXI_RVALID     => in_AXI_RVALID,
+        out_AXI_RREADY    => out_AXI_RREADY,
+        
+        in_HLS_ARADDR     => tmp_rreq,
+        in_HLS_ARVALID    => rreq_valid,
+        out_HLS_ARREADY   => rreq_ready,
+
+        out_HLS_RDATA     => out_HLS_RDATA,
+        out_HLS_RVALID    => rdata_valid,
+        in_HLS_RREADY     => in_HLS_RREADY);
 
     -- ===================================================================
-    -- start of ARADDR PREPROCESSOR
-    in_rreq_pack    <= in_HLS_ARLEN & in_HLS_ARADDR;
-    next_rreq       <= rreq_valid and ready_for_rreq;
-    ready_for_rreq  <= (not tmp_valid) or (in_AXI_ARREADY and rreq_ready);
-    rreq_len        <= rreq_pack(USER_AW + 31 downto USER_AW);
-    rreq_addr       <= rreq_pack(USER_AW - 1 downto 0);
-
-    valid_length    <= '1' when rreq_len /= 0 and rreq_len(31) = '0' else '0';
-
-    out_AXI_ARLEN   <= tmp_len;   -- Byte length
-    out_AXI_ARADDR  <= tmp_addr;  -- Byte address
-    out_AXI_ARVALID <= tmp_valid and rreq_ready;
+    out_HLS_RFIFONUM     <= to_unsigned(1, USER_RFIFONUM_WIDTH) when rdata_valid = '1' else (others=>'0');
+    out_HLS_RVALID       <= rdata_valid;
+    out_AXI_RBURST_READY <= ready_for_outstanding;
 
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                tmp_addr <= (others => '0');
-                tmp_len   <= (others => '0');
+                ready_for_outstanding  <= '1';
             elsif ACLK_EN = '1' then
-                if (next_rreq = '1') then
-                    tmp_addr  <= TARGET_ADDR + SHIFT_LEFT(RESIZE(rreq_addr, BUS_ADDR_WIDTH), USER_ADDR_ALIGN);
-                    tmp_len   <= SHIFT_LEFT(rreq_len, USER_ADDR_ALIGN) - 1;
+                if (in_AXI_RVALID and in_AXI_RLAST(1)) = '1' then
+                    ready_for_outstanding <= '1';
+                else
+                    ready_for_outstanding <= '0';
                 end if;
             end if;
         end if;
     end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ARESET = '1') then
-                tmp_valid  <= '0';
-            elsif ACLK_EN = '1' then
-                if (next_rreq and valid_length) = '1' then
-                    tmp_valid <= '1';
-                elsif (in_AXI_ARREADY and rreq_ready) = '1' then
-                    tmp_valid <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    -- end of ARADDR PREPROCESSOR
     -- ===================================================================
-    
-    
-
-    buff_rdata : LinearImageFilter_image_in_m_axi_fifo
-    generic map (
-        MEM_STYLE         => BUFFER_IMPL,
-        DATA_WIDTH        => BUS_DATA_WIDTH + 2,
-        ADDR_WIDTH        => log2(RBUFF_DEPTH),
-        DEPTH             => RBUFF_DEPTH)
-    port map (
-        clk               => ACLK,
-        reset             => ARESET,
-        clk_en            => ACLK_EN,
-        if_full_n         => out_AXI_RREADY,
-        if_write          => in_AXI_RVALID,
-        if_din            => in_beat_pack,
-        if_empty_n        => beat_valid,
-        if_read           => next_beat,
-        if_dout           => beat_pack,
-        if_num_data_valid => beat_nvalid);
-        
-        in_beat_pack     <= in_AXI_RLAST & in_AXI_RDATA;
-        beat_data        <= beat_pack(BUS_DATA_WIDTH-1 downto 0);
-        last_beat        <= beat_pack(BUS_DATA_WIDTH);
-        burst_ready      <= beat_pack(BUS_DATA_WIDTH+1);
-
-        out_AXI_RBURST_READY <= ready_for_outstanding;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    ready_for_outstanding  <= '1';
-                elsif ACLK_EN = '1' then
-                    if (next_beat = '1') then
-                        ready_for_outstanding <= burst_ready;
-                    else
-                        ready_for_outstanding <= '0';
-                    end if;
-                end if;
-            end if;
-        end process;
-
-    -- ===================================================================
-    -- start of RDATA PREPROCESSOR
-    bus_equal_gen : if (USER_DATA_WIDTH = BUS_DATA_WIDTH) generate
-    begin
-        rreq_ready       <= '1';
-        -- regslice io ?  no
-        next_beat        <= in_HLS_RREADY;
-        out_HLS_RDATA    <= beat_data(USER_DW-1 downto 0);
-        out_HLS_RVALID   <= beat_valid;
-        out_HLS_RFIFONUM <= beat_nvalid; -- 
-
-    end generate bus_equal_gen;
-
-    bus_wide_gen : if (USER_DATA_WIDTH < BUS_DATA_WIDTH) generate
-        constant TOTAL_SPLIT    : INTEGER := BUS_DATA_WIDTH / USER_DATA_WIDTH;
-        constant SPLIT_ALIGN    : INTEGER := log2(TOTAL_SPLIT);
-        signal  tmp_addr_end    : UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
-
-        signal  offset_full_n   : STD_LOGIC;
-        signal  offset_write    : STD_LOGIC;
-        signal  start_offset    : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-        signal  end_offset      : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-
-        signal  offset_valid    : STD_LOGIC;
-        signal  next_offset     : STD_LOGIC;
-        signal  offset_info     : UNSIGNED(2*SPLIT_ALIGN-1 downto 0);
-        signal  offset_pack     : UNSIGNED(2*SPLIT_ALIGN-1 downto 0);
-        signal  head_offset     : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-        signal  tail_offset     : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-
-        signal  data_buf        : UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
-        signal  data_valid      : STD_LOGIC;
-
-        signal  rdata_nvalid    : UNSIGNED(USER_RFIFONUM_WIDTH-1 downto 0);
-        signal  data_nvalid     : UNSIGNED(SPLIT_ALIGN downto 0);
-        signal  split_nvalid    : UNSIGNED(SPLIT_ALIGN downto 0);
-
-        signal  split_cnt       : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-        signal  split_cnt_buf   : UNSIGNED(SPLIT_ALIGN-1 downto 0);
-
-        signal  first_beat      : STD_LOGIC;
-
-        signal  ready_for_data  : BOOLEAN;
-        signal  first_data      : STD_LOGIC;
-        signal  last_data       : STD_LOGIC;
-        
-        signal  first_split     : BOOLEAN;
-        signal  next_split      : BOOLEAN;
-        signal  last_split      : BOOLEAN;
-
-    begin
-
-        rreq_offset : LinearImageFilter_image_in_m_axi_fifo
-        generic map (
-            DATA_WIDTH        => 2*SPLIT_ALIGN,
-            ADDR_WIDTH        => log2(NUM_READ_OUTSTANDING),
-            DEPTH             => NUM_READ_OUTSTANDING)
-        port map (
-            clk               => ACLK,
-            reset             => ARESET,
-            clk_en            => ACLK_EN,
-            if_full_n         => offset_full_n,
-            if_write          => offset_write,
-            if_din            => offset_info,
-            if_empty_n        => offset_valid,
-            if_read           => next_offset,
-            if_dout           => offset_pack,
-            if_num_data_valid => open);
-
-        rreq_ready       <= '1' when offset_full_n = '1' or offset_write = '0' else '0';
-        tmp_addr_end     <= tmp_addr + tmp_len;
-
-        start_offset     <= tmp_addr(BUS_ADDR_ALIGN-1 downto USER_ADDR_ALIGN);
-        end_offset       <= tmp_addr_end(BUS_ADDR_ALIGN-1 downto USER_ADDR_ALIGN);
-        offset_info      <= start_offset & end_offset;
-        offset_write     <= tmp_valid and in_AXI_ARREADY;
-
-        next_offset      <= '1' when (last_beat = '1' and beat_valid = '1') and last_split else '0';
-        next_beat        <= '1' when last_split else '0';
-
-        head_offset      <= offset_pack(2*SPLIT_ALIGN-1 downto SPLIT_ALIGN);
-        tail_offset      <= offset_pack(SPLIT_ALIGN-1 downto 0);
-
-        -- regslice io ?  no
-        out_HLS_RDATA    <= data_buf(USER_DW-1 downto 0);
-        out_HLS_RVALID   <= data_valid;
-        out_HLS_RFIFONUM <= rdata_nvalid + data_nvalid;
-        ready_for_data   <= data_valid = '0' or in_HLS_RREADY = '1'; -- 
-
-        first_data       <= (first_beat and beat_valid) and offset_valid;
-        last_data        <= (last_beat  and beat_valid) and offset_valid;
-
-        first_split      <= (split_cnt = 0 and beat_valid = '1' and ready_for_data) when first_data = '0' else
-                            (split_cnt = head_offset and ready_for_data);
-        last_split       <= (split_cnt = (TOTAL_SPLIT - 1) and ready_for_data)      when last_data = '0'  else
-                            (split_cnt = tail_offset and ready_for_data);
-        next_split       <= (split_cnt /= 0 and ready_for_data)                     when first_data = '0' else
-                            (split_cnt /= head_offset and ready_for_data);
-        split_cnt        <= head_offset                                             when first_data = '1' and (split_cnt_buf = 0) else
-                            split_cnt_buf;
-        split_nvalid     <= RESIZE(tail_offset - head_offset, SPLIT_ALIGN+1) + 1    when (first_data and last_data) = '1' else
-                            RESIZE(TOTAL_SPLIT - head_offset, SPLIT_ALIGN+1)        when first_data = '1'                 else
-                            RESIZE(tail_offset + 1           ,SPLIT_ALIGN+1)        when last_data  = '1'                 else
-                            TO_UNSIGNED(TOTAL_SPLIT          ,SPLIT_ALIGN+1);
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    first_beat <= '1';
-                elsif ACLK_EN = '1' then
-                    if last_beat = '1' and last_split then
-                        first_beat <= '1';
-                    elsif (first_beat = '1' and last_split) then
-                        first_beat <= '0';
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    split_cnt_buf <= (others => '0');
-                elsif ACLK_EN = '1' then
-                    if last_split then
-                        split_cnt_buf <= (others => '0');
-                    elsif first_split or next_split then
-                        split_cnt_buf <= split_cnt + 1;
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if ACLK_EN = '1' then
-                    if first_split and (first_data = '1') then
-                        data_buf <= SHIFT_RIGHT(beat_data, to_integer(head_offset)*USER_DATA_WIDTH);
-                    elsif first_split then
-                        data_buf <= beat_data;
-                    elsif next_split then
-                        data_buf <= SHIFT_RIGHT(data_buf, USER_DATA_WIDTH);
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    data_valid <= '0';
-                elsif ACLK_EN = '1' then
-                    if first_split then
-                        data_valid <= '1';
-                    elsif not (first_split or next_split) and ready_for_data then
-                        data_valid <= '0';
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    data_nvalid <= (others=>'0');
-                elsif ACLK_EN = '1' then
-                    if first_split then
-                        data_nvalid <= split_nvalid;
-                    elsif next_split then
-                        data_nvalid <= data_nvalid - 1;
-                    elsif not (first_split or next_split) and ready_for_data then
-                        data_nvalid <= (others=>'0');
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    rdata_nvalid <= (others=>'0');
-                elsif ACLK_EN = '1' then
-                    if beat_valid = '0' then
-                        rdata_nvalid <= (others=>'0');
-                    else
-                        rdata_nvalid <= SHIFT_LEFT(RESIZE(beat_nvalid-1, USER_RFIFONUM_WIDTH), SPLIT_ALIGN);
-                    end if;
-                end if;
-            end if;
-        end process;
-
-    end generate bus_wide_gen; 
-
-    bus_narrow_gen : if (USER_DATA_WIDTH > BUS_DATA_WIDTH) generate
-        constant TOTAL_PADS     : INTEGER := USER_DATA_WIDTH / BUS_DATA_WIDTH;
-        constant PAD_ALIGN      : INTEGER := log2(TOTAL_PADS);
-
-        signal  data_buf        : UNSIGNED(USER_DATA_WIDTH-1 downto 0);
-        signal  data_nvalid     : UNSIGNED(PAD_ALIGN downto 0);
-        signal  data_valid      : STD_LOGIC;
-        signal  pad_oh          : UNSIGNED(TOTAL_PADS - 1 downto 0);
-        signal  pad_oh_reg      : UNSIGNED(TOTAL_PADS - 1 downto 0);
-       
-        signal  rdata_num_vld   : UNSIGNED(USER_RFIFONUM_WIDTH - 1 downto 0);
-        signal  ready_for_data  : BOOLEAN;
-        signal  next_pad        : BOOLEAN;
-        signal  first_pad       : BOOLEAN;
-        signal  last_pad        : BOOLEAN;
-    begin
-
-        rreq_ready       <= '1';
-        next_beat        <= '1' when next_pad else '0';
-        rdata_num_vld    <= RESIZE(beat_nvalid(log2(RBUFF_DEPTH) downto PAD_ALIGN), RBUFF_DEPTH) + SHIFT_RIGHT(beat_nvalid(PAD_ALIGN-1 downto 0) + data_nvalid, PAD_ALIGN);
-
-        -- regslice io ?  no
-        out_HLS_RDATA    <= data_buf(USER_DW-1 downto 0);
-        out_HLS_RVALID   <= data_valid;
-        out_HLS_RFIFONUM <= rdata_num_vld;
-        ready_for_data   <= data_valid = '0' or in_HLS_RREADY = '1';-- 
-
-        next_pad         <= beat_valid = '1' and ready_for_data;
-        last_pad         <= pad_oh(TOTAL_PADS - 1) = '1';
-
-        pad_oh           <= (others => '0')            when beat_valid = '0' else
-                            TO_UNSIGNED(1, TOTAL_PADS) when first_pad      else
-                            pad_oh_reg;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    pad_oh_reg <= (others => '0');
-                elsif ACLK_EN = '1' then
-                    if next_pad then
-                        pad_oh_reg <= pad_oh(TOTAL_PADS - 2 downto 0) & '0';
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    first_pad <= true;
-                elsif ACLK_EN = '1' then
-                    if next_pad and not last_pad then
-                        first_pad <= false;
-                    elsif next_pad and last_pad then
-                        first_pad <= true;
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        data_gen : for i in 0 to TOTAL_PADS-1 generate
-        begin
-            process (ACLK)
-            begin
-                if (ACLK'event and ACLK = '1') then
-                    if ACLK_EN = '1' then
-                        if pad_oh(i) = '1' and ready_for_data then
-                            data_buf((i+1)*BUS_DATA_WIDTH - 1 downto i*BUS_DATA_WIDTH) <= beat_data;
-                        end if;
-                    end if;
-                end if;
-            end process;
-        end generate data_gen;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    data_valid <= '0';
-                elsif ACLK_EN = '1' then
-                    if next_beat = '1' then
-                        data_valid <= '1';
-                    elsif ready_for_data then
-                        data_valid <= '0';
-                    end if;
-                end if;
-            end if;
-        end process;
-
-        process (ACLK)
-        begin
-            if (ACLK'event and ACLK = '1') then
-                if (ARESET = '1') then
-                    data_nvalid <= (others=>'0');
-                elsif ACLK_EN = '1' then
-                    if first_pad then
-                        data_nvalid <= TO_UNSIGNED(1,PAD_ALIGN+1);
-                    elsif next_pad then
-                        data_nvalid <= data_nvalid + 1;
-                    end if;
-                end if;
-            end if;
-        end process;
-    
-    end generate bus_narrow_gen;
-
-    -- end of RDATA PREPROCESSOR
-    -- ==================================================================
-
 end architecture behave;
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
@@ -1142,7 +1453,7 @@ architecture behave of LinearImageFilter_image_in_m_axi_store is
     constant BUS_ADDR_ALIGN   : INTEGER := log2(BUS_DATA_BYTES);
     -- write buffer size
     constant WBUFF_DEPTH      : INTEGER := max(MAX_WRITE_BURST_LENGTH * BUS_DATA_WIDTH / USER_DATA_WIDTH, 1); 
-    constant TARGET_ADDR      : INTEGER := (C_TARGET_ADDR/USER_DATA_BYTES)*USER_DATA_BYTES;
+    constant TARGET_ADDR      : INTEGER := (C_TARGET_ADDR/BUS_DATA_BYTES)*BUS_DATA_BYTES;
     ------------------------Local signal-------------------
     signal next_wreq      : STD_LOGIC;
     signal ready_for_wreq : STD_LOGIC;
@@ -1181,8 +1492,6 @@ architecture behave of LinearImageFilter_image_in_m_axi_store is
     signal ursp_ready     : STD_LOGIC;
     signal ursp_write     : STD_LOGIC;
 
-    -- regslice io ?  no 
-
     component LinearImageFilter_image_in_m_axi_fifo is
         generic (
             MEM_STYLE         : STRING  := "shiftreg";
@@ -1202,12 +1511,8 @@ architecture behave of LinearImageFilter_image_in_m_axi_store is
             if_num_data_valid : out UNSIGNED(ADDR_WIDTH downto 0));
     end component LinearImageFilter_image_in_m_axi_fifo;
 
-    
-
 begin
     -- Instantiation
-    
-
     fifo_wreq : LinearImageFilter_image_in_m_axi_fifo
     generic map (
         DATA_WIDTH        => USER_AW + 32,
@@ -1271,8 +1576,6 @@ begin
 
     -- end of AWADDR PREPROCESSOR
     -- ===================================================================
-
-    
 
     buff_wdata : LinearImageFilter_image_in_m_axi_fifo
     generic map (
@@ -1685,8 +1988,6 @@ begin
         if_read           => in_HLS_BREADY,
         if_dout           => open,
         if_num_data_valid => open);
-
-    
 
     out_AXI_BREADY <= wrsp_type(0) and ursp_ready;
     

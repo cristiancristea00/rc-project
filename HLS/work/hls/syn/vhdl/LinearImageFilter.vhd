@@ -21,7 +21,7 @@ generic (
     C_M_AXI_IMAGE_IN_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_IMAGE_IN_ID_WIDTH : INTEGER := 1;
     C_M_AXI_IMAGE_IN_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_IMAGE_IN_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_IMAGE_IN_DATA_WIDTH : INTEGER := 1024;
     C_M_AXI_IMAGE_IN_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_IMAGE_IN_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_IMAGE_IN_RUSER_WIDTH : INTEGER := 1;
@@ -29,7 +29,7 @@ generic (
     C_M_AXI_KERNEL_ADDR_WIDTH : INTEGER := 32;
     C_M_AXI_KERNEL_ID_WIDTH : INTEGER := 1;
     C_M_AXI_KERNEL_AWUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_KERNEL_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_KERNEL_DATA_WIDTH : INTEGER := 1024;
     C_M_AXI_KERNEL_WUSER_WIDTH : INTEGER := 1;
     C_M_AXI_KERNEL_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_KERNEL_RUSER_WIDTH : INTEGER := 1;
@@ -316,137 +316,138 @@ architecture behav of LinearImageFilter is
     signal image_out_blk_n_B : STD_LOGIC;
     signal ap_CS_fsm_state50 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state50 : signal is "none";
-    signal padding_read_reg_411 : STD_LOGIC_VECTOR (7 downto 0);
-    signal stride_col_read_reg_416 : STD_LOGIC_VECTOR (31 downto 0);
-    signal stride_row_read_reg_423 : STD_LOGIC_VECTOR (31 downto 0);
-    signal kernel_dim_read_reg_429 : STD_LOGIC_VECTOR (31 downto 0);
-    signal kernel_offset_read_reg_435 : STD_LOGIC_VECTOR (31 downto 0);
-    signal cols_read_reg_440 : STD_LOGIC_VECTOR (31 downto 0);
-    signal rows_read_reg_447 : STD_LOGIC_VECTOR (31 downto 0);
-    signal image_in_offset_read_reg_453 : STD_LOGIC_VECTOR (31 downto 0);
-    signal image_out_offset_read_reg_458 : STD_LOGIC_VECTOR (31 downto 0);
-    signal trunc_ln7_fu_243_p1 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln7_reg_469 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln7_1_fu_247_p1 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln7_1_reg_475 : STD_LOGIC_VECTOR (29 downto 0);
-    signal div_reg_480 : STD_LOGIC_VECTOR (30 downto 0);
-    signal empty_fu_261_p1 : STD_LOGIC_VECTOR (28 downto 0);
-    signal empty_reg_486 : STD_LOGIC_VECTOR (28 downto 0);
-    signal empty_40_fu_265_p1 : STD_LOGIC_VECTOR (28 downto 0);
-    signal empty_40_reg_491 : STD_LOGIC_VECTOR (28 downto 0);
-    signal zext_ln7_fu_274_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal padding_read_reg_421 : STD_LOGIC_VECTOR (7 downto 0);
+    signal stride_col_read_reg_426 : STD_LOGIC_VECTOR (31 downto 0);
+    signal stride_row_read_reg_433 : STD_LOGIC_VECTOR (31 downto 0);
+    signal kernel_dim_read_reg_439 : STD_LOGIC_VECTOR (31 downto 0);
+    signal kernel_offset_read_reg_445 : STD_LOGIC_VECTOR (31 downto 0);
+    signal cols_read_reg_450 : STD_LOGIC_VECTOR (31 downto 0);
+    signal rows_read_reg_457 : STD_LOGIC_VECTOR (31 downto 0);
+    signal image_in_offset_read_reg_463 : STD_LOGIC_VECTOR (31 downto 0);
+    signal image_out_offset_read_reg_468 : STD_LOGIC_VECTOR (31 downto 0);
+    signal trunc_ln7_fu_253_p1 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln7_reg_479 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln7_1_fu_257_p1 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln7_1_reg_485 : STD_LOGIC_VECTOR (29 downto 0);
+    signal div_reg_490 : STD_LOGIC_VECTOR (30 downto 0);
+    signal empty_fu_271_p1 : STD_LOGIC_VECTOR (28 downto 0);
+    signal empty_reg_496 : STD_LOGIC_VECTOR (28 downto 0);
+    signal empty_40_fu_275_p1 : STD_LOGIC_VECTOR (28 downto 0);
+    signal empty_40_reg_501 : STD_LOGIC_VECTOR (28 downto 0);
+    signal zext_ln7_fu_284_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal div_cast_fu_279_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal div_cast_reg_502 : STD_LOGIC_VECTOR (31 downto 0);
+    signal div_cast_fu_289_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal div_cast_reg_512 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal newRow_4_fu_282_p2 : STD_LOGIC_VECTOR (29 downto 0);
-    signal newRow_4_reg_507 : STD_LOGIC_VECTOR (29 downto 0);
-    signal mul_i_fu_287_p3 : STD_LOGIC_VECTOR (29 downto 0);
-    signal mul_i_reg_512 : STD_LOGIC_VECTOR (29 downto 0);
-    signal newCol_2_fu_294_p2 : STD_LOGIC_VECTOR (29 downto 0);
-    signal newCol_2_reg_517 : STD_LOGIC_VECTOR (29 downto 0);
-    signal mul35_i_fu_299_p3 : STD_LOGIC_VECTOR (29 downto 0);
-    signal mul35_i_reg_522 : STD_LOGIC_VECTOR (29 downto 0);
-    signal grp_fu_235_p2 : STD_LOGIC_VECTOR (63 downto 0);
-    signal mul_ln7_reg_527 : STD_LOGIC_VECTOR (63 downto 0);
+    signal newRow_4_fu_292_p2 : STD_LOGIC_VECTOR (29 downto 0);
+    signal newRow_4_reg_517 : STD_LOGIC_VECTOR (29 downto 0);
+    signal mul_i_fu_297_p3 : STD_LOGIC_VECTOR (29 downto 0);
+    signal mul_i_reg_522 : STD_LOGIC_VECTOR (29 downto 0);
+    signal newCol_2_fu_304_p2 : STD_LOGIC_VECTOR (29 downto 0);
+    signal newCol_2_reg_527 : STD_LOGIC_VECTOR (29 downto 0);
+    signal mul35_i_fu_309_p3 : STD_LOGIC_VECTOR (29 downto 0);
+    signal mul35_i_reg_532 : STD_LOGIC_VECTOR (29 downto 0);
+    signal grp_fu_245_p2 : STD_LOGIC_VECTOR (63 downto 0);
+    signal mul_ln7_reg_537 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
-    signal add_fu_314_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal add_reg_540 : STD_LOGIC_VECTOR (31 downto 0);
-    signal col_1_fu_337_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal col_1_reg_548 : STD_LOGIC_VECTOR (31 downto 0);
+    signal add_fu_324_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal add_reg_550 : STD_LOGIC_VECTOR (31 downto 0);
+    signal col_1_fu_347_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal col_1_reg_558 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state5 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal grp_fu_324_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal udiv_ln50_reg_553 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_334_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal udiv_ln53_reg_563 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state40 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state40 : signal is "none";
-    signal grp_fu_328_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal udiv_ln50_1_reg_558 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_332_p2 : STD_LOGIC_VECTOR (29 downto 0);
-    signal udiv_ln50_2_reg_563 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln50_fu_351_p1 : STD_LOGIC_VECTOR (29 downto 0);
-    signal trunc_ln50_reg_568 : STD_LOGIC_VECTOR (29 downto 0);
+    signal grp_fu_338_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal udiv_ln53_1_reg_568 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_342_p2 : STD_LOGIC_VECTOR (29 downto 0);
+    signal udiv_ln53_2_reg_573 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln53_fu_361_p1 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln53_reg_578 : STD_LOGIC_VECTOR (29 downto 0);
     signal ap_CS_fsm_state42 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state42 : signal is "none";
-    signal trunc_ln1_reg_573 : STD_LOGIC_VECTOR (29 downto 0);
+    signal trunc_ln1_reg_583 : STD_LOGIC_VECTOR (29 downto 0);
     signal ap_CS_fsm_state43 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state43 : signal is "none";
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_idle : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WLAST : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_BREADY : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WDATA : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WLAST : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARID : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_BREADY : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out_ap_vld : STD_LOGIC;
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_idle : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WLAST : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_BREADY : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WLAST : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_BREADY : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out_ap_vld : STD_LOGIC;
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce : STD_LOGIC;
+    signal m_axi_image_in_cache_flush : STD_LOGIC;
     signal image_in_AWREADY : STD_LOGIC;
     signal image_in_WREADY : STD_LOGIC;
     signal image_in_ARVALID : STD_LOGIC;
@@ -467,6 +468,7 @@ architecture behav of LinearImageFilter is
     signal image_out_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
     signal image_out_BVALID : STD_LOGIC;
     signal image_out_BREADY : STD_LOGIC;
+    signal m_axi_kernel_cache_flush : STD_LOGIC;
     signal kernel_AWREADY : STD_LOGIC;
     signal kernel_WREADY : STD_LOGIC;
     signal kernel_ARVALID : STD_LOGIC;
@@ -476,30 +478,30 @@ architecture behav of LinearImageFilter is
     signal kernel_RDATA : STD_LOGIC_VECTOR (31 downto 0);
     signal kernel_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
     signal kernel_BVALID : STD_LOGIC;
-    signal col_reg_198 : STD_LOGIC_VECTOR (31 downto 0);
-    signal icmp_ln28_fu_309_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg : STD_LOGIC := '0';
-    signal icmp_ln30_fu_319_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal col_reg_208 : STD_LOGIC_VECTOR (31 downto 0);
+    signal icmp_ln31_fu_319_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg : STD_LOGIC := '0';
+    signal icmp_ln33_fu_329_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state6 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state6 : signal is "none";
-    signal sext_ln51_fu_386_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal row_fu_120 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    signal row_3_fu_342_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_235_p0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_235_p1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_239_p0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_239_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sext_ln54_fu_396_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal row_fu_130 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    signal row_3_fu_352_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_245_p0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_245_p1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_249_p0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_249_p1 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state41 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state41 : signal is "none";
-    signal grp_fu_239_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal trunc_ln50_1_fu_355_p1 : STD_LOGIC_VECTOR (29 downto 0);
-    signal out_idx_fu_358_p2 : STD_LOGIC_VECTOR (29 downto 0);
-    signal shl_ln_fu_363_p3 : STD_LOGIC_VECTOR (31 downto 0);
-    signal add_ln51_fu_371_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal grp_fu_239_ce : STD_LOGIC;
-    signal grp_fu_324_ap_start : STD_LOGIC;
-    signal grp_fu_324_ap_done : STD_LOGIC;
-    signal grp_fu_324_ce : STD_LOGIC;
+    signal grp_fu_249_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal trunc_ln53_1_fu_365_p1 : STD_LOGIC_VECTOR (29 downto 0);
+    signal out_idx_fu_368_p2 : STD_LOGIC_VECTOR (29 downto 0);
+    signal shl_ln_fu_373_p3 : STD_LOGIC_VECTOR (31 downto 0);
+    signal add_ln54_fu_381_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal grp_fu_249_ce : STD_LOGIC;
+    signal grp_fu_334_ap_start : STD_LOGIC;
+    signal grp_fu_334_ap_done : STD_LOGIC;
+    signal grp_fu_334_ce : STD_LOGIC;
     signal ap_CS_fsm_state46 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state46 : signal is "none";
     signal ap_CS_fsm_state47 : STD_LOGIC;
@@ -508,12 +510,12 @@ architecture behav of LinearImageFilter is
     attribute fsm_encoding of ap_CS_fsm_state48 : signal is "none";
     signal ap_CS_fsm_state49 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state49 : signal is "none";
-    signal grp_fu_328_ap_start : STD_LOGIC;
-    signal grp_fu_328_ap_done : STD_LOGIC;
-    signal grp_fu_328_ce : STD_LOGIC;
-    signal grp_fu_332_ap_start : STD_LOGIC;
-    signal grp_fu_332_ap_done : STD_LOGIC;
-    signal grp_fu_332_ce : STD_LOGIC;
+    signal grp_fu_338_ap_start : STD_LOGIC;
+    signal grp_fu_338_ap_done : STD_LOGIC;
+    signal grp_fu_338_ce : STD_LOGIC;
+    signal grp_fu_342_ap_start : STD_LOGIC;
+    signal grp_fu_342_ap_done : STD_LOGIC;
+    signal grp_fu_342_ce : STD_LOGIC;
     signal ap_NS_fsm : STD_LOGIC_VECTOR (49 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -684,10 +686,10 @@ architecture behav of LinearImageFilter is
         mul35_i : IN STD_LOGIC_VECTOR (29 downto 0);
         sum_1_out : OUT STD_LOGIC_VECTOR (31 downto 0);
         sum_1_out_ap_vld : OUT STD_LOGIC;
-        grp_fu_239_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        grp_fu_239_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        grp_fu_239_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        grp_fu_239_p_ce : OUT STD_LOGIC );
+        grp_fu_249_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        grp_fu_249_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        grp_fu_249_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        grp_fu_249_p_ce : OUT STD_LOGIC );
     end component;
 
 
@@ -876,6 +878,7 @@ architecture behav of LinearImageFilter is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
+        cache_flush : IN STD_LOGIC;
         I_ARVALID : IN STD_LOGIC;
         I_ARREADY : OUT STD_LOGIC;
         I_ARADDR : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -1060,6 +1063,7 @@ architecture behav of LinearImageFilter is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
+        cache_flush : IN STD_LOGIC;
         I_ARVALID : IN STD_LOGIC;
         I_ARREADY : OUT STD_LOGIC;
         I_ARADDR : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -1083,49 +1087,49 @@ architecture behav of LinearImageFilter is
 
 
 begin
-    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210 : component LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols
+    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220 : component LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start,
-        ap_done => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done,
-        ap_idle => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_idle,
-        ap_ready => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready,
-        m_axi_kernel_AWVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWVALID,
+        ap_start => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start,
+        ap_done => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done,
+        ap_idle => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_idle,
+        ap_ready => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready,
+        m_axi_kernel_AWVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWVALID,
         m_axi_kernel_AWREADY => ap_const_logic_0,
-        m_axi_kernel_AWADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWADDR,
-        m_axi_kernel_AWID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWID,
-        m_axi_kernel_AWLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLEN,
-        m_axi_kernel_AWSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWSIZE,
-        m_axi_kernel_AWBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWBURST,
-        m_axi_kernel_AWLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLOCK,
-        m_axi_kernel_AWCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWCACHE,
-        m_axi_kernel_AWPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWPROT,
-        m_axi_kernel_AWQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWQOS,
-        m_axi_kernel_AWREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWREGION,
-        m_axi_kernel_AWUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWUSER,
-        m_axi_kernel_WVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WVALID,
+        m_axi_kernel_AWADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWADDR,
+        m_axi_kernel_AWID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWID,
+        m_axi_kernel_AWLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLEN,
+        m_axi_kernel_AWSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWSIZE,
+        m_axi_kernel_AWBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWBURST,
+        m_axi_kernel_AWLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLOCK,
+        m_axi_kernel_AWCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWCACHE,
+        m_axi_kernel_AWPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWPROT,
+        m_axi_kernel_AWQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWQOS,
+        m_axi_kernel_AWREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWREGION,
+        m_axi_kernel_AWUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWUSER,
+        m_axi_kernel_WVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WVALID,
         m_axi_kernel_WREADY => ap_const_logic_0,
-        m_axi_kernel_WDATA => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WDATA,
-        m_axi_kernel_WSTRB => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WSTRB,
-        m_axi_kernel_WLAST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WLAST,
-        m_axi_kernel_WID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WID,
-        m_axi_kernel_WUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WUSER,
-        m_axi_kernel_ARVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID,
+        m_axi_kernel_WDATA => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WDATA,
+        m_axi_kernel_WSTRB => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WSTRB,
+        m_axi_kernel_WLAST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WLAST,
+        m_axi_kernel_WID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WID,
+        m_axi_kernel_WUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WUSER,
+        m_axi_kernel_ARVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID,
         m_axi_kernel_ARREADY => kernel_ARREADY,
-        m_axi_kernel_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR,
-        m_axi_kernel_ARID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARID,
-        m_axi_kernel_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN,
-        m_axi_kernel_ARSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARSIZE,
-        m_axi_kernel_ARBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARBURST,
-        m_axi_kernel_ARLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLOCK,
-        m_axi_kernel_ARCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARCACHE,
-        m_axi_kernel_ARPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARPROT,
-        m_axi_kernel_ARQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARQOS,
-        m_axi_kernel_ARREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARREGION,
-        m_axi_kernel_ARUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARUSER,
+        m_axi_kernel_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR,
+        m_axi_kernel_ARID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARID,
+        m_axi_kernel_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN,
+        m_axi_kernel_ARSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARSIZE,
+        m_axi_kernel_ARBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARBURST,
+        m_axi_kernel_ARLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLOCK,
+        m_axi_kernel_ARCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARCACHE,
+        m_axi_kernel_ARPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARPROT,
+        m_axi_kernel_ARQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARQOS,
+        m_axi_kernel_ARREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARREGION,
+        m_axi_kernel_ARUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARUSER,
         m_axi_kernel_RVALID => kernel_RVALID,
-        m_axi_kernel_RREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY,
+        m_axi_kernel_RREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY,
         m_axi_kernel_RDATA => kernel_RDATA,
         m_axi_kernel_RLAST => ap_const_logic_0,
         m_axi_kernel_RID => ap_const_lv1_0,
@@ -1133,45 +1137,45 @@ begin
         m_axi_kernel_RUSER => ap_const_lv1_0,
         m_axi_kernel_RRESP => ap_const_lv2_0,
         m_axi_kernel_BVALID => ap_const_logic_0,
-        m_axi_kernel_BREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_BREADY,
+        m_axi_kernel_BREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_BREADY,
         m_axi_kernel_BRESP => ap_const_lv2_0,
         m_axi_kernel_BID => ap_const_lv1_0,
         m_axi_kernel_BUSER => ap_const_lv1_0,
-        m_axi_image_in_AWVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWVALID,
+        m_axi_image_in_AWVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWVALID,
         m_axi_image_in_AWREADY => ap_const_logic_0,
-        m_axi_image_in_AWADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWADDR,
-        m_axi_image_in_AWID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWID,
-        m_axi_image_in_AWLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLEN,
-        m_axi_image_in_AWSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWSIZE,
-        m_axi_image_in_AWBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWBURST,
-        m_axi_image_in_AWLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLOCK,
-        m_axi_image_in_AWCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWCACHE,
-        m_axi_image_in_AWPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWPROT,
-        m_axi_image_in_AWQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWQOS,
-        m_axi_image_in_AWREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWREGION,
-        m_axi_image_in_AWUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWUSER,
-        m_axi_image_in_WVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WVALID,
+        m_axi_image_in_AWADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWADDR,
+        m_axi_image_in_AWID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWID,
+        m_axi_image_in_AWLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLEN,
+        m_axi_image_in_AWSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWSIZE,
+        m_axi_image_in_AWBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWBURST,
+        m_axi_image_in_AWLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLOCK,
+        m_axi_image_in_AWCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWCACHE,
+        m_axi_image_in_AWPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWPROT,
+        m_axi_image_in_AWQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWQOS,
+        m_axi_image_in_AWREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWREGION,
+        m_axi_image_in_AWUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWUSER,
+        m_axi_image_in_WVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WVALID,
         m_axi_image_in_WREADY => ap_const_logic_0,
-        m_axi_image_in_WDATA => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WDATA,
-        m_axi_image_in_WSTRB => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WSTRB,
-        m_axi_image_in_WLAST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WLAST,
-        m_axi_image_in_WID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WID,
-        m_axi_image_in_WUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WUSER,
-        m_axi_image_in_ARVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID,
+        m_axi_image_in_WDATA => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WDATA,
+        m_axi_image_in_WSTRB => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WSTRB,
+        m_axi_image_in_WLAST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WLAST,
+        m_axi_image_in_WID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WID,
+        m_axi_image_in_WUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WUSER,
+        m_axi_image_in_ARVALID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID,
         m_axi_image_in_ARREADY => image_in_ARREADY,
-        m_axi_image_in_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR,
-        m_axi_image_in_ARID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARID,
-        m_axi_image_in_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN,
-        m_axi_image_in_ARSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARSIZE,
-        m_axi_image_in_ARBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARBURST,
-        m_axi_image_in_ARLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLOCK,
-        m_axi_image_in_ARCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARCACHE,
-        m_axi_image_in_ARPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARPROT,
-        m_axi_image_in_ARQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARQOS,
-        m_axi_image_in_ARREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARREGION,
-        m_axi_image_in_ARUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARUSER,
+        m_axi_image_in_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR,
+        m_axi_image_in_ARID => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARID,
+        m_axi_image_in_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN,
+        m_axi_image_in_ARSIZE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARSIZE,
+        m_axi_image_in_ARBURST => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARBURST,
+        m_axi_image_in_ARLOCK => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLOCK,
+        m_axi_image_in_ARCACHE => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARCACHE,
+        m_axi_image_in_ARPROT => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARPROT,
+        m_axi_image_in_ARQOS => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARQOS,
+        m_axi_image_in_ARREGION => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARREGION,
+        m_axi_image_in_ARUSER => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARUSER,
         m_axi_image_in_RVALID => image_in_RVALID,
-        m_axi_image_in_RREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY,
+        m_axi_image_in_RREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY,
         m_axi_image_in_RDATA => image_in_RDATA,
         m_axi_image_in_RLAST => ap_const_logic_0,
         m_axi_image_in_RID => ap_const_lv1_0,
@@ -1179,31 +1183,31 @@ begin
         m_axi_image_in_RUSER => ap_const_lv1_0,
         m_axi_image_in_RRESP => ap_const_lv2_0,
         m_axi_image_in_BVALID => ap_const_logic_0,
-        m_axi_image_in_BREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_BREADY,
+        m_axi_image_in_BREADY => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_BREADY,
         m_axi_image_in_BRESP => ap_const_lv2_0,
         m_axi_image_in_BID => ap_const_lv1_0,
         m_axi_image_in_BUSER => ap_const_lv1_0,
-        mul_ln7 => mul_ln7_reg_527,
-        padding => padding_read_reg_411,
-        kernel_dim => kernel_dim_read_reg_429,
-        add => add_reg_540,
-        rows => rows_read_reg_447,
-        newRow_4 => newRow_4_reg_507,
-        col => col_reg_198,
-        empty_26 => div_reg_480,
-        cols => cols_read_reg_440,
-        empty => trunc_ln7_reg_469,
-        image_in_offset => image_in_offset_read_reg_453,
-        kernel_offset => kernel_offset_read_reg_435,
-        newCol_2 => newCol_2_reg_517,
-        mul_i => mul_i_reg_512,
-        mul35_i => mul35_i_reg_522,
-        sum_1_out => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out,
-        sum_1_out_ap_vld => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out_ap_vld,
-        grp_fu_239_p_din0 => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0,
-        grp_fu_239_p_din1 => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1,
-        grp_fu_239_p_dout0 => grp_fu_239_p2,
-        grp_fu_239_p_ce => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce);
+        mul_ln7 => mul_ln7_reg_537,
+        padding => padding_read_reg_421,
+        kernel_dim => kernel_dim_read_reg_439,
+        add => add_reg_550,
+        rows => rows_read_reg_457,
+        newRow_4 => newRow_4_reg_517,
+        col => col_reg_208,
+        empty_26 => div_reg_490,
+        cols => cols_read_reg_450,
+        empty => trunc_ln7_reg_479,
+        image_in_offset => image_in_offset_read_reg_463,
+        kernel_offset => kernel_offset_read_reg_445,
+        newCol_2 => newCol_2_reg_527,
+        mul_i => mul_i_reg_522,
+        mul35_i => mul35_i_reg_532,
+        sum_1_out => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out,
+        sum_1_out_ap_vld => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out_ap_vld,
+        grp_fu_249_p_din0 => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0,
+        grp_fu_249_p_din1 => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1,
+        grp_fu_249_p_dout0 => grp_fu_249_p2,
+        grp_fu_249_p_ce => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce);
 
     control_s_axi_U : component LinearImageFilter_control_s_axi
     generic map (
@@ -1316,10 +1320,11 @@ begin
         ACLK => ap_clk,
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
+        cache_flush => m_axi_image_in_cache_flush,
         I_ARVALID => image_in_ARVALID,
         I_ARREADY => image_in_ARREADY,
-        I_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR,
-        I_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN,
+        I_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR,
+        I_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN,
         I_RVALID => image_in_RVALID,
         I_RREADY => image_in_RREADY,
         I_RDATA => image_in_RDATA,
@@ -1416,7 +1421,7 @@ begin
         I_RFIFONUM => image_out_RFIFONUM,
         I_AWVALID => image_out_AWVALID,
         I_AWREADY => image_out_AWREADY,
-        I_AWADDR => sext_ln51_fu_386_p1,
+        I_AWADDR => sext_ln54_fu_396_p1,
         I_AWLEN => ap_const_lv32_1,
         I_WVALID => image_out_WVALID,
         I_WREADY => image_out_WREADY,
@@ -1496,10 +1501,11 @@ begin
         ACLK => ap_clk,
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
+        cache_flush => m_axi_kernel_cache_flush,
         I_ARVALID => kernel_ARVALID,
         I_ARREADY => kernel_ARREADY,
-        I_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR,
-        I_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN,
+        I_ARADDR => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR,
+        I_ARLEN => grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN,
         I_RVALID => kernel_RVALID,
         I_RREADY => kernel_RREADY,
         I_RDATA => kernel_RDATA,
@@ -1525,10 +1531,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        din0 => grp_fu_235_p0,
-        din1 => grp_fu_235_p1,
+        din0 => grp_fu_245_p0,
+        din1 => grp_fu_245_p1,
         ce => ap_const_logic_1,
-        dout => grp_fu_235_p2);
+        dout => grp_fu_245_p2);
 
     mul_32s_32s_32_2_1_U27 : component LinearImageFilter_mul_32s_32s_32_2_1
     generic map (
@@ -1540,10 +1546,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        din0 => grp_fu_239_p0,
-        din1 => grp_fu_239_p1,
-        ce => grp_fu_239_ce,
-        dout => grp_fu_239_p2);
+        din0 => grp_fu_249_p0,
+        din1 => grp_fu_249_p1,
+        ce => grp_fu_249_ce,
+        dout => grp_fu_249_p2);
 
     udiv_32ns_32ns_32_36_seq_1_U28 : component LinearImageFilter_udiv_32ns_32ns_32_36_seq_1
     generic map (
@@ -1555,12 +1561,12 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        start => grp_fu_324_ap_start,
-        done => grp_fu_324_ap_done,
-        din0 => row_fu_120,
-        din1 => stride_row_read_reg_423,
-        ce => grp_fu_324_ce,
-        dout => grp_fu_324_p2);
+        start => grp_fu_334_ap_start,
+        done => grp_fu_334_ap_done,
+        din0 => row_fu_130,
+        din1 => stride_row_read_reg_433,
+        ce => grp_fu_334_ce,
+        dout => grp_fu_334_p2);
 
     udiv_32ns_32ns_32_36_seq_1_U29 : component LinearImageFilter_udiv_32ns_32ns_32_36_seq_1
     generic map (
@@ -1572,12 +1578,12 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        start => grp_fu_328_ap_start,
-        done => grp_fu_328_ap_done,
-        din0 => cols_read_reg_440,
-        din1 => stride_col_read_reg_416,
-        ce => grp_fu_328_ce,
-        dout => grp_fu_328_p2);
+        start => grp_fu_338_ap_start,
+        done => grp_fu_338_ap_done,
+        din0 => cols_read_reg_450,
+        din1 => stride_col_read_reg_426,
+        ce => grp_fu_338_ce,
+        dout => grp_fu_338_p2);
 
     udiv_32ns_32ns_30_36_seq_1_U30 : component LinearImageFilter_udiv_32ns_32ns_30_36_seq_1
     generic map (
@@ -1589,12 +1595,12 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        start => grp_fu_332_ap_start,
-        done => grp_fu_332_ap_done,
-        din0 => col_reg_198,
-        din1 => stride_col_read_reg_416,
-        ce => grp_fu_332_ce,
-        dout => grp_fu_332_p2);
+        start => grp_fu_342_ap_start,
+        done => grp_fu_342_ap_done,
+        din0 => col_reg_208,
+        din1 => stride_col_read_reg_426,
+        ce => grp_fu_342_ce,
+        dout => grp_fu_342_p2);
 
 
 
@@ -1612,40 +1618,40 @@ begin
     end process;
 
 
-    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg_assign_proc : process(ap_clk)
+    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst_n_inv = '1') then
-                grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= ap_const_logic_0;
+                grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= ap_const_logic_0;
             else
-                if (((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
-                    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= ap_const_logic_1;
-                elsif ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready = ap_const_logic_1)) then 
-                    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= ap_const_logic_0;
+                if (((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+                    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready = ap_const_logic_1)) then 
+                    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= ap_const_logic_0;
                 end if; 
             end if;
         end if;
     end process;
 
 
-    col_reg_198_assign_proc : process (ap_clk)
+    col_reg_208_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((image_out_BVALID = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state50))) then 
-                col_reg_198 <= col_1_reg_548;
-            elsif (((icmp_ln28_fu_309_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
-                col_reg_198 <= ap_const_lv32_0;
+                col_reg_208 <= col_1_reg_558;
+            elsif (((icmp_ln31_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+                col_reg_208 <= ap_const_lv32_0;
             end if; 
         end if;
     end process;
 
-    row_fu_120_assign_proc : process (ap_clk)
+    row_fu_130_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                row_fu_120 <= ap_const_lv32_0;
-            elsif (((icmp_ln30_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
-                row_fu_120 <= row_3_fu_342_p2;
+                row_fu_130 <= ap_const_lv32_0;
+            elsif (((icmp_ln33_fu_329_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+                row_fu_130 <= row_3_fu_352_p2;
             end if; 
         end if;
     end process;
@@ -1653,7 +1659,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state4)) then
-                add_reg_540 <= add_fu_314_p2;
+                add_reg_550 <= add_fu_324_p2;
             end if;
         end if;
     end process;
@@ -1661,7 +1667,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state5)) then
-                col_1_reg_548 <= col_1_fu_337_p2;
+                col_1_reg_558 <= col_1_fu_347_p2;
             end if;
         end if;
     end process;
@@ -1669,20 +1675,20 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                cols_read_reg_440 <= cols;
-                div_reg_480 <= kernel_dim(31 downto 1);
-                empty_40_reg_491 <= empty_40_fu_265_p1;
-                empty_reg_486 <= empty_fu_261_p1;
-                image_in_offset_read_reg_453 <= image_in_offset;
-                image_out_offset_read_reg_458 <= image_out_offset;
-                kernel_dim_read_reg_429 <= kernel_dim;
-                kernel_offset_read_reg_435 <= kernel_offset;
-                padding_read_reg_411 <= padding;
-                rows_read_reg_447 <= rows;
-                stride_col_read_reg_416 <= stride_col;
-                stride_row_read_reg_423 <= stride_row;
-                trunc_ln7_1_reg_475 <= trunc_ln7_1_fu_247_p1;
-                trunc_ln7_reg_469 <= trunc_ln7_fu_243_p1;
+                cols_read_reg_450 <= cols;
+                div_reg_490 <= kernel_dim(31 downto 1);
+                empty_40_reg_501 <= empty_40_fu_275_p1;
+                empty_reg_496 <= empty_fu_271_p1;
+                image_in_offset_read_reg_463 <= image_in_offset;
+                image_out_offset_read_reg_468 <= image_out_offset;
+                kernel_dim_read_reg_439 <= kernel_dim;
+                kernel_offset_read_reg_445 <= kernel_offset;
+                padding_read_reg_421 <= padding;
+                rows_read_reg_457 <= rows;
+                stride_col_read_reg_426 <= stride_col;
+                stride_row_read_reg_433 <= stride_row;
+                trunc_ln7_1_reg_485 <= trunc_ln7_1_fu_257_p1;
+                trunc_ln7_reg_479 <= trunc_ln7_fu_253_p1;
             end if;
         end if;
     end process;
@@ -1690,12 +1696,12 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state3)) then
-                    div_cast_reg_502(30 downto 0) <= div_cast_fu_279_p1(30 downto 0);
-                    mul35_i_reg_522(29 downto 1) <= mul35_i_fu_299_p3(29 downto 1);
-                    mul_i_reg_512(29 downto 1) <= mul_i_fu_287_p3(29 downto 1);
-                mul_ln7_reg_527 <= grp_fu_235_p2;
-                newCol_2_reg_517 <= newCol_2_fu_294_p2;
-                newRow_4_reg_507 <= newRow_4_fu_282_p2;
+                    div_cast_reg_512(30 downto 0) <= div_cast_fu_289_p1(30 downto 0);
+                    mul35_i_reg_532(29 downto 1) <= mul35_i_fu_309_p3(29 downto 1);
+                    mul_i_reg_522(29 downto 1) <= mul_i_fu_297_p3(29 downto 1);
+                mul_ln7_reg_537 <= grp_fu_245_p2;
+                newCol_2_reg_527 <= newCol_2_fu_304_p2;
+                newRow_4_reg_517 <= newRow_4_fu_292_p2;
             end if;
         end if;
     end process;
@@ -1703,7 +1709,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state43)) then
-                trunc_ln1_reg_573 <= add_ln51_fu_371_p2(31 downto 2);
+                trunc_ln1_reg_583 <= add_ln54_fu_381_p2(31 downto 2);
             end if;
         end if;
     end process;
@@ -1711,7 +1717,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state42)) then
-                trunc_ln50_reg_568 <= trunc_ln50_fu_351_p1;
+                trunc_ln53_reg_578 <= trunc_ln53_fu_361_p1;
             end if;
         end if;
     end process;
@@ -1719,17 +1725,17 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state40)) then
-                udiv_ln50_1_reg_558 <= grp_fu_328_p2;
-                udiv_ln50_2_reg_563 <= grp_fu_332_p2;
-                udiv_ln50_reg_553 <= grp_fu_324_p2;
+                udiv_ln53_1_reg_568 <= grp_fu_338_p2;
+                udiv_ln53_2_reg_573 <= grp_fu_342_p2;
+                udiv_ln53_reg_563 <= grp_fu_334_p2;
             end if;
         end if;
     end process;
-    div_cast_reg_502(31) <= '0';
-    mul_i_reg_512(0) <= '0';
-    mul35_i_reg_522(0) <= '0';
+    div_cast_reg_512(31) <= '0';
+    mul_i_reg_522(0) <= '0';
+    mul35_i_reg_532(0) <= '0';
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state4, ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done, image_out_AWREADY, image_out_WREADY, image_out_BVALID, icmp_ln28_fu_309_p2, icmp_ln30_fu_319_p2, ap_CS_fsm_state6)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state4, ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done, image_out_AWREADY, image_out_WREADY, image_out_BVALID, icmp_ln31_fu_319_p2, icmp_ln33_fu_329_p2, ap_CS_fsm_state6)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -1743,19 +1749,19 @@ begin
             when ap_ST_fsm_state3 => 
                 ap_NS_fsm <= ap_ST_fsm_state4;
             when ap_ST_fsm_state4 => 
-                if (((icmp_ln28_fu_309_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
+                if (((icmp_ln31_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state5;
                 end if;
             when ap_ST_fsm_state5 => 
-                if (((icmp_ln30_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
+                if (((icmp_ln33_fu_329_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state5))) then
                     ap_NS_fsm <= ap_ST_fsm_state4;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state6;
                 end if;
             when ap_ST_fsm_state6 => 
-                if (((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
+                if (((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state6))) then
                     ap_NS_fsm <= ap_ST_fsm_state7;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state6;
@@ -1864,8 +1870,8 @@ begin
                 ap_NS_fsm <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end case;
     end process;
-    add_fu_314_p2 <= std_logic_vector(unsigned(row_fu_120) - unsigned(div_cast_reg_502));
-    add_ln51_fu_371_p2 <= std_logic_vector(unsigned(shl_ln_fu_363_p3) + unsigned(image_out_offset_read_reg_458));
+    add_fu_324_p2 <= std_logic_vector(unsigned(row_fu_130) - unsigned(div_cast_reg_512));
+    add_ln54_fu_381_p2 <= std_logic_vector(unsigned(shl_ln_fu_373_p3) + unsigned(image_out_offset_read_reg_468));
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
     ap_CS_fsm_state3 <= ap_CS_fsm(2);
@@ -1966,9 +1972,9 @@ begin
 
     ap_ST_fsm_state5_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state6_blk_assign_proc : process(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done)
+    ap_ST_fsm_state6_blk_assign_proc : process(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done)
     begin
-        if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done = ap_const_logic_0)) then 
+        if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done = ap_const_logic_0)) then 
             ap_ST_fsm_state6_blk <= ap_const_logic_1;
         else 
             ap_ST_fsm_state6_blk <= ap_const_logic_0;
@@ -1979,9 +1985,9 @@ begin
     ap_ST_fsm_state8_blk <= ap_const_logic_0;
     ap_ST_fsm_state9_blk <= ap_const_logic_0;
 
-    ap_done_assign_proc : process(ap_CS_fsm_state4, icmp_ln28_fu_309_p2)
+    ap_done_assign_proc : process(ap_CS_fsm_state4, icmp_ln31_fu_319_p2)
     begin
-        if (((icmp_ln28_fu_309_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((icmp_ln31_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -1999,9 +2005,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state4, icmp_ln28_fu_309_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state4, icmp_ln31_fu_319_p2)
     begin
-        if (((icmp_ln28_fu_309_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+        if (((icmp_ln31_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -2014,124 +2020,124 @@ begin
                 ap_rst_n_inv <= not(ap_rst_n);
     end process;
 
-    col_1_fu_337_p2 <= std_logic_vector(unsigned(col_reg_198) + unsigned(stride_col_read_reg_416));
-    div_cast_fu_279_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(div_reg_480),32));
-    empty_40_fu_265_p1 <= cols(29 - 1 downto 0);
-    empty_fu_261_p1 <= rows(29 - 1 downto 0);
-    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg;
-    grp_fu_235_p0 <= zext_ln7_fu_274_p1(32 - 1 downto 0);
-    grp_fu_235_p1 <= zext_ln7_fu_274_p1(32 - 1 downto 0);
+    col_1_fu_347_p2 <= std_logic_vector(unsigned(col_reg_208) + unsigned(stride_col_read_reg_426));
+    div_cast_fu_289_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(div_reg_490),32));
+    empty_40_fu_275_p1 <= cols(29 - 1 downto 0);
+    empty_fu_271_p1 <= rows(29 - 1 downto 0);
+    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg;
+    grp_fu_245_p0 <= zext_ln7_fu_284_p1(32 - 1 downto 0);
+    grp_fu_245_p1 <= zext_ln7_fu_284_p1(32 - 1 downto 0);
 
-    grp_fu_239_ce_assign_proc : process(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce, ap_CS_fsm_state6)
+    grp_fu_249_ce_assign_proc : process(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce, ap_CS_fsm_state6)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            grp_fu_239_ce <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce;
+            grp_fu_249_ce <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce;
         else 
-            grp_fu_239_ce <= ap_const_logic_1;
+            grp_fu_249_ce <= ap_const_logic_1;
         end if; 
     end process;
 
 
-    grp_fu_239_p0_assign_proc : process(udiv_ln50_1_reg_558, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0, ap_CS_fsm_state6, ap_CS_fsm_state41)
+    grp_fu_249_p0_assign_proc : process(udiv_ln53_1_reg_568, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0, ap_CS_fsm_state6, ap_CS_fsm_state41)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            grp_fu_239_p0 <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0;
+            grp_fu_249_p0 <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state41)) then 
-            grp_fu_239_p0 <= udiv_ln50_1_reg_558;
+            grp_fu_249_p0 <= udiv_ln53_1_reg_568;
         else 
-            grp_fu_239_p0 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+            grp_fu_249_p0 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    grp_fu_239_p1_assign_proc : process(udiv_ln50_reg_553, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1, ap_CS_fsm_state6, ap_CS_fsm_state41)
+    grp_fu_249_p1_assign_proc : process(udiv_ln53_reg_563, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1, ap_CS_fsm_state6, ap_CS_fsm_state41)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            grp_fu_239_p1 <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1;
+            grp_fu_249_p1 <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1;
         elsif ((ap_const_logic_1 = ap_CS_fsm_state41)) then 
-            grp_fu_239_p1 <= udiv_ln50_reg_553;
+            grp_fu_249_p1 <= udiv_ln53_reg_563;
         else 
-            grp_fu_239_p1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+            grp_fu_249_p1 <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
         end if; 
     end process;
 
 
-    grp_fu_324_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln30_fu_319_p2)
+    grp_fu_334_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln33_fu_329_p2)
     begin
-        if (((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
-            grp_fu_324_ap_start <= ap_const_logic_1;
+        if (((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+            grp_fu_334_ap_start <= ap_const_logic_1;
         else 
-            grp_fu_324_ap_start <= ap_const_logic_0;
+            grp_fu_334_ap_start <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    grp_fu_324_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
-    begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state1) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46))) then 
-            grp_fu_324_ce <= ap_const_logic_0;
-        else 
-            grp_fu_324_ce <= ap_const_logic_1;
-        end if; 
-    end process;
-
-
-    grp_fu_328_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln30_fu_319_p2)
-    begin
-        if (((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
-            grp_fu_328_ap_start <= ap_const_logic_1;
-        else 
-            grp_fu_328_ap_start <= ap_const_logic_0;
-        end if; 
-    end process;
-
-
-    grp_fu_328_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
+    grp_fu_334_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state1) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46))) then 
-            grp_fu_328_ce <= ap_const_logic_0;
+            grp_fu_334_ce <= ap_const_logic_0;
         else 
-            grp_fu_328_ce <= ap_const_logic_1;
+            grp_fu_334_ce <= ap_const_logic_1;
         end if; 
     end process;
 
 
-    grp_fu_332_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln30_fu_319_p2)
+    grp_fu_338_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln33_fu_329_p2)
     begin
-        if (((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
-            grp_fu_332_ap_start <= ap_const_logic_1;
+        if (((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+            grp_fu_338_ap_start <= ap_const_logic_1;
         else 
-            grp_fu_332_ap_start <= ap_const_logic_0;
+            grp_fu_338_ap_start <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    grp_fu_332_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
+    grp_fu_338_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state1) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46))) then 
-            grp_fu_332_ce <= ap_const_logic_0;
+            grp_fu_338_ce <= ap_const_logic_0;
         else 
-            grp_fu_332_ce <= ap_const_logic_1;
+            grp_fu_338_ce <= ap_const_logic_1;
         end if; 
     end process;
 
-    icmp_ln28_fu_309_p2 <= "1" when (unsigned(row_fu_120) < unsigned(rows_read_reg_447)) else "0";
-    icmp_ln30_fu_319_p2 <= "1" when (unsigned(col_reg_198) < unsigned(cols_read_reg_440)) else "0";
 
-    image_in_ARVALID_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID, icmp_ln30_fu_319_p2, ap_CS_fsm_state6)
+    grp_fu_342_ap_start_assign_proc : process(ap_CS_fsm_state5, icmp_ln33_fu_329_p2)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
-            image_in_ARVALID <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID;
+        if (((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5))) then 
+            grp_fu_342_ap_start <= ap_const_logic_1;
+        else 
+            grp_fu_342_ap_start <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    grp_fu_342_ce_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state44, ap_CS_fsm_state45, ap_CS_fsm_state50, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state42, ap_CS_fsm_state43, ap_CS_fsm_state41, ap_CS_fsm_state46, ap_CS_fsm_state47, ap_CS_fsm_state48, ap_CS_fsm_state49)
+    begin
+        if (((ap_const_logic_1 = ap_CS_fsm_state41) or (ap_const_logic_1 = ap_CS_fsm_state1) or (ap_const_logic_1 = ap_CS_fsm_state43) or (ap_const_logic_1 = ap_CS_fsm_state42) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state50) or (ap_const_logic_1 = ap_CS_fsm_state45) or (ap_const_logic_1 = ap_CS_fsm_state44) or (ap_const_logic_1 = ap_CS_fsm_state49) or (ap_const_logic_1 = ap_CS_fsm_state48) or (ap_const_logic_1 = ap_CS_fsm_state47) or (ap_const_logic_1 = ap_CS_fsm_state46))) then 
+            grp_fu_342_ce <= ap_const_logic_0;
+        else 
+            grp_fu_342_ce <= ap_const_logic_1;
+        end if; 
+    end process;
+
+    icmp_ln31_fu_319_p2 <= "1" when (unsigned(row_fu_130) < unsigned(rows_read_reg_457)) else "0";
+    icmp_ln33_fu_329_p2 <= "1" when (unsigned(col_reg_208) < unsigned(cols_read_reg_450)) else "0";
+
+    image_in_ARVALID_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID, icmp_ln33_fu_329_p2, ap_CS_fsm_state6)
+    begin
+        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
+            image_in_ARVALID <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID;
         else 
             image_in_ARVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    image_in_RREADY_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY, icmp_ln30_fu_319_p2, ap_CS_fsm_state6)
+    image_in_RREADY_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY, icmp_ln33_fu_329_p2, ap_CS_fsm_state6)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
-            image_in_RREADY <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY;
+        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
+            image_in_RREADY <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY;
         else 
             image_in_RREADY <= ap_const_logic_0;
         end if; 
@@ -2157,7 +2163,7 @@ begin
         end if; 
     end process;
 
-    image_out_WDATA <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out;
+    image_out_WDATA <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out;
 
     image_out_WVALID_assign_proc : process(ap_CS_fsm_state45, image_out_WREADY)
     begin
@@ -2199,37 +2205,57 @@ begin
     end process;
 
 
-    kernel_ARVALID_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID, icmp_ln30_fu_319_p2, ap_CS_fsm_state6)
+    kernel_ARVALID_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID, icmp_ln33_fu_329_p2, ap_CS_fsm_state6)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
-            kernel_ARVALID <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID;
+        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
+            kernel_ARVALID <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID;
         else 
             kernel_ARVALID <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    kernel_RREADY_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY, icmp_ln30_fu_319_p2, ap_CS_fsm_state6)
+    kernel_RREADY_assign_proc : process(ap_CS_fsm_state5, grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY, icmp_ln33_fu_329_p2, ap_CS_fsm_state6)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln30_fu_319_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
-            kernel_RREADY <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY;
+        if (((ap_const_logic_1 = ap_CS_fsm_state6) or ((icmp_ln33_fu_329_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state5)))) then 
+            kernel_RREADY <= grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY;
         else 
             kernel_RREADY <= ap_const_logic_0;
         end if; 
     end process;
 
-    mul35_i_fu_299_p3 <= (empty_40_reg_491 & ap_const_lv1_0);
-    mul_i_fu_287_p3 <= (empty_reg_486 & ap_const_lv1_0);
-    newCol_2_fu_294_p2 <= std_logic_vector(unsigned(trunc_ln7_reg_469) + unsigned(ap_const_lv30_3FFFFFFF));
-    newRow_4_fu_282_p2 <= std_logic_vector(unsigned(trunc_ln7_1_reg_475) + unsigned(ap_const_lv30_3FFFFFFF));
-    out_idx_fu_358_p2 <= std_logic_vector(unsigned(trunc_ln50_reg_568) + unsigned(trunc_ln50_1_fu_355_p1));
-    row_3_fu_342_p2 <= std_logic_vector(unsigned(row_fu_120) + unsigned(stride_row_read_reg_423));
-        sext_ln51_fu_386_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln1_reg_573),32));
 
-    shl_ln_fu_363_p3 <= (out_idx_fu_358_p2 & ap_const_lv2_0);
-    trunc_ln50_1_fu_355_p1 <= udiv_ln50_2_reg_563(30 - 1 downto 0);
-    trunc_ln50_fu_351_p1 <= grp_fu_239_p2(30 - 1 downto 0);
-    trunc_ln7_1_fu_247_p1 <= rows(30 - 1 downto 0);
-    trunc_ln7_fu_243_p1 <= cols(30 - 1 downto 0);
-    zext_ln7_fu_274_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(kernel_dim_read_reg_429),64));
+    m_axi_image_in_cache_flush_assign_proc : process(ap_CS_fsm_state4, icmp_ln31_fu_319_p2)
+    begin
+        if (((icmp_ln31_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            m_axi_image_in_cache_flush <= ap_const_logic_1;
+        else 
+            m_axi_image_in_cache_flush <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    m_axi_kernel_cache_flush_assign_proc : process(ap_CS_fsm_state4, icmp_ln31_fu_319_p2)
+    begin
+        if (((icmp_ln31_fu_319_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state4))) then 
+            m_axi_kernel_cache_flush <= ap_const_logic_1;
+        else 
+            m_axi_kernel_cache_flush <= ap_const_logic_0;
+        end if; 
+    end process;
+
+    mul35_i_fu_309_p3 <= (empty_40_reg_501 & ap_const_lv1_0);
+    mul_i_fu_297_p3 <= (empty_reg_496 & ap_const_lv1_0);
+    newCol_2_fu_304_p2 <= std_logic_vector(unsigned(trunc_ln7_reg_479) + unsigned(ap_const_lv30_3FFFFFFF));
+    newRow_4_fu_292_p2 <= std_logic_vector(unsigned(trunc_ln7_1_reg_485) + unsigned(ap_const_lv30_3FFFFFFF));
+    out_idx_fu_368_p2 <= std_logic_vector(unsigned(trunc_ln53_reg_578) + unsigned(trunc_ln53_1_fu_365_p1));
+    row_3_fu_352_p2 <= std_logic_vector(unsigned(row_fu_130) + unsigned(stride_row_read_reg_433));
+        sext_ln54_fu_396_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(trunc_ln1_reg_583),32));
+
+    shl_ln_fu_373_p3 <= (out_idx_fu_368_p2 & ap_const_lv2_0);
+    trunc_ln53_1_fu_365_p1 <= udiv_ln53_2_reg_573(30 - 1 downto 0);
+    trunc_ln53_fu_361_p1 <= grp_fu_249_p2(30 - 1 downto 0);
+    trunc_ln7_1_fu_257_p1 <= rows(30 - 1 downto 0);
+    trunc_ln7_fu_253_p1 <= cols(30 - 1 downto 0);
+    zext_ln7_fu_284_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(kernel_dim_read_reg_439),64));
 end behav;

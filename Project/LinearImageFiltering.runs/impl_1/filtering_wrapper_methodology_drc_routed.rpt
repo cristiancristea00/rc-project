@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-| Date         : Thu May 30 19:42:24 2024
+| Date         : Thu May 30 20:56:25 2024
 | Host         : Hephaestion running 64-bit Ubuntu 24.04 LTS
 | Command      : report_methodology -file filtering_wrapper_methodology_drc_routed.rpt -pb filtering_wrapper_methodology_drc_routed.pb -rpx filtering_wrapper_methodology_drc_routed.rpx
 | Design       : filtering_wrapper
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 3
-+---------+----------+------------------------------+------------+
-| Rule    | Severity | Description                  | Violations |
-+---------+----------+------------------------------+------------+
-| LUTAR-1 | Warning  | LUT drives async reset alert | 3          |
-+---------+----------+------------------------------+------------+
+             Violations found: 18
++-----------+----------+------------------------------+------------+
+| Rule      | Severity | Description                  | Violations |
++-----------+----------+------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert | 3          |
+| TIMING-16 | Warning  | Large setup violation        | 15         |
++-----------+----------+------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -90,6 +91,81 @@ filtering_i/axi_mem_intercon/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_i
 filtering_i/axi_mem_intercon/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR,
 filtering_i/axi_mem_intercon/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR
  (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.004 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tag_array_reg[192][10]/CE (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.006 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[10]_rep__6/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tag_array_reg[27][6]/CE (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.010 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[150].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.010 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[159].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.028 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[135].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.028 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[143].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.044 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[136].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.044 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[139].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.066 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[142].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.159 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[100].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.159 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[134].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.159 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[138].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.187 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[211].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.187 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[220].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.246 ns between filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/tmp_addr_reg[9]_rep__3/C (clocked by clk_fpga_0) and filtering_i/LinearImageFilter/inst/image_in_m_axi_U/load_unit/read_cache/genblk1[128].cache_mem/mem_reg/ENARDEN (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 

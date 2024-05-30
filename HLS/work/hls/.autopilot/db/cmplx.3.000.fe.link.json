@@ -4,7 +4,7 @@
     "calls": "1",
     "file": "LinearImageFiltering.cpp",
     "fileloc": 7,
-    "instructions": 95,
+    "instructions": 97,
     "loads": {
       "L": 2,
       "T": 2
@@ -14,13 +14,13 @@
       "L": 4,
       "T": 1
     },
-    "total_instructions": 172
+    "total_instructions": 174
   },
   "1": {
     "basicblocks": 28,
     "calls": "",
     "file": "LinearImageFiltering.cpp",
-    "fileloc": 56,
+    "fileloc": 59,
     "instructions": 77,
     "loads": {
       "L": 16

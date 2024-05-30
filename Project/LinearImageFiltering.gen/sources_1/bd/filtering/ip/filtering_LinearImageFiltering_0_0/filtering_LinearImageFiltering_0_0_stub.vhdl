@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
--- Date        : Thu May 30 19:40:16 2024
+-- Date        : Thu May 30 20:45:49 2024
 -- Host        : Hephaestion running 64-bit Ubuntu 24.04 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_LinearImageFiltering_0_0/filtering_LinearImageFiltering_0_0_stub.vhdl

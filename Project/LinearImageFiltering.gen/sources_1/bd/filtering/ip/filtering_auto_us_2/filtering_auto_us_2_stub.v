@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-// Date        : Thu May 30 19:39:51 2024
+// Date        : Thu May 30 19:39:50 2024
 // Host        : Hephaestion running 64-bit Ubuntu 24.04 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_2/filtering_auto_us_2_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top filtering_auto_us_2 -prefix
+//               filtering_auto_us_2_ filtering_auto_us_2_stub.v
 // Design      : filtering_auto_us_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

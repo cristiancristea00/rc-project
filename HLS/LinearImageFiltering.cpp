@@ -18,6 +18,9 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
     #pragma HLS INTERFACE mode = s_axilite port = padding
     #pragma HLS INTERFACE mode = s_axilite port = return
 
+    #pragma HLS CACHE port = image_in depth = 128 lines = 256
+    #pragma HLS CACHE port = kernel   depth = 128 lines = 1
+
     float sum{0.0F};
 
     int32_t newRow{0};

@@ -46,14 +46,14 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36</SourceLocation>
+<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:39</SourceLocation>
 <SummaryOfLoopViolations>
 <ker_rows_ker_cols>
 <Name>ker_rows_ker_cols</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Memory Dependency</ViolationType>
 <IterationDistance>1</IterationDistance>
-<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:34</SourceLocation>
+<SourceLocation>/home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:37</SourceLocation>
 </ker_rows_ker_cols>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -144,7 +144,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_din0</name>
+<name>grp_fu_249_p_din0</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -155,7 +155,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_din1</name>
+<name>grp_fu_249_p_din1</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -166,7 +166,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_dout0</name>
+<name>grp_fu_249_p_dout0</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -177,7 +177,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_fu_239_p_ce</name>
+<name>grp_fu_249_p_ce</name>
 <Object>LinearImageFilter_Pipeline_ker_rows_ker_cols</Object>
 <Type>return value</Type>
 <Scope></Scope>

@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
 -- Date        : Thu May 30 19:39:52 2024
 -- Host        : Hephaestion running 64-bit Ubuntu 24.04 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_0/filtering_auto_us_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top filtering_auto_us_0 -prefix
+--               filtering_auto_us_0_ filtering_auto_us_0_sim_netlist.vhdl
 -- Design      : filtering_auto_us_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -103,8 +103,6 @@ entity filtering_auto_us_0_axi_dwidth_converter_v2_1_30_w_upsizer is
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[3].USE_RTL_DATA.USE_REGISTER.M_AXI_WDATA_I_reg[63]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[3].USE_RTL_DATA.USE_REGISTER.M_AXI_WDATA_I_reg[63]_1\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_w_upsizer : entity is "axi_dwidth_converter_v2_1_30_w_upsizer";
 end filtering_auto_us_0_axi_dwidth_converter_v2_1_30_w_upsizer;
 
 architecture STRUCTURE of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_w_upsizer is
@@ -1995,8 +1993,6 @@ entity filtering_auto_us_0_axi_register_slice_v2_1_30_axic_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 61 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_register_slice_v2_1_30_axic_register_slice : entity is "axi_register_slice_v2_1_30_axic_register_slice";
 end filtering_auto_us_0_axi_register_slice_v2_1_30_axic_register_slice;
 
 architecture STRUCTURE of filtering_auto_us_0_axi_register_slice_v2_1_30_axic_register_slice is
@@ -3600,8 +3596,6 @@ entity filtering_auto_us_0_generic_baseblocks_v2_1_1_command_fifo is
     s_axi_bready : in STD_LOGIC;
     m_axi_bvalid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_generic_baseblocks_v2_1_1_command_fifo : entity is "generic_baseblocks_v2_1_1_command_fifo";
 end filtering_auto_us_0_generic_baseblocks_v2_1_1_command_fifo;
 
 architecture STRUCTURE of filtering_auto_us_0_generic_baseblocks_v2_1_1_command_fifo is
@@ -6585,8 +6579,6 @@ entity filtering_auto_us_0_axi_dwidth_converter_v2_1_30_a_upsizer is
     m_axi_awready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 27 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_a_upsizer : entity is "axi_dwidth_converter_v2_1_30_a_upsizer";
 end filtering_auto_us_0_axi_dwidth_converter_v2_1_30_a_upsizer;
 
 architecture STRUCTURE of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_a_upsizer is
@@ -6759,8 +6751,6 @@ entity filtering_auto_us_0_axi_register_slice_v2_1_30_axi_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 61 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_register_slice_v2_1_30_axi_register_slice : entity is "axi_register_slice_v2_1_30_axi_register_slice";
 end filtering_auto_us_0_axi_register_slice_v2_1_30_axi_register_slice;
 
 architecture STRUCTURE of filtering_auto_us_0_axi_register_slice_v2_1_30_axi_register_slice is
@@ -6813,8 +6803,6 @@ entity filtering_auto_us_0_axi_dwidth_converter_v2_1_30_axi_upsizer is
     s_axi_wvalid : in STD_LOGIC;
     m_axi_awready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_axi_upsizer : entity is "axi_dwidth_converter_v2_1_30_axi_upsizer";
 end filtering_auto_us_0_axi_dwidth_converter_v2_1_30_axi_upsizer;
 
 architecture STRUCTURE of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_axi_upsizer is
@@ -7459,8 +7447,6 @@ entity filtering_auto_us_0_axi_dwidth_converter_v2_1_30_top is
   attribute C_S_AXI_ID_WIDTH of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_top : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_top : entity is "axi_dwidth_converter_v2_1_30_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of filtering_auto_us_0_axi_dwidth_converter_v2_1_30_top : entity is 1;
   attribute P_AXI4 : integer;

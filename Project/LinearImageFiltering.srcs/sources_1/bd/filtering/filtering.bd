@@ -1938,11 +1938,19 @@
         }
       },
       "LinearImageFilter": {
-        "vlnv": "Cristi:Image:LinearImageFiltering:0.1",
+        "vlnv": "Cristi:Image:LinearImageFiltering:0.2",
         "ip_revision": "0",
         "xci_name": "filtering_LinearImageFiltering_0_0",
         "xci_path": "ip/filtering_LinearImageFiltering_0_0/filtering_LinearImageFiltering_0_0.xci",
         "inst_hier_path": "LinearImageFilter",
+        "parameters": {
+          "C_M_AXI_IMAGE_IN_DATA_WIDTH": {
+            "value": "32"
+          },
+          "C_M_AXI_KERNEL_DATA_WIDTH": {
+            "value": "32"
+          }
+        },
         "interface_ports": {
           "m_axi_image_out": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -2917,7 +2925,6 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "ps7_0_axi_periph/S00_ACLK",
           "rst_ps7_0_100M/slowest_sync_clk",
-          "LinearImageFilter/ap_clk",
           "ps7_0_axi_periph/M00_ACLK",
           "ps7_0_axi_periph/ACLK",
           "axi_mem_intercon/S00_ACLK",
@@ -2925,7 +2932,8 @@
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
           "axi_mem_intercon/S01_ACLK",
-          "axi_mem_intercon/S02_ACLK"
+          "axi_mem_intercon/S02_ACLK",
+          "LinearImageFilter/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2938,14 +2946,14 @@
         "ports": [
           "rst_ps7_0_100M/peripheral_aresetn",
           "ps7_0_axi_periph/S00_ARESETN",
-          "LinearImageFilter/ap_rst_n",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/ARESETN",
           "axi_mem_intercon/S01_ARESETN",
-          "axi_mem_intercon/S02_ARESETN"
+          "axi_mem_intercon/S02_ARESETN",
+          "LinearImageFilter/ap_rst_n"
         ]
       }
     },

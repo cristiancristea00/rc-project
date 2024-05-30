@@ -28,8 +28,8 @@ set C_modelArgList {
 	{ stride_col int 32 regular {axi_slave 0}  }
 	{ padding uint 8 regular {axi_slave 0}  }
 }
-set hasAXIMCache 0
-set AXIMCacheInstList { }
+set hasAXIMCache 1
+set AXIMCacheInstList { image_in_m_axi_U kernel_m_axi_U }
 set C_modelArgMapList {[ 
 	{ "Name" : "image_out", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "image_out_offset","offset": { "type": "dynamic","port_name": "image_out_offset"},"direction": "WRITEONLY"}]}]} , 
  	{ "Name" : "image_in", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "image_in_offset","offset": { "type": "dynamic","port_name": "image_in_offset"},"direction": "READONLY"}]}]} , 
@@ -108,8 +108,8 @@ set portList {
 	{ m_axi_image_in_AWUSER sc_out sc_lv 1 signal 1 } 
 	{ m_axi_image_in_WVALID sc_out sc_logic 1 signal 1 } 
 	{ m_axi_image_in_WREADY sc_in sc_logic 1 signal 1 } 
-	{ m_axi_image_in_WDATA sc_out sc_lv 32 signal 1 } 
-	{ m_axi_image_in_WSTRB sc_out sc_lv 4 signal 1 } 
+	{ m_axi_image_in_WDATA sc_out sc_lv 1024 signal 1 } 
+	{ m_axi_image_in_WSTRB sc_out sc_lv 128 signal 1 } 
 	{ m_axi_image_in_WLAST sc_out sc_logic 1 signal 1 } 
 	{ m_axi_image_in_WID sc_out sc_lv 1 signal 1 } 
 	{ m_axi_image_in_WUSER sc_out sc_lv 1 signal 1 } 
@@ -128,7 +128,7 @@ set portList {
 	{ m_axi_image_in_ARUSER sc_out sc_lv 1 signal 1 } 
 	{ m_axi_image_in_RVALID sc_in sc_logic 1 signal 1 } 
 	{ m_axi_image_in_RREADY sc_out sc_logic 1 signal 1 } 
-	{ m_axi_image_in_RDATA sc_in sc_lv 32 signal 1 } 
+	{ m_axi_image_in_RDATA sc_in sc_lv 1024 signal 1 } 
 	{ m_axi_image_in_RLAST sc_in sc_logic 1 signal 1 } 
 	{ m_axi_image_in_RID sc_in sc_lv 1 signal 1 } 
 	{ m_axi_image_in_RUSER sc_in sc_lv 1 signal 1 } 
@@ -153,8 +153,8 @@ set portList {
 	{ m_axi_kernel_AWUSER sc_out sc_lv 1 signal 2 } 
 	{ m_axi_kernel_WVALID sc_out sc_logic 1 signal 2 } 
 	{ m_axi_kernel_WREADY sc_in sc_logic 1 signal 2 } 
-	{ m_axi_kernel_WDATA sc_out sc_lv 32 signal 2 } 
-	{ m_axi_kernel_WSTRB sc_out sc_lv 4 signal 2 } 
+	{ m_axi_kernel_WDATA sc_out sc_lv 1024 signal 2 } 
+	{ m_axi_kernel_WSTRB sc_out sc_lv 128 signal 2 } 
 	{ m_axi_kernel_WLAST sc_out sc_logic 1 signal 2 } 
 	{ m_axi_kernel_WID sc_out sc_lv 1 signal 2 } 
 	{ m_axi_kernel_WUSER sc_out sc_lv 1 signal 2 } 
@@ -173,7 +173,7 @@ set portList {
 	{ m_axi_kernel_ARUSER sc_out sc_lv 1 signal 2 } 
 	{ m_axi_kernel_RVALID sc_in sc_logic 1 signal 2 } 
 	{ m_axi_kernel_RREADY sc_out sc_logic 1 signal 2 } 
-	{ m_axi_kernel_RDATA sc_in sc_lv 32 signal 2 } 
+	{ m_axi_kernel_RDATA sc_in sc_lv 1024 signal 2 } 
 	{ m_axi_kernel_RLAST sc_in sc_logic 1 signal 2 } 
 	{ m_axi_kernel_RID sc_in sc_lv 1 signal 2 } 
 	{ m_axi_kernel_RUSER sc_in sc_lv 1 signal 2 } 
@@ -283,8 +283,8 @@ set NewPortList {[
  	{ "name": "m_axi_image_in_AWUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "AWUSER" }} , 
  	{ "name": "m_axi_image_in_WVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "WVALID" }} , 
  	{ "name": "m_axi_image_in_WREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "WREADY" }} , 
- 	{ "name": "m_axi_image_in_WDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_in", "role": "WDATA" }} , 
- 	{ "name": "m_axi_image_in_WSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "image_in", "role": "WSTRB" }} , 
+ 	{ "name": "m_axi_image_in_WDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "image_in", "role": "WDATA" }} , 
+ 	{ "name": "m_axi_image_in_WSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "image_in", "role": "WSTRB" }} , 
  	{ "name": "m_axi_image_in_WLAST", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "WLAST" }} , 
  	{ "name": "m_axi_image_in_WID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "WID" }} , 
  	{ "name": "m_axi_image_in_WUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "WUSER" }} , 
@@ -303,7 +303,7 @@ set NewPortList {[
  	{ "name": "m_axi_image_in_ARUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "ARUSER" }} , 
  	{ "name": "m_axi_image_in_RVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "RVALID" }} , 
  	{ "name": "m_axi_image_in_RREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "RREADY" }} , 
- 	{ "name": "m_axi_image_in_RDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_in", "role": "RDATA" }} , 
+ 	{ "name": "m_axi_image_in_RDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "image_in", "role": "RDATA" }} , 
  	{ "name": "m_axi_image_in_RLAST", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "RLAST" }} , 
  	{ "name": "m_axi_image_in_RID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "RID" }} , 
  	{ "name": "m_axi_image_in_RUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "image_in", "role": "RUSER" }} , 
@@ -328,8 +328,8 @@ set NewPortList {[
  	{ "name": "m_axi_kernel_AWUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "AWUSER" }} , 
  	{ "name": "m_axi_kernel_WVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "WVALID" }} , 
  	{ "name": "m_axi_kernel_WREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "WREADY" }} , 
- 	{ "name": "m_axi_kernel_WDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "kernel", "role": "WDATA" }} , 
- 	{ "name": "m_axi_kernel_WSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "kernel", "role": "WSTRB" }} , 
+ 	{ "name": "m_axi_kernel_WDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "kernel", "role": "WDATA" }} , 
+ 	{ "name": "m_axi_kernel_WSTRB", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "kernel", "role": "WSTRB" }} , 
  	{ "name": "m_axi_kernel_WLAST", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "WLAST" }} , 
  	{ "name": "m_axi_kernel_WID", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "WID" }} , 
  	{ "name": "m_axi_kernel_WUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "WUSER" }} , 
@@ -348,7 +348,7 @@ set NewPortList {[
  	{ "name": "m_axi_kernel_ARUSER", "direction": "out", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "ARUSER" }} , 
  	{ "name": "m_axi_kernel_RVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "RVALID" }} , 
  	{ "name": "m_axi_kernel_RREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "RREADY" }} , 
- 	{ "name": "m_axi_kernel_RDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "kernel", "role": "RDATA" }} , 
+ 	{ "name": "m_axi_kernel_RDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":1024, "type": "signal", "bundle":{"name": "kernel", "role": "RDATA" }} , 
  	{ "name": "m_axi_kernel_RLAST", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "RLAST" }} , 
  	{ "name": "m_axi_kernel_RID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "RID" }} , 
  	{ "name": "m_axi_kernel_RUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "kernel", "role": "RUSER" }} , 
@@ -382,10 +382,10 @@ set RtlHierarchyInfo {[
 					{"Name" : "image_out_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "image_in", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Port" : "image_in", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220", "Port" : "image_in", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
 			{"Name" : "kernel", "Type" : "MAXI", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Port" : "kernel", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
+					{"ID" : "1", "SubInstance" : "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220", "Port" : "kernel", "Inst_start_state" : "5", "Inst_end_state" : "6"}]},
 			{"Name" : "image_out_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "image_in_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "rows", "Type" : "None", "Direction" : "I"},
@@ -400,7 +400,7 @@ set RtlHierarchyInfo {[
 				"LoopDec" : {"FSMBitwidth" : "50", "FirstState" : "ap_ST_fsm_state5", "LastState" : ["ap_ST_fsm_state50"], "QuitState" : ["ap_ST_fsm_state5"], "PreState" : ["ap_ST_fsm_state4"], "PostState" : ["ap_ST_fsm_state4"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "img_rows", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "50", "FirstState" : "ap_ST_fsm_state4", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state4"], "PreState" : ["ap_ST_fsm_state3"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
 		"CDFG" : "LinearImageFilter_Pipeline_ker_rows_ker_cols",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -442,10 +442,10 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "ker_rows_ker_cols", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage1", "LastStateIter" : "ap_enable_reg_pp0_iter5", "LastStateBlock" : "ap_block_pp0_stage1_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter5", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "1"},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "1"},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.mul_30s_30s_30_2_1_U3", "Parent" : "1"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220.mul_30s_30s_30_2_1_U3", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_in_m_axi_U", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.image_out_m_axi_U", "Parent" : "0"},
@@ -503,14 +503,14 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	image_out { m_axi {  { m_axi_image_out_AWVALID VALID 1 1 }  { m_axi_image_out_AWREADY READY 0 1 }  { m_axi_image_out_AWADDR ADDR 1 32 }  { m_axi_image_out_AWID ID 1 1 }  { m_axi_image_out_AWLEN SIZE 1 8 }  { m_axi_image_out_AWSIZE BURST 1 3 }  { m_axi_image_out_AWBURST LOCK 1 2 }  { m_axi_image_out_AWLOCK CACHE 1 2 }  { m_axi_image_out_AWCACHE PROT 1 4 }  { m_axi_image_out_AWPROT QOS 1 3 }  { m_axi_image_out_AWQOS REGION 1 4 }  { m_axi_image_out_AWREGION USER 1 4 }  { m_axi_image_out_AWUSER DATA 1 1 }  { m_axi_image_out_WVALID VALID 1 1 }  { m_axi_image_out_WREADY READY 0 1 }  { m_axi_image_out_WDATA FIFONUM 1 32 }  { m_axi_image_out_WSTRB STRB 1 4 }  { m_axi_image_out_WLAST LAST 1 1 }  { m_axi_image_out_WID ID 1 1 }  { m_axi_image_out_WUSER DATA 1 1 }  { m_axi_image_out_ARVALID VALID 1 1 }  { m_axi_image_out_ARREADY READY 0 1 }  { m_axi_image_out_ARADDR ADDR 1 32 }  { m_axi_image_out_ARID ID 1 1 }  { m_axi_image_out_ARLEN SIZE 1 8 }  { m_axi_image_out_ARSIZE BURST 1 3 }  { m_axi_image_out_ARBURST LOCK 1 2 }  { m_axi_image_out_ARLOCK CACHE 1 2 }  { m_axi_image_out_ARCACHE PROT 1 4 }  { m_axi_image_out_ARPROT QOS 1 3 }  { m_axi_image_out_ARQOS REGION 1 4 }  { m_axi_image_out_ARREGION USER 1 4 }  { m_axi_image_out_ARUSER DATA 1 1 }  { m_axi_image_out_RVALID VALID 0 1 }  { m_axi_image_out_RREADY READY 1 1 }  { m_axi_image_out_RDATA FIFONUM 0 32 }  { m_axi_image_out_RLAST LAST 0 1 }  { m_axi_image_out_RID ID 0 1 }  { m_axi_image_out_RUSER DATA 0 1 }  { m_axi_image_out_RRESP RESP 0 2 }  { m_axi_image_out_BVALID VALID 0 1 }  { m_axi_image_out_BREADY READY 1 1 }  { m_axi_image_out_BRESP RESP 0 2 }  { m_axi_image_out_BID ID 0 1 }  { m_axi_image_out_BUSER DATA 0 1 } } }
-	image_in { m_axi {  { m_axi_image_in_AWVALID VALID 1 1 }  { m_axi_image_in_AWREADY READY 0 1 }  { m_axi_image_in_AWADDR ADDR 1 32 }  { m_axi_image_in_AWID ID 1 1 }  { m_axi_image_in_AWLEN SIZE 1 8 }  { m_axi_image_in_AWSIZE BURST 1 3 }  { m_axi_image_in_AWBURST LOCK 1 2 }  { m_axi_image_in_AWLOCK CACHE 1 2 }  { m_axi_image_in_AWCACHE PROT 1 4 }  { m_axi_image_in_AWPROT QOS 1 3 }  { m_axi_image_in_AWQOS REGION 1 4 }  { m_axi_image_in_AWREGION USER 1 4 }  { m_axi_image_in_AWUSER DATA 1 1 }  { m_axi_image_in_WVALID VALID 1 1 }  { m_axi_image_in_WREADY READY 0 1 }  { m_axi_image_in_WDATA FIFONUM 1 32 }  { m_axi_image_in_WSTRB STRB 1 4 }  { m_axi_image_in_WLAST LAST 1 1 }  { m_axi_image_in_WID ID 1 1 }  { m_axi_image_in_WUSER DATA 1 1 }  { m_axi_image_in_ARVALID VALID 1 1 }  { m_axi_image_in_ARREADY READY 0 1 }  { m_axi_image_in_ARADDR ADDR 1 32 }  { m_axi_image_in_ARID ID 1 1 }  { m_axi_image_in_ARLEN SIZE 1 8 }  { m_axi_image_in_ARSIZE BURST 1 3 }  { m_axi_image_in_ARBURST LOCK 1 2 }  { m_axi_image_in_ARLOCK CACHE 1 2 }  { m_axi_image_in_ARCACHE PROT 1 4 }  { m_axi_image_in_ARPROT QOS 1 3 }  { m_axi_image_in_ARQOS REGION 1 4 }  { m_axi_image_in_ARREGION USER 1 4 }  { m_axi_image_in_ARUSER DATA 1 1 }  { m_axi_image_in_RVALID VALID 0 1 }  { m_axi_image_in_RREADY READY 1 1 }  { m_axi_image_in_RDATA FIFONUM 0 32 }  { m_axi_image_in_RLAST LAST 0 1 }  { m_axi_image_in_RID ID 0 1 }  { m_axi_image_in_RUSER DATA 0 1 }  { m_axi_image_in_RRESP RESP 0 2 }  { m_axi_image_in_BVALID VALID 0 1 }  { m_axi_image_in_BREADY READY 1 1 }  { m_axi_image_in_BRESP RESP 0 2 }  { m_axi_image_in_BID ID 0 1 }  { m_axi_image_in_BUSER DATA 0 1 } } }
-	kernel { m_axi {  { m_axi_kernel_AWVALID VALID 1 1 }  { m_axi_kernel_AWREADY READY 0 1 }  { m_axi_kernel_AWADDR ADDR 1 32 }  { m_axi_kernel_AWID ID 1 1 }  { m_axi_kernel_AWLEN SIZE 1 8 }  { m_axi_kernel_AWSIZE BURST 1 3 }  { m_axi_kernel_AWBURST LOCK 1 2 }  { m_axi_kernel_AWLOCK CACHE 1 2 }  { m_axi_kernel_AWCACHE PROT 1 4 }  { m_axi_kernel_AWPROT QOS 1 3 }  { m_axi_kernel_AWQOS REGION 1 4 }  { m_axi_kernel_AWREGION USER 1 4 }  { m_axi_kernel_AWUSER DATA 1 1 }  { m_axi_kernel_WVALID VALID 1 1 }  { m_axi_kernel_WREADY READY 0 1 }  { m_axi_kernel_WDATA FIFONUM 1 32 }  { m_axi_kernel_WSTRB STRB 1 4 }  { m_axi_kernel_WLAST LAST 1 1 }  { m_axi_kernel_WID ID 1 1 }  { m_axi_kernel_WUSER DATA 1 1 }  { m_axi_kernel_ARVALID VALID 1 1 }  { m_axi_kernel_ARREADY READY 0 1 }  { m_axi_kernel_ARADDR ADDR 1 32 }  { m_axi_kernel_ARID ID 1 1 }  { m_axi_kernel_ARLEN SIZE 1 8 }  { m_axi_kernel_ARSIZE BURST 1 3 }  { m_axi_kernel_ARBURST LOCK 1 2 }  { m_axi_kernel_ARLOCK CACHE 1 2 }  { m_axi_kernel_ARCACHE PROT 1 4 }  { m_axi_kernel_ARPROT QOS 1 3 }  { m_axi_kernel_ARQOS REGION 1 4 }  { m_axi_kernel_ARREGION USER 1 4 }  { m_axi_kernel_ARUSER DATA 1 1 }  { m_axi_kernel_RVALID VALID 0 1 }  { m_axi_kernel_RREADY READY 1 1 }  { m_axi_kernel_RDATA FIFONUM 0 32 }  { m_axi_kernel_RLAST LAST 0 1 }  { m_axi_kernel_RID ID 0 1 }  { m_axi_kernel_RUSER DATA 0 1 }  { m_axi_kernel_RRESP RESP 0 2 }  { m_axi_kernel_BVALID VALID 0 1 }  { m_axi_kernel_BREADY READY 1 1 }  { m_axi_kernel_BRESP RESP 0 2 }  { m_axi_kernel_BID ID 0 1 }  { m_axi_kernel_BUSER DATA 0 1 } } }
+	image_in { m_axi {  { m_axi_image_in_AWVALID VALID 1 1 }  { m_axi_image_in_AWREADY READY 0 1 }  { m_axi_image_in_AWADDR ADDR 1 32 }  { m_axi_image_in_AWID ID 1 1 }  { m_axi_image_in_AWLEN SIZE 1 8 }  { m_axi_image_in_AWSIZE BURST 1 3 }  { m_axi_image_in_AWBURST LOCK 1 2 }  { m_axi_image_in_AWLOCK CACHE 1 2 }  { m_axi_image_in_AWCACHE PROT 1 4 }  { m_axi_image_in_AWPROT QOS 1 3 }  { m_axi_image_in_AWQOS REGION 1 4 }  { m_axi_image_in_AWREGION USER 1 4 }  { m_axi_image_in_AWUSER DATA 1 1 }  { m_axi_image_in_WVALID VALID 1 1 }  { m_axi_image_in_WREADY READY 0 1 }  { m_axi_image_in_WDATA FIFONUM 1 1024 }  { m_axi_image_in_WSTRB STRB 1 128 }  { m_axi_image_in_WLAST LAST 1 1 }  { m_axi_image_in_WID ID 1 1 }  { m_axi_image_in_WUSER DATA 1 1 }  { m_axi_image_in_ARVALID VALID 1 1 }  { m_axi_image_in_ARREADY READY 0 1 }  { m_axi_image_in_ARADDR ADDR 1 32 }  { m_axi_image_in_ARID ID 1 1 }  { m_axi_image_in_ARLEN SIZE 1 8 }  { m_axi_image_in_ARSIZE BURST 1 3 }  { m_axi_image_in_ARBURST LOCK 1 2 }  { m_axi_image_in_ARLOCK CACHE 1 2 }  { m_axi_image_in_ARCACHE PROT 1 4 }  { m_axi_image_in_ARPROT QOS 1 3 }  { m_axi_image_in_ARQOS REGION 1 4 }  { m_axi_image_in_ARREGION USER 1 4 }  { m_axi_image_in_ARUSER DATA 1 1 }  { m_axi_image_in_RVALID VALID 0 1 }  { m_axi_image_in_RREADY READY 1 1 }  { m_axi_image_in_RDATA FIFONUM 0 1024 }  { m_axi_image_in_RLAST LAST 0 1 }  { m_axi_image_in_RID ID 0 1 }  { m_axi_image_in_RUSER DATA 0 1 }  { m_axi_image_in_RRESP RESP 0 2 }  { m_axi_image_in_BVALID VALID 0 1 }  { m_axi_image_in_BREADY READY 1 1 }  { m_axi_image_in_BRESP RESP 0 2 }  { m_axi_image_in_BID ID 0 1 }  { m_axi_image_in_BUSER DATA 0 1 } } }
+	kernel { m_axi {  { m_axi_kernel_AWVALID VALID 1 1 }  { m_axi_kernel_AWREADY READY 0 1 }  { m_axi_kernel_AWADDR ADDR 1 32 }  { m_axi_kernel_AWID ID 1 1 }  { m_axi_kernel_AWLEN SIZE 1 8 }  { m_axi_kernel_AWSIZE BURST 1 3 }  { m_axi_kernel_AWBURST LOCK 1 2 }  { m_axi_kernel_AWLOCK CACHE 1 2 }  { m_axi_kernel_AWCACHE PROT 1 4 }  { m_axi_kernel_AWPROT QOS 1 3 }  { m_axi_kernel_AWQOS REGION 1 4 }  { m_axi_kernel_AWREGION USER 1 4 }  { m_axi_kernel_AWUSER DATA 1 1 }  { m_axi_kernel_WVALID VALID 1 1 }  { m_axi_kernel_WREADY READY 0 1 }  { m_axi_kernel_WDATA FIFONUM 1 1024 }  { m_axi_kernel_WSTRB STRB 1 128 }  { m_axi_kernel_WLAST LAST 1 1 }  { m_axi_kernel_WID ID 1 1 }  { m_axi_kernel_WUSER DATA 1 1 }  { m_axi_kernel_ARVALID VALID 1 1 }  { m_axi_kernel_ARREADY READY 0 1 }  { m_axi_kernel_ARADDR ADDR 1 32 }  { m_axi_kernel_ARID ID 1 1 }  { m_axi_kernel_ARLEN SIZE 1 8 }  { m_axi_kernel_ARSIZE BURST 1 3 }  { m_axi_kernel_ARBURST LOCK 1 2 }  { m_axi_kernel_ARLOCK CACHE 1 2 }  { m_axi_kernel_ARCACHE PROT 1 4 }  { m_axi_kernel_ARPROT QOS 1 3 }  { m_axi_kernel_ARQOS REGION 1 4 }  { m_axi_kernel_ARREGION USER 1 4 }  { m_axi_kernel_ARUSER DATA 1 1 }  { m_axi_kernel_RVALID VALID 0 1 }  { m_axi_kernel_RREADY READY 1 1 }  { m_axi_kernel_RDATA FIFONUM 0 1024 }  { m_axi_kernel_RLAST LAST 0 1 }  { m_axi_kernel_RID ID 0 1 }  { m_axi_kernel_RUSER DATA 0 1 }  { m_axi_kernel_RRESP RESP 0 2 }  { m_axi_kernel_BVALID VALID 0 1 }  { m_axi_kernel_BREADY READY 1 1 }  { m_axi_kernel_BRESP RESP 0 2 }  { m_axi_kernel_BID ID 0 1 }  { m_axi_kernel_BUSER DATA 0 1 } } }
 }
 
 set maxi_interface_dict [dict create]
 dict set maxi_interface_dict image_out {NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE WRITE_ONLY}
-dict set maxi_interface_dict image_in {NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
-dict set maxi_interface_dict kernel {NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict image_in {NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY NUM_CACHE_LINES 256 CACHE_LINE_DEPTH 128 CACHE_LINE_WIDTH 32}
+dict set maxi_interface_dict kernel {NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY NUM_CACHE_LINES 1 CACHE_LINE_DEPTH 128 CACHE_LINE_WIDTH 32}
 
 # RTL port scheduling information:
 set fifoSchedulingInfoList { 

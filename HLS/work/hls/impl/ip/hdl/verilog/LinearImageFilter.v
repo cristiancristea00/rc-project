@@ -221,7 +221,7 @@ parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 7;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_M_AXI_IMAGE_IN_ID_WIDTH = 1;
 parameter    C_M_AXI_IMAGE_IN_ADDR_WIDTH = 32;
-parameter    C_M_AXI_IMAGE_IN_DATA_WIDTH = 32;
+parameter    C_M_AXI_IMAGE_IN_DATA_WIDTH = 1024;
 parameter    C_M_AXI_IMAGE_IN_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_IMAGE_IN_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_IMAGE_IN_WUSER_WIDTH = 1;
@@ -244,7 +244,7 @@ parameter    C_M_AXI_IMAGE_OUT_PROT_VALUE = 0;
 parameter    C_M_AXI_IMAGE_OUT_CACHE_VALUE = 3;
 parameter    C_M_AXI_KERNEL_ID_WIDTH = 1;
 parameter    C_M_AXI_KERNEL_ADDR_WIDTH = 32;
-parameter    C_M_AXI_KERNEL_DATA_WIDTH = 32;
+parameter    C_M_AXI_KERNEL_DATA_WIDTH = 1024;
 parameter    C_M_AXI_KERNEL_AWUSER_WIDTH = 1;
 parameter    C_M_AXI_KERNEL_ARUSER_WIDTH = 1;
 parameter    C_M_AXI_KERNEL_WUSER_WIDTH = 1;
@@ -256,10 +256,10 @@ parameter    C_M_AXI_KERNEL_CACHE_VALUE = 3;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_IMAGE_IN_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_IMAGE_IN_WSTRB_WIDTH = (1024 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_IMAGE_OUT_WSTRB_WIDTH = (32 / 8);
-parameter C_M_AXI_KERNEL_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_KERNEL_WSTRB_WIDTH = (1024 / 8);
 
 input   ap_clk;
 input   ap_rst_n;
@@ -439,130 +439,131 @@ reg    image_out_blk_n_W;
 wire    ap_CS_fsm_state45;
 reg    image_out_blk_n_B;
 wire    ap_CS_fsm_state50;
-reg   [7:0] padding_read_reg_411;
-reg   [31:0] stride_col_read_reg_416;
-reg   [31:0] stride_row_read_reg_423;
-reg   [31:0] kernel_dim_read_reg_429;
-reg   [31:0] kernel_offset_read_reg_435;
-reg   [31:0] cols_read_reg_440;
-reg   [31:0] rows_read_reg_447;
-reg   [31:0] image_in_offset_read_reg_453;
-reg   [31:0] image_out_offset_read_reg_458;
-wire   [29:0] trunc_ln7_fu_243_p1;
-reg   [29:0] trunc_ln7_reg_469;
-wire   [29:0] trunc_ln7_1_fu_247_p1;
-reg   [29:0] trunc_ln7_1_reg_475;
-reg   [30:0] div_reg_480;
-wire   [28:0] empty_fu_261_p1;
-reg   [28:0] empty_reg_486;
-wire   [28:0] empty_40_fu_265_p1;
-reg   [28:0] empty_40_reg_491;
-wire   [63:0] zext_ln7_fu_274_p1;
+reg   [7:0] padding_read_reg_421;
+reg   [31:0] stride_col_read_reg_426;
+reg   [31:0] stride_row_read_reg_433;
+reg   [31:0] kernel_dim_read_reg_439;
+reg   [31:0] kernel_offset_read_reg_445;
+reg   [31:0] cols_read_reg_450;
+reg   [31:0] rows_read_reg_457;
+reg   [31:0] image_in_offset_read_reg_463;
+reg   [31:0] image_out_offset_read_reg_468;
+wire   [29:0] trunc_ln7_fu_253_p1;
+reg   [29:0] trunc_ln7_reg_479;
+wire   [29:0] trunc_ln7_1_fu_257_p1;
+reg   [29:0] trunc_ln7_1_reg_485;
+reg   [30:0] div_reg_490;
+wire   [28:0] empty_fu_271_p1;
+reg   [28:0] empty_reg_496;
+wire   [28:0] empty_40_fu_275_p1;
+reg   [28:0] empty_40_reg_501;
+wire   [63:0] zext_ln7_fu_284_p1;
 wire    ap_CS_fsm_state2;
-wire   [31:0] div_cast_fu_279_p1;
-reg   [31:0] div_cast_reg_502;
+wire   [31:0] div_cast_fu_289_p1;
+reg   [31:0] div_cast_reg_512;
 wire    ap_CS_fsm_state3;
-wire   [29:0] newRow_4_fu_282_p2;
-reg   [29:0] newRow_4_reg_507;
-wire   [29:0] mul_i_fu_287_p3;
-reg   [29:0] mul_i_reg_512;
-wire   [29:0] newCol_2_fu_294_p2;
-reg   [29:0] newCol_2_reg_517;
-wire   [29:0] mul35_i_fu_299_p3;
-reg   [29:0] mul35_i_reg_522;
-wire   [63:0] grp_fu_235_p2;
-reg   [63:0] mul_ln7_reg_527;
+wire   [29:0] newRow_4_fu_292_p2;
+reg   [29:0] newRow_4_reg_517;
+wire   [29:0] mul_i_fu_297_p3;
+reg   [29:0] mul_i_reg_522;
+wire   [29:0] newCol_2_fu_304_p2;
+reg   [29:0] newCol_2_reg_527;
+wire   [29:0] mul35_i_fu_309_p3;
+reg   [29:0] mul35_i_reg_532;
+wire   [63:0] grp_fu_245_p2;
+reg   [63:0] mul_ln7_reg_537;
 wire    ap_CS_fsm_state4;
-wire   [31:0] add_fu_314_p2;
-reg   [31:0] add_reg_540;
-wire   [31:0] col_1_fu_337_p2;
-reg   [31:0] col_1_reg_548;
+wire   [31:0] add_fu_324_p2;
+reg   [31:0] add_reg_550;
+wire   [31:0] col_1_fu_347_p2;
+reg   [31:0] col_1_reg_558;
 wire    ap_CS_fsm_state5;
-wire  signed [31:0] grp_fu_324_p2;
-reg  signed [31:0] udiv_ln50_reg_553;
+wire  signed [31:0] grp_fu_334_p2;
+reg  signed [31:0] udiv_ln53_reg_563;
 wire    ap_CS_fsm_state40;
-wire  signed [31:0] grp_fu_328_p2;
-reg  signed [31:0] udiv_ln50_1_reg_558;
-wire   [29:0] grp_fu_332_p2;
-reg   [29:0] udiv_ln50_2_reg_563;
-wire   [29:0] trunc_ln50_fu_351_p1;
-reg   [29:0] trunc_ln50_reg_568;
+wire  signed [31:0] grp_fu_338_p2;
+reg  signed [31:0] udiv_ln53_1_reg_568;
+wire   [29:0] grp_fu_342_p2;
+reg   [29:0] udiv_ln53_2_reg_573;
+wire   [29:0] trunc_ln53_fu_361_p1;
+reg   [29:0] trunc_ln53_reg_578;
 wire    ap_CS_fsm_state42;
-reg   [29:0] trunc_ln1_reg_573;
+reg   [29:0] trunc_ln1_reg_583;
 wire    ap_CS_fsm_state43;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_idle;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWADDR;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLEN;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWSIZE;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWBURST;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLOCK;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWCACHE;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWPROT;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWQOS;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWREGION;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WDATA;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WSTRB;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WLAST;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WID;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARSIZE;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARBURST;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLOCK;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARCACHE;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARPROT;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARQOS;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARREGION;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_BREADY;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWADDR;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLEN;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWSIZE;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWBURST;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLOCK;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWCACHE;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWPROT;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWQOS;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWREGION;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WDATA;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WSTRB;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WLAST;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WID;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARID;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARSIZE;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARBURST;
-wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLOCK;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARCACHE;
-wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARPROT;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARQOS;
-wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARREGION;
-wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARUSER;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_BREADY;
-wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out_ap_vld;
-wire  signed [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0;
-wire  signed [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1;
-wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_idle;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWADDR;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLEN;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWSIZE;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWBURST;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLOCK;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWCACHE;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWPROT;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWQOS;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWREGION;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WDATA;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WSTRB;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WLAST;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WID;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARSIZE;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARBURST;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLOCK;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARCACHE;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARPROT;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARQOS;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARREGION;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_BREADY;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWADDR;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLEN;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWSIZE;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWBURST;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLOCK;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWCACHE;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWPROT;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWQOS;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWREGION;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WDATA;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WSTRB;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WLAST;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WID;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARID;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARSIZE;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARBURST;
+wire   [1:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLOCK;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARCACHE;
+wire   [2:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARPROT;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARQOS;
+wire   [3:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARREGION;
+wire   [0:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARUSER;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_BREADY;
+wire   [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out_ap_vld;
+wire  signed [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0;
+wire  signed [31:0] grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1;
+wire    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce;
+reg    m_axi_image_in_cache_flush;
 wire    image_in_AWREADY;
 wire    image_in_WREADY;
 reg    image_in_ARVALID;
@@ -583,6 +584,7 @@ wire   [31:0] image_out_RDATA;
 wire   [8:0] image_out_RFIFONUM;
 wire    image_out_BVALID;
 reg    image_out_BREADY;
+reg    m_axi_kernel_cache_flush;
 wire    kernel_AWREADY;
 wire    kernel_WREADY;
 reg    kernel_ARVALID;
@@ -592,38 +594,38 @@ reg    kernel_RREADY;
 wire   [31:0] kernel_RDATA;
 wire   [8:0] kernel_RFIFONUM;
 wire    kernel_BVALID;
-reg   [31:0] col_reg_198;
-wire   [0:0] icmp_ln28_fu_309_p2;
-reg    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg;
-wire   [0:0] icmp_ln30_fu_319_p2;
+reg   [31:0] col_reg_208;
+wire   [0:0] icmp_ln31_fu_319_p2;
+reg    grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg;
+wire   [0:0] icmp_ln33_fu_329_p2;
 wire    ap_CS_fsm_state6;
-wire   [31:0] sext_ln51_fu_386_p1;
-reg   [31:0] row_fu_120;
-wire   [31:0] row_3_fu_342_p2;
-wire   [31:0] grp_fu_235_p0;
-wire   [31:0] grp_fu_235_p1;
-reg  signed [31:0] grp_fu_239_p0;
-reg  signed [31:0] grp_fu_239_p1;
+wire   [31:0] sext_ln54_fu_396_p1;
+reg   [31:0] row_fu_130;
+wire   [31:0] row_3_fu_352_p2;
+wire   [31:0] grp_fu_245_p0;
+wire   [31:0] grp_fu_245_p1;
+reg  signed [31:0] grp_fu_249_p0;
+reg  signed [31:0] grp_fu_249_p1;
 wire    ap_CS_fsm_state41;
-wire   [31:0] grp_fu_239_p2;
-wire   [29:0] trunc_ln50_1_fu_355_p1;
-wire   [29:0] out_idx_fu_358_p2;
-wire   [31:0] shl_ln_fu_363_p3;
-wire   [31:0] add_ln51_fu_371_p2;
-reg    grp_fu_239_ce;
-reg    grp_fu_324_ap_start;
-wire    grp_fu_324_ap_done;
-reg    grp_fu_324_ce;
+wire   [31:0] grp_fu_249_p2;
+wire   [29:0] trunc_ln53_1_fu_365_p1;
+wire   [29:0] out_idx_fu_368_p2;
+wire   [31:0] shl_ln_fu_373_p3;
+wire   [31:0] add_ln54_fu_381_p2;
+reg    grp_fu_249_ce;
+reg    grp_fu_334_ap_start;
+wire    grp_fu_334_ap_done;
+reg    grp_fu_334_ce;
 wire    ap_CS_fsm_state46;
 wire    ap_CS_fsm_state47;
 wire    ap_CS_fsm_state48;
 wire    ap_CS_fsm_state49;
-reg    grp_fu_328_ap_start;
-wire    grp_fu_328_ap_done;
-reg    grp_fu_328_ce;
-reg    grp_fu_332_ap_start;
-wire    grp_fu_332_ap_done;
-reg    grp_fu_332_ce;
+reg    grp_fu_338_ap_start;
+wire    grp_fu_338_ap_done;
+reg    grp_fu_338_ce;
+reg    grp_fu_342_ap_start;
+wire    grp_fu_342_ap_done;
+reg    grp_fu_342_ce;
 reg   [49:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -680,52 +682,52 @@ wire    ap_ce_reg;
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 50'd1;
-#0 grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg = 1'b0;
-#0 row_fu_120 = 32'd0;
+#0 grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg = 1'b0;
+#0 row_fu_130 = 32'd0;
 end
 
-LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210(
+LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start),
-    .ap_done(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done),
-    .ap_idle(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_idle),
-    .ap_ready(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready),
-    .m_axi_kernel_AWVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWVALID),
+    .ap_start(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start),
+    .ap_done(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done),
+    .ap_idle(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_idle),
+    .ap_ready(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready),
+    .m_axi_kernel_AWVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWVALID),
     .m_axi_kernel_AWREADY(1'b0),
-    .m_axi_kernel_AWADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWADDR),
-    .m_axi_kernel_AWID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWID),
-    .m_axi_kernel_AWLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLEN),
-    .m_axi_kernel_AWSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWSIZE),
-    .m_axi_kernel_AWBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWBURST),
-    .m_axi_kernel_AWLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWLOCK),
-    .m_axi_kernel_AWCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWCACHE),
-    .m_axi_kernel_AWPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWPROT),
-    .m_axi_kernel_AWQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWQOS),
-    .m_axi_kernel_AWREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWREGION),
-    .m_axi_kernel_AWUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_AWUSER),
-    .m_axi_kernel_WVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WVALID),
+    .m_axi_kernel_AWADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWADDR),
+    .m_axi_kernel_AWID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWID),
+    .m_axi_kernel_AWLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLEN),
+    .m_axi_kernel_AWSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWSIZE),
+    .m_axi_kernel_AWBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWBURST),
+    .m_axi_kernel_AWLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWLOCK),
+    .m_axi_kernel_AWCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWCACHE),
+    .m_axi_kernel_AWPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWPROT),
+    .m_axi_kernel_AWQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWQOS),
+    .m_axi_kernel_AWREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWREGION),
+    .m_axi_kernel_AWUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_AWUSER),
+    .m_axi_kernel_WVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WVALID),
     .m_axi_kernel_WREADY(1'b0),
-    .m_axi_kernel_WDATA(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WDATA),
-    .m_axi_kernel_WSTRB(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WSTRB),
-    .m_axi_kernel_WLAST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WLAST),
-    .m_axi_kernel_WID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WID),
-    .m_axi_kernel_WUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_WUSER),
-    .m_axi_kernel_ARVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID),
+    .m_axi_kernel_WDATA(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WDATA),
+    .m_axi_kernel_WSTRB(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WSTRB),
+    .m_axi_kernel_WLAST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WLAST),
+    .m_axi_kernel_WID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WID),
+    .m_axi_kernel_WUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_WUSER),
+    .m_axi_kernel_ARVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID),
     .m_axi_kernel_ARREADY(kernel_ARREADY),
-    .m_axi_kernel_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR),
-    .m_axi_kernel_ARID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARID),
-    .m_axi_kernel_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN),
-    .m_axi_kernel_ARSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARSIZE),
-    .m_axi_kernel_ARBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARBURST),
-    .m_axi_kernel_ARLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLOCK),
-    .m_axi_kernel_ARCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARCACHE),
-    .m_axi_kernel_ARPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARPROT),
-    .m_axi_kernel_ARQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARQOS),
-    .m_axi_kernel_ARREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARREGION),
-    .m_axi_kernel_ARUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARUSER),
+    .m_axi_kernel_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR),
+    .m_axi_kernel_ARID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARID),
+    .m_axi_kernel_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN),
+    .m_axi_kernel_ARSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARSIZE),
+    .m_axi_kernel_ARBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARBURST),
+    .m_axi_kernel_ARLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLOCK),
+    .m_axi_kernel_ARCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARCACHE),
+    .m_axi_kernel_ARPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARPROT),
+    .m_axi_kernel_ARQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARQOS),
+    .m_axi_kernel_ARREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARREGION),
+    .m_axi_kernel_ARUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARUSER),
     .m_axi_kernel_RVALID(kernel_RVALID),
-    .m_axi_kernel_RREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY),
+    .m_axi_kernel_RREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY),
     .m_axi_kernel_RDATA(kernel_RDATA),
     .m_axi_kernel_RLAST(1'b0),
     .m_axi_kernel_RID(1'd0),
@@ -733,45 +735,45 @@ LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols grp_LinearImageFi
     .m_axi_kernel_RUSER(1'd0),
     .m_axi_kernel_RRESP(2'd0),
     .m_axi_kernel_BVALID(1'b0),
-    .m_axi_kernel_BREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_BREADY),
+    .m_axi_kernel_BREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_BREADY),
     .m_axi_kernel_BRESP(2'd0),
     .m_axi_kernel_BID(1'd0),
     .m_axi_kernel_BUSER(1'd0),
-    .m_axi_image_in_AWVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWVALID),
+    .m_axi_image_in_AWVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWVALID),
     .m_axi_image_in_AWREADY(1'b0),
-    .m_axi_image_in_AWADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWADDR),
-    .m_axi_image_in_AWID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWID),
-    .m_axi_image_in_AWLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLEN),
-    .m_axi_image_in_AWSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWSIZE),
-    .m_axi_image_in_AWBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWBURST),
-    .m_axi_image_in_AWLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWLOCK),
-    .m_axi_image_in_AWCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWCACHE),
-    .m_axi_image_in_AWPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWPROT),
-    .m_axi_image_in_AWQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWQOS),
-    .m_axi_image_in_AWREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWREGION),
-    .m_axi_image_in_AWUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_AWUSER),
-    .m_axi_image_in_WVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WVALID),
+    .m_axi_image_in_AWADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWADDR),
+    .m_axi_image_in_AWID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWID),
+    .m_axi_image_in_AWLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLEN),
+    .m_axi_image_in_AWSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWSIZE),
+    .m_axi_image_in_AWBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWBURST),
+    .m_axi_image_in_AWLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWLOCK),
+    .m_axi_image_in_AWCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWCACHE),
+    .m_axi_image_in_AWPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWPROT),
+    .m_axi_image_in_AWQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWQOS),
+    .m_axi_image_in_AWREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWREGION),
+    .m_axi_image_in_AWUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_AWUSER),
+    .m_axi_image_in_WVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WVALID),
     .m_axi_image_in_WREADY(1'b0),
-    .m_axi_image_in_WDATA(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WDATA),
-    .m_axi_image_in_WSTRB(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WSTRB),
-    .m_axi_image_in_WLAST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WLAST),
-    .m_axi_image_in_WID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WID),
-    .m_axi_image_in_WUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_WUSER),
-    .m_axi_image_in_ARVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID),
+    .m_axi_image_in_WDATA(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WDATA),
+    .m_axi_image_in_WSTRB(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WSTRB),
+    .m_axi_image_in_WLAST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WLAST),
+    .m_axi_image_in_WID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WID),
+    .m_axi_image_in_WUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_WUSER),
+    .m_axi_image_in_ARVALID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID),
     .m_axi_image_in_ARREADY(image_in_ARREADY),
-    .m_axi_image_in_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR),
-    .m_axi_image_in_ARID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARID),
-    .m_axi_image_in_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN),
-    .m_axi_image_in_ARSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARSIZE),
-    .m_axi_image_in_ARBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARBURST),
-    .m_axi_image_in_ARLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLOCK),
-    .m_axi_image_in_ARCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARCACHE),
-    .m_axi_image_in_ARPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARPROT),
-    .m_axi_image_in_ARQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARQOS),
-    .m_axi_image_in_ARREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARREGION),
-    .m_axi_image_in_ARUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARUSER),
+    .m_axi_image_in_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR),
+    .m_axi_image_in_ARID(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARID),
+    .m_axi_image_in_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN),
+    .m_axi_image_in_ARSIZE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARSIZE),
+    .m_axi_image_in_ARBURST(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARBURST),
+    .m_axi_image_in_ARLOCK(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLOCK),
+    .m_axi_image_in_ARCACHE(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARCACHE),
+    .m_axi_image_in_ARPROT(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARPROT),
+    .m_axi_image_in_ARQOS(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARQOS),
+    .m_axi_image_in_ARREGION(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARREGION),
+    .m_axi_image_in_ARUSER(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARUSER),
     .m_axi_image_in_RVALID(image_in_RVALID),
-    .m_axi_image_in_RREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY),
+    .m_axi_image_in_RREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY),
     .m_axi_image_in_RDATA(image_in_RDATA),
     .m_axi_image_in_RLAST(1'b0),
     .m_axi_image_in_RID(1'd0),
@@ -779,31 +781,31 @@ LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols grp_LinearImageFi
     .m_axi_image_in_RUSER(1'd0),
     .m_axi_image_in_RRESP(2'd0),
     .m_axi_image_in_BVALID(1'b0),
-    .m_axi_image_in_BREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_BREADY),
+    .m_axi_image_in_BREADY(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_BREADY),
     .m_axi_image_in_BRESP(2'd0),
     .m_axi_image_in_BID(1'd0),
     .m_axi_image_in_BUSER(1'd0),
-    .mul_ln7(mul_ln7_reg_527),
-    .padding(padding_read_reg_411),
-    .kernel_dim(kernel_dim_read_reg_429),
-    .add(add_reg_540),
-    .rows(rows_read_reg_447),
-    .newRow_4(newRow_4_reg_507),
-    .col(col_reg_198),
-    .empty_26(div_reg_480),
-    .cols(cols_read_reg_440),
-    .empty(trunc_ln7_reg_469),
-    .image_in_offset(image_in_offset_read_reg_453),
-    .kernel_offset(kernel_offset_read_reg_435),
-    .newCol_2(newCol_2_reg_517),
-    .mul_i(mul_i_reg_512),
-    .mul35_i(mul35_i_reg_522),
-    .sum_1_out(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out),
-    .sum_1_out_ap_vld(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out_ap_vld),
-    .grp_fu_239_p_din0(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0),
-    .grp_fu_239_p_din1(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1),
-    .grp_fu_239_p_dout0(grp_fu_239_p2),
-    .grp_fu_239_p_ce(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce)
+    .mul_ln7(mul_ln7_reg_537),
+    .padding(padding_read_reg_421),
+    .kernel_dim(kernel_dim_read_reg_439),
+    .add(add_reg_550),
+    .rows(rows_read_reg_457),
+    .newRow_4(newRow_4_reg_517),
+    .col(col_reg_208),
+    .empty_26(div_reg_490),
+    .cols(cols_read_reg_450),
+    .empty(trunc_ln7_reg_479),
+    .image_in_offset(image_in_offset_read_reg_463),
+    .kernel_offset(kernel_offset_read_reg_445),
+    .newCol_2(newCol_2_reg_527),
+    .mul_i(mul_i_reg_522),
+    .mul35_i(mul35_i_reg_532),
+    .sum_1_out(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out),
+    .sum_1_out_ap_vld(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out_ap_vld),
+    .grp_fu_249_p_din0(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0),
+    .grp_fu_249_p_din1(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1),
+    .grp_fu_249_p_dout0(grp_fu_249_p2),
+    .grp_fu_249_p_ce(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce)
 );
 
 LinearImageFilter_control_s_axi #(
@@ -916,10 +918,11 @@ image_in_m_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
+    .cache_flush(m_axi_image_in_cache_flush),
     .I_ARVALID(image_in_ARVALID),
     .I_ARREADY(image_in_ARREADY),
-    .I_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARADDR),
-    .I_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARLEN),
+    .I_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARADDR),
+    .I_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARLEN),
     .I_RVALID(image_in_RVALID),
     .I_RREADY(image_in_RREADY),
     .I_RDATA(image_in_RDATA),
@@ -1016,7 +1019,7 @@ image_out_m_axi_U(
     .I_RFIFONUM(image_out_RFIFONUM),
     .I_AWVALID(image_out_AWVALID),
     .I_AWREADY(image_out_AWREADY),
-    .I_AWADDR(sext_ln51_fu_386_p1),
+    .I_AWADDR(sext_ln54_fu_396_p1),
     .I_AWLEN(32'd1),
     .I_WVALID(image_out_WVALID),
     .I_WREADY(image_out_WREADY),
@@ -1096,10 +1099,11 @@ kernel_m_axi_U(
     .ACLK(ap_clk),
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
+    .cache_flush(m_axi_kernel_cache_flush),
     .I_ARVALID(kernel_ARVALID),
     .I_ARREADY(kernel_ARREADY),
-    .I_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARADDR),
-    .I_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARLEN),
+    .I_ARADDR(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARADDR),
+    .I_ARLEN(grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARLEN),
     .I_RVALID(kernel_RVALID),
     .I_RREADY(kernel_RREADY),
     .I_RDATA(kernel_RDATA),
@@ -1125,10 +1129,10 @@ LinearImageFilter_mul_32ns_32ns_64_2_1 #(
 mul_32ns_32ns_64_2_1_U26(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .din0(grp_fu_235_p0),
-    .din1(grp_fu_235_p1),
+    .din0(grp_fu_245_p0),
+    .din1(grp_fu_245_p1),
     .ce(1'b1),
-    .dout(grp_fu_235_p2)
+    .dout(grp_fu_245_p2)
 );
 
 LinearImageFilter_mul_32s_32s_32_2_1 #(
@@ -1140,10 +1144,10 @@ LinearImageFilter_mul_32s_32s_32_2_1 #(
 mul_32s_32s_32_2_1_U27(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .din0(grp_fu_239_p0),
-    .din1(grp_fu_239_p1),
-    .ce(grp_fu_239_ce),
-    .dout(grp_fu_239_p2)
+    .din0(grp_fu_249_p0),
+    .din1(grp_fu_249_p1),
+    .ce(grp_fu_249_ce),
+    .dout(grp_fu_249_p2)
 );
 
 LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 #(
@@ -1155,12 +1159,12 @@ LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 #(
 udiv_32ns_32ns_32_36_seq_1_U28(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .start(grp_fu_324_ap_start),
-    .done(grp_fu_324_ap_done),
-    .din0(row_fu_120),
-    .din1(stride_row_read_reg_423),
-    .ce(grp_fu_324_ce),
-    .dout(grp_fu_324_p2)
+    .start(grp_fu_334_ap_start),
+    .done(grp_fu_334_ap_done),
+    .din0(row_fu_130),
+    .din1(stride_row_read_reg_433),
+    .ce(grp_fu_334_ce),
+    .dout(grp_fu_334_p2)
 );
 
 LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 #(
@@ -1172,12 +1176,12 @@ LinearImageFilter_udiv_32ns_32ns_32_36_seq_1 #(
 udiv_32ns_32ns_32_36_seq_1_U29(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .start(grp_fu_328_ap_start),
-    .done(grp_fu_328_ap_done),
-    .din0(cols_read_reg_440),
-    .din1(stride_col_read_reg_416),
-    .ce(grp_fu_328_ce),
-    .dout(grp_fu_328_p2)
+    .start(grp_fu_338_ap_start),
+    .done(grp_fu_338_ap_done),
+    .din0(cols_read_reg_450),
+    .din1(stride_col_read_reg_426),
+    .ce(grp_fu_338_ce),
+    .dout(grp_fu_338_p2)
 );
 
 LinearImageFilter_udiv_32ns_32ns_30_36_seq_1 #(
@@ -1189,12 +1193,12 @@ LinearImageFilter_udiv_32ns_32ns_30_36_seq_1 #(
 udiv_32ns_32ns_30_36_seq_1_U30(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .start(grp_fu_332_ap_start),
-    .done(grp_fu_332_ap_done),
-    .din0(col_reg_198),
-    .din1(stride_col_read_reg_416),
-    .ce(grp_fu_332_ce),
-    .dout(grp_fu_332_p2)
+    .start(grp_fu_342_ap_start),
+    .done(grp_fu_342_ap_done),
+    .din0(col_reg_208),
+    .din1(stride_col_read_reg_426),
+    .ce(grp_fu_342_ce),
+    .dout(grp_fu_342_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -1207,91 +1211,91 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= 1'b0;
+        grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= 1'b0;
     end else begin
-        if (((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
-            grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= 1'b1;
-        end else if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_ready == 1'b1)) begin
-            grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg <= 1'b0;
+        if (((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
+            grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= 1'b1;
+        end else if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_ready == 1'b1)) begin
+            grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((image_out_BVALID == 1'b1) & (1'b1 == ap_CS_fsm_state50))) begin
-        col_reg_198 <= col_1_reg_548;
-    end else if (((icmp_ln28_fu_309_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
-        col_reg_198 <= 32'd0;
+        col_reg_208 <= col_1_reg_558;
+    end else if (((icmp_ln31_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
+        col_reg_208 <= 32'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        row_fu_120 <= 32'd0;
-    end else if (((icmp_ln30_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
-        row_fu_120 <= row_3_fu_342_p2;
+        row_fu_130 <= 32'd0;
+    end else if (((icmp_ln33_fu_329_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
+        row_fu_130 <= row_3_fu_352_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        add_reg_540 <= add_fu_314_p2;
+        add_reg_550 <= add_fu_324_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        col_1_reg_548 <= col_1_fu_337_p2;
+        col_1_reg_558 <= col_1_fu_347_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        cols_read_reg_440 <= cols;
-        div_reg_480 <= {{kernel_dim[31:1]}};
-        empty_40_reg_491 <= empty_40_fu_265_p1;
-        empty_reg_486 <= empty_fu_261_p1;
-        image_in_offset_read_reg_453 <= image_in_offset;
-        image_out_offset_read_reg_458 <= image_out_offset;
-        kernel_dim_read_reg_429 <= kernel_dim;
-        kernel_offset_read_reg_435 <= kernel_offset;
-        padding_read_reg_411 <= padding;
-        rows_read_reg_447 <= rows;
-        stride_col_read_reg_416 <= stride_col;
-        stride_row_read_reg_423 <= stride_row;
-        trunc_ln7_1_reg_475 <= trunc_ln7_1_fu_247_p1;
-        trunc_ln7_reg_469 <= trunc_ln7_fu_243_p1;
+        cols_read_reg_450 <= cols;
+        div_reg_490 <= {{kernel_dim[31:1]}};
+        empty_40_reg_501 <= empty_40_fu_275_p1;
+        empty_reg_496 <= empty_fu_271_p1;
+        image_in_offset_read_reg_463 <= image_in_offset;
+        image_out_offset_read_reg_468 <= image_out_offset;
+        kernel_dim_read_reg_439 <= kernel_dim;
+        kernel_offset_read_reg_445 <= kernel_offset;
+        padding_read_reg_421 <= padding;
+        rows_read_reg_457 <= rows;
+        stride_col_read_reg_426 <= stride_col;
+        stride_row_read_reg_433 <= stride_row;
+        trunc_ln7_1_reg_485 <= trunc_ln7_1_fu_257_p1;
+        trunc_ln7_reg_479 <= trunc_ln7_fu_253_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        div_cast_reg_502[30 : 0] <= div_cast_fu_279_p1[30 : 0];
-        mul35_i_reg_522[29 : 1] <= mul35_i_fu_299_p3[29 : 1];
-        mul_i_reg_512[29 : 1] <= mul_i_fu_287_p3[29 : 1];
-        mul_ln7_reg_527 <= grp_fu_235_p2;
-        newCol_2_reg_517 <= newCol_2_fu_294_p2;
-        newRow_4_reg_507 <= newRow_4_fu_282_p2;
+        div_cast_reg_512[30 : 0] <= div_cast_fu_289_p1[30 : 0];
+        mul35_i_reg_532[29 : 1] <= mul35_i_fu_309_p3[29 : 1];
+        mul_i_reg_522[29 : 1] <= mul_i_fu_297_p3[29 : 1];
+        mul_ln7_reg_537 <= grp_fu_245_p2;
+        newCol_2_reg_527 <= newCol_2_fu_304_p2;
+        newRow_4_reg_517 <= newRow_4_fu_292_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state43)) begin
-        trunc_ln1_reg_573 <= {{add_ln51_fu_371_p2[31:2]}};
+        trunc_ln1_reg_583 <= {{add_ln54_fu_381_p2[31:2]}};
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state42)) begin
-        trunc_ln50_reg_568 <= trunc_ln50_fu_351_p1;
+        trunc_ln53_reg_578 <= trunc_ln53_fu_361_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state40)) begin
-        udiv_ln50_1_reg_558 <= grp_fu_328_p2;
-        udiv_ln50_2_reg_563 <= grp_fu_332_p2;
-        udiv_ln50_reg_553 <= grp_fu_324_p2;
+        udiv_ln53_1_reg_568 <= grp_fu_338_p2;
+        udiv_ln53_2_reg_573 <= grp_fu_342_p2;
+        udiv_ln53_reg_563 <= grp_fu_334_p2;
     end
 end
 
@@ -1412,7 +1416,7 @@ end
 assign ap_ST_fsm_state5_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done == 1'b0)) begin
+    if ((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done == 1'b0)) begin
         ap_ST_fsm_state6_blk = 1'b1;
     end else begin
         ap_ST_fsm_state6_blk = 1'b0;
@@ -1426,7 +1430,7 @@ assign ap_ST_fsm_state8_blk = 1'b0;
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((icmp_ln28_fu_309_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    if (((icmp_ln31_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1442,7 +1446,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln28_fu_309_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+    if (((icmp_ln31_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1451,91 +1455,91 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_239_ce = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_ce;
+        grp_fu_249_ce = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_ce;
     end else begin
-        grp_fu_239_ce = 1'b1;
+        grp_fu_249_ce = 1'b1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_239_p0 = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din0;
+        grp_fu_249_p0 = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din0;
     end else if ((1'b1 == ap_CS_fsm_state41)) begin
-        grp_fu_239_p0 = udiv_ln50_1_reg_558;
+        grp_fu_249_p0 = udiv_ln53_1_reg_568;
     end else begin
-        grp_fu_239_p0 = 'bx;
+        grp_fu_249_p0 = 'bx;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_fu_239_p1 = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_grp_fu_239_p_din1;
+        grp_fu_249_p1 = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_grp_fu_249_p_din1;
     end else if ((1'b1 == ap_CS_fsm_state41)) begin
-        grp_fu_239_p1 = udiv_ln50_reg_553;
+        grp_fu_249_p1 = udiv_ln53_reg_563;
     end else begin
-        grp_fu_239_p1 = 'bx;
+        grp_fu_249_p1 = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
-        grp_fu_324_ap_start = 1'b1;
+    if (((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
+        grp_fu_334_ap_start = 1'b1;
     end else begin
-        grp_fu_324_ap_start = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state41) | (1'b1 == ap_CS_fsm_state1) | (1'b1 == ap_CS_fsm_state43) | (1'b1 == ap_CS_fsm_state42) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state50) | (1'b1 == ap_CS_fsm_state45) | (1'b1 == ap_CS_fsm_state44) | (1'b1 == ap_CS_fsm_state49) | (1'b1 == ap_CS_fsm_state48) | (1'b1 == ap_CS_fsm_state47) | (1'b1 == ap_CS_fsm_state46))) begin
-        grp_fu_324_ce = 1'b0;
-    end else begin
-        grp_fu_324_ce = 1'b1;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
-        grp_fu_328_ap_start = 1'b1;
-    end else begin
-        grp_fu_328_ap_start = 1'b0;
+        grp_fu_334_ap_start = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state41) | (1'b1 == ap_CS_fsm_state1) | (1'b1 == ap_CS_fsm_state43) | (1'b1 == ap_CS_fsm_state42) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state50) | (1'b1 == ap_CS_fsm_state45) | (1'b1 == ap_CS_fsm_state44) | (1'b1 == ap_CS_fsm_state49) | (1'b1 == ap_CS_fsm_state48) | (1'b1 == ap_CS_fsm_state47) | (1'b1 == ap_CS_fsm_state46))) begin
-        grp_fu_328_ce = 1'b0;
+        grp_fu_334_ce = 1'b0;
     end else begin
-        grp_fu_328_ce = 1'b1;
+        grp_fu_334_ce = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
-        grp_fu_332_ap_start = 1'b1;
+    if (((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
+        grp_fu_338_ap_start = 1'b1;
     end else begin
-        grp_fu_332_ap_start = 1'b0;
+        grp_fu_338_ap_start = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state41) | (1'b1 == ap_CS_fsm_state1) | (1'b1 == ap_CS_fsm_state43) | (1'b1 == ap_CS_fsm_state42) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state50) | (1'b1 == ap_CS_fsm_state45) | (1'b1 == ap_CS_fsm_state44) | (1'b1 == ap_CS_fsm_state49) | (1'b1 == ap_CS_fsm_state48) | (1'b1 == ap_CS_fsm_state47) | (1'b1 == ap_CS_fsm_state46))) begin
-        grp_fu_332_ce = 1'b0;
+        grp_fu_338_ce = 1'b0;
     end else begin
-        grp_fu_332_ce = 1'b1;
+        grp_fu_338_ce = 1'b1;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
-        image_in_ARVALID = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_ARVALID;
+    if (((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5))) begin
+        grp_fu_342_ap_start = 1'b1;
+    end else begin
+        grp_fu_342_ap_start = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state41) | (1'b1 == ap_CS_fsm_state1) | (1'b1 == ap_CS_fsm_state43) | (1'b1 == ap_CS_fsm_state42) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2) | (1'b1 == ap_CS_fsm_state50) | (1'b1 == ap_CS_fsm_state45) | (1'b1 == ap_CS_fsm_state44) | (1'b1 == ap_CS_fsm_state49) | (1'b1 == ap_CS_fsm_state48) | (1'b1 == ap_CS_fsm_state47) | (1'b1 == ap_CS_fsm_state46))) begin
+        grp_fu_342_ce = 1'b0;
+    end else begin
+        grp_fu_342_ce = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
+        image_in_ARVALID = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_ARVALID;
     end else begin
         image_in_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
-        image_in_RREADY = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_image_in_RREADY;
+    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
+        image_in_RREADY = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_image_in_RREADY;
     end else begin
         image_in_RREADY = 1'b0;
     end
@@ -1590,18 +1594,34 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
-        kernel_ARVALID = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_ARVALID;
+    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
+        kernel_ARVALID = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_ARVALID;
     end else begin
         kernel_ARVALID = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln30_fu_319_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
-        kernel_RREADY = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_m_axi_kernel_RREADY;
+    if (((1'b1 == ap_CS_fsm_state6) | ((icmp_ln33_fu_329_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state5)))) begin
+        kernel_RREADY = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_m_axi_kernel_RREADY;
     end else begin
         kernel_RREADY = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((icmp_ln31_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        m_axi_image_in_cache_flush = 1'b1;
+    end else begin
+        m_axi_image_in_cache_flush = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((icmp_ln31_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        m_axi_kernel_cache_flush = 1'b1;
+    end else begin
+        m_axi_kernel_cache_flush = 1'b0;
     end
 end
 
@@ -1621,21 +1641,21 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((icmp_ln28_fu_309_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+            if (((icmp_ln31_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state5;
             end
         end
         ap_ST_fsm_state5 : begin
-            if (((icmp_ln30_fu_319_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
+            if (((icmp_ln33_fu_329_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
             end
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
+            if (((grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state7;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
@@ -1791,9 +1811,9 @@ always @ (*) begin
     endcase
 end
 
-assign add_fu_314_p2 = (row_fu_120 - div_cast_reg_502);
+assign add_fu_324_p2 = (row_fu_130 - div_cast_reg_512);
 
-assign add_ln51_fu_371_p2 = (shl_ln_fu_363_p3 + image_out_offset_read_reg_458);
+assign add_ln54_fu_381_p2 = (shl_ln_fu_373_p3 + image_out_offset_read_reg_468);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -1833,56 +1853,56 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign col_1_fu_337_p2 = (col_reg_198 + stride_col_read_reg_416);
+assign col_1_fu_347_p2 = (col_reg_208 + stride_col_read_reg_426);
 
-assign div_cast_fu_279_p1 = div_reg_480;
+assign div_cast_fu_289_p1 = div_reg_490;
 
-assign empty_40_fu_265_p1 = cols[28:0];
+assign empty_40_fu_275_p1 = cols[28:0];
 
-assign empty_fu_261_p1 = rows[28:0];
+assign empty_fu_271_p1 = rows[28:0];
 
-assign grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg;
+assign grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg;
 
-assign grp_fu_235_p0 = zext_ln7_fu_274_p1;
+assign grp_fu_245_p0 = zext_ln7_fu_284_p1;
 
-assign grp_fu_235_p1 = zext_ln7_fu_274_p1;
+assign grp_fu_245_p1 = zext_ln7_fu_284_p1;
 
-assign icmp_ln28_fu_309_p2 = ((row_fu_120 < rows_read_reg_447) ? 1'b1 : 1'b0);
+assign icmp_ln31_fu_319_p2 = ((row_fu_130 < rows_read_reg_457) ? 1'b1 : 1'b0);
 
-assign icmp_ln30_fu_319_p2 = ((col_reg_198 < cols_read_reg_440) ? 1'b1 : 1'b0);
+assign icmp_ln33_fu_329_p2 = ((col_reg_208 < cols_read_reg_450) ? 1'b1 : 1'b0);
 
-assign image_out_WDATA = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_sum_1_out;
+assign image_out_WDATA = grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_sum_1_out;
 
-assign mul35_i_fu_299_p3 = {{empty_40_reg_491}, {1'd0}};
+assign mul35_i_fu_309_p3 = {{empty_40_reg_501}, {1'd0}};
 
-assign mul_i_fu_287_p3 = {{empty_reg_486}, {1'd0}};
+assign mul_i_fu_297_p3 = {{empty_reg_496}, {1'd0}};
 
-assign newCol_2_fu_294_p2 = ($signed(trunc_ln7_reg_469) + $signed(30'd1073741823));
+assign newCol_2_fu_304_p2 = ($signed(trunc_ln7_reg_479) + $signed(30'd1073741823));
 
-assign newRow_4_fu_282_p2 = ($signed(trunc_ln7_1_reg_475) + $signed(30'd1073741823));
+assign newRow_4_fu_292_p2 = ($signed(trunc_ln7_1_reg_485) + $signed(30'd1073741823));
 
-assign out_idx_fu_358_p2 = (trunc_ln50_reg_568 + trunc_ln50_1_fu_355_p1);
+assign out_idx_fu_368_p2 = (trunc_ln53_reg_578 + trunc_ln53_1_fu_365_p1);
 
-assign row_3_fu_342_p2 = (row_fu_120 + stride_row_read_reg_423);
+assign row_3_fu_352_p2 = (row_fu_130 + stride_row_read_reg_433);
 
-assign sext_ln51_fu_386_p1 = $signed(trunc_ln1_reg_573);
+assign sext_ln54_fu_396_p1 = $signed(trunc_ln1_reg_583);
 
-assign shl_ln_fu_363_p3 = {{out_idx_fu_358_p2}, {2'd0}};
+assign shl_ln_fu_373_p3 = {{out_idx_fu_368_p2}, {2'd0}};
 
-assign trunc_ln50_1_fu_355_p1 = udiv_ln50_2_reg_563[29:0];
+assign trunc_ln53_1_fu_365_p1 = udiv_ln53_2_reg_573[29:0];
 
-assign trunc_ln50_fu_351_p1 = grp_fu_239_p2[29:0];
+assign trunc_ln53_fu_361_p1 = grp_fu_249_p2[29:0];
 
-assign trunc_ln7_1_fu_247_p1 = rows[29:0];
+assign trunc_ln7_1_fu_257_p1 = rows[29:0];
 
-assign trunc_ln7_fu_243_p1 = cols[29:0];
+assign trunc_ln7_fu_253_p1 = cols[29:0];
 
-assign zext_ln7_fu_274_p1 = kernel_dim_read_reg_429;
+assign zext_ln7_fu_284_p1 = kernel_dim_read_reg_439;
 
 always @ (posedge ap_clk) begin
-    div_cast_reg_502[31] <= 1'b0;
-    mul_i_reg_512[0] <= 1'b0;
-    mul35_i_reg_522[0] <= 1'b0;
+    div_cast_reg_512[31] <= 1'b0;
+    mul_i_reg_522[0] <= 1'b0;
+    mul35_i_reg_532[0] <= 1'b0;
 end
 
 endmodule //LinearImageFilter

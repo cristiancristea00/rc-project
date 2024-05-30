@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'LinearImageFilter'" level="0">
-<item name = "Date">Thu May 30 19:32:06 2024
+<item name = "Date">Thu May 30 20:38:02 2024
 </item>
 <item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
 <item name = "Project">work</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210">LinearImageFilter_Pipeline_ker_rows_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220">LinearImageFilter_Pipeline_ker_rows_ker_cols, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -64,7 +64,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210">LinearImageFilter_Pipeline_ker_rows_ker_cols, 0, 8, 1678, 2568, 0</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220">LinearImageFilter_Pipeline_ker_rows_ker_cols, 0, 8, 1678, 2568, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 354, 568, 0</column>
 <column name="image_in_m_axi_U">image_in_m_axi, 4, 0, 830, 734, 0</column>
 <column name="image_out_m_axi_U">image_out_m_axi, 4, 0, 830, 734, 0</column>
@@ -90,24 +90,24 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln51_fu_371_p2">+, 0, 0, 39, 32, 32</column>
-<column name="col_1_fu_337_p2">+, 0, 0, 39, 32, 32</column>
-<column name="newCol_2_fu_294_p2">+, 0, 0, 37, 30, 2</column>
-<column name="newRow_4_fu_282_p2">+, 0, 0, 37, 30, 2</column>
-<column name="out_idx_fu_358_p2">+, 0, 0, 37, 30, 30</column>
-<column name="row_3_fu_342_p2">+, 0, 0, 39, 32, 32</column>
-<column name="add_fu_314_p2">-, 0, 0, 39, 32, 32</column>
-<column name="icmp_ln28_fu_309_p2">icmp, 0, 0, 39, 32, 32</column>
-<column name="icmp_ln30_fu_319_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="add_ln54_fu_381_p2">+, 0, 0, 39, 32, 32</column>
+<column name="col_1_fu_347_p2">+, 0, 0, 39, 32, 32</column>
+<column name="newCol_2_fu_304_p2">+, 0, 0, 37, 30, 2</column>
+<column name="newRow_4_fu_292_p2">+, 0, 0, 37, 30, 2</column>
+<column name="out_idx_fu_368_p2">+, 0, 0, 37, 30, 30</column>
+<column name="row_3_fu_352_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_fu_324_p2">-, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln31_fu_319_p2">icmp, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln33_fu_329_p2">icmp, 0, 0, 39, 32, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">221, 51, 1, 51</column>
-<column name="col_reg_198">9, 2, 32, 64</column>
-<column name="grp_fu_239_ce">9, 2, 1, 2</column>
-<column name="grp_fu_239_p0">14, 3, 32, 96</column>
-<column name="grp_fu_239_p1">14, 3, 32, 96</column>
+<column name="col_reg_208">9, 2, 32, 64</column>
+<column name="grp_fu_249_ce">9, 2, 1, 2</column>
+<column name="grp_fu_249_p0">14, 3, 32, 96</column>
+<column name="grp_fu_249_p1">14, 3, 32, 96</column>
 <column name="image_in_ARVALID">9, 2, 1, 2</column>
 <column name="image_in_RREADY">9, 2, 1, 2</column>
 <column name="image_out_blk_n_AW">9, 2, 1, 2</column>
@@ -115,42 +115,42 @@
 <column name="image_out_blk_n_W">9, 2, 1, 2</column>
 <column name="kernel_ARVALID">9, 2, 1, 2</column>
 <column name="kernel_RREADY">9, 2, 1, 2</column>
-<column name="row_fu_120">9, 2, 32, 64</column>
+<column name="row_fu_130">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_reg_540">32, 0, 32, 0</column>
+<column name="add_reg_550">32, 0, 32, 0</column>
 <column name="ap_CS_fsm">50, 0, 50, 0</column>
-<column name="col_1_reg_548">32, 0, 32, 0</column>
-<column name="col_reg_198">32, 0, 32, 0</column>
-<column name="cols_read_reg_440">32, 0, 32, 0</column>
-<column name="div_cast_reg_502">31, 0, 32, 1</column>
-<column name="div_reg_480">31, 0, 31, 0</column>
-<column name="empty_40_reg_491">29, 0, 29, 0</column>
-<column name="empty_reg_486">29, 0, 29, 0</column>
-<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210_ap_start_reg">1, 0, 1, 0</column>
-<column name="image_in_offset_read_reg_453">32, 0, 32, 0</column>
-<column name="image_out_offset_read_reg_458">32, 0, 32, 0</column>
-<column name="kernel_dim_read_reg_429">32, 0, 32, 0</column>
-<column name="kernel_offset_read_reg_435">32, 0, 32, 0</column>
-<column name="mul35_i_reg_522">29, 0, 30, 1</column>
-<column name="mul_i_reg_512">29, 0, 30, 1</column>
-<column name="mul_ln7_reg_527">64, 0, 64, 0</column>
-<column name="newCol_2_reg_517">30, 0, 30, 0</column>
-<column name="newRow_4_reg_507">30, 0, 30, 0</column>
-<column name="padding_read_reg_411">8, 0, 8, 0</column>
-<column name="row_fu_120">32, 0, 32, 0</column>
-<column name="rows_read_reg_447">32, 0, 32, 0</column>
-<column name="stride_col_read_reg_416">32, 0, 32, 0</column>
-<column name="stride_row_read_reg_423">32, 0, 32, 0</column>
-<column name="trunc_ln1_reg_573">30, 0, 30, 0</column>
-<column name="trunc_ln50_reg_568">30, 0, 30, 0</column>
-<column name="trunc_ln7_1_reg_475">30, 0, 30, 0</column>
-<column name="trunc_ln7_reg_469">30, 0, 30, 0</column>
-<column name="udiv_ln50_1_reg_558">32, 0, 32, 0</column>
-<column name="udiv_ln50_2_reg_563">30, 0, 30, 0</column>
-<column name="udiv_ln50_reg_553">32, 0, 32, 0</column>
+<column name="col_1_reg_558">32, 0, 32, 0</column>
+<column name="col_reg_208">32, 0, 32, 0</column>
+<column name="cols_read_reg_450">32, 0, 32, 0</column>
+<column name="div_cast_reg_512">31, 0, 32, 1</column>
+<column name="div_reg_490">31, 0, 31, 0</column>
+<column name="empty_40_reg_501">29, 0, 29, 0</column>
+<column name="empty_reg_496">29, 0, 29, 0</column>
+<column name="grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220_ap_start_reg">1, 0, 1, 0</column>
+<column name="image_in_offset_read_reg_463">32, 0, 32, 0</column>
+<column name="image_out_offset_read_reg_468">32, 0, 32, 0</column>
+<column name="kernel_dim_read_reg_439">32, 0, 32, 0</column>
+<column name="kernel_offset_read_reg_445">32, 0, 32, 0</column>
+<column name="mul35_i_reg_532">29, 0, 30, 1</column>
+<column name="mul_i_reg_522">29, 0, 30, 1</column>
+<column name="mul_ln7_reg_537">64, 0, 64, 0</column>
+<column name="newCol_2_reg_527">30, 0, 30, 0</column>
+<column name="newRow_4_reg_517">30, 0, 30, 0</column>
+<column name="padding_read_reg_421">8, 0, 8, 0</column>
+<column name="row_fu_130">32, 0, 32, 0</column>
+<column name="rows_read_reg_457">32, 0, 32, 0</column>
+<column name="stride_col_read_reg_426">32, 0, 32, 0</column>
+<column name="stride_row_read_reg_433">32, 0, 32, 0</column>
+<column name="trunc_ln1_reg_583">30, 0, 30, 0</column>
+<column name="trunc_ln53_reg_578">30, 0, 30, 0</column>
+<column name="trunc_ln7_1_reg_485">30, 0, 30, 0</column>
+<column name="trunc_ln7_reg_479">30, 0, 30, 0</column>
+<column name="udiv_ln53_1_reg_568">32, 0, 32, 0</column>
+<column name="udiv_ln53_2_reg_573">30, 0, 30, 0</column>
+<column name="udiv_ln53_reg_563">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -240,8 +240,8 @@
 <column name="m_axi_image_in_AWUSER">out, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_WVALID">out, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_WREADY">in, 1, m_axi, image_in, pointer</column>
-<column name="m_axi_image_in_WDATA">out, 32, m_axi, image_in, pointer</column>
-<column name="m_axi_image_in_WSTRB">out, 4, m_axi, image_in, pointer</column>
+<column name="m_axi_image_in_WDATA">out, 1024, m_axi, image_in, pointer</column>
+<column name="m_axi_image_in_WSTRB">out, 128, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_WLAST">out, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_WID">out, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_WUSER">out, 1, m_axi, image_in, pointer</column>
@@ -260,7 +260,7 @@
 <column name="m_axi_image_in_ARUSER">out, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_RVALID">in, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_RREADY">out, 1, m_axi, image_in, pointer</column>
-<column name="m_axi_image_in_RDATA">in, 32, m_axi, image_in, pointer</column>
+<column name="m_axi_image_in_RDATA">in, 1024, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_RLAST">in, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_RID">in, 1, m_axi, image_in, pointer</column>
 <column name="m_axi_image_in_RUSER">in, 1, m_axi, image_in, pointer</column>
@@ -285,8 +285,8 @@
 <column name="m_axi_kernel_AWUSER">out, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_WVALID">out, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_WREADY">in, 1, m_axi, kernel, pointer</column>
-<column name="m_axi_kernel_WDATA">out, 32, m_axi, kernel, pointer</column>
-<column name="m_axi_kernel_WSTRB">out, 4, m_axi, kernel, pointer</column>
+<column name="m_axi_kernel_WDATA">out, 1024, m_axi, kernel, pointer</column>
+<column name="m_axi_kernel_WSTRB">out, 128, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_WLAST">out, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_WID">out, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_WUSER">out, 1, m_axi, kernel, pointer</column>
@@ -305,7 +305,7 @@
 <column name="m_axi_kernel_ARUSER">out, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_RVALID">in, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_RREADY">out, 1, m_axi, kernel, pointer</column>
-<column name="m_axi_kernel_RDATA">in, 32, m_axi, kernel, pointer</column>
+<column name="m_axi_kernel_RDATA">in, 1024, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_RLAST">in, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_RID">in, 1, m_axi, kernel, pointer</column>
 <column name="m_axi_kernel_RUSER">in, 1, m_axi, kernel, pointer</column>

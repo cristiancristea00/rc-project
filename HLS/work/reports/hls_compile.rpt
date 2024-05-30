@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'LinearImageFilter'
 ================================================================
 + General Information: 
-    * Date:           Thu May 30 19:32:06 2024
+    * Date:           Thu May 30 20:38:02 2024
     * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
     * Project:        work
     * Solution:       hls (Vivado IP Flow Target)
@@ -31,14 +31,14 @@
 == HW Interfaces
 ================================================================
 * M_AXI
-+-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| Interface       | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
-|                 | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
-+-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| m_axi_image_in  | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
-| m_axi_image_out | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
-| m_axi_kernel    | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
-+-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+----------------------------------------+-------------------+
+| Interface       | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Cache Info                             | Resource Estimate |
+|                 | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                                        |                   |
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+----------------------------------------+-------------------+
+| m_axi_image_in  | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | 256 lines of 512  byte(s), 32 bitwidth | BRAM=4            |
+| m_axi_image_out | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |                                        | BRAM=4            |
+| m_axi_kernel    | 32 -> 32   | 32            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | 1 lines of 512  byte(s), 32 bitwidth   | BRAM=4            |
++-----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+----------------------------------------+-------------------+
 
 * S_AXILITE Interfaces
 +---------------+------------+---------------+--------+----------+
@@ -120,12 +120,12 @@
  Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
 
 * All M_AXI Variable Accesses
-+----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
-| HW Interface   | Variable | Access Location                                                           | Direction | Burst Status | Loop     | Loop Location                                                             | Resolution | Problem                                  |
-+----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
-| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:46:28 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
-| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:46:63 | read      | Fail         | ker_cols | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:36:27 | 214-232    | Access load is in the conditional branch |
-+----------------+----------+---------------------------------------------------------------------------+-----------+--------------+----------+---------------------------------------------------------------------------+------------+------------------------------------------+
++----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
+| HW Interface   | Variable | Access Location                                                           | Direction | Burst Status | Resolution | Problem                                                                                                                            |
++----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
+| m_axi_image_in | image_in | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49:28 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
+| m_axi_kernel   | kernel   | /home/cristi/Documents/ACES/RC-Project/HLS/LinearImageFiltering.cpp:49:63 | read      | Fail         | 214-417    | Using a cache line to infer a burst is less efficient in terms of resources than writing the code to automatically infer the burst |
++----------------+----------+---------------------------------------------------------------------------+-----------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
 
     * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
 
@@ -136,31 +136,31 @@
 | Name                                            | DSP | Pragma | Variable   | Op   | Impl    | Latency |
 +-------------------------------------------------+-----+--------+------------+------+---------+---------+
 | + LinearImageFilter                             | 15  |        |            |      |         |         |
-|   newRow_4_fu_282_p2                            |     |        | newRow_4   | add  | fabric  | 0       |
-|   newCol_2_fu_294_p2                            |     |        | newCol_2   | add  | fabric  | 0       |
+|   newRow_4_fu_292_p2                            |     |        | newRow_4   | add  | fabric  | 0       |
+|   newCol_2_fu_304_p2                            |     |        | newCol_2   | add  | fabric  | 0       |
 |   mul_32s_32s_32_2_1_U27                        | 4   |        | mul_ln7    | mul  | auto    | 1       |
-|   add_fu_314_p2                                 |     |        | add        | sub  | fabric  | 0       |
-|   mul_32s_32s_32_2_1_U27                        | 3   |        | mul_ln50   | mul  | auto    | 1       |
-|   out_idx_fu_358_p2                             |     |        | out_idx    | add  | fabric  | 0       |
-|   add_ln51_fu_371_p2                            |     |        | add_ln51   | add  | fabric  | 0       |
-|   col_1_fu_337_p2                               |     |        | col_1      | add  | fabric  | 0       |
-|   row_3_fu_342_p2                               |     |        | row_3      | add  | fabric  | 0       |
+|   add_fu_324_p2                                 |     |        | add        | sub  | fabric  | 0       |
+|   mul_32s_32s_32_2_1_U27                        | 3   |        | mul_ln53   | mul  | auto    | 1       |
+|   out_idx_fu_368_p2                             |     |        | out_idx    | add  | fabric  | 0       |
+|   add_ln54_fu_381_p2                            |     |        | add_ln54   | add  | fabric  | 0       |
+|   col_1_fu_347_p2                               |     |        | col_1      | add  | fabric  | 0       |
+|   row_3_fu_352_p2                               |     |        | row_3      | add  | fabric  | 0       |
 |  + LinearImageFilter_Pipeline_ker_rows_ker_cols | 8   |        |            |      |         |         |
-|    add_ln34_fu_322_p2                           |     |        | add_ln34   | add  | fabric  | 0       |
-|    add_ln34_1_fu_339_p2                         |     |        | add_ln34_1 | add  | fabric  | 0       |
-|    newRow_fu_359_p2                             |     |        | newRow     | add  | fabric  | 0       |
-|    neg_fu_479_p2                                |     |        | neg        | sub  | fabric  | 0       |
-|    newRow_5_fu_496_p2                           |     |        | newRow_5   | add  | fabric  | 0       |
-|    neg1_fu_512_p2                               |     |        | neg1       | sub  | fabric  | 0       |
-|    newCol_4_fu_529_p2                           |     |        | newCol_4   | add  | fabric  | 0       |
-|    mul_30s_30s_30_2_1_U3                        | 3   |        | mul_ln46   | mul  | auto    | 1       |
-|    add_ln46_fu_690_p2                           |     |        | add_ln46   | add  | fabric  | 0       |
-|    add_ln46_1_fu_703_p2                         |     |        | add_ln46_1 | add  | fabric  | 0       |
-|    add_ln46_2_fu_634_p2                         |     |        | add_ln46_2 | add  | fabric  | 0       |
-|    add_ln46_3_fu_647_p2                         |     |        | add_ln46_3 | add  | fabric  | 0       |
+|    add_ln37_fu_328_p2                           |     |        | add_ln37   | add  | fabric  | 0       |
+|    add_ln37_1_fu_345_p2                         |     |        | add_ln37_1 | add  | fabric  | 0       |
+|    newRow_fu_365_p2                             |     |        | newRow     | add  | fabric  | 0       |
+|    neg_fu_485_p2                                |     |        | neg        | sub  | fabric  | 0       |
+|    newRow_5_fu_502_p2                           |     |        | newRow_5   | add  | fabric  | 0       |
+|    neg1_fu_518_p2                               |     |        | neg1       | sub  | fabric  | 0       |
+|    newCol_4_fu_535_p2                           |     |        | newCol_4   | add  | fabric  | 0       |
+|    mul_30s_30s_30_2_1_U3                        | 3   |        | mul_ln49   | mul  | auto    | 1       |
+|    add_ln49_fu_696_p2                           |     |        | add_ln49   | add  | fabric  | 0       |
+|    add_ln49_1_fu_709_p2                         |     |        | add_ln49_1 | add  | fabric  | 0       |
+|    add_ln49_2_fu_640_p2                         |     |        | add_ln49_2 | add  | fabric  | 0       |
+|    add_ln49_3_fu_653_p2                         |     |        | add_ln49_3 | add  | fabric  | 0       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U2             | 3   |        | mul        | fmul | maxdsp  | 3       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U1            | 2   |        | sum_1      | fadd | fulldsp | 4       |
-|    add_ln36_fu_672_p2                           |     |        | add_ln36   | add  | fabric  | 0       |
+|    add_ln39_fu_678_p2                           |     |        | add_ln39   | add  | fabric  | 0       |
 +-------------------------------------------------+-----+--------+------------+------+---------+---------+
 
 
@@ -196,7 +196,9 @@
 | interface | mode = s_axilite port = stride_col                                               | LinearImageFiltering.cpp:17 in linearimagefilter |
 | interface | mode = s_axilite port = padding                                                  | LinearImageFiltering.cpp:18 in linearimagefilter |
 | interface | mode = s_axilite port = return                                                   | LinearImageFiltering.cpp:19 in linearimagefilter |
-| inline    |                                                                                  | LinearImageFiltering.cpp:58 in pad               |
+| cache     | port = image_in depth = 128 lines = 256                                          | LinearImageFiltering.cpp:21 in linearimagefilter |
+| cache     | port = kernel depth = 128 lines = 1                                              | LinearImageFiltering.cpp:22 in linearimagefilter |
+| inline    |                                                                                  | LinearImageFiltering.cpp:61 in pad               |
 +-----------+----------------------------------------------------------------------------------+--------------------------------------------------+
 
 

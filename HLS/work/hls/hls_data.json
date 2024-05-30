@@ -173,7 +173,7 @@
       "config_export -ipname=LinearImageFiltering",
       "config_export -taxonomy=ImageProcessing",
       "config_export -vendor=Cristi",
-      "config_export -version=0.1.0",
+      "config_export -version=0.2.0",
       "config_export -output=\/home\/cristi\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering",
       "config_export -format=ip_catalog",
       "config_export -rtl=verilog",
@@ -182,6 +182,7 @@
       "config_compile -pragma_strict_mode=1",
       "config_compile -unsafe_math_optimizations=1",
       "config_interface -m_axi_addr64=0",
+      "config_interface -m_axi_cache_impl=bram",
       "config_interface -s_axilite_data64=0"
     ],
     "DirectiveTcl": ["set_directive_top LinearImageFilter -name LinearImageFilter"],
@@ -202,13 +203,13 @@
     "Vendor": "Cristi",
     "Library": "Image",
     "Name": "LinearImageFiltering",
-    "Version": "0.1",
+    "Version": "0.2",
     "DisplayName": "Linear Image Filtering",
     "Revision": "0",
     "Description": "Linear Image Filtering using HSL",
     "Taxonomy": "\/ImageProcessing",
     "AutoFamilySupport": "",
-    "ZipFile": "Cristi_Image_LinearImageFiltering_0_1.zip"
+    "ZipFile": "Cristi_Image_LinearImageFiltering_0_2.zip"
   },
   "Files": {
     "CSource": ["\/home\/cristi\/Documents\/ACES\/RC-Project\/HLS\/LinearImageFiltering.cpp"],
@@ -245,16 +246,16 @@
       "impl\/verilog\/LinearImageFilter.v"
     ],
     "SwDriver": [
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/data\/LinearImageFilter.mdd",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/data\/LinearImageFilter.tcl",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/data\/LinearImageFilter.yaml",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/CMakeLists.txt",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/Makefile",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/xlinearimagefilter.c",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/xlinearimagefilter.h",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/xlinearimagefilter_hw.h",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/xlinearimagefilter_linux.c",
-      "impl\/misc\/drivers\/LinearImageFilter_v0_1\/src\/xlinearimagefilter_sinit.c"
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.mdd",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.tcl",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/data\/LinearImageFilter.yaml",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/CMakeLists.txt",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/Makefile",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter.c",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter.h",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_hw.h",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_linux.c",
+      "impl\/misc\/drivers\/LinearImageFilter_v0_2\/src\/xlinearimagefilter_sinit.c"
     ],
     "IpMisc": ["impl\/misc\/logo.png"],
     "Subcore": [
@@ -793,10 +794,15 @@
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
-      "dataWidth": "32",
+      "dataWidth": "1024",
       "addrWidth": "32",
       "portPrefix": "m_axi_image_in_",
       "paramPrefix": "C_M_AXI_IMAGE_IN_",
+      "cacheInfo": {
+        "lineCount": "256",
+        "lineWords": "128",
+        "lineWidth": "32"
+      },
       "offsetSlaveName": "s_axi_control",
       "preferredUsageValue": "MEMORY",
       "busParams": {
@@ -883,10 +889,15 @@
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
-      "dataWidth": "32",
+      "dataWidth": "1024",
       "addrWidth": "32",
       "portPrefix": "m_axi_kernel_",
       "paramPrefix": "C_M_AXI_KERNEL_",
+      "cacheInfo": {
+        "lineCount": "1",
+        "lineWords": "128",
+        "lineWidth": "32"
+      },
       "offsetSlaveName": "s_axi_control",
       "preferredUsageValue": "MEMORY",
       "busParams": {
@@ -1305,11 +1316,11 @@
     },
     "m_axi_image_in_WDATA": {
       "dir": "out",
-      "width": "32"
+      "width": "1024"
     },
     "m_axi_image_in_WSTRB": {
       "dir": "out",
-      "width": "4"
+      "width": "128"
     },
     "m_axi_image_in_WLAST": {
       "dir": "out",
@@ -1389,7 +1400,7 @@
     },
     "m_axi_image_in_RDATA": {
       "dir": "in",
-      "width": "32"
+      "width": "1024"
     },
     "m_axi_image_in_RLAST": {
       "dir": "in",
@@ -1495,11 +1506,11 @@
     },
     "m_axi_kernel_WDATA": {
       "dir": "out",
-      "width": "32"
+      "width": "1024"
     },
     "m_axi_kernel_WSTRB": {
       "dir": "out",
-      "width": "4"
+      "width": "128"
     },
     "m_axi_kernel_WLAST": {
       "dir": "out",
@@ -1579,7 +1590,7 @@
     },
     "m_axi_kernel_RDATA": {
       "dir": "in",
-      "width": "32"
+      "width": "1024"
     },
     "m_axi_kernel_RLAST": {
       "dir": "in",
@@ -1627,7 +1638,7 @@
       "ModuleName": "LinearImageFilter",
       "Instances": [{
           "ModuleName": "LinearImageFilter_Pipeline_ker_rows_ker_cols",
-          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_210"
+          "InstanceName": "grp_LinearImageFilter_Pipeline_ker_rows_ker_cols_fu_220"
         }]
     },
     "Info": {
@@ -1737,7 +1748,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-05-30 19:32:09 EEST",
+    "Time": "2024-05-30 20:38:04 EEST",
     "ToolName": "vitis_hls",
     "ToolVersion": "2023.2.2"
   }

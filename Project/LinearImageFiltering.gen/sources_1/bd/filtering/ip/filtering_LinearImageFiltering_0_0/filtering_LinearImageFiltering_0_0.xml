@@ -2996,11 +2996,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:40:17 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:45:51 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8b127e19</spirit:value>
+            <spirit:value>9:06b70b15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3014,11 +3014,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:38:35 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:39:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8b127e19</spirit:value>
+            <spirit:value>9:06b70b15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3029,7 +3029,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8b127e19</spirit:value>
+            <spirit:value>9:06b70b15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3072,11 +3072,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:38:35 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:39:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1eb72bfe</spirit:value>
+            <spirit:value>9:b96ba7c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3092,11 +3092,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:38:35 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:39:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1eb72bfe</spirit:value>
+            <spirit:value>9:b96ba7c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3139,11 +3139,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:38:35 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:39:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8b127e19</spirit:value>
+            <spirit:value>9:06b70b15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3159,11 +3159,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 30 16:38:35 UTC 2024</spirit:value>
+            <spirit:value>Thu May 30 17:39:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8b127e19</spirit:value>
+            <spirit:value>9:06b70b15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6178,43 +6178,43 @@
     <spirit:fileSet>
       <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/data/LinearImageFilter.mdd</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/data/LinearImageFilter.mdd</spirit:name>
         <spirit:userFileType>driver_mdd</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/data/LinearImageFilter.tcl</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/data/LinearImageFilter.tcl</spirit:name>
         <spirit:userFileType>driver_tcl</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/data/LinearImageFilter.yaml</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/data/LinearImageFilter.yaml</spirit:name>
         <spirit:fileType>unknown</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/CMakeLists.txt</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/CMakeLists.txt</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/Makefile</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/Makefile</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/xlinearimagefilter.c</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/xlinearimagefilter.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/xlinearimagefilter.h</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/xlinearimagefilter.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/xlinearimagefilter_hw.h</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/xlinearimagefilter_hw.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/xlinearimagefilter_linux.c</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/xlinearimagefilter_linux.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/LinearImageFilter_v0_1/src/xlinearimagefilter_sinit.c</spirit:name>
+        <spirit:name>drivers/LinearImageFilter_v0_2/src/xlinearimagefilter_sinit.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -6371,82 +6371,82 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_control_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_control_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_image_in_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_image_in_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_image_out_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_image_out_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_kernel_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_kernel_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -6602,11 +6602,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/ip/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1_ip.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/ip/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1_ip.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -6615,59 +6615,59 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_control_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_control_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_fadd_32ns_32ns_32_5_full_dsp_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_flow_control_loop_pipe_sequential_init.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_fmul_32ns_32ns_32_4_max_dsp_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_image_in_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_image_in_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_image_out_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_image_out_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_kernel_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_kernel_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_LinearImageFilter_Pipeline_ker_rows_ker_cols.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_30s_30s_30_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_32ns_32ns_64_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_mul_32s_32s_32_2_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_30_36_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter_udiv_32ns_32ns_32_36_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7b4e/hdl/verilog/LinearImageFilter.v</spirit:name>
+        <spirit:name>../../ipshared/d34d/hdl/verilog/LinearImageFilter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -7217,6 +7217,8 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CONTROL.SUPPORTS_NARROW_BURST" xilinx:valueSource="auto" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CONTROL.WUSER_BITS_PER_BYTE" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CONTROL.WUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_IMAGE_IN_DATA_WIDTH" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_KERNEL_DATA_WIDTH" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
@@ -7224,10 +7226,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1fe55220"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="0c78f690"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="15a2556c"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="31331a84"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="417565b0"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="30fa342e"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="66911506"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b214a45c"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="d1b84c0b"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="2c3d7ca8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="811f6201"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
