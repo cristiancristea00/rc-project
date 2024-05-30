@@ -1,6 +1,27 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
+| Date         : Thu May 30 22:40:40 2024
+| Host         : Hephaestion running 64-bit Ubuntu 24.04 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'filtering_LinearImageFiltering_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of filtering_LinearImageFiltering_0_0 from Cristi:Image:LinearImageFiltering:0.3 to Cristi:Image:LinearImageFiltering:0.4
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
 | Date         : Thu May 30 21:35:49 2024
 | Host         : Hephaestion running 64-bit Ubuntu 24.04 LTS
 | Command      : upgrade_ip

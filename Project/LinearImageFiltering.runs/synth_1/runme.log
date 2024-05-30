@@ -11,7 +11,7 @@
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source filtering_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1331.926 ; gain = 0.027 ; free physical = 7571 ; free virtual = 12064
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1279.566 ; gain = 14.902 ; free physical = 7703 ; free virtual = 10059
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cristi/Documents/ACES/RC-Project/HLS'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/cristi/AMD/Vivado/2023.2/data/ip'.
@@ -27,14 +27,14 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 138110
+INFO: [Synth 8-7075] Helper process launched with PID 216561
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2071.289 ; gain = 403.801 ; free physical = 6473 ; free virtual = 11030
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2073.492 ; gain = 405.770 ; free physical = 6511 ; free virtual = 8951
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'filtering_wrapper' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/hdl/filtering_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'filtering' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:13]
-INFO: [Synth 8-6157] synthesizing module 'filtering_LinearImageFiltering_0_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_LinearImageFiltering_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_LinearImageFiltering_0_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_LinearImageFiltering_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_LinearImageFiltering_0_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_LinearImageFiltering_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_LinearImageFiltering_0_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_LinearImageFiltering_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'interrupt' of module 'filtering_LinearImageFiltering_0_0' is unconnected for instance 'LinearImageFilter' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:233]
 WARNING: [Synth 8-7071] port 'm_axi_image_out_WID' of module 'filtering_LinearImageFiltering_0_0' is unconnected for instance 'LinearImageFilter' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:233]
 WARNING: [Synth 8-7071] port 'm_axi_image_out_ARID' of module 'filtering_LinearImageFiltering_0_0' is unconnected for instance 'LinearImageFilter' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:233]
@@ -86,29 +86,29 @@ WARNING: [Synth 8-7071] port 'm_axi_kernel_BREADY' of module 'filtering_LinearIm
 WARNING: [Synth 8-7023] instance 'LinearImageFilter' of module 'filtering_LinearImageFiltering_0_0' has 140 connections declared, but only 92 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:233]
 INFO: [Synth 8-6157] synthesizing module 'filtering_axi_mem_intercon_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:608]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_158YU37' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1693]
-INFO: [Synth 8-6157] synthesizing module 'filtering_auto_pc_1' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_pc_1' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_auto_pc_1' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_pc_1' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_pc_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_158YU37' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1693]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_3GWD5B' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2393]
-INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'filtering_auto_us_0' is unconnected for instance 'auto_us' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2564]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'filtering_auto_us_0' has 42 connections declared, but only 41 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2564]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_3GWD5B' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2393]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1OVEVO7' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2608]
-INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_1' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_1' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_1' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_1' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'filtering_auto_us_1' is unconnected for instance 'auto_us' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2755]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'filtering_auto_us_1' has 36 connections declared, but only 35 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2755]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1OVEVO7' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2608]
 INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_XCPQ4E' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2793]
-INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_2' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_2' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_us_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_auto_us_2' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_us_2' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_us_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'filtering_auto_us_2' is unconnected for instance 'auto_us' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2940]
 WARNING: [Synth 8-7023] instance 'auto_us' of module 'filtering_auto_us_2' has 36 connections declared, but only 35 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2940]
 INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_XCPQ4E' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2793]
-INFO: [Synth 8-6157] synthesizing module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_xbar_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_xbar_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_xbar_0_stub.v:6]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_awready' does not match port width (3) of module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1370]
 WARNING: [Synth 8-689] width (2) of port connection 's_axi_bresp' does not match port width (6) of module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1374]
 WARNING: [Synth 8-689] width (1) of port connection 's_axi_bvalid' does not match port width (3) of module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1375]
@@ -117,8 +117,8 @@ WARNING: [Synth 8-7071] port 's_axi_bid' of module 'filtering_xbar_0' is unconne
 WARNING: [Synth 8-7071] port 's_axi_rid' of module 'filtering_xbar_0' is unconnected for instance 'xbar' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1309]
 WARNING: [Synth 8-7023] instance 'xbar' of module 'filtering_xbar_0' has 78 connections declared, but only 76 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1309]
 INFO: [Synth 8-6155] done synthesizing module 'filtering_axi_mem_intercon_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:608]
-INFO: [Synth 8-6157] synthesizing module 'filtering_processing_system7_0_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_processing_system7_0_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_processing_system7_0_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_processing_system7_0_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'filtering_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:432]
 WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'filtering_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:432]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'filtering_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:432]
@@ -128,15 +128,15 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'filtering_processing
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'filtering_processing_system7_0_0' has 110 connections declared, but only 104 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:432]
 INFO: [Synth 8-6157] synthesizing module 'filtering_ps7_0_axi_periph_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1388]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1NJE7C8' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2098]
-INFO: [Synth 8-6157] synthesizing module 'filtering_auto_pc_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_pc_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_auto_pc_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_auto_pc_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_auto_pc_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'filtering_auto_pc_0' is unconnected for instance 'auto_pc' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2333]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'filtering_auto_pc_0' is unconnected for instance 'auto_pc' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2333]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'filtering_auto_pc_0' has 59 connections declared, but only 57 given [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2333]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1NJE7C8' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:2098]
 INFO: [Synth 8-6155] done synthesizing module 'filtering_ps7_0_axi_periph_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:1388]
-INFO: [Synth 8-6157] synthesizing module 'filtering_rst_ps7_0_100M_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_rst_ps7_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'filtering_rst_ps7_0_100M_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-138081-Hephaestion/realtime/filtering_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'filtering_rst_ps7_0_100M_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'filtering_rst_ps7_0_100M_0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/.Xil/Vivado-216529-Hephaestion/realtime/filtering_rst_ps7_0_100M_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'filtering_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:599]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'filtering_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:599]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'filtering_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/synth/filtering.v:599]
@@ -176,18 +176,18 @@ WARNING: [Synth 8-7129] Port S01_ARESETN in module filtering_axi_mem_intercon_0 
 WARNING: [Synth 8-7129] Port S02_ACLK in module filtering_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S02_ARESETN in module filtering_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2154.227 ; gain = 486.738 ; free physical = 6363 ; free virtual = 10928
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2154.461 ; gain = 486.738 ; free physical = 6393 ; free virtual = 8836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2169.070 ; gain = 501.582 ; free physical = 6363 ; free virtual = 10928
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2169.305 ; gain = 501.582 ; free physical = 6393 ; free virtual = 8836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2169.070 ; gain = 501.582 ; free physical = 6363 ; free virtual = 10928
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2169.305 ; gain = 501.582 ; free physical = 6393 ; free virtual = 8836
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2169.070 ; gain = 0.000 ; free physical = 6363 ; free virtual = 10929
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2169.305 ; gain = 0.000 ; free physical = 6393 ; free virtual = 8836
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -214,22 +214,22 @@ Parsing XDC File [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFilt
 Finished Parsing XDC File [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.008 ; gain = 0.000 ; free physical = 6355 ; free virtual = 10924
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.242 ; gain = 0.000 ; free physical = 6389 ; free virtual = 8834
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.043 ; gain = 0.000 ; free physical = 6355 ; free virtual = 10924
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.277 ; gain = 0.000 ; free physical = 6389 ; free virtual = 8834
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6352 ; free virtual = 10923
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6401 ; free virtual = 8833
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6352 ; free virtual = 10922
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6401 ; free virtual = 8833
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -507,10 +507,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for filtering_i/axi_mem_intercon/s02_
 Applied set_property KEEP_HIERARCHY = SOFT for filtering_i/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for filtering_i/axi_mem_intercon. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6356 ; free virtual = 10927
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6400 ; free virtual = 8833
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6359 ; free virtual = 10931
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6367 ; free virtual = 8800
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -556,25 +556,25 @@ WARNING: [Synth 8-7129] Port S02_ACLK in module filtering_axi_mem_intercon_0 is 
 WARNING: [Synth 8-7129] Port S02_ARESETN in module filtering_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S02_AXI_arlock[1] in module filtering_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6372 ; free virtual = 10940
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6370 ; free virtual = 8808
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6405 ; free virtual = 10970
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6379 ; free virtual = 8817
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6405 ; free virtual = 10970
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6379 ; free virtual = 8817
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6405 ; free virtual = 10970
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6379 ; free virtual = 8817
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -592,37 +592,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6415 ; free virtual = 10990
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6417 ; free virtual = 10992
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6418 ; free virtual = 10993
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6419 ; free virtual = 10994
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6419 ; free virtual = 10994
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6419 ; free virtual = 10994
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -655,16 +655,16 @@ Report Cell Usage:
 |9     |filtering_xbar                   |     1|
 +------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6419 ; free virtual = 10994
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2242.043 ; gain = 501.582 ; free physical = 6424 ; free virtual = 10996
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.043 ; gain = 574.555 ; free physical = 6424 ; free virtual = 10996
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2242.277 ; gain = 501.582 ; free physical = 6404 ; free virtual = 8849
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.277 ; gain = 574.555 ; free physical = 6404 ; free virtual = 8849
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2242.043 ; gain = 0.000 ; free physical = 6677 ; free virtual = 11249
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2242.277 ; gain = 0.000 ; free physical = 6600 ; free virtual = 9045
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.043 ; gain = 0.000 ; free physical = 6710 ; free virtual = 11284
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.277 ; gain = 0.000 ; free physical = 6700 ; free virtual = 9146
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -672,9 +672,9 @@ Synth Design complete | Checksum: 564215a3
 INFO: [Common 17-83] Releasing license: Synthesis
 57 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2242.043 ; gain = 910.117 ; free physical = 6709 ; free virtual = 11284
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1849.612; main = 1523.422; forked = 376.197
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3201.543; main = 2209.996; forked = 991.547
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2242.277 ; gain = 929.023 ; free physical = 6701 ; free virtual = 9146
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1973.876; main = 1674.650; forked = 416.746
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3201.781; main = 2210.230; forked = 991.551
 INFO: [Common 17-1381] The checkpoint '/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/synth_1/filtering_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file filtering_wrapper_utilization_synth.rpt -pb filtering_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May 30 21:47:49 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May 30 22:52:49 2024...

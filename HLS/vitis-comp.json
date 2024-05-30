@@ -1,9 +1,0 @@
-{
-  "name": "HLS",
-  "type": "HLS",
-  "configuration": {
-    "componentType": "HLS",
-    "configFiles": ["config.cfg"],
-    "work_dir": "work"
-  }
-}

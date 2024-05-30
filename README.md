@@ -6,4 +6,5 @@ This project is a part of the Reconfigurable Computing course at the University 
 
 - **Version 1** – Initial implementation of the project by transforming the reference C++ code into a Vitis project.
 - **Version 2** – Implement caching for the input image and the kernel matrix in BRAM memory to reduce the memory access time.
-- **Version 3** - Unroll the columns loop in the kernel matrix to increase the parallelism of the algorithm.
+- **Version 3** – Unroll the columns loop in the image processing loops to increase the parallelism of the algorithm.
+- **Version 4** – Change the unroll to the rows loop in the image processing loops.

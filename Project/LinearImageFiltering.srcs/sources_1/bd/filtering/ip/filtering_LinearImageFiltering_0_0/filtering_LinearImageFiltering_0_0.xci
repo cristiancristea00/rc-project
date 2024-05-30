@@ -3,7 +3,7 @@
   "ip_inst": {
     "xci_name": "filtering_LinearImageFiltering_0_0",
     "cell_name": "LinearImageFilter",
-    "component_reference": "Cristi:Image:LinearImageFiltering:0.3",
+    "component_reference": "Cristi:Image:LinearImageFiltering:0.4",
     "ip_revision": "0",
     "gen_directory": "../../../../../../LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_LinearImageFiltering_0_0",
     "parameters": {
