@@ -18,7 +18,7 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
     #pragma HLS INTERFACE mode = s_axilite port = padding
     #pragma HLS INTERFACE mode = s_axilite port = return
 
-    #pragma HLS CACHE port = image_in depth = 128 lines = 256
+    #pragma HLS CACHE port = image_in depth = 32 lines = 512
     #pragma HLS CACHE port = kernel   depth = 128 lines = 1
 
     float sum{0.0F};
@@ -30,7 +30,7 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
 
     img_rows: for (uint32_t row = 0; row < rows; row += stride_row)
     {
-        #pragma HLS UNROLL factor = 16
+        #pragma HLS UNROLL factor = 8
 
         img_cols: for (uint32_t col = 0; col < cols; col += stride_col)
         {
@@ -64,7 +64,7 @@ auto LinearImageFilter(float * const image_out, float const * const image_in, ui
 
 inline auto Pad(int32_t & row, int32_t & col, uint32_t const matRows, uint32_t const matCols, Padding const padding) -> bool
 {
-    #pragma HLS INLINE
+    #pragma HLS PIPELINE II = 1
 
     if ((row < 0) || (row >= matRows) || (col < 0) || (col >= matCols))
     {

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../LinearImageFiltering.gen/sources_1/bd/filtering",
       "name": "filtering",
@@ -1938,7 +1938,7 @@
         }
       },
       "LinearImageFilter": {
-        "vlnv": "Cristi:Image:LinearImageFiltering:0.4",
+        "vlnv": "Cristi:Image:LinearImageFiltering:0.5",
         "ip_revision": "0",
         "xci_name": "filtering_LinearImageFiltering_0_0",
         "xci_path": "ip/filtering_LinearImageFiltering_0_0/filtering_LinearImageFiltering_0_0.xci",

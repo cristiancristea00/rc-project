@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1717098059" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/filtering_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1717263244" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/filtering_wrapper.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="filtering_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="filtering_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="filtering_wrapper_utilization_synth.pb"/>
@@ -64,8 +64,8 @@
       <Option Id="ShregMinSize">5</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="filtering_LinearImageFiltering_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="filtering_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="filtering_LinearImageFiltering_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="filtering_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="filtering_rst_ps7_0_100M_0"/>
 </GenRun>

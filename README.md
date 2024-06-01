@@ -8,6 +8,7 @@ This project is a part of the Reconfigurable Computing course at the University 
 - **Version 2** – Implement caching for the input image and the kernel matrix in BRAM memory to reduce the memory access time.
 - **Version 3** – Unroll the columns loop in the image processing loops to increase the parallelism of the algorithm.
 - **Version 4** – Change the unroll to the rows loop in the image processing loops.
+- **Version 5** – Change the input image cache to have shorter lines and more of them, reduce the unroll factor, and pipeline the padding function instead of inlining it.
 
 ## Results
 
@@ -21,6 +22,7 @@ This project is a part of the Reconfigurable Computing course at the University 
 | Version 2 on PYNQ-Z2    | 14131 ms | 22194 ms | 34288 ms  | 50413 ms  | 70568 ms  |
 | Version 3 on PYNQ-Z2    | 13830 ms | 21892 ms | 33987 ms  | 50112 ms  | 70266 ms  |
 | Version 4 on PYNQ-Z2    | 14132 ms | 22195 ms | 34288 ms  | 50412 ms  | 70568 ms  |
+| Version 5 on PYNQ-Z2    | 14204 ms | 22266 ms | 34359 ms  | 50859 ms  | 71398 ms  |
 
 [^1]: Intel® Core™ i5-6600K (4 Cores, 4 Threads, 3.5 GHz - 3.9 GHz, 6 MB Cache)
 [^2]: Intel® Core™ i7-9750H (6 Cores, 12 Threads, 2.6 GHz - 4.5 GHz, 12 MB Cache)
