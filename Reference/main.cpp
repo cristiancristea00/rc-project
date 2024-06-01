@@ -10,7 +10,7 @@
 
 #define NUM_THREADS     ( std::thread::hardware_concurrency() )
 
-#define KERNEL_SIZE     ( 9 )
+#define STRIDE          ( 1U )
 
 
 enum class Padding : std::uint8_t
@@ -33,28 +33,31 @@ auto MeasureTime(std::function<void()> const & function, std::string_view const 
 
 auto main(int argc, char * argv[]) -> int
 {
-    if (argc != 3)
+    if (argc != 2)
     {
-        std::println(stderr, "Usage: {} <image_path> <output_path>", argv[0]);
+        std::println(stderr, "Usage: {} <image_path>", argv[0]);
         return EXIT_FAILURE;
     }
 
     omp_set_num_threads(NUM_THREADS);
+    std::println("Linear Image Filtering with {} threads", NUM_THREADS);
 
     Matrix const image{argv[1]};
-
-    auto const kernel = GetMedianFilterKernel(KERNEL_SIZE);
-
-    std::println("Linear Image Filtering with {} threads and kernel size of {}", NUM_THREADS, KERNEL_SIZE);
     std::println("Image size: {}x{}", image.rows(), image.cols());
 
-    MeasureTime(
-        [&] -> void
-        {
-            auto const result = LinearFilter(image, kernel);
-            result.save(argv[2]);
-        }, "Linear Filter"
-    );
+    constexpr auto KERNEL_SIZES = std::to_array<std::size_t>({3, 5, 7, 9, 11});
+
+    for (auto const size : KERNEL_SIZES)
+    {
+        auto const kernel = GetMedianFilterKernel(size);
+
+        MeasureTime(
+            [&] -> void
+            {
+                auto const result = LinearFilter(image, kernel, STRIDE, Padding::REFLECT);
+            }, std::format("Linear Filter with kernel size {}x{}", size, size)
+        );
+    }
 
     return EXIT_SUCCESS;
 }
