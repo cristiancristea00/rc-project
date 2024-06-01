@@ -21,6 +21,15 @@ public:
         imshow(title.data(), convertedImage);
     }
 
+    constexpr auto save(std::string_view const fileName) const -> void
+    {
+        cv::Mat const image{static_cast<int>(imageRows), static_cast<int>(imageCols), CV_32F, const_cast<float *>(data.data())};
+        cv::Mat convertedImage;
+        image.convertTo(convertedImage, CV_8U, MAX_VALUE);
+
+        cv::imwrite(fileName.data(), convertedImage);
+    }
+
     [[nodiscard]] constexpr auto rows() const noexcept -> std::size_t
     {
         return imageRows;

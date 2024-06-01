@@ -5,7 +5,7 @@
 #include <vector>
 
 
-#define FILTER_SIZE    ( 5 )
+#define FILTER_SIZE    ( 9 )
 #define STRIDE         ( 1 )
 
 
@@ -14,8 +14,7 @@ auto GetMedianFilterKernel(std::size_t const size) -> Matrix;
 
 auto main() -> int
 {
-    Matrix const image{"../../../../lena.tif"};
-    image.show("Original Image");
+    Matrix const image{"../../../../test.jpeg"};
 
     auto const kernel = GetMedianFilterKernel(FILTER_SIZE);
 
@@ -23,9 +22,7 @@ auto main() -> int
 
     LinearImageFilter(filteredImage.storage(), image.storage(), image.rows(), image.cols(), kernel.storage(), FILTER_SIZE, STRIDE, STRIDE, Padding::ZEROS);
 
-    filteredImage.show("Filtered Image");
-
-    cv::waitKey(0);
+    filteredImage.save("../../../../result.jpg");
 
     return 0;
 }

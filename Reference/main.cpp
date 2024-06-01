@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <thread>
 
 #include <omp.h>
@@ -9,6 +9,8 @@
 
 
 #define NUM_THREADS     ( std::thread::hardware_concurrency() )
+
+#define KERNEL_SIZE     ( 9 )
 
 
 enum class Padding : std::uint8_t
@@ -31,9 +33,9 @@ auto MeasureTime(std::function<void()> const & function, std::string_view const 
 
 auto main(int argc, char * argv[]) -> int
 {
-    if (argc != 2)
+    if (argc != 3)
     {
-        std::cerr << std::format("Usage: {} <image_path>\n", argv[0]);
+        std::println(stderr, "Usage: {} <image_path> <output_path>", argv[0]);
         return EXIT_FAILURE;
     }
 
@@ -41,15 +43,16 @@ auto main(int argc, char * argv[]) -> int
 
     Matrix const image{argv[1]};
 
-    auto const kernel = GetMedianFilterKernel(5);
+    auto const kernel = GetMedianFilterKernel(KERNEL_SIZE);
 
-    std::cout << std::format("Linear Image Filtering with {} threads\n", NUM_THREADS);
-    std::cout << std::format("Image size: {}x{}\n", image.rows(), image.cols());
+    std::println("Linear Image Filtering with {} threads and kernel size of {}", NUM_THREADS, KERNEL_SIZE);
+    std::println("Image size: {}x{}", image.rows(), image.cols());
 
     MeasureTime(
         [&] -> void
         {
             auto const result = LinearFilter(image, kernel);
+            result.save(argv[2]);
         }, "Linear Filter"
     );
 
@@ -203,5 +206,5 @@ auto MeasureTime(std::function<void()> const & function, std::string_view const 
     auto const stop = std::chrono::high_resolution_clock::now();
     auto const difference_ms = duration_cast<std::chrono::milliseconds>(stop - start);
     auto const time_ms = difference_ms.count();
-    std::cout << std::format("{}: {} ms\n", message, time_ms);
+    std::println("{}: {} ms", message, time_ms);
 }
