@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (lin64) Build 4126759 Thu Feb  8 23:52:05 MST 2024
-| Date         : Sat Jun  1 20:40:12 2024
+| Date         : Sat Jun 15 10:46:10 2024
 | Host         : Hephaestion running 64-bit Ubuntu 24.04 LTS
 | Command      : report_utilization -file filtering_wrapper_utilization_synth.rpt -pb filtering_wrapper_utilization_synth.pb
 | Design       : filtering_wrapper
@@ -180,12 +180,12 @@ Table of Contents
 | filtering_xbar_0                   |    1 |
 | filtering_rst_ps7_0_100M_0         |    1 |
 | filtering_processing_system7_0_0   |    1 |
-| filtering_auto_us_2                |    1 |
 | filtering_auto_us_1                |    1 |
 | filtering_auto_us_0                |    1 |
 | filtering_auto_pc_1                |    1 |
 | filtering_auto_pc_0                |    1 |
-| filtering_LinearImageFiltering_0_0 |    1 |
+| filtering_auto_ds_0                |    1 |
+| filtering_LinearImageFiltering_0_1 |    1 |
 +------------------------------------+------+
 
 

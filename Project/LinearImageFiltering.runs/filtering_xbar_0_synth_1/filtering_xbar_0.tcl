@@ -85,7 +85,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_repo_paths /home/cristi/Documents/ACES/RC-Project/HLS [current_project]
+set_property ip_repo_paths {
+  /home/cristi/Documents/ACES/RC-Project/HLS
+  /home/cristi/Documents/ACES/RC-Project/HLS-Integer
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

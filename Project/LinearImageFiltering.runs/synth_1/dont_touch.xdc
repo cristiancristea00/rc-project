@@ -7,9 +7,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering |
 # IP: bd/filtering/ip/filtering_processing_system7_0_0/filtering_processing_system7_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_processing_system7_0_0 || ORIG_REF_NAME==filtering_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/filtering/ip/filtering_LinearImageFiltering_0_0/filtering_LinearImageFiltering_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_LinearImageFiltering_0_0 || ORIG_REF_NAME==filtering_LinearImageFiltering_0_0} -quiet] -quiet
-
 # IP: bd/filtering/ip/filtering_ps7_0_axi_periph_0/filtering_ps7_0_axi_periph_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_ps7_0_axi_periph_0 || ORIG_REF_NAME==filtering_ps7_0_axi_periph_0} -quiet] -quiet
 
@@ -22,6 +19,9 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_x
 # IP: bd/filtering/ip/filtering_axi_mem_intercon_0/filtering_axi_mem_intercon_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_axi_mem_intercon_0 || ORIG_REF_NAME==filtering_axi_mem_intercon_0} -quiet] -quiet
 
+# IP: bd/filtering/ip/filtering_LinearImageFiltering_0_1/filtering_LinearImageFiltering_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_LinearImageFiltering_0_1 || ORIG_REF_NAME==filtering_LinearImageFiltering_0_1} -quiet] -quiet
+
 # IP: bd/filtering/ip/filtering_auto_pc_0/filtering_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_auto_pc_0 || ORIG_REF_NAME==filtering_auto_pc_0} -quiet] -quiet
 
@@ -31,8 +31,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_a
 # IP: bd/filtering/ip/filtering_auto_us_1/filtering_auto_us_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_auto_us_1 || ORIG_REF_NAME==filtering_auto_us_1} -quiet] -quiet
 
-# IP: bd/filtering/ip/filtering_auto_us_2/filtering_auto_us_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_auto_us_2 || ORIG_REF_NAME==filtering_auto_us_2} -quiet] -quiet
+# IP: bd/filtering/ip/filtering_auto_ds_0/filtering_auto_ds_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_auto_ds_0 || ORIG_REF_NAME==filtering_auto_ds_0} -quiet] -quiet
 
 # IP: bd/filtering/ip/filtering_auto_pc_1/filtering_auto_pc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==filtering_auto_pc_1 || ORIG_REF_NAME==filtering_auto_pc_1} -quiet] -quiet

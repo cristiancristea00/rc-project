@@ -84,7 +84,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_repo_paths /home/cristi/Documents/ACES/RC-Project/HLS [current_project]
+set_property ip_repo_paths {
+  /home/cristi/Documents/ACES/RC-Project/HLS
+  /home/cristi/Documents/ACES/RC-Project/HLS-Integer
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -93,11 +96,11 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/hdl/filtering_wrapper.v
 add_files /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.srcs/sources_1/bd/filtering/filtering.bd
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_processing_system7_0_0/filtering_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_LinearImageFiltering_0_0/constraints/LinearImageFilter_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_rst_ps7_0_100M_0/filtering_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_rst_ps7_0_100M_0/filtering_rst_ps7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_rst_ps7_0_100M_0/filtering_rst_ps7_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_xbar_0/filtering_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_LinearImageFiltering_0_1/constraints/LinearImageFilter_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_pc_0/filtering_auto_pc_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_0/filtering_auto_us_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_0/filtering_auto_us_0_clocks.xdc]
@@ -105,9 +108,9 @@ set_property used_in_implementation false [get_files -all /home/cristi/Documents
 set_property used_in_synthesis false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_1/filtering_auto_us_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_1/filtering_auto_us_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_1/filtering_auto_us_1_ooc.xdc]
-set_property used_in_synthesis false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_2/filtering_auto_us_2_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_2/filtering_auto_us_2_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_us_2/filtering_auto_us_2_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_ds_0/filtering_auto_ds_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_ds_0/filtering_auto_ds_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_ds_0/filtering_auto_ds_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_auto_pc_1/filtering_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/filtering_ooc.xdc]
 

@@ -3,18 +3,19 @@
 # SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
 # IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
 # SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Thu May 30 19:38:45 2024
-# Process ID: 9679
+# Start of session at: Fri Jun 14 22:27:36 2024
+# Process ID: 32783
 # Current directory: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1
 # Command line: vivado -log filtering_xbar_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source filtering_xbar_0.tcl
 # Log file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/filtering_xbar_0.vds
 # Journal file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/vivado.jou
-# Running On: Hephaestion, OS: Linux, CPU Frequency: 3399.997 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 3899.989 MHz, CPU Physical cores: 6, Host memory: 16631 MB
 #-----------------------------------------------------------
 source filtering_xbar_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1278.598 ; gain = 15.902 ; free physical = 1492 ; free virtual = 12248
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1279.594 ; gain = 19.871 ; free physical = 7336 ; free virtual = 12995
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cristi/Documents/ACES/RC-Project/HLS'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cristi/Documents/ACES/RC-Project/HLS-Integer'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/cristi/AMD/Vivado/2023.2/data/ip'.
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: filtering_xbar_0
 Command: synth_design -top filtering_xbar_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
@@ -24,9 +25,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10001
+INFO: [Synth 8-7075] Helper process launched with PID 33047
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2061.445 ; gain = 400.660 ; free physical = 228 ; free virtual = 4041
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2061.504 ; gain = 403.660 ; free physical = 1035 ; free virtual = 6690
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'filtering_xbar_0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ip/filtering_xbar_0/synth/filtering_xbar_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_axi_crossbar' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
@@ -47,6 +48,10 @@ INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_29_axic_srl_fi
 INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_mux_enc' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
 INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_mux_enc' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_si_transactor' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_splitter' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_splitter' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_wdata_router' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
@@ -56,11 +61,9 @@ INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_29_ndeep_srl__
 INFO: [Synth 8-155] case statement is not full and has no default [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/7964/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
 INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_29_axic_reg_srl_fifo' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/7964/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_wdata_router' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized1' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_arbiter_resp' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:1020]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_arbiter_resp' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:1020]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_si_transactor__parameterized1' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
 INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_31_addr_decoder__parameterized0' [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_31_addr_decoder__parameterized0' (0#1) [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
@@ -122,8 +125,8 @@ WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_
 WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
 WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
 WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/ba70/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
 WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/7964/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
 WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/7964/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
 WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.gen/sources_1/bd/filtering/ipshared/7964/hdl/axi_data_fifo_v2_1_vl_rfs.v:1034]
@@ -139,6 +142,7 @@ WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_30_axic_re
 WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[2] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_wid[1] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_wid[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
@@ -152,6 +156,9 @@ WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_31_si_trans
 WARNING: [Synth 8-7129] Port S_ABURST[0] in module axi_crossbar_v2_1_31_si_transactor__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_31_si_transactor is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_ABURST[0] in module axi_crossbar_v2_1_31_si_transactor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[8] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[7] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWID[6] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWID[5] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWID[4] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWID[3] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
@@ -190,62 +197,58 @@ WARNING: [Synth 8-7129] Port S_AXI_AWADDR[67] in module axi_crossbar_v2_1_31_cro
 WARNING: [Synth 8-7129] Port S_AXI_AWADDR[66] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWADDR[65] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWADDR[64] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[63] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[62] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[61] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[60] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[59] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[58] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[57] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[56] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[55] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[54] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[53] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[52] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[51] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[50] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[49] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[48] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[47] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[46] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[45] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[44] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[43] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[42] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[41] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[40] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[39] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[38] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[37] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[36] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[35] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[34] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[33] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWADDR[32] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[31] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[30] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[29] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[28] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[27] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[26] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[25] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[24] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[23] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[22] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[21] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[20] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[19] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[18] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[17] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[16] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[15] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[14] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[13] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[12] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[11] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[10] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[9] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[8] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[7] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[6] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[5] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[4] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[3] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[2] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[1] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[0] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[23] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[22] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[21] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[20] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[19] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWLEN[18] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[17] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[16] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[15] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_AWLEN[14] in module axi_crossbar_v2_1_31_crossbar is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2263.414 ; gain = 602.629 ; free physical = 178 ; free virtual = 2711
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2280.473 ; gain = 622.629 ; free physical = 176 ; free virtual = 5378
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2263.414 ; gain = 602.629 ; free physical = 170 ; free virtual = 2704
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2280.473 ; gain = 622.629 ; free physical = 153 ; free virtual = 5325
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2263.414 ; gain = 602.629 ; free physical = 170 ; free virtual = 2704
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2280.473 ; gain = 622.629 ; free physical = 153 ; free virtual = 5325
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2263.414 ; gain = 0.000 ; free physical = 153 ; free virtual = 2690
+Netlist sorting complete. Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2280.473 ; gain = 0.000 ; free physical = 188 ; free virtual = 5249
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -256,28 +259,28 @@ Parsing XDC File [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFilt
 Finished Parsing XDC File [/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2345.258 ; gain = 0.000 ; free physical = 184 ; free virtual = 2645
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2363.316 ; gain = 0.000 ; free physical = 226 ; free virtual = 5188
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2345.293 ; gain = 0.000 ; free physical = 184 ; free virtual = 2645
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2363.352 ; gain = 0.000 ; free physical = 225 ; free virtual = 5187
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 178 ; free virtual = 2566
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 215 ; free virtual = 5224
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 178 ; free virtual = 2566
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 215 ; free virtual = 5224
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 178 ; free virtual = 2566
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 216 ; free virtual = 5225
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_29_axic_reg_srl_fifo'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_29_axic_reg_srl_fifo__parameterized0'
@@ -319,7 +322,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' using encoding 'one-hot' in module 'axi_crossbar_v2_1_31_decerr_slave'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 183 ; free virtual = 2361
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 215 ; free virtual = 5227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -327,28 +330,29 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input    8 Bit       Adders := 3     
-	   2 Input    4 Bit       Adders := 8     
+	   2 Input    4 Bit       Adders := 11    
 	   2 Input    3 Bit       Adders := 5     
 	   2 Input    2 Bit       Adders := 3     
 	   2 Input    1 Bit       Adders := 4     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 8     
+	   2 Input      1 Bit         XORs := 9     
 +---Registers : 
-	               69 Bit    Registers := 4     
-	               65 Bit    Registers := 2     
+	             1030 Bit    Registers := 4     
+	               66 Bit    Registers := 2     
 	                8 Bit    Registers := 3     
-	                4 Bit    Registers := 11    
-	                3 Bit    Registers := 11    
-	                2 Bit    Registers := 19    
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 13    
+	                2 Bit    Registers := 18    
 	                1 Bit    Registers := 35    
 +---Muxes : 
-	   2 Input   69 Bit        Muxes := 4     
-	   2 Input   16 Bit        Muxes := 4     
+	   2 Input 1030 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 6     
 	   2 Input    8 Bit        Muxes := 1     
-	   3 Input    4 Bit        Muxes := 3     
+	   3 Input    4 Bit        Muxes := 5     
 	   2 Input    4 Bit        Muxes := 11    
-	   2 Input    3 Bit        Muxes := 5     
-	   2 Input    2 Bit        Muxes := 16    
+	   2 Input    3 Bit        Muxes := 6     
+	   2 Input    2 Bit        Muxes := 19    
 	   2 Input    1 Bit        Muxes := 82    
 	   4 Input    1 Bit        Muxes := 9     
 	   3 Input    1 Bit        Muxes := 9     
@@ -368,29 +372,29 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-INFO: [Synth 8-3332] Sequential element (gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_31_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.wdata_router_w/wrouter_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_31_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_31_axi_crossbar.
 INFO: [Synth 8-3332] Sequential element (gen_samd.crossbar_samd/gen_master_slots[1].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_31_axi_crossbar.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 434 ; free virtual = 2568
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 193 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 571 ; free virtual = 2831
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 445 ; free virtual = 5364
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 571 ; free virtual = 2833
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 208 ; free virtual = 4823
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 571 ; free virtual = 2834
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 175 ; free virtual = 4573
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -408,37 +412,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2559 ; free virtual = 4908
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1562 ; free virtual = 5939
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2559 ; free virtual = 4908
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1562 ; free virtual = 5939
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2558 ; free virtual = 4909
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2558 ; free virtual = 4909
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2550 ; free virtual = 4901
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2550 ; free virtual = 4902
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -454,42 +458,42 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |LUT1    |     9|
-|2     |LUT2    |   148|
-|3     |LUT3    |   182|
-|4     |LUT4    |   110|
-|5     |LUT5    |    44|
-|6     |LUT6    |    89|
+|1     |LUT1    |    10|
+|2     |LUT2    |  1034|
+|3     |LUT3    |  3374|
+|4     |LUT4    |    57|
+|5     |LUT5    |    58|
+|6     |LUT6    |    94|
 |7     |SRLC32E |     5|
-|8     |FDRE    |   357|
-|9     |FDSE    |    16|
+|8     |FDRE    |  2301|
+|9     |FDSE    |    18|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2555 ; free virtual = 4907
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 720 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 2345.293 ; gain = 602.629 ; free physical = 2554 ; free virtual = 4907
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 2345.293 ; gain = 684.508 ; free physical = 2554 ; free virtual = 4907
+Synthesis finished with 0 errors, 0 critical warnings and 2523 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 2363.352 ; gain = 622.629 ; free physical = 1570 ; free virtual = 5947
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2363.352 ; gain = 705.508 ; free physical = 1570 ; free virtual = 5947
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2345.293 ; gain = 0.000 ; free physical = 2840 ; free virtual = 5193
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2363.352 ; gain = 0.000 ; free physical = 1766 ; free virtual = 6152
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2345.293 ; gain = 0.000 ; free physical = 3611 ; free virtual = 6007
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2363.352 ; gain = 0.000 ; free physical = 1765 ; free virtual = 6157
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: d5f1f9bd
+Synth Design complete | Checksum: 3a8d7ddb
 INFO: [Common 17-83] Releasing license: Synthesis
-113 Infos, 121 Warnings, 0 Critical Warnings and 0 Errors encountered.
+116 Infos, 121 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 2345.293 ; gain = 1040.945 ; free physical = 4398 ; free virtual = 6837
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1635.655; main = 1358.866; forked = 303.957
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3307.797; main = 2345.262; forked = 994.551
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2369.270 ; gain = 0.000 ; free physical = 4397 ; free virtual = 6837
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:51 . Memory (MB): peak = 2363.352 ; gain = 1059.977 ; free physical = 1764 ; free virtual = 6156
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1749.960; main = 1456.508; forked = 306.153
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3322.852; main = 2363.320; forked = 991.547
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2387.328 ; gain = 0.000 ; free physical = 1763 ; free virtual = 6156
 INFO: [Common 17-1381] The checkpoint '/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/filtering_xbar_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP filtering_xbar_0, cache-ID = 2dc795a82f9f1972
-INFO: [Coretcl 2-1174] Renamed 27 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2369.270 ; gain = 0.000 ; free physical = 4382 ; free virtual = 6833
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP filtering_xbar_0, cache-ID = 5f18f7d077a3a9a2
+INFO: [Coretcl 2-1174] Renamed 28 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2387.328 ; gain = 0.000 ; free physical = 1768 ; free virtual = 6162
 INFO: [Common 17-1381] The checkpoint '/home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/filtering_xbar_0_synth_1/filtering_xbar_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file filtering_xbar_0_utilization_synth.rpt -pb filtering_xbar_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May 30 19:39:54 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 14 22:28:42 2024...

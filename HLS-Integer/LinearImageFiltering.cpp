@@ -1,0 +1,125 @@
+#include <cstdint>
+#include <cmath>
+
+#include "LinearImageFiltering.hpp"
+
+
+auto LinearImageFilter(uint8_t * const image_out, uint8_t const * const image_in, uint32_t const rows, uint32_t const cols, uint8_t const * const kernel, uint32_t const kernel_dim, uint32_t const stride_row, uint32_t const stride_col, Padding const padding) -> void
+{
+    #pragma HLS INTERFACE mode = m_axi     port = image_out bundle = image_out offset = slave depth = 10000000
+    #pragma HLS INTERFACE mode = m_axi     port = image_in  bundle = image_in  offset = slave depth = 10000000
+    #pragma HLS INTERFACE mode = m_axi     port = kernel    bundle = kernel    offset = slave depth = 1000
+
+    #pragma HLS INTERFACE mode = s_axilite port = rows
+    #pragma HLS INTERFACE mode = s_axilite port = cols
+    #pragma HLS INTERFACE mode = s_axilite port = kernel_dim
+    #pragma HLS INTERFACE mode = s_axilite port = stride_row
+    #pragma HLS INTERFACE mode = s_axilite port = stride_col
+    #pragma HLS INTERFACE mode = s_axilite port = padding
+    #pragma HLS INTERFACE mode = s_axilite port = return
+
+    #pragma HLS CACHE port = image_in depth = 32 lines = 64
+    #pragma HLS CACHE port = kernel   depth = 128 lines = 1
+
+    uint32_t sum{0};
+    uint32_t div{0};
+
+    int32_t newRow{0};
+    int32_t newCol{0};
+
+    uint32_t out_idx{0};
+
+    ker_cols_sum: for (uint32_t i = 0; i < kernel_dim; ++i)
+    {
+        ker_rows_sum: for (uint32_t j = 0; j < kernel_dim; ++j)
+        {
+            div += static_cast<uint32_t>(kernel[i * kernel_dim + j]);
+        }
+    }
+
+    int32_t const half_kernel_dim = kernel_dim / 2;
+
+    img_rows: for (uint32_t row = 0; row < rows; row += stride_row)
+    {
+        img_cols: for (uint32_t col = 0; col < cols; col += stride_col)
+        {
+            sum = 0;
+
+            ker_rows: for (uint32_t i = 0; i < kernel_dim; ++i)
+            {
+                #pragma HLS LOOP_TRIPCOUNT min = 3 max = 11 avg = 5
+
+                ker_cols: for (uint32_t j = 0; j < kernel_dim; ++j)
+                {
+                    #pragma HLS LOOP_TRIPCOUNT min = 3 max = 11 avg = 5
+
+                    newRow = static_cast<int32_t>(row + i) - half_kernel_dim;
+                    newCol = static_cast<int32_t>(col + j) - half_kernel_dim;
+
+                    if (!Pad(newRow, newCol, rows, cols, padding))
+                    {
+                        continue;
+                    }
+
+                    sum += static_cast<uint16_t>(image_in[newRow * cols + newCol]) * static_cast<uint16_t>(kernel[i * kernel_dim + j]);
+                }
+            }
+
+            out_idx = (row / stride_row) * (cols / stride_col) + (col / stride_col);
+            image_out[out_idx] = static_cast<uint8_t>(sum / div);
+        }
+    }
+};
+
+inline auto Pad(int32_t & row, int32_t & col, uint32_t const matRows, uint32_t const matCols, Padding const padding) -> bool
+{
+    #pragma HLS INLINE
+
+    if ((row < 0) || (row >= matRows) || (col < 0) || (col >= matCols))
+    {
+        switch (padding)
+        {
+            case Padding::EDGE:
+                if (row < 0)
+                {
+                    row = 0;
+                }
+                if (row >= matRows)
+                {
+                    row = matRows - 1;
+                }
+                if (col < 0)
+                {
+                    col = 0;
+                }
+                if (col >= matCols)
+                {
+                    col = matCols - 1;
+                }
+                break;
+            case Padding::REFLECT:
+                if (row < 0)
+                {
+                    row = abs(row) - 1;
+                }
+                if (row >= matRows)
+                {
+                    row = 2 * matRows - row - 1;
+                }
+                if (col < 0)
+                {
+                    col = abs(col) - 1;
+                }
+                if (col >= matCols)
+                {
+                    col = 2 * matCols - col - 1;
+                }
+                break;
+            case Padding::ZEROS:
+            default:
+                return false;
+        }
+    }
+
+    return true;
+}

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2.2 (64-bit)
+# SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
+# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+# Start of session at: Sat Jun 15 10:46:23 2024
+# Process ID: 86026
+# Current directory: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1
+# Command line: vivado -log filtering_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source filtering_wrapper.tcl -notrace
+# Log file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1/filtering_wrapper.vdi
+# Journal file: /home/cristi/Documents/ACES/RC-Project/Project/LinearImageFiltering.runs/impl_1/vivado.jou
+# Running On: Hephaestion, OS: Linux, CPU Frequency: 2600.009 MHz, CPU Physical cores: 6, Host memory: 16631 MB
+#-----------------------------------------------------------
+source filtering_wrapper.tcl -notrace

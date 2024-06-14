@@ -66,9 +66,9 @@ filtering_auto_us_1_sc::filtering_auto_us_1_sc(const sc_core::sc_module_name& nm
     model_param_props.addLong("C_SUPPORTS_ID", "1");
     model_param_props.addLong("C_AXI_ADDR_WIDTH", "32");
     model_param_props.addLong("C_S_AXI_DATA_WIDTH", "32");
-    model_param_props.addLong("C_M_AXI_DATA_WIDTH", "64");
-    model_param_props.addLong("C_AXI_SUPPORTS_WRITE", "0");
-    model_param_props.addLong("C_AXI_SUPPORTS_READ", "1");
+    model_param_props.addLong("C_M_AXI_DATA_WIDTH", "1024");
+    model_param_props.addLong("C_AXI_SUPPORTS_WRITE", "1");
+    model_param_props.addLong("C_AXI_SUPPORTS_READ", "0");
     model_param_props.addLong("C_FIFO_MODE", "0");
     model_param_props.addLong("C_S_AXI_ACLK_RATIO", "1");
     model_param_props.addLong("C_M_AXI_ACLK_RATIO", "2");
